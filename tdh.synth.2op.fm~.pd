@@ -1,0 +1,260 @@
+#N canvas 1678 -443 1585 1148 10;
+#X obj 73 634 osc~;
+#X obj 73 656 *~;
+#X obj 368 498 osc~;
+#X obj 73 613 +~;
+#X obj 73 717 outlet~;
+#X obj 783 23 loadbang;
+#X obj 292 47 f \$1;
+#X text 3 3 Arguments:;
+#X text 3 -80 Two-Operator FM Synth;
+#X text 5 -42 Travis Houldcroft;
+#X text 4 -29 thouldcroft@gmail.com;
+#X text 4 -17 travishouldcroft.com;
+#X text 12 17 1: carrier freq.;
+#X text 12 28 2: carrier amp.;
+#X text 12 40 3: modulator freq.;
+#X obj 429 47 f \$2;
+#X obj 550 47 f \$3;
+#X obj 672 47 f \$4;
+#X text 12 52 4: modulator amp. (deviation);
+#X text 3 -69 tdh.synth.2op.fm~.pd;
+#X floatatom 106 129 5 0 0 1 Carr.Freq. #0-carrFreq-r #0-carrFreq-s
+0;
+#X floatatom 106 149 5 0 1 1 Carr.Amp. #0-carrAmp-r #0-carrAmp-s 0
+;
+#X floatatom 208 130 5 0 0 1 Mod.Freq. #0-modFreq-r #0-modFreq-s 0
+;
+#X floatatom 208 150 5 0 0 1 Mod.Amp. #0-modAmp-r #0-modAmp-s 0;
+#X text 883 -50 Modulation inputs -----------------------------;
+#X obj 1029 -29 inlet~ carr_amp_mod;
+#X obj 1165 -29 inlet~ mod_freq_mod;
+#X obj 884 -29 inlet~ carr_freq_mod;
+#X obj 1313 -29 inlet~ mod_amp_mod;
+#X text 300 -81 Oscillator settings inputs -----------------------------
+;
+#X obj 1029 -7 s~ carr_amp_mod-\$0;
+#X obj 1165 -7 s~ mod_freq_mod-\$0;
+#X obj 1313 -7 s~ mod_amp_mod-\$0;
+#X obj 88 472 r~ carr_freq_mod-\$0;
+#X obj 235 472 r~ carr_amp_mod-\$0;
+#X obj 383 393 r~ mod_freq_mod-\$0;
+#X obj 543 392 r~ mod_amp_mod-\$0;
+#X obj 884 -7 s~ carr_freq_mod-\$0;
+#X obj 741 -30 inlet gain;
+#X obj 783 47 f \$5;
+#X text 12 64 5: Voice gain;
+#X obj 73 575 +~;
+#X obj 220 575 *~;
+#X obj 114 501 loadbang;
+#X obj 114 545 sig~;
+#X msg 114 523 0;
+#X obj 279 501 loadbang;
+#X obj 279 545 sig~;
+#X msg 279 523 1;
+#X obj 368 472 +~;
+#X obj 443 418 loadbang;
+#X obj 411 441 sig~;
+#X obj 618 418 loadbang;
+#X obj 585 441 sig~;
+#X msg 618 440 1;
+#X obj 73 370 sig~;
+#X obj 220 370 sig~;
+#X obj 368 371 sig~;
+#X obj 528 371 sig~;
+#X obj 368 575 *~;
+#X msg 443 440 0;
+#X obj 528 472 *~;
+#X text 101 105 Cf;
+#X text 125 105 Ca;
+#X text 156 105 Mf;
+#X text 186 105 Ma;
+#X text 216 105 Ga;
+#X text 241 105 CfM;
+#X text 273 105 CaM;
+#X text 303 105 MfM;
+#X text 327 105 MaM;
+#X text 100 194 Out;
+#X obj 244 -30 inlet carr_freq;
+#X obj 376 -30 inlet carr_amp;
+#X obj 502 -30 inlet mod_freq;
+#X obj 628 -30 inlet mod_amp;
+#X obj 244 -8 change;
+#X obj 376 -8 change;
+#X obj 502 -8 change;
+#X obj 628 -8 change;
+#X obj 742 -8 change;
+#X obj 73 676 lop~ 15000;
+#X obj 100 169 cnv 15 248 23 empty empty 2\\\ Operator\\\ FM\\\ Synth\\\ Module
+20 12 0 14 #e0e0e0 #404040 0;
+#X text 294 66 Args: Carrier Freq \, Carrier Amp \, Modulator Freq
+\, Modulator Amp, f 33;
+#X obj 243 17 s \$0-carrFreq-r;
+#X obj 73 343 r \$0-carrFreq-s;
+#X obj 513 345 cnv 14 14 14 empty empty R 6 8 0 8 #fce0c4 #7c7c7c 0
+;
+#X obj 352 347 cnv 14 14 14 empty empty R 6 8 0 8 #fcc4c4 #7c7c7c 0
+;
+#X obj 203 343 cnv 14 14 14 empty empty R 6 8 0 8 #b8b8b8 #404040 0
+;
+#X obj 57 343 cnv 14 14 14 empty empty R 6 8 0 8 #dcdcdc #7c7c7c 0
+;
+#X obj 651 393 cnv 14 14 14 empty empty R 6 8 0 8 #c4c4fc #7c7c7c 0
+;
+#X obj 498 394 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcfc #7c7c7c 0
+;
+#X obj 348 472 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
+;
+#X obj 207 473 cnv 14 14 14 empty empty R 6 8 0 8 #fcfcc4 #7c7c7c 0
+;
+#X obj 1386 404 cnv 14 14 14 empty empty R 6 8 0 8 #e0c4fc #7c7c7c
+0;
+#X obj 612 15 cnv 14 14 14 empty empty S 6 8 0 8 #fce0c4 #7c7c7c 0
+;
+#X obj 486 15 cnv 14 14 14 empty empty S 6 8 0 8 #fcc4c4 #7c7c7c 0
+;
+#X obj 363 19 cnv 14 14 14 empty empty S 6 8 0 8 #b8b8b8 #404040 0
+;
+#X obj 227 19 cnv 14 14 14 empty empty S 6 8 0 8 #dcdcdc #7c7c7c 0
+;
+#X obj 1297 -5 cnv 14 14 14 empty empty S 6 8 0 8 #c4c4fc #7c7c7c 0
+;
+#X obj 1149 -5 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcfc #7c7c7c 0
+;
+#X obj 1014 -5 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcc4 #7c7c7c 0
+;
+#X obj 869 -6 cnv 14 14 14 empty empty S 6 8 0 8 #fcfcc4 #7c7c7c 0
+;
+#X obj 1386 434 cnv 14 14 14 empty empty S 6 8 0 8 #e0c4fc #7c7c7c
+0;
+#X obj 1501 404 cnv 14 14 14 empty empty R 6 8 0 8 #00fc04 #7c7c7c
+0;
+#X obj 1471 404 cnv 14 14 14 empty empty R 6 8 0 8 #f8fc00 #7c7c7c
+0;
+#X obj 1441 404 cnv 14 14 14 empty empty R 6 8 0 8 #fc8000 #7c7c7c
+0;
+#X obj 1411 404 cnv 14 14 14 empty empty R 6 8 0 8 #fc0400 #404040
+0;
+#X obj 1591 404 cnv 14 14 14 empty empty R 6 8 0 8 #9c00fc #b8b8b8
+0;
+#X obj 1561 404 cnv 14 14 14 empty empty R 6 8 0 8 #0400fc #b8b8b8
+0;
+#X obj 1531 404 cnv 14 14 14 empty empty R 6 8 0 8 #00f8fc #404040
+0;
+#X obj 1501 434 cnv 14 14 14 empty empty S 6 8 0 8 #00fc04 #7c7c7c
+0;
+#X obj 1471 434 cnv 14 14 14 empty empty S 6 8 0 8 #f8fc00 #7c7c7c
+0;
+#X obj 1441 434 cnv 14 14 14 empty empty S 6 8 0 8 #fc8000 #7c7c7c
+0;
+#X obj 1411 434 cnv 14 14 14 empty empty S 6 8 0 8 #fc0400 #404040
+0;
+#X obj 1591 434 cnv 14 14 14 empty empty S 6 8 0 8 #9c00fc #b8b8b8
+0;
+#X obj 1561 434 cnv 14 14 14 empty empty S 6 8 0 8 #0400fc #b8b8b8
+0;
+#X obj 1531 434 cnv 14 14 14 empty empty S 6 8 0 8 #00f8fc #404040
+0;
+#X obj 81 133 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #e0e0e0
+#404040 0;
+#X obj 81 152 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #b8b8b8
+#404040 0;
+#X obj 365 133 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #fcc4c4
+#404040 0;
+#X obj 366 159 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #fce0c4
+#404040 0;
+#X obj 1271 393 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #fcfcc4
+#404040 0;
+#X obj 1301 392 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #c4fcc4
+#404040 0;
+#X obj 1331 392 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #c4fcfc
+#404040 0;
+#X obj 1361 392 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #c4c4fc
+#404040 0;
+#X obj 1391 392 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #e0c4fc
+#404040 0;
+#X obj 1417 391 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #fc0400
+#404040 0;
+#X obj 1447 391 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #fc8000
+#404040 0;
+#X obj 1476 391 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #f8fc00
+#404040 0;
+#X obj 1507 391 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #00fc04
+#404040 0;
+#X obj 1537 391 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #00f8fc
+#404040 0;
+#X obj 1567 391 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #0400fc
+#fcfcfc 0;
+#X obj 1597 391 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #9c00fc
+#fcfcfc 0;
+#X obj 220 343 r \$0-carrAmp-s;
+#X obj 379 18 s \$0-carrAmp-r;
+#X obj 502 13 s \$0-modFreq-r;
+#X obj 368 347 r \$0-modFreq-s;
+#X obj 628 13 s \$0-modAmp-r;
+#X obj 528 345 r \$0-modAmp-s;
+#X obj 414 419 cnv 10 28 14 empty empty INIT 2 8 0 10 #fcc4c4 #404040
+0;
+#X obj 585 419 cnv 10 28 14 empty empty INIT 2 8 0 10 #fcc4c4 #404040
+0;
+#X obj 837 24 cnv 10 28 14 empty empty INIT 2 8 0 10 #fcc4c4 #404040
+0;
+#X obj 73 697 *~ 1;
+#X connect 0 0 1 0;
+#X connect 1 0 81 0;
+#X connect 2 0 59 0;
+#X connect 3 0 0 0;
+#X connect 5 0 6 0;
+#X connect 5 0 15 0;
+#X connect 5 0 16 0;
+#X connect 5 0 17 0;
+#X connect 5 0 39 0;
+#X connect 6 0 84 0;
+#X connect 15 0 135 0;
+#X connect 16 0 136 0;
+#X connect 17 0 138 0;
+#X connect 25 0 30 0;
+#X connect 26 0 31 0;
+#X connect 27 0 37 0;
+#X connect 28 0 32 0;
+#X connect 33 0 41 1;
+#X connect 34 0 42 1;
+#X connect 35 0 49 1;
+#X connect 36 0 61 1;
+#X connect 38 0 80 0;
+#X connect 41 0 3 0;
+#X connect 42 0 1 1;
+#X connect 43 0 45 0;
+#X connect 44 0 41 1;
+#X connect 45 0 44 0;
+#X connect 46 0 48 0;
+#X connect 47 0 42 1;
+#X connect 48 0 47 0;
+#X connect 49 0 2 0;
+#X connect 50 0 60 0;
+#X connect 51 0 49 1;
+#X connect 52 0 54 0;
+#X connect 53 0 61 1;
+#X connect 54 0 53 0;
+#X connect 55 0 41 0;
+#X connect 56 0 42 0;
+#X connect 57 0 49 0;
+#X connect 58 0 61 0;
+#X connect 59 0 3 1;
+#X connect 60 0 51 0;
+#X connect 61 0 59 1;
+#X connect 72 0 76 0;
+#X connect 73 0 77 0;
+#X connect 74 0 78 0;
+#X connect 75 0 79 0;
+#X connect 76 0 84 0;
+#X connect 77 0 135 0;
+#X connect 78 0 136 0;
+#X connect 79 0 138 0;
+#X connect 81 0 143 0;
+#X connect 85 0 55 0;
+#X connect 134 0 56 0;
+#X connect 137 0 57 0;
+#X connect 139 0 58 0;
+#X connect 143 0 4 0;
+#X coords 0 -1 1 1 250 111 2 100 100;

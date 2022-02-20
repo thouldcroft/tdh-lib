@@ -1,0 +1,26 @@
+#N canvas 844 222 687 543 10;
+#X obj -328 292 outlet~;
+#X obj -76 133 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom -63 162 5 0 0 0 - - -, f 5;
+#X obj -359 253 *~;
+#X obj -78 181 - 1;
+#X floatatom -61 228 5 0 0 0 - - -, f 5;
+#X obj -78 203 * -1;
+#X obj -281 253 *~;
+#X text -411 252 Dry Sig;
+#X text -332 252 Wet Sig;
+#X obj -79 46 inlet dry_wet_ctrl;
+#X obj -359 39 inlet~ dry;
+#X obj -281 39 inlet~ wet;
+#X connect 1 0 2 0;
+#X connect 1 0 4 0;
+#X connect 1 0 7 1;
+#X connect 3 0 0 0;
+#X connect 4 0 6 0;
+#X connect 6 0 5 0;
+#X connect 6 0 3 1;
+#X connect 7 0 0 0;
+#X connect 10 0 1 0;
+#X connect 11 0 3 0;
+#X connect 12 0 7 0;

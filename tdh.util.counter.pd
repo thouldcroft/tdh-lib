@@ -1,0 +1,850 @@
+#N canvas 1461 -209 1739 1035 10;
+#X text 374 3 tdh.util.counter;
+#X text 374 23 An incremental counter that responds to "bang";
+#X text 374 43 Arguments: counter_min count_max increment_amt;
+#X obj 34 285 inlet getNextNumber;
+#X text 32 222 Bang causes object to output next number, f 18;
+#X obj 34 310 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 34 330 s \$0-getNextNumber;
+#X obj 247 288 inlet minNumber;
+#X text 245 141 This is the lowest number counted from/to, f 27;
+#X obj 17 653 outlet;
+#X floatatom 17 631 5 0 0 0 - - - 0;
+#X obj 130 465 cnv 14 14 14 empty empty R 6 8 0 8 #b8b8b8 #404040 0
+;
+#X obj 128 494 cnv 14 14 14 empty empty R 6 8 0 8 #c4c4fc #7c7c7c 0
+;
+#X obj 32 494 r \$0-nextNumber;
+#X obj 17 465 r \$0-getNextNumber;
+#X obj 147 331 cnv 14 14 14 empty empty S 6 8 0 8 #b8b8b8 #404040 0
+;
+#X text 246 171 The object defaults to counting UP starting from the
+minimum number, f 27;
+#X obj 233 288 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc
+0;
+#X obj 878 260 cnv 14 14 14 empty empty 3 4 8 0 12 #606060 #dcdcdc
+0;
+#X obj 1303 262 cnv 14 14 14 empty empty 4 4 8 0 12 #606060 #dcdcdc
+0;
+#X obj 1521 283 cnv 14 14 14 empty empty 5 4 8 0 12 #606060 #dcdcdc
+0;
+#X obj 550 289 cnv 14 14 14 empty empty 2 4 8 0 12 #606060 #dcdcdc
+0;
+#X obj 19 286 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc 0
+;
+#X msg 1362 313 0, f 1;
+#X obj 662 336 float \$2;
+#X obj 993 320 float \$3;
+#X obj 662 288 loadbang;
+#X obj 993 260 loadbang;
+#X obj 1536 283 inlet direction;
+#X obj 1536 324 s \$0-direction;
+#X text 624 336 Max #;
+#X obj 1626 325 cnv 14 14 14 empty empty S 6 8 0 8 #fcc4c4 #7c7c7c
+0;
+#X obj 982 374 cnv 14 14 14 empty empty S 6 8 0 8 #dcdcdc #7c7c7c 0
+;
+#X obj 1318 360 s \$0-nextNumber;
+#X obj 1414 360 cnv 14 14 14 empty empty S 6 8 0 8 #c4c4fc #7c7c7c
+0;
+#X obj 1656 282 loadbang;
+#X msg 1656 303 0;
+#X obj 564 288 inlet maxNumber;
+#X obj 58 606 s \$0-calculateNextNum;
+#X obj 17 581 t f f;
+#X obj 800 435 cnv 14 14 14 empty empty R 6 8 0 8 #e0c4fc #7c7c7c 0
+;
+#X obj 189 608 cnv 14 14 14 empty empty S 6 8 0 8 #e0c4fc #7c7c7c 0
+;
+#X obj 669 435 r \$0-calculateNextNum;
+#X obj 669 678 + 1;
+#X obj 669 658 spigot;
+#X obj 702 634 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 702 524 sel 0 1 2 3;
+#X obj 918 658 spigot;
+#X obj 951 634 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 918 678 - 1;
+#X msg 733 582 0;
+#X msg 702 582 1;
+#X msg 764 582 0;
+#X obj 1540 677 b;
+#X obj 702 548 t b b b b, f 16;
+#X msg 795 582 0;
+#X msg 981 582 0;
+#X obj 919 550 t b b b b, f 16;
+#X msg 1012 582 0;
+#X obj 1540 658 spigot;
+#X obj 1573 634 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X msg 1240 582 0;
+#X obj 1209 547 t b b b b, f 16;
+#X msg 1302 582 0;
+#X obj 1239 668 spigot;
+#X obj 1272 634 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X text 1163 658 UpDown;
+#X msg 1511 582 0;
+#X msg 1543 582 0;
+#X obj 1480 546 t b b b b, f 16;
+#X msg 919 582 0;
+#X msg 950 582 1;
+#X msg 1208 582 0;
+#X msg 1272 582 1;
+#X msg 1479 582 0;
+#X msg 1573 582 1;
+#X floatatom 1540 714 5 0 0 0 - - - 0;
+#X obj 1540 696 random 50;
+#X floatatom 702 504 5 0 0 0 - - - 0;
+#X text 744 503 0 = up \, 1 = down \, 2 = upDown \, 3 = random;
+#X obj 686 484 cnv 14 14 14 empty empty R 6 8 0 8 #fcc4c4 #7c7c7c 0
+;
+#X obj 790 678 cnv 14 14 14 empty empty R 6 8 0 8 #dcdcdc #7c7c7c 0
+;
+#X obj 702 483 r \$0-direction;
+#X obj 669 719 s \$0-nextNumber;
+#X obj 764 719 cnv 14 14 14 empty empty S 6 8 0 8 #c4c4fc #7c7c7c 0
+;
+#X obj 918 719 s \$0-nextNumber;
+#X obj 1013 719 cnv 14 14 14 empty empty S 6 8 0 8 #c4c4fc #7c7c7c
+0;
+#X obj 1540 735 s \$0-nextNumber;
+#X obj 1636 735 cnv 14 14 14 empty empty S 6 8 0 8 #c4c4fc #7c7c7c
+0;
+#X text 565 141 This is the highest number counted to/from, f 27;
+#X text 566 171 The object defaults to counting UP starting from the
+minimum number to maximum number, f 27;
+#X text 247 221 Established via INLET 1 or ARGUMENT 1, f 22;
+#X text 567 221 Established via INLET 2 or ARGUMENT 2, f 22;
+#X text 247 251 Default value = 0, f 22;
+#X text 567 251 Default value = 99, f 22;
+#N canvas 2374 217 719 510 argDefaultHandling 0;
+#X obj 213 103 == 0;
+#X obj 264 47 t f f;
+#X obj 213 139 sel 1 0;
+#X obj 278 176 f;
+#X obj 213 222 outlet;
+#X obj 211 176 cnv 15 35 20 empty empty empty 0 8 0 14 #c4c4fc #404040
+0;
+#X obj 213 177 f 55;
+#X text 56 133 Yes \, use the default \, else use the argument, f
+21;
+#X text 93 177 Set DEFAULT here;
+#X obj 249 16 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc 0
+;
+#X obj 200 222 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc
+0;
+#X text 24 83 Check if argument is 0 (if no argument is supplied \,
+the argument variable will output "0"), f 29;
+#X obj 447 14 inlet;
+#X obj 432 14 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc 0
+;
+#X text 36 17 Use [loadbang]-> [f $#] to send the argument value into
+this subpatch, f 32;
+#X obj 264 16 inlet argument;
+#X text 187 376 ( <-- Can't use [send] or [receive] because a patch
+might have multiple versions of this subpatch \, and the receives would
+get shared);
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 1 1 3 1;
+#X connect 2 0 6 0;
+#X connect 2 1 3 0;
+#X connect 3 0 4 0;
+#X connect 6 0 4 0;
+#X connect 12 0 6 1;
+#X connect 15 0 1 0;
+#X restore 662 359 pd argDefaultHandling;
+#X obj 662 309 t b b;
+#X text 812 333 Default Value, f 7;
+#X msg 785 336 99, f 2;
+#N canvas 2374 217 719 510 argDefaultHandling 0;
+#X obj 213 103 == 0;
+#X obj 264 47 t f f;
+#X obj 213 139 sel 1 0;
+#X obj 278 176 f;
+#X obj 213 222 outlet;
+#X obj 211 176 cnv 15 35 20 empty empty empty 0 8 0 14 #c4c4fc #404040
+0;
+#X obj 213 177 f 55;
+#X text 56 133 Yes \, use the default \, else use the argument, f
+21;
+#X text 93 177 Set DEFAULT here;
+#X obj 249 16 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc 0
+;
+#X obj 200 222 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc
+0;
+#X text 24 83 Check if argument is 0 (if no argument is supplied \,
+the argument variable will output "0"), f 29;
+#X obj 447 14 inlet;
+#X obj 432 14 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc 0
+;
+#X text 36 17 Use [loadbang]-> [f $#] to send the argument value into
+this subpatch, f 32;
+#X obj 264 16 inlet argument;
+#X text 187 376 ( <-- Can't use [send] or [receive] because a patch
+might have multiple versions of this subpatch \, and the receives would
+get shared);
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 1 1 3 1;
+#X connect 2 0 6 0;
+#X connect 2 1 3 0;
+#X connect 3 0 4 0;
+#X connect 6 0 4 0;
+#X connect 12 0 6 1;
+#X connect 15 0 1 0;
+#X restore 993 344 pd argDefaultHandling;
+#X obj 993 294 t b b;
+#X text 1143 318 Default Value, f 7;
+#X msg 1116 321 1, f 1;
+#X obj 893 260 inlet stepValue;
+#X obj 893 374 s \$0-stepValue;
+#X obj 702 678 r \$0-stepValue;
+#X text 887 221 Default value = 99, f 22;
+#X text 885 141 The step value each count takes (amount that each count
+increases or decreases), f 27;
+#X text 887 191 Established via INLET 3 or ARGUMENT 3, f 22;
+#X obj 1316 287 route float bang;
+#X obj 1317 262 inlet reset;
+#X text 1297 221 Established via INLET 3 or ARGUMENT 3, f 22;
+#X text 1295 171 Value to reset to on next count;
+#N canvas 2217 -210 542 657 checkIfInBounds 0;
+#X obj 146 32 inlet;
+#X obj 131 32 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc 0
+;
+#X obj 396 62 cnv 14 14 14 empty empty S 6 8 0 8 #fcfcc4 #7c7c7c 0
+;
+#X obj 445 82 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcc4 #7c7c7c 0
+;
+#X obj 307 62 r \$0-minNumber;
+#X obj 356 82 r \$0-maxNumber;
+#X obj 292 157 f;
+#X obj 341 157 f;
+#X obj 146 250 f;
+#X text 74 162 Check if input value is smaller than the maximum value
+, f 9;
+#X obj 146 217 sel 1;
+#X obj 179 450 f;
+#X text 185 242 Send out input value stored here if value is smaller
+than max, f 12;
+#X text 311 348 Test if input value is smaller than minimum value,
+f 12;
+#X text 217 430 Send out input value stored here if value is larger
+than max, f 12;
+#X obj 179 531 outlet;
+#X obj 164 533 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc
+0;
+#X obj 277 392 sel 1;
+#X obj 146 111 t f f f b b, f 33;
+#X obj 146 196 <=;
+#X obj 277 371 >=;
+#X connect 0 0 18 0;
+#X connect 4 0 6 1;
+#X connect 5 0 7 1;
+#X connect 6 0 20 1;
+#X connect 7 0 19 1;
+#X connect 8 0 20 0;
+#X connect 10 0 8 0;
+#X connect 11 0 15 0;
+#X connect 17 0 11 0;
+#X connect 18 0 19 0;
+#X connect 18 1 11 1;
+#X connect 18 2 8 1;
+#X connect 18 3 6 0;
+#X connect 18 4 7 0;
+#X connect 19 0 10 0;
+#X connect 20 0 17 0;
+#X restore 1318 337 pd checkIfInBounds;
+#X obj 1435 337 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #fcfcc4
+#404040 0;
+#X obj 1436 349 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #c4fcc4
+#404040 0;
+#X obj 1557 148 vradio 15 1 0 8 empty empty DEBUG 20 5 0 10 #ffffff
+#000000 #000000 0;
+#X text 83 536 Store the next number \, output the next number on the
+next count request (getNextNumber) \, send it to the calculate code
+to determine what the next number will be \, store that next number
+here for the next count;
+#N canvas 2471 -207 513 417 minNumCheck 0;
+#X text 297 8 MINIMUM CHECK/RETURN TO MAX NUMBER;
+#X text 297 31 WHEN COUNTRING DOWN Reports if the count has hit the
+minimum number, f 30;
+#X obj 145 283 spigot;
+#X obj 179 169 sel 1 0;
+#X obj 242 283 spigot;
+#X msg 198 223 1, f 1;
+#X msg 218 223 0, f 1;
+#X obj 179 198 t b b b;
+#X obj 236 198 t b b b;
+#X msg 255 223 0, f 1;
+#X msg 275 223 1, f 1;
+#X obj 145 248 f;
+#X obj 145 304 t b;
+#X obj 242 369 outlet;
+#X obj 97 47 inlet;
+#X obj 194 127 v \$0-minNum;
+#X obj 145 329 v \$0-maxNum;
+#X text 293 301 if we aren't at the MIN number \, then just send out
+the next number, f 20;
+#X obj 179 148 <;
+#X obj 97 95 t f b f, f 11;
+#X text 18 272 If we have counted lower than the min number \, send
+out the MAX number and set that as current number to be counted down
+from., f 17;
+#X connect 2 0 12 0;
+#X connect 3 0 7 0;
+#X connect 3 1 8 0;
+#X connect 4 0 13 0;
+#X connect 5 0 2 1;
+#X connect 6 0 4 1;
+#X connect 7 0 11 0;
+#X connect 7 1 5 0;
+#X connect 7 2 6 0;
+#X connect 8 0 11 0;
+#X connect 8 1 9 0;
+#X connect 8 2 10 0;
+#X connect 9 0 2 1;
+#X connect 10 0 4 1;
+#X connect 11 0 2 0;
+#X connect 11 0 4 0;
+#X connect 12 0 16 0;
+#X connect 14 0 19 0;
+#X connect 15 0 18 1;
+#X connect 16 0 13 0;
+#X connect 18 0 3 0;
+#X connect 19 0 18 0;
+#X connect 19 1 15 0;
+#X connect 19 2 11 1;
+#X restore 918 700 pd minNumCheck;
+#X obj 247 396 v \$0-minNum;
+#X obj 564 403 v \$0-maxNum;
+#N canvas 2471 -207 513 417 maxNumCheck 0;
+#X text 297 8 MINIMUM CHECK/RETURN TO MAX NUMBER;
+#X text 297 31 WHEN COUNTRING DOWN Reports if the count has hit the
+minimum number, f 30;
+#X obj 145 283 spigot;
+#X obj 179 169 sel 1 0;
+#X obj 242 283 spigot;
+#X msg 198 223 1, f 1;
+#X msg 218 223 0, f 1;
+#X obj 179 198 t b b b;
+#X obj 236 198 t b b b;
+#X msg 255 223 0, f 1;
+#X msg 275 223 1, f 1;
+#X obj 145 248 f;
+#X obj 145 304 t b;
+#X obj 242 369 outlet;
+#X obj 97 47 inlet;
+#X text 293 301 if we aren't at the MIN number \, then just send out
+the next number, f 20;
+#X obj 97 95 t f b f, f 11;
+#X text 18 272 If we have counted lower than the min number \, send
+out the MAX number and set that as current number to be counted down
+from., f 17;
+#X obj 194 127 v \$0-maxNum;
+#X obj 145 329 v \$0-minNum;
+#X obj 179 148 >;
+#X connect 2 0 12 0;
+#X connect 3 0 7 0;
+#X connect 3 1 8 0;
+#X connect 4 0 13 0;
+#X connect 5 0 2 1;
+#X connect 6 0 4 1;
+#X connect 7 0 11 0;
+#X connect 7 1 5 0;
+#X connect 7 2 6 0;
+#X connect 8 0 11 0;
+#X connect 8 1 9 0;
+#X connect 8 2 10 0;
+#X connect 9 0 2 1;
+#X connect 10 0 4 1;
+#X connect 11 0 2 0;
+#X connect 11 0 4 0;
+#X connect 12 0 19 0;
+#X connect 14 0 16 0;
+#X connect 16 0 20 0;
+#X connect 16 1 18 0;
+#X connect 16 2 11 1;
+#X connect 18 0 20 1;
+#X connect 19 0 13 0;
+#X connect 20 0 3 0;
+#X restore 669 700 pd maxNumCheck;
+#X obj 353 287 loadbang;
+#N canvas 2374 217 719 510 argDefaultHandling 0;
+#X obj 213 103 == 0;
+#X obj 264 47 t f f;
+#X obj 213 139 sel 1 0;
+#X obj 278 176 f;
+#X obj 213 222 outlet;
+#X obj 211 176 cnv 15 35 20 empty empty empty 0 8 0 14 #c4c4fc #404040
+0;
+#X obj 213 177 f 55;
+#X text 56 133 Yes \, use the default \, else use the argument, f
+21;
+#X text 93 177 Set DEFAULT here;
+#X obj 249 16 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc 0
+;
+#X obj 200 222 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc
+0;
+#X text 24 83 Check if argument is 0 (if no argument is supplied \,
+the argument variable will output "0"), f 29;
+#X obj 447 14 inlet;
+#X obj 432 14 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc 0
+;
+#X text 36 17 Use [loadbang]-> [f $#] to send the argument value into
+this subpatch, f 32;
+#X obj 264 16 inlet argument;
+#X text 187 376 ( <-- Can't use [send] or [receive] because a patch
+might have multiple versions of this subpatch \, and the receives would
+get shared);
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 1 1 3 1;
+#X connect 2 0 6 0;
+#X connect 2 1 3 0;
+#X connect 3 0 4 0;
+#X connect 6 0 4 0;
+#X connect 12 0 6 1;
+#X connect 15 0 1 0;
+#X restore 353 354 pd argDefaultHandling;
+#X obj 353 308 t b b;
+#X text 503 328 Default Value, f 7;
+#X msg 476 331 0, f 2;
+#X obj 353 331 float \$1;
+#X obj 17 542 v \$0-next;
+#X obj 169 464 loadbang;
+#X obj 169 485 f 0;
+#X obj 169 506 t b f;
+#N canvas 1984 -31 450 300 compMinToNext 0;
+#X obj 46 59 inlet;
+#X obj 46 154 v \$0-minNum;
+#X obj 46 80 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 46 100 delay 50;
+#X obj 127 154 v \$0-next;
+#X obj 46 121 t b b;
+#X obj 46 187 >;
+#X obj 46 258 v \$0-next;
+#X obj 46 208 sel 1;
+#X obj 46 229 v \$0-minNum;
+#X text 91 208 if TRUE...;
+#X text 122 230 output MIN number;
+#X text 110 258 set MIN number as NEXT;
+#X text 90 186 see if the NEXT value is less than the MIN number;
+#X text 44 7 When the MINIMUM value is set via argument or via inlet
+\, this code checks to make sure that the current value (NEXT) is not
+less than the MIN. If it is \, we set NEXT to MIN.;
+#X text 90 54 Connect to [loadbang] or new MIN value input (which is
+converted to "bang";
+#X connect 0 0 2 0;
+#X connect 1 0 6 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 4 0 6 1;
+#X connect 5 0 1 0;
+#X connect 5 1 4 0;
+#X connect 6 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 7 0;
+#X restore 263 319 pd compMinToNext;
+#X f 7;
+#X text 315 331 Min #;
+#N canvas 1984 -31 450 300 compMaxToNext 0;
+#X obj 46 59 inlet;
+#X obj 46 80 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 46 100 delay 50;
+#X obj 127 154 v \$0-next;
+#X obj 46 121 t b b;
+#X obj 46 258 v \$0-next;
+#X obj 46 208 sel 1;
+#X text 91 208 if TRUE...;
+#X text 110 258 set MIN number as NEXT;
+#X obj 46 154 v \$0-maxNum;
+#X obj 46 187 <;
+#X text 44 7 When the MAXIMUM value is set via argument or via inlet
+\, this code checks to make sure that the current value (NEXT) is not
+greater than the MAX If it is \, we set NEXT to MAX;
+#X text 90 54 Connect to [loadbang] or new MAX value input (which is
+converted to "bang";
+#X text 90 186 see if the NEXT value is greater than the MAX number
+;
+#X text 122 230 output MAX number;
+#X obj 46 229 v \$0-maxNum;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 3 0 10 1;
+#X connect 4 0 9 0;
+#X connect 4 1 3 0;
+#X connect 6 0 15 0;
+#X connect 9 0 10 0;
+#X connect 10 0 6 0;
+#X connect 15 0 5 0;
+#X restore 573 326 pd compMaxToNext;
+#X f 7;
+#X obj 1754 193 cnv 15 2 1 empty empty It\\\ works!!! 4 8 0 32 #ffffff
+#9c00ff 0;
+#N canvas 2047 -13 988 590 oldCode 0;
+#X obj 291 174 cnv 14 14 14 empty empty R 6 8 0 8 #fcfcc4 #7c7c7c 0
+;
+#X obj 202 174 r \$0-minNumber;
+#X obj 39 214 sel;
+#X obj 39 174 r \$0-countDownMinCheck;
+#X obj 176 174 cnv 14 14 14 empty empty R 6 8 0 8 #fce0c4 #7c7c7c 0
+;
+#X obj 162 347 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
+;
+#X obj 960 433 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcc4 #7c7c7c 0
+;
+#X obj 39 319 spigot;
+#X obj 72 239 r \$0-direction;
+#X obj 162 240 cnv 14 14 14 empty empty R 6 8 0 8 #fcc4c4 #7c7c7c 0
+;
+#X obj 72 260 sel 1;
+#X msg 72 288 1;
+#X msg 108 287 0;
+#X text 187 233 In a counting down scenario \, we want to jump to the
+max number once we hit the minimum \, as the count will cycle back
+from MAX to MIN. This is ONLY when counting DOWN \, which is why there
+is a [spigot] that only opens if the down direction ("1" sent to INLET
+5 -or- ARGUMENT 4, f 20;
+#X obj 870 432 s \$0-maxNumber;
+#X obj 74 346 r \$0-maxNumber;
+#X obj 39 372 f;
+#X text 39 106 MINIMUM CHECK/RETURN TO MAX NUMBER;
+#X obj 135 405 cnv 14 14 14 empty empty R 6 8 0 8 #c4c4fc #7c7c7c 0
+;
+#X obj 39 404 s \$0-nextNumber;
+#X obj 757 496 s \$0-countDownMinCheck;
+#X obj 894 496 cnv 14 14 14 empty empty S 6 8 0 8 #fce0c4 #7c7c7c 0
+;
+#X obj 929 552 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcfc #7c7c7c 0
+;
+#X obj 795 548 s \$0-countDownMaxCheck;
+#X obj 654 170 cnv 14 14 14 empty empty R 6 8 0 8 #fcfcc4 #7c7c7c 0
+;
+#X obj 402 210 sel;
+#X obj 539 170 cnv 14 14 14 empty empty R 6 8 0 8 #fce0c4 #7c7c7c 0
+;
+#X obj 525 343 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
+;
+#X obj 402 315 spigot;
+#X obj 435 235 r \$0-direction;
+#X obj 525 236 cnv 14 14 14 empty empty R 6 8 0 8 #fcc4c4 #7c7c7c 0
+;
+#X msg 435 284 1;
+#X msg 471 283 0;
+#X obj 402 368 f;
+#X obj 498 401 cnv 14 14 14 empty empty R 6 8 0 8 #c4c4fc #7c7c7c 0
+;
+#X obj 402 400 s \$0-nextNumber;
+#X text 402 106 MAXIMUM CHECK RETURN TO MIN NUMBER;
+#X text 402 125 WHEN COUNTING UP reports if the count has hit the MAX
+number and returns the counter to the minimum, f 38;
+#X text 39 129 WHEN COUNTRING DOWN Reports if the count has hit the
+minimum number, f 30;
+#X obj 402 170 r \$0-countDownMaxCheck;
+#X obj 565 170 r \$0-maxNumber;
+#X obj 435 256 sel 0;
+#X text 550 225 Similar to how the minimum number is handled \, when
+counting up (direction val= 0) we want to return to the MIN number
+at the next count after we hit the MAX number, f 14;
+#X text 87 314 open only for mode 1, f 10;
+#X text 448 309 open only for mode 0, f 10;
+#X obj 153 263 tgl 15 0 empty empty DEBUG -38 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 520 264 tgl 15 0 empty empty DEBUG -38 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 473 372 bng 15 250 50 0 empty empty DEBUG -38 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 437 342 r \$0-minNumber;
+#X obj 850 342 cnv 14 14 14 empty empty R 6 8 0 8 #c4c4fc #7c7c7c 0
+;
+#X obj 754 342 s \$0-nextNumber;
+#X obj 66 46 cnv 15 2 1 empty empty This\\\ is\\\ old\\\ code\\\ I\\\ don't\\\ want\\\ to\\\ get\\\ rid\\\ of\\\ yet
+4 8 0 22 #ffffff #0e4345 0;
+#X connect 1 0 2 1;
+#X connect 2 0 7 0;
+#X connect 3 0 2 0;
+#X connect 7 0 16 0;
+#X connect 8 0 10 0;
+#X connect 10 0 11 0;
+#X connect 10 1 12 0;
+#X connect 11 0 7 1;
+#X connect 11 0 45 0;
+#X connect 12 0 7 1;
+#X connect 12 0 45 0;
+#X connect 15 0 16 1;
+#X connect 16 0 19 0;
+#X connect 25 0 28 0;
+#X connect 28 0 33 0;
+#X connect 28 0 47 0;
+#X connect 29 0 41 0;
+#X connect 31 0 28 1;
+#X connect 31 0 46 0;
+#X connect 32 0 28 1;
+#X connect 32 0 46 0;
+#X connect 33 0 35 0;
+#X connect 39 0 25 0;
+#X connect 40 0 25 1;
+#X connect 41 0 31 0;
+#X connect 41 1 32 0;
+#X connect 48 0 33 1;
+#X restore 13 692 pd oldCode;
+#N canvas 2265 -209 935 511 upDown 0;
+#X obj 434 442 v \$0-minNum;
+#X obj 347 442 v \$0-maxNum;
+#X obj 327 138 loadbang;
+#X floatatom 231 128 5 0 0 0 - - - 0;
+#X obj 231 488 outlet;
+#X obj 419 464 ==;
+#X obj 231 316 spigot;
+#X obj 264 299 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 305 316 spigot;
+#X obj 338 299 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 231 148 t f b;
+#X obj 327 184 v \$0-upDwnDir;
+#X obj 327 205 sel 0 1;
+#X obj 231 337 + 1;
+#X obj 305 337 - 1;
+#X floatatom 231 393 5 0 0 0 - - - 0;
+#X obj 332 464 ==;
+#X obj 231 413 t f f f b b;
+#X obj 332 485 sel 1;
+#X obj 419 485 sel 1;
+#X text 346 506 Reached MAX \, change to down, f 11;
+#X text 436 506 Reached MIN \, change to up, f 11;
+#X obj 332 547 v \$0-upDwnDir;
+#X obj 518 442 cnv 5 5 5 empty empty ⎤ 0 0 0 14 #fcfcfc #404040 0
+;
+#X obj 521 458 cnv 5 5 5 empty empty ⎜ 0 0 0 14 #fcfcfc #404040 0
+;
+#X obj 518 571 cnv 5 5 5 empty empty ⎦ 0 0 0 14 #fcfcfc #404040 0
+;
+#X obj 521 474 cnv 5 5 5 empty empty ⎜ 0 0 0 14 #fcfcfc #404040 0
+;
+#X obj 521 490 cnv 5 5 5 empty empty ⎜ 0 0 0 14 #fcfcfc #404040 0
+;
+#X obj 521 506 cnv 5 5 5 empty empty ⎜ 0 0 0 14 #fcfcfc #404040 0
+;
+#X obj 521 522 cnv 5 5 5 empty empty ⎜ 0 0 0 14 #fcfcfc #404040 0
+;
+#X obj 521 538 cnv 5 5 5 empty empty ⎜ 0 0 0 14 #fcfcfc #404040 0
+;
+#X obj 521 554 cnv 5 5 5 empty empty ⎜ 0 0 0 14 #fcfcfc #404040 0
+;
+#X text 530 468 Check if we have hit the MAX of MIN value and if so
+\, change direction, f 12;
+#X obj 465 109 inlet stepValue;
+#X obj 231 107 inlet nextNumber;
+#X obj 465 130 s \$0-step;
+#X obj 340 338 r \$0-step;
+#X obj 524 131 cnv 14 14 14 empty empty S 6 8 0 8 #dcdcdc #7c7c7c 0
+;
+#X obj 399 338 cnv 14 14 14 empty empty R 6 8 0 8 #dcdcdc #7c7c7c 0
+;
+#X obj 594 192 cnv 14 14 14 empty empty S 6 8 0 8 #fcc4c4 #7c7c7c 0
+;
+#X obj 504 191 r \$0-direction;
+#X msg 419 506 0, f 1;
+#X msg 332 505 1, f 1;
+#X msg 326 231 1, f 1;
+#X msg 346 232 0, f 1;
+#X msg 366 231 0, f 1;
+#X msg 385 232 1, f 1;
+#X text 858 272 The overall patch direction system uses the same values
+(0 & 1) to set the mode of the counter as UP (looping) or DOWN (looping)
+respectively. So we report these values to the UPDOWN direction \,
+so that when *swtiching* to UPDOWN from UP or DOWN \, we continue on
+in the same direction.;
+#X text 374 204 if 0 count up \, if 1 count down, f 17;
+#X obj 504 212 sel 2;
+#X msg 504 233 0, f 1;
+#X text 543 211 when direction is changed to "UPDOWN" \, make sure
+the direction here is set to UP;
+#X obj 351 387 print;
+#X obj 434 388 print min;
+#X msg 327 159 0, f 1;
+#X connect 0 0 5 1;
+#X connect 0 0 53 0;
+#X connect 1 0 16 1;
+#X connect 1 0 52 0;
+#X connect 2 0 54 0;
+#X connect 3 0 10 0;
+#X connect 5 0 19 0;
+#X connect 6 0 13 0;
+#X connect 7 0 6 1;
+#X connect 8 0 14 0;
+#X connect 9 0 8 1;
+#X connect 10 0 8 0;
+#X connect 10 0 6 0;
+#X connect 10 1 11 0;
+#X connect 11 0 12 0;
+#X connect 12 0 43 0;
+#X connect 12 0 44 0;
+#X connect 12 1 45 0;
+#X connect 12 1 46 0;
+#X connect 13 0 15 0;
+#X connect 14 0 15 0;
+#X connect 15 0 17 0;
+#X connect 16 0 18 0;
+#X connect 17 0 4 0;
+#X connect 17 1 16 0;
+#X connect 17 2 5 0;
+#X connect 17 3 1 0;
+#X connect 17 4 0 0;
+#X connect 18 0 42 0;
+#X connect 19 0 41 0;
+#X connect 33 0 35 0;
+#X connect 34 0 3 0;
+#X connect 36 0 13 1;
+#X connect 36 0 14 1;
+#X connect 40 0 49 0;
+#X connect 41 0 22 0;
+#X connect 42 0 22 0;
+#X connect 43 0 7 0;
+#X connect 44 0 9 0;
+#X connect 45 0 7 0;
+#X connect 46 0 9 0;
+#X connect 49 0 50 0;
+#X connect 50 0 11 0;
+#X connect 54 0 11 0;
+#X restore 1239 689 pd upDown;
+#X floatatom 186 287 5 0 0 0 - - - 0;
+#X floatatom 491 286 5 0 0 0 - - - 0;
+#X obj 1239 711 s \$0-nextNumber;
+#X obj 1334 711 cnv 14 14 14 empty empty S 6 8 0 8 #c4c4fc #7c7c7c
+0;
+#X obj 993 398 v \$0-stepValue;
+#X obj 1040 678 cnv 14 14 14 empty empty R 6 8 0 8 #dcdcdc #7c7c7c
+0;
+#X obj 952 678 r \$0-stepValue;
+#X obj 1390 688 cnv 14 14 14 empty empty R 6 8 0 8 #dcdcdc #7c7c7c
+0;
+#X obj 1302 688 r \$0-stepValue;
+#X obj 337 395 s \$0-minNum-s;
+#X obj 660 406 s \$0-maxNum-s;
+#X connect 3 0 5 0;
+#X connect 5 0 6 0;
+#X connect 7 0 119 0;
+#X connect 7 0 132 0;
+#X connect 7 0 147 0;
+#X connect 10 0 9 0;
+#X connect 13 0 128 0;
+#X connect 14 0 128 0;
+#X connect 23 0 113 0;
+#X connect 24 0 95 0;
+#X connect 25 0 99 0;
+#X connect 26 0 96 0;
+#X connect 26 0 134 0;
+#X connect 27 0 100 0;
+#X connect 28 0 29 0;
+#X connect 35 0 36 0;
+#X connect 36 0 29 0;
+#X connect 37 0 120 0;
+#X connect 37 0 134 0;
+#X connect 37 0 148 0;
+#X connect 39 0 10 0;
+#X connect 39 1 38 0;
+#X connect 42 0 44 0;
+#X connect 42 0 47 0;
+#X connect 42 0 59 0;
+#X connect 42 0 64 0;
+#X connect 43 0 121 0;
+#X connect 44 0 43 0;
+#X connect 45 0 44 1;
+#X connect 46 0 54 0;
+#X connect 46 1 57 0;
+#X connect 46 2 62 0;
+#X connect 46 3 69 0;
+#X connect 47 0 49 0;
+#X connect 48 0 47 1;
+#X connect 49 0 118 0;
+#X connect 50 0 48 0;
+#X connect 51 0 45 0;
+#X connect 52 0 65 0;
+#X connect 53 0 77 0;
+#X connect 54 0 51 0;
+#X connect 54 1 50 0;
+#X connect 54 2 52 0;
+#X connect 54 3 55 0;
+#X connect 55 0 60 0;
+#X connect 56 0 65 0;
+#X connect 57 0 70 0;
+#X connect 57 1 71 0;
+#X connect 57 2 56 0;
+#X connect 57 3 58 0;
+#X connect 58 0 60 0;
+#X connect 59 0 53 0;
+#X connect 60 0 59 1;
+#X connect 61 0 48 0;
+#X connect 62 0 72 0;
+#X connect 62 1 61 0;
+#X connect 62 2 73 0;
+#X connect 62 3 63 0;
+#X connect 63 0 60 0;
+#X connect 64 0 137 0;
+#X connect 65 0 64 1;
+#X connect 67 0 48 0;
+#X connect 68 0 65 0;
+#X connect 69 0 74 0;
+#X connect 69 1 67 0;
+#X connect 69 2 68 0;
+#X connect 69 3 75 0;
+#X connect 70 0 45 0;
+#X connect 71 0 48 0;
+#X connect 72 0 45 0;
+#X connect 73 0 65 0;
+#X connect 74 0 45 0;
+#X connect 75 0 60 0;
+#X connect 76 0 87 0;
+#X connect 77 0 76 0;
+#X connect 78 0 46 0;
+#X connect 82 0 78 0;
+#X connect 95 0 120 0;
+#X connect 95 0 134 0;
+#X connect 95 0 148 0;
+#X connect 96 0 24 0;
+#X connect 96 1 98 0;
+#X connect 98 0 95 1;
+#X connect 99 0 104 0;
+#X connect 99 0 142 0;
+#X connect 100 0 25 0;
+#X connect 100 1 102 0;
+#X connect 102 0 99 1;
+#X connect 103 0 104 0;
+#X connect 103 0 142 0;
+#X connect 105 0 43 1;
+#X connect 109 0 113 0;
+#X connect 109 1 23 0;
+#X connect 110 0 109 0;
+#X connect 113 0 33 0;
+#X connect 116 0 29 0;
+#X connect 118 0 85 0;
+#X connect 121 0 83 0;
+#X connect 122 0 124 0;
+#X connect 122 0 132 0;
+#X connect 123 0 119 0;
+#X connect 123 0 147 0;
+#X connect 123 0 132 0;
+#X connect 124 0 127 0;
+#X connect 124 1 126 0;
+#X connect 126 0 123 1;
+#X connect 127 0 123 0;
+#X connect 128 0 39 0;
+#X connect 129 0 130 0;
+#X connect 130 0 131 0;
+#X connect 131 1 128 0;
+#X connect 137 0 140 0;
+#X connect 138 0 132 0;
+#X connect 138 0 119 0;
+#X connect 139 0 134 0;
+#X connect 139 0 120 0;
+#X connect 144 0 49 1;
+#X connect 146 0 137 1;

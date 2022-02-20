@@ -1,0 +1,71 @@
+#N canvas 416 86 512 643 10;
+#X text 16 34 Travis Houldcroft || travishouldcroft.com;
+#X text 18 220 All waveform generating code is an implementation of
+code discussed in "Making Voltage Controlled Oscillators in Pure Data"
+by Alexandros Drymonitis (drymonitis.me).;
+#X obj 21 293 inlet;
+#X obj 21 358 phasor~;
+#X obj 21 615 outlet~;
+#X text 61 294 Frequency;
+#X obj 0 0 cnv 15 500 30 empty empty tdh.synth.oscil-pulse~ 20 12 0
+14 #e0e0e0 #404040 0;
+#X obj 0 58 cnv 15 500 8 empty empty Inlets 20 15 0 14 #e0e0e0 #404040
+0;
+#X text 20 87 0;
+#X text 42 87 -;
+#X obj 0 128 cnv 15 500 8 empty empty Outlets 20 15 0 14 #e0e0e0 #404040
+0;
+#X text 20 157 0;
+#X text 42 157 -;
+#X text 64 157 (sig) waveform;
+#X text 64 87 (float) oscillator frequency;
+#X obj 0 188 cnv 15 500 8 empty empty Note 20 15 0 14 #e0e0e0 #404040
+0;
+#X obj 211 293 inlet;
+#X text 258 274 Pulse Width Control - Values closer to 0 produce larger
+positive pulse width., f 23;
+#X obj 211 337 clip 0.001 0.999;
+#X text 324 338 0 < PW < 1;
+#X obj 211 385 line~;
+#X obj 21 426 expr~ $v1 > $v2;
+#X obj 292 449 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array \$0-scope 240 float 0 black black;
+#X coords 0 1 239 -1 200 140 1;
+#X restore 291 493 graph;
+#X obj 21 563 *~ 2;
+#X obj 21 588 -~ 1;
+#X msg 211 361 \$1 20;
+#X text 71 358 ramp 0 to 1;
+#X text 121 425 When [phasor~] is greater than PW \, [expr~] outputs
+a 1 \, else it outputs a 0, f 18;
+#X text 56 563 Shift range to 0 to 2;
+#X text 55 587 Shift range to -1 to 1;
+#N canvas 0 22 450 300 scope 0;
+#X obj 13 94 tabwrite~ \$0-scope;
+#X obj 14 50 metro 256;
+#X obj 13 26 inlet;
+#X obj 106 28 receive~ \$0-toScope;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X restore 292 470 pd scope;
+#X obj 77 616 send~ \$0-toScope;
+#X obj 270 420 cnv 15 231 8 empty empty Oscilloscope 20 15 0 14 #e0e0e0
+#404040 0;
+#X text 313 449 On/Off;
+#X floatatom 21 318 5 0 0 0 - - -, f 5;
+#X obj 137 292 inlet~;
+#X connect 2 0 35 0;
+#X connect 3 0 21 0;
+#X connect 16 0 18 0;
+#X connect 18 0 26 0;
+#X connect 20 0 21 1;
+#X connect 21 0 24 0;
+#X connect 22 0 31 0;
+#X connect 24 0 25 0;
+#X connect 25 0 4 0;
+#X connect 25 0 32 0;
+#X connect 26 0 20 0;
+#X connect 35 0 3 0;

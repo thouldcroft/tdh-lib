@@ -1,0 +1,24 @@
+#N canvas 2282 135 552 471 10;
+#X obj 184 303 log;
+#X obj 184 324 / 2.303;
+#X obj 184 345 * 20;
+#X obj 184 252 inlet;
+#X obj 184 402 outlet;
+#X text 23 21 Linear Amplitude to dB-FS;
+#X text 23 32 Travis Houldcroft / travishouldcroft.com;
+#X text 23 43 tdh.math.linamptodbfs.pd;
+#X obj 411 161 cyclone/atodb;
+#X text 23 64 This abstraction takes a linear amplitude value from
+0.0-1.0 and converts it to dB digital full-scale.;
+#X text 23 106 Inlet 1 (float): Linear amplitude;
+#X text 23 117 Outlet 1 (float): Amplitude in dbFS;
+#X text 23 95 Arguments: None;
+#X text 23 144 NOTE: This abstraction is mostly a copy of the Cyclone
+library object [atodb] \, in fact I got most of the math directly from
+that object \, and this abstraction is really only here to be used
+as a subpatch in Pd patches that I am attempting to avoid using external
+libraries for \, such as demonstration/educational patches.;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 3 0 0 0;

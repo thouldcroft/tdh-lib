@@ -1,0 +1,377 @@
+#N canvas 27 23 1413 855 10;
+#X obj 516 715 vline~;
+#X floatatom 705 524 5 0 0 1 A - -;
+#X floatatom 705 554 5 0 0 1 S - -;
+#X floatatom 706 587 5 0 0 1 D - -;
+#X obj 516 429 sel 1;
+#X obj 516 634 f;
+#X floatatom 845 271 5 0 0 1 Attack_(ms) - -;
+#X floatatom 845 288 5 0 0 1 Decay_(ms) - -;
+#X floatatom 845 307 5 0 0 1 Sustain_(amp) - -;
+#X obj 720 296 tgl 15 0 empty empty GateSustain 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 638 435 sel 0;
+#X obj 637 634 f;
+#X obj 637 457 t b b b;
+#X obj 498 82 inlet attack;
+#X obj 598 82 inlet decay;
+#X obj 692 82 inlet sustain;
+#X obj 516 977 outlet~ envelope_sig;
+#N canvas 164 190 450 300 snapshot 0;
+#X obj 120 111 snapshot~;
+#X obj 120 23 inlet~;
+#X obj 120 153 outlet;
+#X obj 186 82 metro 10;
+#X obj 186 38 loadbang;
+#X msg 186 60 1;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X restore 659 764 pd snapshot;
+#X obj 659 977 outlet envelope_data;
+#X text 8 -31 ADSR Envelope;
+#X obj 386 83 inlet gate;
+#X obj 523 101 loadbang;
+#X obj 523 132 f \$1;
+#X text 355 418 '1' triggers envelope A \, D & S stages \, '0' ramps
+to S (if necessary) \, and proceeds with R stage., f 25;
+#X text 8 26 Arguments:;
+#X text 34 36 1: Attack time (ms);
+#X text 34 47 2: Decay time (ms);
+#X text 34 59 3: Sustain level (0-1);
+#X text 34 70 4: Release time (ms);
+#X text 8 -15 tdh.synth.adsr~.pd / tdh.satk.adsr~.pd;
+#X text 8 6 Travis Houldcroft / thouldcroft@gmail.com / travishouldcroft.com
+, f 65;
+#X text 8 112 INTERNAL DEVELOPER'S NOTE: This module is an exact copy
+of the abstraction "tdh.synth.adsr~" from tdh.pd.lib \, and so any
+functional changes should be made to the original abstraction.;
+#X text 8 173 EXTERNAL DEVELOPER'S NOTE: You may edit and adapt this
+code AS LONG AS any distribution of the modified code is done with
+a new \, unique title AND some small attribution to the original author(s)
+is made.;
+#X text -1 814 _;
+#X floatatom 949 666 5 0 0 1 Range_Hi - #0-range-hi;
+#X floatatom 951 638 5 0 0 1 Range_Lo - #0-range-lo;
+#X obj 659 789 t f b b, f 11;
+#X obj 659 834 *;
+#X obj 737 787 r \$0-range-hi;
+#X obj 722 835 f 1;
+#X obj 659 935 + 0;
+#X obj 737 881 r \$0-range-lo;
+#X floatatom 767 811 5 0 0 0 - - -;
+#X floatatom 761 902 5 0 0 0 - - -;
+#X obj 691 904 f 0;
+#X floatatom 695 953 5 0 0 0 - - -;
+#X obj 1048 638 loadbang;
+#X msg 1048 663 1;
+#X obj 722 860 -;
+#X text 148 840 Need to implment the range setting for the signal output--->
+;
+#X text 8 243 TO DO: help file \, range setting for signal output;
+#X text 1352 800 _;
+#X text 948 601 Envelope Range (currently it is only suitable for VCA
+by default);
+#X text 953 713 Relative envelope display (like found in Reaktor);
+#N canvas 1280 22 450 300 adsr-disp 0;
+#X restore 965 752 pd adsr-disp;
+#X obj 516 321 t f f;
+#X obj 572 371 * 0.0078;
+#X obj 571 348 spigot;
+#X obj 498 164 s \$0-attack;
+#X obj 598 164 s \$0-decay;
+#X obj 692 164 s \$0-sustain;
+#X obj 1004 239 r \$0-attack;
+#X obj 1004 259 r \$0-decay;
+#X obj 1004 279 r \$0-sustain;
+#X obj 927 520 cnv 5 5 5 empty empty ⎡ 0 0 0 14 -262144 -66577 0
+;
+#X obj 927 536 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 927 785 cnv 5 5 5 empty empty ⎣ 0 0 0 14 -262144 -66577 0
+;
+#X obj 927 552 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 927 568 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 927 584 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 927 600 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 1311 521 cnv 5 5 5 empty empty ⎤ 0 0 0 14 -262144 -66577 0
+;
+#X obj 1311 786 cnv 5 5 5 empty empty ⎦ 0 0 0 14 -262144 -66577 0
+;
+#X obj 927 610 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 927 620 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 927 630 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 927 640 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 927 650 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 927 660 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 927 670 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 927 680 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 927 690 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 927 700 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 927 710 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 927 720 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 927 730 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 927 740 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 927 750 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 927 760 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 927 770 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 1314 536 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 1314 552 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 1314 568 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 1314 584 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 1314 600 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 1314 610 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 1314 620 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 1314 630 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 1314 640 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 1314 650 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 1314 660 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 1314 670 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 1314 680 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 1314 690 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 1314 700 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 1314 710 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 1314 720 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 1314 730 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 1314 740 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 1314 750 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 1314 760 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X obj 1314 770 cnv 5 5 5 empty empty ⎜ 0 0 0 14 -262144 -66577 0
+;
+#X text 946 514 TO BE COMPLETED!! -----------------------------------------
+;
+#X obj 895 161 s \$0-useMidiVel;
+#X obj 629 132 f \$2;
+#X obj 719 132 f \$3;
+#X obj 1004 219 r \$0-gate;
+#X text 558 388 Convert MIDI vel to linear amp for sus, f 20;
+#X obj 720 320 tgl 15 0 empty empty MIDI-VelGate 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 516 351 > 0;
+#X obj 894 82 inlet useMidiVelocity;
+#X obj 946 132 f \$5;
+#X obj 584 235 r \$0-useMidiVel;
+#X obj 691 235 cnv 5 5 5 empty empty ┌ 0 3 0 30 -262144 -4160 0;
+#X obj 726 235 cnv 5 5 5 empty empty ─ 0 3 0 30 -262144 -4160 0;
+#X obj 744 235 cnv 5 5 5 empty empty ─ 0 3 0 30 -262144 -4160 0;
+#X obj 957 235 cnv 5 5 5 empty empty ┐ 0 3 0 30 -262144 -4160 0;
+#X obj 820 222 cnv 3 1 1 empty empty GUI 0 6 0 14 -262144 -4160 0;
+#X obj 960 389 cnv 5 5 5 empty empty ┘ 0 3 0 30 -262144 -4160 0;
+#X obj 699 388 cnv 5 5 5 empty empty └ -6 4 0 30 -262144 -4160 0
+;
+#X text 753 251 Att;
+#X text 800 251 Dec;
+#X text 849 251 Sus;
+#X text 711 364 Out (Sig);
+#X text 894 364 Out (Data);
+#X obj 713 342 cnv 15 245 20 empty empty A(S)D 20 8 0 14 -233017 -66577
+0;
+#X obj 760 235 cnv 5 5 5 empty empty ─ 0 3 0 30 -262144 -4160 0;
+#X obj 778 235 cnv 5 5 5 empty empty ─ 0 3 0 30 -262144 -4160 0;
+#X obj 796 235 cnv 5 5 5 empty empty ─ 0 3 0 30 -262144 -4160 0;
+#X obj 814 235 cnv 5 5 5 empty empty ─ 0 3 0 30 -262144 -4160 0;
+#X obj 832 235 cnv 5 5 5 empty empty ─ 0 3 0 30 -262144 -4160 0;
+#X obj 850 235 cnv 5 5 5 empty empty ─ 0 3 0 30 -262144 -4160 0;
+#X obj 869 235 cnv 5 5 5 empty empty ─ 0 3 0 30 -262144 -4160 0;
+#X obj 885 235 cnv 5 5 5 empty empty ─ 0 3 0 30 -262144 -4160 0;
+#X obj 907 235 cnv 5 5 5 empty empty ─ 0 3 0 30 -262144 -4160 0;
+#X obj 921 235 cnv 5 5 5 empty empty ─ 0 3 0 30 -262144 -4160 0;
+#X obj 933 235 cnv 5 5 5 empty empty ─ 0 3 0 30 -262144 -4160 0;
+#X obj 708 235 cnv 5 5 5 empty empty ─ 0 3 0 30 -262144 -4160 0;
+#X obj 712 389 cnv 5 5 5 empty empty ─ 0 3 0 30 -262144 -4160 0;
+#X obj 730 389 cnv 5 5 5 empty empty ─ 0 3 0 30 -262144 -4160 0;
+#X obj 746 389 cnv 5 5 5 empty empty ─ 0 3 0 30 -262144 -4160 0;
+#X obj 764 389 cnv 5 5 5 empty empty ─ 0 3 0 30 -262144 -4160 0;
+#X obj 782 389 cnv 5 5 5 empty empty ─ 0 3 0 30 -262144 -4160 0;
+#X obj 800 389 cnv 5 5 5 empty empty ─ 0 3 0 30 -262144 -4160 0;
+#X obj 816 389 cnv 5 5 5 empty empty ─ 0 3 0 30 -262144 -4160 0;
+#X obj 834 389 cnv 5 5 5 empty empty ─ 0 3 0 30 -262144 -4160 0;
+#X obj 852 389 cnv 5 5 5 empty empty ─ 0 3 0 30 -262144 -4160 0;
+#X obj 870 389 cnv 5 5 5 empty empty ─ 0 3 0 30 -262144 -4160 0;
+#X obj 886 389 cnv 5 5 5 empty empty ─ 0 3 0 30 -262144 -4160 0;
+#X obj 904 389 cnv 5 5 5 empty empty ─ 0 3 0 30 -262144 -4160 0;
+#X obj 922 389 cnv 5 5 5 empty empty ─ 0 3 0 30 -262144 -4160 0;
+#X obj 941 389 cnv 5 5 5 empty empty ─ 0 3 0 30 -262144 -4160 0;
+#X obj 432 195 s \$0-gateFloat;
+#X obj 386 104 route bang float;
+#X obj 386 215 s \$0-gateBang;
+#X msg 516 688 \$2 \$1;
+#X obj 516 661 pack f f;
+#X obj 516 452 t b b b;
+#X floatatom 845 325 5 0 0 1 Dur_(ms) - -;
+#X obj 797 82 inlet dur;
+#X obj 797 163 s \$0-dur-s;
+#X obj 819 132 f \$4;
+#X obj 1004 299 r \$0-dur-s;
+#X obj 372 513 r \$0-gateBang;
+#X obj 372 534 t b b;
+#X obj 417 535 delay \$4;
+#X obj 1004 420 cnv 14 14 14 empty empty R 6 8 0 8 -4034 -128992 0
+;
+#X obj 607 286 cnv 14 14 14 empty empty R 6 8 0 8 -257985 -128992 0
+;
+#X obj 679 236 cnv 14 14 14 empty empty R 6 8 0 8 -260097 -128992 0
+;
+#X obj 457 513 cnv 14 14 14 empty empty R 6 8 0 8 -258113 -99865 0
+;
+#X obj 1094 420 cnv 14 14 14 empty empty R 6 8 0 8 -159808 -191407
+0;
+#X obj 1064 420 cnv 14 14 14 empty empty R 6 8 0 8 -4160 -191407 0
+;
+#X obj 1034 420 cnv 14 14 14 empty empty R 6 8 0 8 -4032 -128992 0
+;
+#X obj 1000 451 cnv 14 14 14 empty empty S 6 8 0 8 -4034 -128992 0
+;
+#X obj 522 196 cnv 14 14 14 empty empty S 6 8 0 8 -257985 -128992 0
+;
+#X obj 992 161 cnv 14 14 14 empty empty S 6 8 0 8 -260097 -128992 0
+;
+#X obj 470 216 cnv 14 14 14 empty empty S 6 8 0 8 -258113 -99865 0
+;
+#X obj 1090 451 cnv 14 14 14 empty empty S 6 8 0 8 -159808 -191407
+0;
+#X obj 1060 451 cnv 14 14 14 empty empty S 6 8 0 8 -4160 -191407 0
+;
+#X obj 1030 451 cnv 14 14 14 empty empty S 6 8 0 8 -4032 -128992 0
+;
+#X obj 372 84 cnv 14 14 14 empty empty 0 4 8 0 12 -99865 -228856 0
+;
+#X obj 482 83 cnv 14 14 14 empty empty 1 4 8 0 12 -99865 -228856 0
+;
+#X obj 583 82 cnv 14 14 14 empty empty 2 4 8 0 12 -99865 -228856 0
+;
+#X obj 677 82 cnv 14 14 14 empty empty 3 4 8 0 12 -99865 -228856 0
+;
+#X obj 782 82 cnv 14 14 14 empty empty 4 4 8 0 12 -99865 -228856 0
+;
+#X obj 878 82 cnv 14 14 14 empty empty 5 4 8 0 12 -99865 -228856 0
+;
+#X obj 516 284 r \$0-gateFloat;
+#X text 371 492 [bang( handling;
+#X text 897 251 Dur;
+#X text 931 251 MIDI;
+#X text 711 251 Gate;
+#X obj 720 272 bng 15 250 50 0 empty empty Gate 17 7 0 10 -262144 -1
+-1;
+#X msg 637 696 0 \$1;
+#X connect 0 0 17 0;
+#X connect 0 0 16 0;
+#X connect 1 0 5 1;
+#X connect 2 0 166 1;
+#X connect 3 0 11 1;
+#X connect 4 0 167 0;
+#X connect 5 0 166 0;
+#X connect 6 0 1 0;
+#X connect 7 0 3 0;
+#X connect 8 0 2 0;
+#X connect 9 0 55 0;
+#X connect 10 0 12 0;
+#X connect 11 0 202 0;
+#X connect 12 0 11 0;
+#X connect 12 1 3 0;
+#X connect 12 2 2 0;
+#X connect 13 0 58 0;
+#X connect 14 0 59 0;
+#X connect 15 0 60 0;
+#X connect 17 0 36 0;
+#X connect 20 0 163 0;
+#X connect 21 0 22 0;
+#X connect 21 0 114 0;
+#X connect 21 0 121 0;
+#X connect 21 0 115 0;
+#X connect 21 0 171 0;
+#X connect 22 0 58 0;
+#X connect 36 0 37 0;
+#X connect 36 1 44 0;
+#X connect 36 2 39 0;
+#X connect 37 0 40 0;
+#X connect 38 0 39 1;
+#X connect 38 0 42 0;
+#X connect 39 0 48 0;
+#X connect 40 0 45 0;
+#X connect 40 0 18 0;
+#X connect 41 0 43 0;
+#X connect 41 0 44 1;
+#X connect 44 0 40 1;
+#X connect 44 0 48 1;
+#X connect 46 0 47 0;
+#X connect 47 0 34 0;
+#X connect 48 0 37 1;
+#X connect 55 0 119 0;
+#X connect 55 1 57 0;
+#X connect 56 0 8 0;
+#X connect 57 0 56 0;
+#X connect 61 0 6 0;
+#X connect 62 0 7 0;
+#X connect 63 0 8 0;
+#X connect 114 0 59 0;
+#X connect 115 0 60 0;
+#X connect 116 0 9 0;
+#X connect 118 0 57 1;
+#X connect 119 0 10 0;
+#X connect 119 0 4 0;
+#X connect 120 0 113 0;
+#X connect 121 0 113 0;
+#X connect 122 0 118 0;
+#X connect 163 0 164 0;
+#X connect 163 1 162 0;
+#X connect 165 0 0 0;
+#X connect 166 0 165 0;
+#X connect 167 0 5 0;
+#X connect 167 1 2 0;
+#X connect 167 2 1 0;
+#X connect 168 0 175 1;
+#X connect 169 0 170 0;
+#X connect 171 0 170 0;
+#X connect 172 0 168 0;
+#X connect 173 0 174 0;
+#X connect 174 0 5 0;
+#X connect 174 1 175 0;
+#X connect 175 0 11 0;
+#X connect 196 0 55 0;
+#X connect 202 0 0 0;
+#X coords 0 855 1 854 250 130 0;

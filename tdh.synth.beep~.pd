@@ -1,0 +1,34 @@
+#N canvas 579 281 960 481 10;
+#X obj 293 238 line~;
+#X obj 293 143 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 293 332 *~;
+#X obj 448 159 osc~ 440;
+#X obj 448 105 inlet;
+#X obj 293 360 outlet~;
+#X obj 111 123 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 110 143 5 0 0 1 - - -, f 5;
+#X obj 293 106 inlet;
+#X text 149 144 Freq;
+#X text 148 124 Trigger;
+#X msg 293 189 0.5 150;
+#X msg 354 189 0 150;
+#X obj 354 160 delay 300;
+#X obj 228 32 loadbang;
+#X msg 228 59 440;
+#X connect 0 0 2 0;
+#X connect 1 0 11 0;
+#X connect 1 0 13 0;
+#X connect 2 0 5 0;
+#X connect 3 0 2 1;
+#X connect 4 0 3 0;
+#X connect 6 0 1 0;
+#X connect 7 0 3 0;
+#X connect 8 0 1 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 0;
+#X connect 13 0 12 0;
+#X connect 14 0 15 0;
+#X connect 15 0 7 0;
+#X coords 0 -1 1 1 150 60 1 100 100;

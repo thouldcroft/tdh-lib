@@ -1,0 +1,74 @@
+#N canvas 1977 118 1433 917 10;
+#X obj 142 137 hsl 85 15 0 1 0 0 empty empty Balance 18 -8 0 10 -262144
+-1 -1 0 1;
+#X obj -359 253 *~;
+#X obj -243 189 - 1;
+#X obj -243 211 * -1;
+#X obj -161 253 *~;
+#X text -333 253 Dry Sig;
+#X text -135 252 Wet Sig;
+#X obj 138 41 inlet dry_wet_ctrl;
+#X obj -258 253 *~;
+#X obj -360 39 inlet~ dry1;
+#X obj -259 39 inlet~ dry2;
+#X obj -71 253 *~;
+#X obj -161 39 inlet~ wet1;
+#X obj -71 39 inlet~ wet2;
+#X obj -359 384 outlet~ out1;
+#X obj -258 384 outlet~ out2;
+#X floatatom 164 154 5 0 0 0 - - -;
+#X msg 42 140 set \$1;
+#X text -388 438 _;
+#X text 101 204 Out L;
+#X text 229 204 Out R;
+#X obj 101 174 cnv 15 162 29 empty empty 2Signal-Xfade 4 14 0 14 -233017
+-66577 0;
+#X obj -73 158 cnv 15 16 16 empty empty empty 2 10 0 14 -261234 -66577
+0;
+#X obj 164 232 s \$0-fader;
+#X obj -56 159 r \$0-fader;
+#X obj 147 231 cnv 15 16 16 empty empty empty 2 10 0 14 -261234 -66577
+0;
+#X text 100 100 S1-L;
+#X text 132 100 S1-R;
+#X text 168 100 S2-L;
+#X text 206 100 S2-R;
+#X text 236 100 Ctrl;
+#X obj -379 -22 cnv 5 1000 5 empty empty tdh.util.2sigxfade~ 2 16 0
+22 -233017 -66577 0;
+#X text 103 136 Sig1;
+#X text 234 135 Sig2;
+#X obj -376 39 cnv 14 14 14 empty empty 0 4 8 0 12 -99865 -228856 0
+;
+#X obj -275 39 cnv 14 14 14 empty empty 1 4 8 0 12 -99865 -228856 0
+;
+#X obj -177 39 cnv 14 14 14 empty empty 2 4 8 0 12 -99865 -228856 0
+;
+#X obj -87 39 cnv 14 14 14 empty empty 3 4 8 0 12 -99865 -228856 0
+;
+#X obj 123 41 cnv 14 14 14 empty empty 4 4 8 0 12 -99865 -228856 0
+;
+#X obj -375 384 cnv 14 14 14 empty empty 0 4 8 0 12 -99865 -228856
+0;
+#X obj -274 384 cnv 14 14 14 empty empty 1 4 8 0 12 -99865 -228856
+0;
+#X connect 0 0 16 0;
+#X connect 1 0 14 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 1;
+#X connect 3 0 8 1;
+#X connect 4 0 14 0;
+#X connect 7 0 0 0;
+#X connect 8 0 15 0;
+#X connect 9 0 1 0;
+#X connect 10 0 8 0;
+#X connect 11 0 15 0;
+#X connect 12 0 4 0;
+#X connect 13 0 11 0;
+#X connect 16 0 23 0;
+#X connect 16 0 17 0;
+#X connect 17 0 0 0;
+#X connect 24 0 11 1;
+#X connect 24 0 4 1;
+#X connect 24 0 2 0;
+#X coords 0 -1 1 1 164 120 2 100 100;

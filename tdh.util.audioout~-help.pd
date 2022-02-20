@@ -1,0 +1,78 @@
+#N canvas 1280 35 600 734 10;
+#X text 16 35 Travis Houldcroft || travishouldcroft.com;
+#X obj 0 1 cnv 15 581 28 empty empty tdh.util.audioout~ 20 12 0 14
+-233017 -66577 0;
+#X obj 0 99 cnv 8 579 8 empty empty Inlets 20 15 0 14 -233017 -66577
+0;
+#X text 20 128 0;
+#X text 42 128 -;
+#X obj 0 170 cnv 8 579 8 empty empty Outlets 20 15 0 14 -233017 -66577
+0;
+#X obj 0 279 cnv 8 580 8 empty empty Note 20 15 0 14 -233017 -66577
+0;
+#X obj 0 321 cnv 4 579 4 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 0 219 cnv 8 579 8 empty empty Arguments 20 15 0 14 -233017 -66577
+0;
+#X text 20 251 None;
+#X obj 0 57 cnv 4 580 4 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 16 70 Provides access to Pd's DAC \, with control for DSP on/off
+and linear gain., f 74;
+#X text 64 128 (sig) channel 1 input (typically stereo left);
+#X text 43 146 -;
+#X text 21 146 1;
+#X text 65 146 (sig) channel 1 input (typically stereo right);
+#X text 20 198 None;
+#N canvas 0 22 450 300 source1 0;
+#X obj 30 190 osc~ 440;
+#X obj 30 220 outlet~;
+#X obj 30 110 osc~ 15;
+#X obj 30 135 *~ 10;
+#X obj 30 160 +~ 440;
+#X text 30 70 Who authorized this?! Hey! Who authorized this?!;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X restore 180 430 pd source1;
+#N canvas 0 22 450 300 source2 0;
+#X obj 30 220 outlet~;
+#X obj 30 135 *~ 10;
+#X obj 30 160 +~ 440;
+#X text 30 70 Who authorized this?! Hey! Who authorized this?!;
+#X obj 30 190 osc~ 880;
+#X obj 30 110 osc~ 5;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 4 0 0 0;
+#X connect 5 0 1 0;
+#X restore 210 450 pd source2;
+#X text 267 376 Any audio sources. These happen to be alien communications.
+, f 22;
+#X text 355 436 Ch1 in and Ch2 in default to the first two output channels
+you have configured in Pd. Likely this corresponds to Stereo Left (Ch
+1) and Stereo Right (Ch 2) but that can be changed in Pd's settings.
+, f 34;
+#X text 561 700 _;
+#X text 30 475 Turn DSP on and off (necessary for any audio processing
+\, and is more convienient here than in the Console window)., f 20
+;
+#X text 10 330 This module provides acces to Pd's DAC (digital to analog
+converter) \, and has controls for turning DSP (digital signal processing)
+on and off \, plus it has a final gain control. This object stems from
+the very useful [ezdac~] in Max \, which combined DSP control with
+access to the DAC., f 91;
+#X text 156 534 -->;
+#X text 156 571 -->;
+#X obj 180 490 tdh.util.audioout~;
+#X text 241 387 |;
+#X text 241 397 |;
+#X text 245 378 __;
+#X text 241 407 V;
+#X text 24 573 It is often useful to have a final gain control before
+signal hits your speakers or headphones \, and can help preserve your
+speakers \, headphones \, and the relationship you have with your neighbors
+\, family members \, or pets. Scale in dBFS (-100 to 0), f 21;
+#X connect 17 0 26 0;
+#X connect 18 0 26 1;

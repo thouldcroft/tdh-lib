@@ -1,0 +1,128 @@
+#N canvas 2398 -209 713 886 10;
+#X obj 129 401 makefilename sound%d.wav;
+#X floatatom 129 356 5 0 0 0 - - - 0;
+#X msg 284 438 start;
+#X msg 391 438 stop;
+#X msg 129 432 open \$1;
+#X obj 468 505 timer;
+#X obj 117 -9 bng 15 250 50 0 \$0-rec-start empty Start 17 7 0 10 #ffc7c6
+#ff0400 #000000;
+#X obj 557 432 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X msg 557 404 1;
+#X obj 117 14 bng 15 250 50 0 \$0-rec-stop empty Stop 17 7 0 10 #c6feff
+#0400ff #000000;
+#X floatatom 468 560 5 0 0 0 msec - - 0;
+#X obj 578 530 / 1000;
+#X floatatom 578 560 5 0 0 0 sec - - 0;
+#X msg 604 404 0;
+#X obj 557 457 metro 30;
+#X obj 284 259 r \$0-rec-start;
+#X obj 441 355 t b b;
+#X floatatom 224 -11 5 0 0 1 sec - - 0;
+#X obj 468 598 s \$0-rec-time-ms;
+#X obj 578 600 s \$0-rec-time-s;
+#X obj 340 -28 r \$0-rec-time-s;
+#X obj 440 296 r \$0-rec-stop;
+#X obj 340 10 r \$0-rec-filenumber;
+#N canvas 0 22 450 300 counter 0;
+#X obj 171 31 inlet;
+#X obj 171 122 f 0;
+#X obj 208 122 + 1;
+#X obj 171 177 outlet;
+#X obj 217 31 loadbang;
+#X msg 217 60 0;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 1;
+#X connect 4 0 5 0;
+#X connect 5 0 1 1;
+#X restore 129 329 pd counter;
+#X floatatom 225 26 5 0 0 0 - - - 0;
+#X obj 151 378 s \$0-rec-filenumber;
+#X text 5 -32 _;
+#X obj 129 600 writesf~ 2;
+#X obj 17 249 inlet~;
+#X obj 68 249 inlet~;
+#X obj 17 660 outlet~;
+#X obj 68 660 outlet~;
+#X text 105 -52 In Ch1;
+#X text 160 -52 In Ch2;
+#X text 226 -52 Start;
+#X text 287 -52 Stop;
+#X text 105 123 Thru Ch1;
+#X text 263 123 Thru Ch2;
+#X text 117 44 All audio files will be written to the folder that the
+current patch resides., f 27;
+#X obj 228 244 inlet;
+#X obj 228 269 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 393 246 inlet;
+#X obj 393 271 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X text 17 232 In Ch1;
+#X text 68 232 In Ch2;
+#X text 98 186 Start;
+#X text 267 188 Stop;
+#X obj 284 284 t b b b;
+#X obj 105 89 cnv 15 210 30 empty empty Sound\\\ Recorder\\\ to\\\ Disk
+10 12 0 14 #e0e0e0 #404040 0;
+#X text 0 720 _;
+#X obj 106 -31 cnv 2 100 2 empty empty Controls 2 8 0 11 #e0e0e0 #404040
+0;
+#X obj 213 -31 cnv 2 100 2 empty empty Recording\\\ Time 2 8 0 11 #e0e0e0
+#404040 0;
+#X obj 213 9 cnv 2 100 2 empty empty Take\\\ # 2 8 0 11 #e0e0e0 #404040
+0;
+#X obj 459 11 cnv 14 14 14 empty empty R 6 8 0 8 #fce0c4 #7c7c7c 0
+;
+#X obj 523 296 cnv 14 14 14 empty empty R 6 8 0 8 #fcc4c4 #7c7c7c 0
+;
+#X obj 373 259 cnv 14 14 14 empty empty R 6 8 0 8 #b8b8b8 #404040 0
+;
+#X obj 435 -28 cnv 14 14 14 empty empty R 6 8 0 8 #fcfcc4 #7c7c7c 0
+;
+#X obj 270 378 cnv 14 14 14 empty empty S 6 8 0 8 #fce0c4 #7c7c7c 0
+;
+#X obj 673 600 cnv 14 14 14 empty empty S 6 8 0 8 #fcfcc4 #7c7c7c 0
+;
+#X obj 92 -6 cnv 5 5 5 empty empty empty 2 10 0 14 #b8b8b8 #404040
+0;
+#X obj 93 18 cnv 5 5 5 empty empty empty 2 10 0 14 #fcc4c4 #404040
+0;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 27 0;
+#X connect 3 0 27 0;
+#X connect 4 0 27 0;
+#X connect 5 0 10 0;
+#X connect 5 0 11 0;
+#X connect 7 0 14 0;
+#X connect 8 0 7 0;
+#X connect 10 0 18 0;
+#X connect 11 0 12 0;
+#X connect 12 0 19 0;
+#X connect 13 0 7 0;
+#X connect 14 0 5 1;
+#X connect 15 0 47 0;
+#X connect 16 0 8 0;
+#X connect 16 1 5 0;
+#X connect 20 0 17 0;
+#X connect 21 0 3 0;
+#X connect 21 0 13 0;
+#X connect 22 0 24 0;
+#X connect 23 0 1 0;
+#X connect 23 0 25 0;
+#X connect 28 0 27 0;
+#X connect 28 0 30 0;
+#X connect 29 0 27 1;
+#X connect 29 0 31 0;
+#X connect 39 0 40 0;
+#X connect 40 0 47 0;
+#X connect 41 0 42 0;
+#X connect 42 0 3 0;
+#X connect 47 0 2 0;
+#X connect 47 1 23 0;
+#X connect 47 2 16 0;
+#X coords 0 -1 1 1 214 196 2 103 -54;

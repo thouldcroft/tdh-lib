@@ -1,0 +1,139 @@
+#N canvas 409 23 525 855 10;
+#X text 16 34 Travis Houldcroft || travishouldcroft.com;
+#X obj 0 0 cnv 15 500 30 empty empty tdh.util.channel.strip~ 20 12
+0 14 -233017 -66577 0;
+#X obj 0 87 cnv 8 500 8 empty empty Inlets 20 15 0 14 -233017 -66577
+0;
+#X text 20 116 0;
+#X text 42 116 -;
+#X obj 0 248 cnv 8 500 8 empty empty Outlets 20 15 0 14 -233017 -66577
+0;
+#X text 20 277 0;
+#X text 42 277 -;
+#X obj 0 375 cnv 8 500 8 empty empty Note 20 15 0 14 -233017 -66577
+0;
+#X obj 0 482 cnv 4 499 4 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 0 320 cnv 8 500 8 empty empty Arguments 20 15 0 14 -233017 -66577
+0;
+#X text 20 352 None;
+#X obj 0 56 cnv 4 499 4 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 16 64 An inline audio mixer-style channel strip with VU and
+dBFS gain fader., f 71;
+#X text 64 116 (sig) input signal;
+#X text 42 136 -;
+#X text 20 136 1;
+#X text 64 136 (float) gain in linear (0 to 1) floating point value
+;
+#X text 42 156 -;
+#X text 20 156 2;
+#X text 64 156 (float) gain in dBFS (-20 to +6);
+#X text 43 176 -;
+#X text 21 176 3;
+#X text 65 176 (float) panning value from 0 (left) to 0.5 (center)
+to 1 (right), f 65;
+#X text 20 298 0;
+#X text 42 298 -;
+#X text 64 277 (sig) left channel side of stereo image;
+#X text 64 298 (sig) right channel side of stereo image;
+#X text 19 448 TO DO: Accomodate stereo signal \, provide width control
+over stereo image, f 75;
+#X text 489 1047 _;
+#N canvas 990 217 450 300 test-signal 0;
+#X obj 92 231 outlet~;
+#X obj 85 148 -~ 0.5;
+#X obj 85 173 *~ 2;
+#X obj 85 123 phasor~ 220;
+#X obj 85 198 lop~ 3000;
+#X obj 82 87 +~ 220;
+#X obj 78 31 osc~ 440;
+#X obj 80 64 *~ 250;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 3 0 1 0;
+#X connect 4 0 0 0;
+#X connect 5 0 3 0;
+#X connect 6 0 7 0;
+#X connect 7 0 5 0;
+#X restore 154 486 pd test-signal;
+#X floatatom 192 510 5 0 0 0 - - -;
+#X text 232 510 Gain in linear scale (0 to 1);
+#X floatatom 230 532 5 0 0 0 - - -;
+#X text 266 530 Gain in dBFS (-20 to +6);
+#X floatatom 307 615 5 0 0 0 - - -;
+#X text 343 613 Pan value from left to right (0 to 1), f 18;
+#X text 20 426 Currently mono input only!, f 75;
+#N canvas 0 22 450 300 init 0;
+#X obj 40 140 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X msg 40 163 \; pd dsp \$1;
+#X text 60 140 DSP On/Off;
+#X obj 40 80 loadbang;
+#X msg 40 100 1;
+#X obj 120 103 r \$0-dsp;
+#X connect 0 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X restore 443 36 pd init;
+#X obj 154 645 tdh.util.channelstrip~;
+#N canvas 253 407 450 300 audio-out 0;
+#X obj -70 30 inlet~;
+#X obj 50 30 inlet~;
+#X obj 103 143 tgl 15 0 empty empty DSP\\\ On/Off 17 7 0 10 -262144
+-1 -1 1 1;
+#X text 101 101 In Ch1;
+#X text 185 100 In Ch2;
+#X obj 103 163 hsl 64 15 0.01 1 1 0 empty empty Volume 72 7 0 10 -262144
+-1 -1 0 1;
+#X obj 50 220 *~;
+#X obj 102 120 cnv 2 123 2 empty empty Audio\\\ Output 1 8 0 14 -233017
+-66577 0;
+#X obj 183 144 tgl 15 0 empty empty Mute 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj -70 200 *~;
+#X obj -70 250 dac~ 1 2;
+#X msg 103 230 \; pd dsp \$1;
+#X text -100 260 _;
+#X obj 103 63 r \$0-dsp-ctrl;
+#X obj 203 63 r \$0-gain-ctrl;
+#X connect 0 0 9 0;
+#X connect 1 0 6 0;
+#X connect 2 0 11 0;
+#X connect 5 0 6 1;
+#X connect 5 0 9 1;
+#X connect 6 0 10 1;
+#X connect 8 0 6 1;
+#X connect 8 0 9 1;
+#X connect 9 0 10 0;
+#X connect 13 0 2 0;
+#X connect 14 0 5 0;
+#X coords 0 -1 1 1 127 82 2 100 100;
+#X restore 154 949 pd audio-out;
+#X text 43 194 -;
+#X text 21 194 3;
+#X text 65 194 (float) panning value from 0 (left) to 0.5 (center)
+to 1 (right), f 65;
+#X text 19 405 This module requires the ELSE library and CYCLONE library
+, f 75;
+#X obj 268 582 line~;
+#X obj 4 493 cnv 15 145 150 empty empty empty 20 12 0 14 -167163 -66577
+0;
+#X text 7 509 This module emulates the channel strip from an in-line
+mixer. It accepts a mono signal and gives you gain control in dBFS
+or linear amplitude \, and control over panning the signal in the stereo
+image., f 22;
+#X text 305 583 Can also be controlled by a signal for VCA style use
+, f 26;
+#X msg 268 560 0 \, 1 5000;
+#X msg 338 560 1 \, 0 3000;
+#X connect 30 0 39 0;
+#X connect 31 0 39 1;
+#X connect 33 0 39 2;
+#X connect 35 0 39 4;
+#X connect 39 0 40 0;
+#X connect 39 1 40 1;
+#X connect 45 0 39 3;
+#X connect 49 0 45 0;
+#X connect 50 0 45 0;

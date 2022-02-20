@@ -1,0 +1,101 @@
+#N canvas 1505 7 946 759 10;
+#X text -100 -624 Travis Houldcroft || travishouldcroft.com;
+#X obj -120 -660 cnv 15 919 27 empty empty tdh.util.audiofile~ 20 12
+0 14 -233017 -66577 0;
+#X obj -119 -600 cnv 15 919 8 empty empty Inlets 20 15 0 14 -233017
+-66577 0;
+#X text -99 -571 0;
+#X text -77 -571 -;
+#X obj -119 -470 cnv 15 919 8 empty empty Outlets 20 15 0 14 -233017
+-66577 0;
+#X text -99 -441 0;
+#X text -77 -441 -;
+#X obj -120 -410 cnv 15 919 10 empty empty Note 20 15 0 14 -233017
+-66577 0;
+#X text -55 -571 (bang) plays audio file stored in arry;
+#X text -77 -551 -;
+#X text -99 -551 1;
+#X text -55 -551 (float) file playback start point in ms;
+#X text -77 -531 -;
+#X text -99 -531 2;
+#X text -55 -531 (float) file playback end point in ms;
+#X text -77 -511 -;
+#X text -99 -511 3;
+#X text -55 -511 (float) timestretch playback factor 0.1-500;
+#X text -55 -441 (sig) signal;
+#X text -101 -378 Dependencies: tdh.util.ms2samp~;
+#X obj 12 -240 tdh.util.audiofile~;
+#X obj 12 -319 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 224 -282 5 0 0 0 - - -;
+#X floatatom 366 -280 5 0 0 0 - - -;
+#X floatatom 521 -280 5 0 0 0 - - -;
+#X text 32 -319 Send "bang" to play;
+#X text 264 -282 Playback start in ms, f 13;
+#X text 406 -280 Playback endpoint in ms, f 15;
+#X text 562 -280 Playback speed from 0.1 to 500 where;
+#X text 562 -265 100 = normal speed;
+#X text 562 -250 < 100 faster speed;
+#X text 562 -235 > 100 slower speed;
+#X text -84 -185 Load a file -->;
+#X text -84 -218 Play a file -->;
+#X text -102 -163 Normalize file -->;
+#X text -113 -128 Display duration -->;
+#X text -102 -91 Playback start -->;
+#X text -91 -38 Playback end -->;
+#X obj -120 -350 cnv 15 919 2 empty empty empty 20 12 0 14 -233017
+-66577 0;
+#X text 530 -30 <-- Plaback speed with presets;
+#X floatatom 534 84 5 0 0 0 - - -;
+#X obj 139 -301 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 159 -301 Send "bang" to stop;
+#X text -94 -202 Stop playback -->;
+#X text 89 -241 |;
+#X text 89 -232 V;
+#X text 89 -251 |;
+#X text -11 -272 ________________;
+#X text -89 -268 Loop playback;
+#X text 89 -262 |;
+#N canvas 1372 32 450 300 help-audio-out 0;
+#X obj -70 30 inlet~;
+#X obj 50 30 inlet~;
+#X obj 103 143 tgl 15 0 empty empty DSP\\\ On/Off 17 7 0 10 -262144
+-1 -1 0 1;
+#X text 101 101 In Ch1;
+#X text 181 100 In Ch2;
+#X obj 103 163 hsl 64 15 0.01 1 1 0 empty empty Volume 72 7 0 10 -262144
+-1 -1 0 1;
+#X obj 50 220 *~;
+#X obj 102 120 cnv 2 123 2 empty empty Audio\\\ Output 1 8 0 14 -233017
+-66577 0;
+#X obj 183 144 tgl 15 0 empty empty Mute 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj -70 200 *~;
+#X obj -70 250 dac~ 1 2;
+#X msg 103 230 \; pd dsp \$1;
+#X text -100 260 _;
+#X obj 103 63 r \$0-dsp-ctrl;
+#X obj 203 63 r \$0-gain-ctrl;
+#X connect 0 0 9 0;
+#X connect 1 0 6 0;
+#X connect 2 0 11 0;
+#X connect 5 0 6 1;
+#X connect 5 0 9 1;
+#X connect 6 0 10 1;
+#X connect 8 0 6 1;
+#X connect 8 0 9 1;
+#X connect 9 0 10 0;
+#X connect 13 0 2 0;
+#X connect 14 0 5 0;
+#X coords 0 -1 1 1 127 82 2 100 100;
+#X restore 12 73 pd help-audio-out;
+#X connect 21 0 51 0;
+#X connect 21 0 51 1;
+#X connect 21 1 41 0;
+#X connect 22 0 21 0;
+#X connect 23 0 21 2;
+#X connect 24 0 21 3;
+#X connect 25 0 21 4;
+#X connect 42 0 21 1;
+#X coords 0 0 1 1 516 261 0;

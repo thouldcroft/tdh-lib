@@ -1,0 +1,329 @@
+#N canvas 2293 82 1158 704 12;
+#X obj 90 -130 inlet thresh;
+#X obj 230 -130 inlet ratio;
+#X obj 360 -130 inlet attRel;
+#X obj 500 -130 inlet makeup;
+#X obj 640 -130 inlet rmsPeakSw;
+#X obj 90 -72 s \$0-thresh;
+#N canvas 634 97 450 300 dbFStodBlin 0;
+#X obj 60 50 inlet;
+#X obj 60 80 + 100;
+#X obj 60 110 dbtorms;
+#X obj 60 140 outlet;
+#X text 110 80 convert dBFS (-100 to 0) to dBPD (0 to 100);
+#X text 120 110 convert dBPD to dBlin ("0.0 to 1.0");
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X restore 90 -101 pd dbFStodBlin;
+#N canvas 0 22 450 300 inverse 0;
+#X obj 54 43 inlet;
+#X obj 54 72 swap 1;
+#X obj 54 101 /;
+#X obj 54 130 outlet;
+#X text 100 100 Produces 1/ratio;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 2 1;
+#X connect 2 0 3 0;
+#X restore 230 -101 pd inverse;
+#X obj 230 -72 s \$0-ratio;
+#N canvas 0 22 450 300 mstofreq 0;
+#X obj 70 30 inlet;
+#X obj 70 59 swap 1000;
+#X obj 70 88 /;
+#X obj 70 117 outlet;
+#X text 120 90 Produces 1000/time in ms;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 2 1;
+#X connect 2 0 3 0;
+#X restore 360 -101 pd mstofreq;
+#X obj 360 -72 s \$0-att-rel;
+#N canvas 634 97 450 300 dbFStodBlin 0;
+#X obj 60 50 inlet;
+#X obj 60 80 + 100;
+#X obj 60 110 dbtorms;
+#X obj 60 140 outlet;
+#X text 110 80 convert dBFS (-100 to 0) to dBPD (0 to 100);
+#X text 120 110 convert dBPD to dBlin ("0.0 to 1.0");
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X restore 500 -100 pd dbFStodBlin;
+#X obj 500 -70 s \$0-makeup;
+#X obj 640 -100 s \$0-rmsPeakSw;
+#X obj 800 -101 s \$0-lookahead;
+#X obj 800 -130 inlet lookahead;
+#X obj 910 -200 loadbang;
+#X msg 910 -156 0;
+#X msg 752 -156 0;
+#X msg 461 -156 25;
+#X msg 322 -156 25;
+#X msg 201 -156 -20;
+#X msg 602 -156 -40;
+#X obj 13 16 inlet~;
+#N canvas 2777 -7 959 746 peak-gain-computation~ 0;
+#X obj 293 178 inlet~;
+#X obj 293 217 abs~;
+#X text 180 220 Peak detection;
+#X obj -30 10 cnv 1 200 1 empty empty Peak\\\ Gain\\\ Computation 2
+12 0 14 -233017 -66577 0;
+#X obj 293 680 outlet~;
+#X text 0 129 • If the signal is above the threshold:;
+#X text 0 91 • If the signal is below the thresh:;
+#X text 40 148 • output = threshold + (input - threshold)/ratio;
+#X text 40 109 • output = input;
+#X obj 293 340 -~;
+#X floatatom 311 290 5 0 0 1 threshold - -;
+#X text 136 290 input - threshold;
+#X floatatom 311 422 5 0 0 1 ratio - -;
+#X text 65 420 (input - threshold) / ratio;
+#X obj 260 470 /~;
+#X floatatom 311 554 5 0 0 1 threshold - -;
+#X text -16 550 threshold + (input - threshold) / ratio;
+#X obj 293 470 *~;
+#X text -16 450 * multiply by the INVERSE of the ratio \, instead of
+the ratio \, because multiplication is less computationally expensive
+(inverse calculated elsewhere), f 42;
+#X obj 311 250 r \$0-thresh;
+#X obj 311 380 r \$0-ratio;
+#X obj 311 520 r \$0-thresh;
+#X text -30 66 • Gain Computation for Downward Compression:;
+#X text -30 40 • Peak Detection -> Gain Computation -> Gain Computation
+/ Peak Detection, f 74;
+#X obj 476 430 +~ 0;
+#X obj 293 600 +~;
+#X obj 293 629 /~;
+#X text 271 290 >;
+#X text 272 419 >;
+#X text 275 549 >;
+#X text 260 284 _;
+#X text 260 413 _;
+#X text 263 543 _;
+#X text -40 720 _;
+#X text 516 430 This doesn't do anything \, it just makes the patch
+neater., f 30;
+#X text 930 720 _;
+#X obj 600 180 inlet;
+#X obj 600 209 switch~;
+#X obj 393 249 cnv 15 20 20 empty empty empty 2 10 0 14 -258113 -66577
+0;
+#X obj 386 380 cnv 15 20 20 empty empty empty 2 10 0 14 -260097 -66577
+0;
+#X obj 393 520 cnv 15 20 20 empty empty empty 2 10 0 14 -258113 -66577
+0;
+#X connect 0 0 1 0;
+#X connect 1 0 9 0;
+#X connect 1 0 24 0;
+#X connect 9 0 17 0;
+#X connect 10 0 9 1;
+#X connect 12 0 17 1;
+#X connect 15 0 25 1;
+#X connect 17 0 25 0;
+#X connect 19 0 10 0;
+#X connect 20 0 12 0;
+#X connect 21 0 15 0;
+#X connect 24 0 26 1;
+#X connect 25 0 26 0;
+#X connect 26 0 4 0;
+#X connect 36 0 37 0;
+#X restore 430 186 pd peak-gain-computation~;
+#N canvas 1775 63 972 750 rms-gain-computation 0;
+#X obj 334 -812 inlet~;
+#X obj 11 -1000 cnv 5 200 1 empty empty RMS\\\ Gain\\\ Computation
+2 12 0 14 -233017 -66577 0;
+#X obj 334 -260 outlet~;
+#X text 41 -881 • If the signal is above the threshold:;
+#X text 41 -919 • If the signal is below the thresh:;
+#X text 81 -862 • output = threshold + (input - threshold)/ratio
+;
+#X text 81 -901 • output = input;
+#X obj 334 -600 -~;
+#X floatatom 352 -650 5 0 0 1 threshold - -;
+#X text 177 -650 input - threshold;
+#X floatatom 352 -518 5 0 0 1 ratio - -;
+#X text 106 -520 (input - threshold) / ratio;
+#X obj 301 -470 /~;
+#X floatatom 352 -386 5 0 0 1 threshold - -;
+#X text 25 -390 threshold + (input - threshold) / ratio;
+#X obj 334 -470 *~;
+#X text 25 -490 * multiply by the INVERSE of the ratio \, instead of
+the ratio \, because multiplication is less computationally expensive
+(inverse calculated elsewhere), f 42;
+#X obj 352 -690 r \$0-thresh;
+#X obj 352 -560 r \$0-ratio;
+#X obj 352 -420 r \$0-thresh;
+#X text 11 -944 • Gain Computation for Downward Compression:;
+#X obj 517 -510 +~ 0;
+#X obj 334 -340 +~;
+#X obj 334 -311 /~;
+#X text 312 -650 >;
+#X text 313 -521 >;
+#X text 316 -391 >;
+#X text 301 -656 _;
+#X text 301 -527 _;
+#X text 304 -397 _;
+#X text 1 -220 _;
+#X text 557 -510 This doesn't do anything \, it just makes the patch
+neater., f 30;
+#X text 971 -220 _;
+#X obj 334 -770 env~ 512;
+#X text 114 -770 calculate the RMS value in dB;
+#X obj 334 -737 dbtorms~;
+#X text 117 -737 rms value in linear amp;
+#X text 971 -1060 _;
+#X text 11 -970 • RMS Value -> Gain Computation -> Gain Computation
+/ RMS Value, f 74;
+#X obj 541 -809 inlet;
+#X obj 541 -780 switch~;
+#X obj 434 -691 cnv 15 20 20 empty empty empty 2 10 0 14 -258113 -66577
+0;
+#X obj 427 -560 cnv 15 20 20 empty empty empty 2 10 0 14 -260097 -66577
+0;
+#X obj 434 -420 cnv 15 20 20 empty empty empty 2 10 0 14 -258113 -66577
+0;
+#X connect 0 0 33 0;
+#X connect 7 0 15 0;
+#X connect 8 0 7 1;
+#X connect 10 0 15 1;
+#X connect 13 0 22 1;
+#X connect 15 0 22 0;
+#X connect 17 0 8 0;
+#X connect 18 0 10 0;
+#X connect 19 0 13 0;
+#X connect 21 0 23 1;
+#X connect 22 0 23 0;
+#X connect 23 0 2 0;
+#X connect 33 0 35 0;
+#X connect 35 0 7 0;
+#X connect 35 0 21 0;
+#X connect 39 0 40 0;
+#X restore 230 186 pd rms-gain-computation;
+#X obj 230 296 clip~ 0 1;
+#X text 303 276 prevents the compressor from gaining the signal positively
+when the threshold is at 0;
+#X obj 230 396 lop~;
+#X text 357 326 Using a lowpass filter as a ramp generator \, converting
+time in ms to frequency (f = 1000 / time) (calculation done elsewhere)
+;
+#N canvas 0 22 450 300 delwrite 0;
+#X obj 40 91 inlet~;
+#X obj 40 120 delwrite~ \$0-comp 500;
+#X obj 43 174 outlet~;
+#X text 30 -10 Pd can't employ a delay less than a block size (1.4ms
+typically) \, unless you encapsulate [delwrite~] and [delread~] in
+subpatches \, give each a dummy [outlet~] and [inlet~] and connect
+them. THIS WAS A BRAND NEW TOPIC TO ME!!;
+#X connect 0 0 1 0;
+#X restore 13 156 pd delwrite;
+#N canvas 0 22 450 300 delread 0;
+#X obj 20 111 inlet~;
+#X obj 20 180 outlet~;
+#X text 10 10 Pd can't employ a delay less than a block size (1.4ms
+typically) \, unless you encapsulate [delwrite~] and [delread~] in
+subpatches \, give each a dummy [outlet~] and [inlet~] and connect
+them. THIS WAS A BRAND NEW TOPIC TO ME!!;
+#X obj 20 150 delread~ \$0-comp 0;
+#X obj 160 110 inlet;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X restore 13 246 pd delread;
+#X text 53 126 lookahead;
+#X floatatom 80 218 5 0 0 1 lookahead_time - -;
+#X obj 212 436 *~;
+#X text 233 156 RMS Gain Computation;
+#X text 433 156 Peak Gain Computation;
+#X obj 212 545 *~;
+#X obj 243 426 r \$0-makeup;
+#X obj 243 485 pack f 5;
+#X obj 243 514 line~;
+#X obj 212 574 outlet~;
+#X obj 388 65 t f f;
+#X obj 388 94 == 0;
+#X obj 255 326 r \$0-att-rel;
+#X obj 388 16 r \$0-rmsPeakSw;
+#X obj 80 189 r \$0-lookahead;
+#X floatatom 243 456 5 0 0 1 makeup - -;
+#X floatatom 255 350 5 0 0 0 - - -;
+#X obj 388 40 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 220 187 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 -258113
+-66577 0;
+#X obj 220 197 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 -260097
+-66577 0;
+#X obj 60 189 cnv 15 19 19 empty empty empty 2 10 0 14 -159808 -262144
+0;
+#X obj 234 326 cnv 15 20 20 empty empty empty 2 10 0 14 -4034 -66577
+0;
+#X obj 325 426 cnv 15 20 20 empty empty empty 2 10 0 14 -4032 -66577
+0;
+#X obj 419 187 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 -258113
+-66577 0;
+#X obj 419 197 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 -260097
+-66577 0;
+#X obj 368 16 cnv 15 19 19 empty empty empty 2 10 0 14 -4160 -262144
+0;
+#X obj 623 -100 cnv 15 16 16 empty empty empty 2 10 0 14 -4160 -262144
+0;
+#X obj 784 -130 cnv 15 16 16 empty empty empty 2 10 0 14 -159808 -262144
+0;
+#X obj 74 -72 cnv 16 16 16 empty \$0-vari-tab-1 empty 2 10 0 14 -258113
+-66577 0;
+#X obj 213 -71 cnv 16 16 16 empty \$0-vari-tab-1 empty 2 10 0 14 -260097
+-66577 0;
+#X obj 344 -72 cnv 16 16 16 empty \$0-vari-tab-1 empty 2 10 0 14 -4034
+-66577 0;
+#X obj 483 -71 cnv 16 16 16 empty \$0-vari-tab-1 empty 2 10 0 14 -4032
+-66577 0;
+#X text 8 -261 Source: https://designingsound.org/2013/06/28/tutorial-a-compressor-in-pure-data/
+, f 81;
+#X obj 5 -288 cnv 5 1000 5 empty empty tdh.sigproc.comp~ 2 16 0 22
+-233017 -66577 0;
+#X text 8 -245 Ver 0.1 21/04/26;
+#X connect 0 0 6 0;
+#X connect 1 0 7 0;
+#X connect 2 0 9 0;
+#X connect 3 0 11 0;
+#X connect 4 0 13 0;
+#X connect 6 0 5 0;
+#X connect 7 0 8 0;
+#X connect 9 0 10 0;
+#X connect 11 0 12 0;
+#X connect 15 0 14 0;
+#X connect 16 0 17 0;
+#X connect 16 0 18 0;
+#X connect 16 0 22 0;
+#X connect 16 0 19 0;
+#X connect 16 0 20 0;
+#X connect 16 0 21 0;
+#X connect 17 0 14 0;
+#X connect 18 0 13 0;
+#X connect 19 0 9 0;
+#X connect 20 0 7 0;
+#X connect 21 0 6 0;
+#X connect 22 0 11 0;
+#X connect 23 0 30 0;
+#X connect 23 0 25 0;
+#X connect 23 0 24 0;
+#X connect 24 0 26 0;
+#X connect 25 0 26 0;
+#X connect 26 0 28 0;
+#X connect 28 0 34 1;
+#X connect 30 0 31 0;
+#X connect 31 0 34 0;
+#X connect 33 0 31 1;
+#X connect 34 0 37 0;
+#X connect 37 0 41 0;
+#X connect 38 0 47 0;
+#X connect 39 0 40 0;
+#X connect 40 0 37 1;
+#X connect 42 0 43 0;
+#X connect 42 1 24 1;
+#X connect 43 0 25 1;
+#X connect 44 0 48 0;
+#X connect 45 0 49 0;
+#X connect 46 0 33 0;
+#X connect 47 0 39 0;
+#X connect 48 0 28 1;
+#X connect 49 0 42 0;
