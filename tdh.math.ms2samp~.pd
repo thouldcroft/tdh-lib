@@ -1,0 +1,24 @@
+#N canvas 2831 -39 483 410 10;
+#X obj 100 96 inlet;
+#X obj 100 141 / 1000;
+#X obj 100 186 t f b;
+#X obj 164 228 samplerate~;
+#X obj 100 259 *;
+#X obj 100 314 outlet;
+#X text 145 167 <-- time point in sec;
+#X text 145 117 <-- time point in msec;
+#X text 145 287 <-- time point in samples;
+#X text 20 -47 Travis Houldcroft / thouldcroft@gmail.com / travishouldcroft.com
+, f 65;
+#X text 20 -84 Timepoint in Milliseconds to Timepoint in Samples;
+#X text 21 -68 tdh.util.ms2samp~.pd;
+#X text 20 10 EXTERNAL DEVELOPER'S NOTE: You may edit and adapt this
+code *AS LONG AS* any distribution of the modified code is done with
+a new \, unique title *AND* attribution to the original author(s) is
+made.;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 2 1 3 0;
+#X connect 3 0 4 1;
+#X connect 4 0 5 0;
