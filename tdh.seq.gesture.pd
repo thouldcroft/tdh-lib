@@ -1,4 +1,4 @@
-#N canvas 1280 -209 1412 1035 10;
+#N canvas 1684 -320 1412 1035 10;
 #X obj 82 477 bng 15 250 50 0 \$0-allGest-s \$0-allGest-r All\\\ Gestures
 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 82 507 bng 15 250 50 0 \$0-g1-s \$0-g1-r Gesture\\\ 1 17 7 0
@@ -11,60 +11,60 @@
 10 #fcfcfc #000000 #000000;
 #X floatatom 200 506 5 0 0 3 StVal \$0-g1start-r \$0-g1start-s 0;
 #X floatatom 240 506 5 0 0 3 EndVal \$0-g1end-r \$0-g1end-s 0;
-#X obj 504 798 r \$0-g1end-s;
-#X obj 395 798 r \$0-g1start-s;
-#X obj 380 620 r \$0-g1-s;
+#X obj 504 848 r \$0-g1end-s;
+#X obj 395 848 r \$0-g1start-s;
+#X obj 380 670 r \$0-g1-s;
 #X floatatom 280 506 5 0 0 3 Dur \$0-g1dur-r \$0-g1dur-s 0;
-#X obj 614 798 r \$0-g1dur-s;
+#X obj 614 848 r \$0-g1dur-s;
 #X floatatom 200 536 5 0 0 3 StVal \$0-g2start-r \$0-g2start-s 0;
 #X floatatom 240 536 5 0 0 3 EndVal \$0-g2end-r \$0-g2end-s 0;
-#X floatatom 280 536 5 0 0 3 Dur \$0-g1dur-r \$0-g2dur-s 0;
+#X floatatom 280 536 5 0 0 3 Dur \$0-g2dur-r \$0-g2dur-s 0;
 #X floatatom 200 566 5 0 0 3 StVal \$0-g3start-r \$0-g3start-s 0;
 #X floatatom 240 566 5 0 0 3 EndVal \$0-g3end-r \$0-g3end-s 0;
 #X floatatom 280 566 5 0 0 3 Dur \$0-g3dur-r \$0-g3dur-s 0;
 #X floatatom 200 596 5 0 0 3 StVal \$0-g4start-r \$0-g4start-s 0;
 #X floatatom 240 596 5 0 0 3 EndVal \$0-g4end-r \$0-g4end-s 0;
 #X floatatom 280 596 5 0 0 3 Dur \$0-g4dur-r \$0-g4dur-s 0;
-#X obj 422 678 r \$0-g1del-s;
+#X obj 422 728 r \$0-g1del-s;
 #X floatatom 160 506 5 0 0 3 Delay \$0-g1del-r \$0-g1del-s 0;
 #X floatatom 160 536 5 0 0 3 Delay \$0-g2del-r \$0-g2del-s 0;
 #X floatatom 160 566 5 0 0 3 Delay \$0-g3del-r \$0-g3del-s 0;
 #X floatatom 160 596 5 0 0 3 Delay \$0-g4del-r \$0-g4del-s 0;
-#X obj 980 627 r \$0-g4-s;
-#X obj 871 629 r \$0-g3-s;
-#X obj 745 630 r \$0-g2-s;
-#X obj 380 962 outlet g1;
-#X obj 745 959 outlet g2;
-#X obj 366 962 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc
+#X obj 980 677 r \$0-g4-s;
+#X obj 871 679 r \$0-g3-s;
+#X obj 745 680 r \$0-g2-s;
+#X obj 380 1012 outlet g1;
+#X obj 745 1009 outlet g2;
+#X obj 366 1012 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc
 0;
-#X obj 730 959 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc
+#X obj 730 1009 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc
 0;
-#X obj 855 959 cnv 14 14 14 empty empty 2 4 8 0 12 #606060 #dcdcdc
+#X obj 855 1009 cnv 14 14 14 empty empty 2 4 8 0 12 #606060 #dcdcdc
 0;
 #X obj 371 451 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc
 0;
-#X obj 407 703 f;
-#X obj 380 825 f;
-#X obj 489 825 f;
-#X obj 489 798 cnv 14 14 14 empty empty R 6 8 0 8 #fce0c4 #7c7c7c 0
+#X obj 407 753 f;
+#X obj 380 875 f;
+#X obj 489 875 f;
+#X obj 489 848 cnv 14 14 14 empty empty R 6 8 0 8 #fce0c4 #7c7c7c 0
 ;
-#X obj 379 798 cnv 14 14 14 empty empty R 6 8 0 8 #fcc4c4 #7c7c7c 0
+#X obj 379 848 cnv 14 14 14 empty empty R 6 8 0 8 #fcc4c4 #7c7c7c 0
 ;
-#X obj 406 678 cnv 14 14 14 empty empty R 6 8 0 8 #b8b8b8 #404040 0
+#X obj 406 728 cnv 14 14 14 empty empty R 6 8 0 8 #b8b8b8 #404040 0
 ;
-#X obj 365 620 cnv 14 14 14 empty empty R 6 8 0 8 #dcdcdc #7c7c7c 0
+#X obj 365 670 cnv 14 14 14 empty empty R 6 8 0 8 #dcdcdc #7c7c7c 0
 ;
-#X obj 598 798 cnv 14 14 14 empty empty R 6 8 0 8 #fcfcc4 #7c7c7c 0
+#X obj 598 848 cnv 14 14 14 empty empty R 6 8 0 8 #fcfcc4 #7c7c7c 0
 ;
-#X obj 856 630 cnv 14 14 14 empty empty R 6 8 0 8 #00fc04 #7c7c7c 0
+#X obj 856 680 cnv 14 14 14 empty empty R 6 8 0 8 #00fc04 #7c7c7c 0
 ;
-#X obj 964 628 cnv 14 14 14 empty empty R 6 8 0 8 #0400fc #dfdfdf 0
+#X obj 964 678 cnv 14 14 14 empty empty R 6 8 0 8 #0400fc #dfdfdf 0
 ;
-#X obj 523 583 cnv 14 14 14 empty empty S 6 8 0 8 #00fc04 #7c7c7c 0
+#X obj 523 633 cnv 14 14 14 empty empty S 6 8 0 8 #00fc04 #7c7c7c 0
 ;
-#X obj 446 583 cnv 14 14 14 empty empty S 6 8 0 8 #fc8000 #7c7c7c 0
+#X obj 446 633 cnv 14 14 14 empty empty S 6 8 0 8 #fc8000 #7c7c7c 0
 ;
-#X obj 601 583 cnv 14 14 14 empty empty S 6 8 0 8 #0400fc #dfdfdf 0
+#X obj 601 633 cnv 14 14 14 empty empty S 6 8 0 8 #0400fc #dfdfdf 0
 ;
 #X obj 27 507 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #e0e0e0
 #404040 0;
@@ -74,27 +74,27 @@
 0;
 #X obj 57 507 cnv 5 5 5 empty empty empty 2 10 0 14 #fce0c4 #404040
 0;
-#X obj 728 665 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #fc8000
+#X obj 728 715 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #fc8000
 #404040 0;
-#X obj 855 662 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #00fc04
+#X obj 855 712 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #00fc04
 #404040 0;
-#X obj 970 664 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #0400fc
+#X obj 970 714 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #0400fc
 #fcfcfc 0;
 #X obj 66 507 cnv 5 5 5 empty empty ☐ 0 2 0 14 #fcfcc4 #dfdfdf 0
 ;
-#X obj 599 825 f;
-#X obj 380 641 t b b;
-#X obj 380 755 t b b b, f 37;
-#X obj 380 731 del;
-#X obj 380 869 pack f f f, f 37;
-#X msg 380 906 \$1 \, \$2 \$3;
-#X obj 380 935 line;
-#X text 505 678 Delay time of gesture start;
-#X text 419 641 Gesture trigger;
-#X text 633 824 Gesture duration;
-#X text 514 824 Gesture destination value, f 11;
-#X text 404 824 Gesture start value, f 11;
-#X text 448 906 A gesture is a linear progression of values from a
+#X obj 599 875 f;
+#X obj 380 691 t b b;
+#X obj 380 805 t b b b, f 37;
+#X obj 380 781 del;
+#X obj 380 919 pack f f f, f 37;
+#X msg 380 956 \$1 \, \$2 \$3;
+#X obj 380 985 line;
+#X text 505 728 Delay time of gesture start;
+#X text 419 691 Gesture trigger;
+#X text 633 874 Gesture duration;
+#X text 514 874 Gesture destination value, f 11;
+#X text 404 874 Gesture start value, f 11;
+#X text 448 956 A gesture is a linear progression of values from a
 start point to an end point over a certain duration, f 26;
 #X obj 61 539 cnv 5 5 5 empty empty ❴ -3 3 0 22 #ffffff #ff8300 0
 ;
@@ -151,8 +151,8 @@ start point to an end point over a certain duration, f 26;
 #X connect 18 0 2 1;
 #X connect 19 0 3 1;
 #X connect 21 0 4 0;
-#X restore 745 659 pd \$0-gesture2;
-#X obj 730 630 cnv 14 14 14 empty empty R 6 8 0 8 #fc8000 #7c7c7c 0
+#X restore 745 709 pd \$0-gesture2;
+#X obj 730 680 cnv 14 14 14 empty empty R 6 8 0 8 #fc8000 #7c7c7c 0
 ;
 #N canvas 1280 -209 740 384 \$0-gesture3 0;
 #X obj 71 97 f;
@@ -203,7 +203,7 @@ start point to an end point over a certain duration, f 26;
 #X connect 23 0 1 1;
 #X connect 24 0 2 1;
 #X connect 25 0 3 1;
-#X restore 870 657 pd \$0-gesture3;
+#X restore 870 707 pd \$0-gesture3;
 #N canvas 1280 -209 740 384 \$0-gesture3 0;
 #X obj 71 97 f;
 #X obj 44 219 f;
@@ -253,50 +253,49 @@ start point to an end point over a certain duration, f 26;
 #X connect 23 0 1 1;
 #X connect 24 0 2 1;
 #X connect 25 0 3 1;
-#X restore 980 657 pd \$0-gesture3;
-#X obj 870 959 outlet g3;
-#X obj 980 962 outlet g4;
-#X obj 385 583 s \$0-g1-r;
-#X obj 370 583 cnv 14 14 14 empty empty S 6 8 0 8 #dcdcdc #7c7c7c 0
+#X restore 980 707 pd \$0-gesture3;
+#X obj 870 1009 outlet g3;
+#X obj 980 1012 outlet g4;
+#X obj 385 633 s \$0-g1-r;
+#X obj 370 633 cnv 14 14 14 empty empty S 6 8 0 8 #dcdcdc #7c7c7c 0
 ;
-#X obj 385 530 r \$0-allGestures-s;
-#X obj 370 530 cnv 14 14 14 empty empty R 6 8 0 8 #9c00fc #dfdfdf 0
+#X obj 370 580 cnv 14 14 14 empty empty R 6 8 0 8 #9c00fc #dfdfdf 0
 ;
 #X obj 64 480 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #9c00fc
 #fcfcfc 0;
-#X obj 462 583 s \$0-g2-r;
-#X obj 539 583 s \$0-g3-r;
-#X obj 616 583 s \$0-g4-r;
-#X obj 385 551 t b b b b, f 39;
+#X obj 462 633 s \$0-g2-r;
+#X obj 539 633 s \$0-g3-r;
+#X obj 616 633 s \$0-g4-r;
+#X obj 385 601 t b b b b, f 39;
 #X obj 387 451 inlet all;
-#X obj 481 451 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc
+#X obj 481 451 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc
 0;
 #X obj 497 451 inlet gest1;
-#X obj 581 451 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc
+#X obj 982 451 cnv 14 14 14 empty empty 2 4 8 0 12 #606060 #dcdcdc
 0;
-#X obj 597 451 inlet gest2;
-#X obj 681 451 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc
+#X obj 998 451 inlet gest2;
+#X obj 1082 451 cnv 14 14 14 empty empty 3 4 8 0 12 #606060 #dcdcdc
 0;
-#X obj 697 451 inlet gest3;
-#X obj 775 451 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc
+#X obj 1098 451 inlet gest3;
+#X obj 1176 451 cnv 14 14 14 empty empty 4 4 8 0 12 #606060 #dcdcdc
 0;
-#X obj 791 451 inlet gest4;
-#X obj 681 480 cnv 14 14 14 empty empty S 6 8 0 8 #00fc04 #7c7c7c 0
+#X obj 1192 451 inlet gest4;
+#X obj 1082 493 cnv 14 14 14 empty empty S 6 8 0 8 #00fc04 #7c7c7c
+0;
+#X obj 982 493 cnv 14 14 14 empty empty S 6 8 0 8 #fc8000 #7c7c7c 0
 ;
-#X obj 581 480 cnv 14 14 14 empty empty S 6 8 0 8 #fc8000 #7c7c7c 0
+#X obj 1177 493 cnv 14 14 14 empty empty S 6 8 0 8 #0400fc #dfdfdf
+0;
+#X obj 497 493 s \$0-g1-r;
+#X obj 482 493 cnv 14 14 14 empty empty S 6 8 0 8 #dcdcdc #7c7c7c 0
 ;
-#X obj 776 480 cnv 14 14 14 empty empty S 6 8 0 8 #0400fc #dfdfdf 0
+#X obj 998 493 s \$0-g2-r;
+#X obj 1098 493 s \$0-g3-r;
+#X obj 1192 493 s \$0-g4-r;
+#X obj 372 493 cnv 14 14 14 empty empty S 6 8 0 8 #9c00fc #dfdfdf 0
 ;
-#X obj 497 480 s \$0-g1-r;
-#X obj 482 480 cnv 14 14 14 empty empty S 6 8 0 8 #dcdcdc #7c7c7c 0
-;
-#X obj 597 480 s \$0-g2-r;
-#X obj 697 480 s \$0-g3-r;
-#X obj 791 480 s \$0-g4-r;
-#X obj 372 480 cnv 14 14 14 empty empty S 6 8 0 8 #9c00fc #dfdfdf 0
-;
-#X obj 387 480 s \$0-allGest-s;
-#X obj 965 962 cnv 14 14 14 empty empty 3 4 8 0 12 #606060 #dcdcdc
+#X obj 387 493 s \$0-allGest-s;
+#X obj 965 1012 cnv 14 14 14 empty empty 3 4 8 0 12 #606060 #dcdcdc
 0;
 #X text 76 451 All;
 #X text 135 451 G1;
@@ -310,13 +309,13 @@ start point to an end point over a certain duration, f 26;
 #X text 18 48 Travis Houldcroft || travishouldcroft.com;
 #X obj 1 2 cnv 15 1400 40 empty \$0-abstrPatchTitleBar tdh.seq.gesture
 9 20 0 18 #3c50fc #a0a0a0 0;
-#X obj 1 302 cnv 2 1400 3 empty \$0-abstrPatchSecLabelNotes Notes 20
+#X obj 1 332 cnv 2 1400 3 empty \$0-abstrPatchSecLabelNotes Notes 20
 15 0 16 #a0a0a0 #202020 0;
-#X obj 1 405 cnv 2 1400 2 empty \$0-abstrPatchSecDivider empty 9 20
+#X obj 1 435 cnv 2 1400 2 empty \$0-abstrPatchSecDivider empty 9 20
 0 18 #a0a0a0 #202020 0;
-#X obj 1 342 cnv 2 1400 3 empty \$0-abstrPatchSecLabelRevHist Revision\ History
+#X obj 1 372 cnv 2 1400 3 empty \$0-abstrPatchSecLabelRevHist Revision\ History
 20 15 0 16 #a0a0a0 #202020 0;
-#X obj 1 262 cnv 2 1400 3 empty \$0-abstrPatchSecLabelArgs Arguments
+#X obj 1 292 cnv 2 1400 3 empty \$0-abstrPatchSecLabelArgs Arguments
 20 15 0 16 #a0a0a0 #202020 0;
 #N canvas 1440 293 656 414 abstr-init 0;
 #X obj 3 21 cnv 5 5 5 empty empty | 0 0 0 14 #fcfcfc #404040 0;
@@ -2672,46 +2671,158 @@ in [message( objects get saved to the patch., f 84;
 #X restore 610 50 pd abstr-init;
 #X obj 1 72 cnv 2 1400 3 empty \$0-abstrPatchSecLabelInlets Inlets
 20 15 0 16 #a0a0a0 #202020 0;
-#X obj 1 172 cnv 2 1400 3 empty \$0-abstrPatchSecLabelOutlets Outlets
+#X obj 1 202 cnv 2 1400 3 empty \$0-abstrPatchSecLabelOutlets Outlets
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 125 81 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc 0
 ;
-#X obj 125 141 cnv 14 18 14 empty empty 10 2 8 0 12 #606060 #dcdcdc
+#X obj 125 141 cnv 14 18 14 empty empty 3 2 8 0 12 #606060 #dcdcdc
 0;
 #X obj 125 101 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
 0;
 #X obj 125 121 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 125 181 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
+#X obj 125 211 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 125 241 cnv 14 18 14 empty empty 10 2 8 0 12 #606060 #dcdcdc
+#X obj 125 271 cnv 14 18 14 empty empty 3 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 125 201 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
+#X obj 125 231 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 125 221 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
+#X obj 125 251 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
 0;
-#X text 197 80 Description;
-#X text 147 80 (type);
-#X text 197 100 Description;
-#X text 147 100 (type);
-#X text 197 120 Description;
-#X text 147 120 (type);
-#X text 197 140 Description;
-#X text 147 140 (type);
-#X text 197 180 Description;
-#X text 147 180 (type);
-#X text 197 200 Description;
-#X text 147 200 (type);
-#X text 197 220 Description;
-#X text 147 220 (type);
-#X text 197 240 Description;
-#X text 147 240 (type);
-#X text 24 373 22/02/20 - ver 0.1, f 21;
-#X text 127 271 None;
-#X text 127 311 Dependencies: None;
-#X text 499 529 Trigger all gestures simultaneously (delays still affect
-start tunes), f 69;
+#X text 24 403 22/02/20 - ver 0.1, f 21;
+#X text 127 299 None;
+#X text 127 339 Dependencies: None;
 #X obj 78 635 cnv 15 255 20 empty empty Gesture 20 9 0 14 #e0e0e0 #404040
+0;
+#X obj 497 472 route bang delay start end dur, f 74;
+#X obj 762 493 cnv 14 14 14 empty empty R 6 8 0 8 #fce0c4 #7c7c7c 0
+;
+#X obj 655 493 cnv 14 14 14 empty empty R 6 8 0 8 #fcc4c4 #7c7c7c 0
+;
+#X obj 857 493 cnv 14 14 14 empty empty R 6 8 0 8 #fcfcc4 #7c7c7c 0
+;
+#X obj 560 493 cnv 14 14 14 empty empty R 6 8 0 8 #b8b8b8 #404040 0
+;
+#X obj 576 493 s \$0-g1del-r;
+#X obj 671 493 s \$0-g1start-r;
+#X obj 777 493 s \$0-g1end-r;
+#X obj 873 493 s \$0-g1dur-r;
+#N canvas 1593 -10 1215 428 g2routing 0;
+#X obj 36 57 inlet;
+#X obj 36 82 route bang delay start end dur, f 74;
+#X obj 99 110 cnv 14 14 14 empty empty S 6 8 0 8 #ff8300 #404040 0
+;
+#X obj 36 110 outlet;
+#X obj 194 110 cnv 14 14 14 empty empty S 6 8 0 8 #ff8300 #404040 0
+;
+#X obj 301 110 cnv 14 14 14 empty empty S 6 8 0 8 #ff8300 #404040 0
+;
+#X obj 397 110 cnv 14 14 14 empty empty S 6 8 0 8 #ff8300 #404040 0
+;
+#X obj 115 110 s \$0-g2del-r;
+#X obj 210 110 s \$0-g2start-r;
+#X obj 316 110 s \$0-g2end-r;
+#X obj 412 110 s \$0-g2dur-r;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 1 1 7 0;
+#X connect 1 2 8 0;
+#X connect 1 3 9 0;
+#X connect 1 4 10 0;
+#X restore 998 472 pd g2routing;
+#N canvas 1593 -10 525 218 g3routing 0;
+#X obj 36 57 inlet;
+#X obj 36 82 route bang delay start end dur, f 74;
+#X obj 99 110 cnv 14 14 14 empty empty S 6 8 0 8 #00ff04 #404040 0
+;
+#X obj 36 110 outlet;
+#X obj 194 110 cnv 14 14 14 empty empty S 6 8 0 8 #00ff04 #404040 0
+;
+#X obj 301 110 cnv 14 14 14 empty empty S 6 8 0 8 #00ff04 #404040 0
+;
+#X obj 397 110 cnv 14 14 14 empty empty S 6 8 0 8 #00ff04 #404040 0
+;
+#X obj 115 110 s \$0-g3del-r;
+#X obj 210 110 s \$0-g3start-r;
+#X obj 316 110 s \$0-g3end-r;
+#X obj 412 110 s \$0-g3dur-r;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 1 1 7 0;
+#X connect 1 2 8 0;
+#X connect 1 3 9 0;
+#X connect 1 4 10 0;
+#X restore 1098 472 pd g3routing;
+#N canvas 1593 -10 525 218 g4routing 0;
+#X obj 36 57 inlet;
+#X obj 36 82 route bang delay start end dur, f 74;
+#X obj 99 110 cnv 14 14 14 empty empty S 6 8 0 8 #0400ff #dfdfdf 0
+;
+#X obj 36 110 outlet;
+#X obj 194 110 cnv 14 14 14 empty empty S 6 8 0 8 #0400ff #dfdfdf 0
+;
+#X obj 301 110 cnv 14 14 14 empty empty S 6 8 0 8 #0400ff #dfdfdf 0
+;
+#X obj 397 110 cnv 14 14 14 empty empty S 6 8 0 8 #0400ff #dfdfdf 0
+;
+#X obj 115 110 s \$0-g4del-r;
+#X obj 210 110 s \$0-g4start-r;
+#X obj 316 110 s \$0-g4end-r;
+#X obj 412 110 s \$0-g4dur-r;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 1 1 7 0;
+#X connect 1 2 8 0;
+#X connect 1 3 9 0;
+#X connect 1 4 10 0;
+#X restore 1192 474 pd g4routing;
+#X obj 988 475 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #fc8000
+#404040 0;
+#X obj 1085 475 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #00fc04
+#404040 0;
+#X obj 1180 475 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #0400fc
+#fcfcfc 0;
+#X text 499 579 Trigger all gestures simultaneously (delays still affect
+start times), f 69;
+#X text 498 517 [route] allows the 3 trigger inlets to also accept
+the messages "delay" \, "start" \, "end" \, and "dur" followed by a
+float value to set the paramters of each gesture externally, f 74
+;
+#X text 1271 472 <- all other routing;
+#X obj 125 161 cnv 14 18 14 empty empty 4 2 8 0 12 #606060 #dcdcdc
+0;
+#X text 147 80 (bang);
+#X text 197 80 Trigger all gestures simultaneously;
+#X text 147 100 (bang/message);
+#X text 147 120 (bang/message);
+#X text 147 140 (bang/message);
+#X text 147 160 (bang/message);
+#X text 247 100 "Bang" triggers gesture 1 \, a message of "delay" \,
+"start" \, "end" \, or "dur" followed by a float value sets the respective
+value for each parameter of the gesture., f 163;
+#X text 247 120 "Bang" triggers gesture 2 \, a message of "delay" \,
+"start" \, "end" \, or "dur" followed by a float value sets the respective
+value for each parameter of the gesture., f 163;
+#X text 247 140 "Bang" triggers gesture 3 \, a message of "delay" \,
+"start" \, "end" \, or "dur" followed by a float value sets the respective
+value for each parameter of the gesture., f 163;
+#X text 247 160 "Bang" triggers gesture 4 \, a message of "delay" \,
+"start" \, "end" \, or "dur" followed by a float value sets the respective
+value for each parameter of the gesture., f 163;
+#X text 147 210 (float);
+#X text 207 210 Gesture 1 in the form of a linear ramp of float values
+determed by the parameters set for that gesture, f 105;
+#X text 147 230 (float);
+#X text 207 230 Gesture 1 in the form of a linear ramp of float values
+determed by the parameters set for that gesture, f 105;
+#X text 147 250 (float);
+#X text 207 250 Gesture 1 in the form of a linear ramp of float values
+determed by the parameters set for that gesture, f 105;
+#X text 147 270 (float);
+#X text 207 270 Gesture 1 in the form of a linear ramp of float values
+determed by the parameters set for that gesture, f 105;
+#X obj 385 580 r \$0-allGest-s;
+#X obj 1314 23 cnv 8 83 16 empty empty tdh-lib 14 8 0 14 #dfdfdf #131255
 0;
 #X connect 7 0 37 1;
 #X connect 8 0 36 1;
@@ -2737,14 +2848,22 @@ start tunes), f 69;
 #X connect 72 0 30 0;
 #X connect 74 0 76 0;
 #X connect 75 0 77 0;
-#X connect 80 0 86 0;
-#X connect 86 0 78 0;
-#X connect 86 1 83 0;
-#X connect 86 2 84 0;
-#X connect 86 3 85 0;
-#X connect 87 0 105 0;
-#X connect 89 0 99 0;
-#X connect 91 0 101 0;
-#X connect 93 0 102 0;
-#X connect 95 0 103 0;
+#X connect 85 0 78 0;
+#X connect 85 1 82 0;
+#X connect 85 2 83 0;
+#X connect 85 3 84 0;
+#X connect 86 0 104 0;
+#X connect 88 0 136 0;
+#X connect 90 0 145 0;
+#X connect 92 0 146 0;
+#X connect 94 0 147 0;
+#X connect 136 0 98 0;
+#X connect 136 1 141 0;
+#X connect 136 2 142 0;
+#X connect 136 3 143 0;
+#X connect 136 4 144 0;
+#X connect 145 0 100 0;
+#X connect 146 0 101 0;
+#X connect 147 0 102 0;
+#X connect 173 0 85 0;
 #X coords 0 -1 1 1 260 230 2 75 450;

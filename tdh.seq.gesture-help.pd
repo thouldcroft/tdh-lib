@@ -1,19 +1,16 @@
-#N canvas 1284 -205 1920 1035 10;
+#N canvas 1802 -403 808 1035 10;
 #X text 17 48 Travis Houldcroft || travishouldcroft.com;
 #X obj 3 1 cnv 15 800 40 empty \$0-helpPatchTitleBar tdh.seq.gesture
 9 20 0 18 #a0a0a0 #202020 0;
 #X obj 2 123 cnv 2 800 3 empty \$0-helpPatchSecLabelInlets Inlets 20
 15 0 16 #a0a0a0 #202020 0;
-#X text 152 131 -;
-#X obj 3 203 cnv 2 800 3 empty \$0-helpPatchSecLabelOutlets Outlets
+#X obj 3 233 cnv 2 800 3 empty \$0-helpPatchSecLabelOutlets Outlets
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 3 363 cnv 2 800 3 empty \$0-helpPatchSecLabelNotes Notes 20
 15 0 16 #a0a0a0 #202020 0;
-#X text 21 395 Notes;
-#X text 174 131 (type) inlet description;
 #X obj 3 443 cnv 1 800 1 empty \$0-helpPatchSecDivider empty 9 20 0
 18 #a0a0a0 #202020 0;
-#X obj 3 283 cnv 2 800 3 empty \$0-helpPatchSecLabelArgs Arguments
+#X obj 3 323 cnv 2 800 3 empty \$0-helpPatchSecLabelArgs Arguments
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 3 77 cnv 1 800 1 empty \$0-helpPatchSecDivider empty 9 20 0
 18 #a0a0a0 #202020 0;
@@ -2053,52 +2050,18 @@ titles and graphics for ABSTRACTIONS., f 84;
 #X connect 10 0 0 1;
 #X connect 11 0 0 0;
 #X restore 413 49 pd help-init;
-#X text 152 151 -;
-#X text 175 151 (type) inlet description;
-#X obj 125 132 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 125 172 cnv 14 18 14 empty empty 10 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 125 152 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
-0;
-#X text 175 171 (type) inlet description;
-#X text 152 171 -;
-#X text 152 211 -;
-#X text 174 211 (type) inlet description;
-#X text 152 231 -;
-#X text 175 231 (type) inlet description;
-#X obj 125 212 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 125 252 cnv 14 18 14 empty empty 10 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 125 232 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
-0;
-#X text 175 251 (type) inlet description;
-#X text 152 251 -;
-#X text 152 291 -;
-#X text 174 291 (type) inlet description;
-#X text 152 311 -;
-#X text 175 311 (type) inlet description;
-#X obj 125 292 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 125 332 cnv 14 18 14 empty empty 10 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 125 312 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
-0;
-#X text 175 331 (type) inlet description;
-#X text 152 331 -;
-#X obj 57 720 tdh.seq.gesture;
+#X obj 57 750 tdh.seq.gesture;
 #X text 15 455 [tdh.seq.gesture] is a tool for sequencing and automating
 gestures \, in the form of streams of linear floating point data. The
 gestures can be triggered simultaneously or individually \, via trigger
 inlets or GUI. A sequence can be created through the use of the delay
 fields., f 96;
-#X obj 57 580 bng 15 250 50 0 empty empty Trigger\ all\ gestures 17
-7 0 10 #fcfcfc #000000 #000000;
-#X floatatom 57 969 5 0 0 0 - - - 0;
-#X floatatom 141 969 5 0 0 0 - - - 0;
-#X floatatom 225 969 5 0 0 0 - - - 0;
-#X floatatom 310 969 5 0 0 0 - - - 0;
+#X obj 57 580 bng 15 250 50 0 empty empty Trigger\\\ all\\\ gestures
+17 7 0 10 #fcfcfc #000000 #000000;
+#X floatatom 57 999 5 0 0 0 - - - 0;
+#X floatatom 141 999 5 0 0 0 - - - 0;
+#X floatatom 225 999 5 0 0 0 - - - 0;
+#X floatatom 310 999 5 0 0 0 - - - 0;
 #X obj 99 598 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
 #X text 15 515 All inlets for each gesture also accept the symbols
@@ -2107,35 +2070,112 @@ set the respective parameter for each gesture. This allows external
 setting of values \, particularly useful for paramter initialization.
 The trigger message "bang" can also sent within the same message box
 (as depicted below)., f 96;
-#X msg 120 598 delay 0 \, start 0 \, end 100 \, dur 5000 \, bang;
 #X obj 162 630 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X msg 183 628 delay 5000 \, start 100 \, end 200 \, dur 5000;
 #X obj 225 658 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X msg 246 658 delay 10000 \, start 200 \, end 300 \, dur 5000;
 #X obj 289 688 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X msg 310 688 delay 15000 \, start 200 \, end 300 \, dur 5000;
-#X text 373 599 Trigger gesture 1 or set parameters and (optionally)
-trigger;
 #X text 436 629 Gesture 2 trigger and parameters;
 #X text 504 659 Gesture 3 trigger and parameters;
 #X text 566 689 Gesture 4 trigger and parameters;
-#X obj 4 612 loadbang;
-#X connect 38 0 41 0;
-#X connect 38 1 42 0;
-#X connect 38 2 43 0;
-#X connect 38 3 44 0;
-#X connect 40 0 38 0;
-#X connect 45 0 38 1;
-#X connect 47 0 38 1;
-#X connect 48 0 38 2;
-#X connect 49 0 38 2;
-#X connect 50 0 38 3;
-#X connect 51 0 38 3;
-#X connect 52 0 38 4;
-#X connect 53 0 38 4;
-#X connect 58 0 49 0;
-#X connect 58 0 51 0;
-#X connect 58 0 53 0;
+#X text 363 599 Trigger gesture 1 or set parameters;
+#X text 622 749 Parameters can be set and gesture can be triggered
+within a single message., f 26;
+#N canvas 2321 337 583 235 init 0;
+#X obj 9 189 outlet;
+#X obj 72 189 outlet;
+#X obj 135 189 outlet;
+#X obj 199 189 outlet;
+#X obj 16 14 loadbang;
+#X msg 9 69 delay 0 \, start 0 \, end 100 \, dur 5000;
+#X msg 72 99 delay 5000 \, start 100 \, end 200 \, dur 5000;
+#X msg 135 130 delay 10000 \, start 200 \, end 300 \, dur 5000;
+#X msg 199 159 delay 15000 \, start 300 \, end 400 \, dur 5000;
+#X connect 4 0 5 0;
+#X connect 4 0 6 0;
+#X connect 4 0 7 0;
+#X connect 4 0 8 0;
+#X connect 5 0 0 0;
+#X connect 6 0 1 0;
+#X connect 7 0 2 0;
+#X connect 8 0 3 0;
+#X restore 6 723 pd init;
+#X f 5;
+#X msg 328 754 delay 500 \, start 8000 \, end 8900 \, dur 7000 \, bang
+;
+#X text 363 999 Gesture values;
+#X msg 120 598 delay 10 \, start 100 \, end 200 \, dur 1500;
+#X msg 183 628 delay 3000 \, start 200 \, end 300 \, dur 8521;
+#X msg 246 658 delay 6000 \, start 300 \, end 400 \, dur 985;
+#X msg 310 688 delay 9000 \, start 400 \, end 500 \, dur 2200;
+#X obj 125 131 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 125 191 cnv 14 18 14 empty empty 3 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 125 151 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 125 171 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 125 241 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 125 301 cnv 14 18 14 empty empty 3 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 125 261 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 125 281 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 125 211 cnv 14 18 14 empty empty 4 2 8 0 12 #606060 #dcdcdc
+0;
+#X text 147 130 (bang);
+#X text 197 130 Trigger all gestures simultaneously;
+#X text 147 150 (bang/message);
+#X text 147 170 (bang/message);
+#X text 147 190 (bang/message);
+#X text 147 210 (bang/message);
+#X text 247 150 "Bang" triggers gesture 1 \, a message of "delay" \,
+"start" \, "end" \, or "dur" followed by a float value sets the respective
+value for each parameter of the gesture., f 163;
+#X text 247 170 "Bang" triggers gesture 2 \, a message of "delay" \,
+"start" \, "end" \, or "dur" followed by a float value sets the respective
+value for each parameter of the gesture., f 163;
+#X text 247 190 "Bang" triggers gesture 3 \, a message of "delay" \,
+"start" \, "end" \, or "dur" followed by a float value sets the respective
+value for each parameter of the gesture., f 163;
+#X text 247 210 "Bang" triggers gesture 4 \, a message of "delay" \,
+"start" \, "end" \, or "dur" followed by a float value sets the respective
+value for each parameter of the gesture., f 163;
+#X text 147 240 (float);
+#X text 207 240 Gesture 1 in the form of a linear ramp of float values
+determed by the parameters set for that gesture, f 105;
+#X text 147 260 (float);
+#X text 207 260 Gesture 1 in the form of a linear ramp of float values
+determed by the parameters set for that gesture, f 105;
+#X text 147 280 (float);
+#X text 207 280 Gesture 1 in the form of a linear ramp of float values
+determed by the parameters set for that gesture, f 105;
+#X text 147 300 (float);
+#X text 207 300 Gesture 1 in the form of a linear ramp of float values
+determed by the parameters set for that gesture, f 105;
+#X text 128 332 None;
+#X text 85 370 Dependencies: None;
+#X obj 717 20 cnv 8 83 16 empty empty tdh-lib 14 8 0 14 #dfdfdf #131255
+0;
+#X connect 10 0 13 0;
+#X connect 10 1 14 0;
+#X connect 10 2 15 0;
+#X connect 10 3 16 0;
+#X connect 12 0 10 0;
+#X connect 17 0 10 1;
+#X connect 19 0 10 2;
+#X connect 20 0 10 3;
+#X connect 21 0 10 4;
+#X connect 27 0 10 1;
+#X connect 27 1 10 2;
+#X connect 27 2 10 3;
+#X connect 27 3 10 4;
+#X connect 28 0 10 4;
+#X connect 30 0 10 1;
+#X connect 31 0 10 2;
+#X connect 32 0 10 3;
+#X connect 33 0 10 4;
