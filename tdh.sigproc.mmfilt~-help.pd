@@ -1,21 +1,48 @@
-#N canvas 103 23 806 855 10;
+#N canvas 2211 -308 1012 923 10;
+#X obj 342 494 noise~;
+#X text 173 546 Change cut-off frequency-->;
+#X text 6 566 Adjust Q (aka bandwidth - for bandpass filter only) -->
+;
+#X text 52 587 Control balance between the original signal (dry->0)
+and the filtered signal (wet->1), f 43;
+#X text 318 585 -->;
+#X text 600 554 <-- Choose filter type;
+#X text 19 398 This module gives you access to 3 types of audio filters:
+;
+#X text 18 423 LOWPASS - allows partials from the cut-off and lower
+to pass;
+#X text 18 445 HIGHPASS - allows partials from the cut-off and higher
+to pass, f 81;
+#X text 17 467 BANDPASS - allows partials on each side of the cutoff
+frequency to pass \, and the amount of partials allowed to pass on
+each side of the cut-off is controlled by the Q (aka bandwidth) control.
+, f 164;
+#X text 20 351 An audio filter allows certain signal partials (the
+sine waves that combine to make a real-world signal) to pass while
+blocking other partials. point where partials are cut off or allowed
+to pass is known as the CUT-OFF FREQUENCY. The balance between filtered
+and original signal is controlled by the DRY/WET control \, where 0
+is the original signal (dry) \, and 1 is only the filtered signal (wet).
+, f 163;
+#X obj 342 515 satk.sigproc.mmfilt~;
+#X obj 201 629 satk.util.spectrograph~;
 #X text 17 48 Travis Houldcroft || travishouldcroft.com;
-#X obj 3 1 cnv 15 800 40 empty \$0-helpPatchTitleBar tdh.seq.gesture
-9 20 0 18 #a0a0a0 #202020 0;
-#X obj 2 113 cnv 2 800 3 empty \$0-helpPatchSecLabelInlets Inlets 20
-15 0 16 #a0a0a0 #202020 0;
-#X obj 3 228 cnv 2 800 3 empty \$0-helpPatchSecLabelOutlets Outlets
+#X obj 3 1 cnv 15 1000 40 empty \$0-helpPatchTitleBar satk.sigproc.mmfilt~
+9 20 0 18 #580050 #dce4fc 0;
+#X obj 2 123 cnv 2 1000 3 empty \$0-helpPatchSecLabelInlets Inlets
 20 15 0 16 #a0a0a0 #202020 0;
-#X obj 3 354 cnv 2 800 3 empty \$0-helpPatchSecLabelNotes Notes 20
-15 0 16 #a0a0a0 #202020 0;
-#X obj 3 384 cnv 1 800 1 empty \$0-helpPatchSecDivider empty 9 20 0
-18 #a0a0a0 #202020 0;
-#X obj 3 323 cnv 2 800 3 empty \$0-helpPatchSecLabelArgs Arguments
+#X obj 3 233 cnv 2 1000 3 empty \$0-helpPatchSecLabelOutlets Outlets
 20 15 0 16 #a0a0a0 #202020 0;
-#X obj 3 77 cnv 1 800 1 empty \$0-helpPatchSecDivider empty 9 20 0
+#X obj 3 313 cnv 2 1000 3 empty \$0-helpPatchSecLabelNotes Notes 20
+15 0 16 #a0a0a0 #202020 0;
+#X obj 3 344 cnv 1 1000 1 empty \$0-helpPatchSecDivider empty 9 20
+0 18 #a0a0a0 #202020 0;
+#X obj 3 273 cnv 2 1000 3 empty \$0-helpPatchSecLabelArgs Arguments
+20 15 0 16 #a0a0a0 #202020 0;
+#X obj 3 77 cnv 1 1000 1 empty \$0-helpPatchSecDivider empty 9 20 0
 18 #a0a0a0 #202020 0;
-#N canvas 2096 454 621 281 help-init 0;
-#N canvas 2229 -169 1435 1029 cnv-set 0;
+#N canvas 2413 319 621 281 help-init 0;
+#N canvas 1813 -209 1435 1029 cnv-set 0;
 #N canvas 1440 23 349 258 canvas-ctrl 0;
 #X obj 291 1 inlet;
 #N canvas 248 270 1089 459 graph 0;
@@ -102,8 +129,8 @@
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 800 40 empty \$0-test_canvas tdh.seq.gesture 20
-15 0 16 #a0a0a0 #202020 0;
+#X obj 738 322 cnv 2 1000 40 empty \$0-test_canvas satk.sigproc.mmfilt~
+20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
 #X obj 170 88 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
@@ -320,9 +347,6 @@ and pasted for easy initializing formatting)., f 89;
 #X connect 2 0 1 0;
 #X restore 343 355 pd canvas-ctrl;
 #X text 142 332 \$0-helpPatchTitleBar;
-#X msg 343 319 doll 1 \, rec helpPatchTitleBar \, size 15 \, visw 501
-\, vish 40 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 20 \, bgclr 1
-\, lblclr 12, f 123;
 #X msg 438 572 symbol Inlets;
 #X msg 343 549 doll 1 \, rec helpPatchSecLabelInlets \, size 2 \, visw
 501 \, vish 3 \, lblfon 0 \, lblsz 16 \, lblx 20 \, lbly 15 \, bgclr
@@ -431,8 +455,8 @@ bgclr 1 \, lblclr 12, f 123;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 800 40 empty \$0-test_canvas tdh.seq.gesture 20
-15 0 16 #a0a0a0 #202020 0;
+#X obj 738 322 cnv 2 1000 40 empty \$0-test_canvas satk.sigproc.mmfilt~
+20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
 #X obj 170 88 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
@@ -734,8 +758,8 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 800 40 empty \$0-test_canvas tdh.seq.gesture 20
-15 0 16 #a0a0a0 #202020 0;
+#X obj 738 322 cnv 2 1000 40 empty \$0-test_canvas satk.sigproc.mmfilt~
+20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
 #X obj 170 88 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
@@ -1037,8 +1061,8 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 800 40 empty \$0-test_canvas tdh.seq.gesture 20
-15 0 16 #a0a0a0 #202020 0;
+#X obj 738 322 cnv 2 1000 40 empty \$0-test_canvas satk.sigproc.mmfilt~
+20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
 #X obj 170 88 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
@@ -1340,8 +1364,8 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 800 40 empty \$0-test_canvas tdh.seq.gesture 20
-15 0 16 #a0a0a0 #202020 0;
+#X obj 738 322 cnv 2 1000 40 empty \$0-test_canvas satk.sigproc.mmfilt~
+20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
 #X obj 170 88 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
@@ -1643,8 +1667,8 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 800 40 empty \$0-test_canvas tdh.seq.gesture 20
-15 0 16 #a0a0a0 #202020 0;
+#X obj 738 322 cnv 2 1000 40 empty \$0-test_canvas satk.sigproc.mmfilt~
+20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
 #X obj 170 88 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
@@ -1993,37 +2017,40 @@ canbas name has "\$0-" at the start of its receive name., f 123;
 with a message, f 72;
 #X obj 244 155 cnv 5 5 5 empty empty ⟵ -3 3 0 30 #fcfcfc #9c00fc
 0;
-#X connect 2 0 0 0;
-#X connect 3 0 16 1;
-#X connect 4 0 16 0;
-#X connect 5 0 15 0;
-#X connect 6 0 17 0;
-#X connect 7 0 17 1;
-#X connect 9 0 18 1;
-#X connect 10 0 18 0;
-#X connect 12 0 19 0;
-#X connect 13 0 19 1;
-#X connect 21 0 28 0;
-#X connect 22 0 24 0;
-#X connect 24 0 25 0;
-#X connect 25 0 36 0;
-#X connect 28 0 0 1;
-#X connect 34 0 2 0;
-#X connect 35 0 5 0;
-#X connect 37 0 0 0;
+#X msg 343 318 doll 1 \, rec helpPatchTitleBar \, size 15 \, visw 701
+\, vish 40 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 20 \, bgclr 29
+\, lblclr 8, f 123;
+#X connect 2 0 15 1;
+#X connect 3 0 15 0;
+#X connect 4 0 14 0;
+#X connect 5 0 16 0;
+#X connect 6 0 16 1;
+#X connect 8 0 17 1;
+#X connect 9 0 17 0;
+#X connect 11 0 18 0;
+#X connect 12 0 18 1;
+#X connect 20 0 27 0;
+#X connect 21 0 23 0;
+#X connect 23 0 24 0;
+#X connect 24 0 35 0;
+#X connect 27 0 0 1;
+#X connect 33 0 59 0;
+#X connect 34 0 4 0;
+#X connect 36 0 0 0;
+#X connect 37 0 14 0;
 #X connect 38 0 15 0;
-#X connect 39 0 16 0;
-#X connect 40 0 4 0;
-#X connect 40 0 3 0;
-#X connect 41 0 17 0;
-#X connect 42 0 6 0;
-#X connect 42 0 7 0;
-#X connect 43 0 18 0;
-#X connect 44 0 10 0;
-#X connect 44 0 9 0;
-#X connect 45 0 19 0;
-#X connect 46 0 12 0;
-#X connect 46 0 13 0;
+#X connect 39 0 3 0;
+#X connect 39 0 2 0;
+#X connect 40 0 16 0;
+#X connect 41 0 5 0;
+#X connect 41 0 6 0;
+#X connect 42 0 17 0;
+#X connect 43 0 9 0;
+#X connect 43 0 8 0;
+#X connect 44 0 18 0;
+#X connect 45 0 11 0;
+#X connect 45 0 12 0;
+#X connect 59 0 0 0;
 #X restore 191 233 pd cnv-set;
 #X f 34;
 #X obj 3 15 cnv 5 5 5 empty empty | 0 0 0 14 #fcfcfc #404040 0;
@@ -2041,135 +2068,185 @@ in [message( objects get saved to the patch., f 84;
 #X text 486 168 EDIT HERE to change patch WIDTH, f 12;
 #X text 16 4 This subpatch (and nested subpatches) helps set the uniform
 titles and graphics for ABSTRACTIONS., f 84;
-#X msg 426 179 800;
-#X msg 191 177 symbol tdh.seq.gesture;
+#X msg 426 179 1000;
+#X msg 191 177 symbol satk.sigproc.mmfilt~;
 #X connect 2 0 3 0;
 #X connect 3 0 11 0;
 #X connect 3 0 10 0;
 #X connect 10 0 0 1;
 #X connect 11 0 0 0;
-#X restore 723 49 pd help-init;
-#X obj 57 592 tdh.seq.gesture;
-#X text 15 396 [tdh.seq.gesture] is a tool for sequencing and automating
-gestures \, in the form of streams of linear floating point data. The
-gestures can be triggered simultaneously or individually \, via trigger
-inlets or GUI. A sequence can be created through the use of the delay
-fields., f 96;
-#X obj 57 492 bng 15 250 50 0 empty empty Trigger\\\ all\\\ gestures
-17 7 0 10 #fcfcfc #000000 #000000;
-#X floatatom 57 828 5 0 0 0 - - - 0;
-#X floatatom 141 828 5 0 0 0 - - - 0;
-#X floatatom 225 828 5 0 0 0 - - - 0;
-#X floatatom 310 828 5 0 0 0 - - - 0;
-#X obj 99 510 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
-#X text 15 437 All inlets for each gesture also accept the symbols
-"delay" \, "start" \, "end" \, & "dur" followed by a float value to
-set the respective parameter for each gesture. This allows external
-setting of values \, particularly useful for paramter initialization.
-The trigger message "bang" can also sent within the same message box
-(as depicted below)., f 96;
-#X obj 162 534 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 225 553 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 289 572 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X text 436 533 Gesture 2 trigger and parameters;
-#X text 504 554 Gesture 3 trigger and parameters;
-#X text 566 573 Gesture 4 trigger and parameters;
-#X text 363 511 Trigger gesture 1 or set parameters;
-#X text 388 642 Parameters can be set and gesture can be triggered
-within a single message., f 26;
-#N canvas 2321 337 583 235 init 0;
-#X obj 9 189 outlet;
-#X obj 72 189 outlet;
-#X obj 135 189 outlet;
-#X obj 199 189 outlet;
-#X obj 16 14 loadbang;
-#X msg 9 69 delay 0 \, start 0 \, end 100 \, dur 5000;
-#X msg 72 99 delay 5000 \, start 100 \, end 200 \, dur 5000;
-#X msg 135 130 delay 10000 \, start 200 \, end 300 \, dur 5000;
-#X msg 199 159 delay 15000 \, start 300 \, end 400 \, dur 5000;
-#X connect 4 0 5 0;
-#X connect 4 0 6 0;
-#X connect 4 0 7 0;
-#X connect 4 0 8 0;
-#X connect 5 0 0 0;
-#X connect 6 0 1 0;
-#X connect 7 0 2 0;
-#X connect 8 0 3 0;
-#X restore 6 565 pd init;
-#X f 5;
-#X msg 328 622 delay 500 \, start 8000 \, end 8900 \, dur 7000 \, bang
+#X restore 920 49 pd help-init;
+#X obj 125 132 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 125 172 cnv 14 18 14 empty empty 10 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 125 152 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 125 242 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 848 4 cnv 8 150 32 empty empty SATK 14 8 0 14 #dfdfdf #131255
+0;
+#X obj 848 21 cnv 8 150 16 empty empty Sound\\\ Art\\\ Tool-Kit 14
+8 0 10 #dfdfdf #131255 0;
+#X text 14 92 A multi-mode filter \, giving you access to LOWPASS \,
+HIGHPASS \, and BANDPASS filters, f 95;
+#X obj 125 212 cnv 14 18 14 empty empty 10 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 125 192 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
+0;
+#N canvas 1838 -134 1149 842 help-audio-out 0;
+#X obj 32 30 inlet~;
+#X obj 192 30 inlet~;
+#X obj 255 152 tgl 15 0 \$0-outputDSP-s \$0-outputDSP-r DSP 17 7 0
+10 #fcfcfc #000000 #000000 0 1;
+#X obj 260 174 hsl 64 15 0.01 1 1 0 empty empty Vol 68 7 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 192 220 *~;
+#X obj 254 120 cnv 2 90 2 empty \$0-audioOutLabel Audio_Output 1 9
+0 12 #e0e0e0 #404040 0;
+#X obj 298 152 tgl 15 0 \$0-helpAudioOutMute-s \$0-helpAudioOutMute-r
+Mute 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 32 226 *~;
+#X obj 32 300 dac~ 1 2;
+#X msg 825 124 \; pd dsp \$1;
+#X text 2 260 _;
+#X obj 492 98 s \$0-audioOutLabel;
+#X msg 490 68 label \$1;
+#X msg 491 27 symbol Audio\ Output;
+#X obj 354 121 vu 8 80 \$0-audioOutVU1-r empty -1 -8 0 10 #404040 #000000
+0 0;
+#X msg 449 319 scale 0;
+#X obj 564 279 cnv 14 35 14 empty empty init 4 7 0 10 #e0c4fc #7c7c7c
+0;
+#X msg 509 299 0;
+#X obj 509 279 loadbang;
+#X obj 656 318 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcfc #7c7c7c 0
 ;
-#X text 363 828 Gesture values;
-#X msg 120 510 delay 10 \, start 100 \, end 200 \, dur 1500;
-#X msg 183 532 delay 3000 \, start 200 \, end 300 \, dur 8521;
-#X msg 246 553 delay 6000 \, start 300 \, end 400 \, dur 985;
-#X msg 310 572 delay 9000 \, start 400 \, end 500 \, dur 2200;
-#X obj 125 121 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
+#N canvas 1738 289 915 515 muteButtonDisplay 0;
+#X obj 172 67 sel 0 1;
+#X text 17 108 When [tgl] is 0 \, change the background color to the
+"off" color, f 23;
+#X text 373 111 When [tgl] is 1 \, change the background color to the
+"on" color \, AND change the foreground color (the "x") to the on color
+\, so we don't see the "x" displayed, f 23;
+#X obj 319 157 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcfc #7c7c7c 0
+;
+#X obj 318 23 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
+;
+#X msg 242 110 color 3;
+#X msg 172 112 color 0;
+#X obj 172 22 r \$0-helpAudioOutMute-s;
+#X obj 172 156 s \$0-helpAudioOutMute-r;
+#X connect 0 0 6 0;
+#X connect 0 1 5 0;
+#X connect 5 0 8 0;
+#X connect 6 0 8 0;
+#X connect 7 0 0 0;
+#X restore 509 230 pd muteButtonDisplay;
+#X obj 509 317 s \$0-helpAudioOutMute-s;
+#X obj 648 257 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
+;
+#N canvas 3092 159 450 300 muteButtonHandling 0;
+#X msg 16 69 \$1 20;
+#X obj 17 30 sel 0 1;
+#X obj 44 49 f 0;
+#X obj 16 49 f 1;
+#X obj 165 16 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
+;
+#X obj 16 114 s~ \$0-helpAudioOutMute;
+#X obj 16 91 vline~;
+#X obj 154 116 cnv 14 18 14 empty empty S~ 6 8 0 8 #e0c4fc #606060
 0;
-#X obj 125 186 cnv 14 18 14 empty empty 3 2 8 0 12 #606060 #dcdcdc
+#X obj 17 11 r \$0-helpAudioOutMute-s;
+#X connect 0 0 6 0;
+#X connect 1 0 3 0;
+#X connect 1 1 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 6 0 5 0;
+#X connect 8 0 1 0;
+#X restore 509 256 pd muteButtonHandling;
+#X obj 668 257 cnv 14 18 14 empty empty S~ 6 8 0 8 #e0c4fc #606060
 0;
-#X obj 125 141 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
+#X obj 68 141 r~ \$0-helpAudioOutMute;
+#X obj 32 247 *~;
+#X obj 192 241 *~;
+#X obj 381 149 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcfc #7c7c7c 0
+;
+#X obj 398 149 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcc4 #7c7c7c 0
+;
+#X obj 671 234 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcfc #7c7c7c 0
+;
+#X obj 648 234 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
+;
+#X obj 252 102 cnv 15 1 1 empty empty Ch1 0 8 0 10 #fcfcfc #404040
 0;
-#X obj 125 166 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
+#X obj 358 102 cnv 15 1 1 empty empty Ch2 0 8 0 10 #fcfcfc #404040
 0;
-#X obj 125 236 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 125 296 cnv 14 18 14 empty empty 3 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 125 256 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 125 276 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 125 206 cnv 14 18 14 empty empty 4 2 8 0 12 #606060 #dcdcdc
-0;
-#X text 147 120 (bang);
-#X text 197 120 Trigger all gestures simultaneously;
-#X text 147 140 (bang/message);
-#X text 147 165 (bang/message);
-#X text 147 185 (bang/message);
-#X text 147 205 (bang/message);
-#X text 247 140 "Bang" triggers gesture 1 \, a message of "delay" \,
-"start" \, "end" \, or "dur" followed by a float value sets the respective
-value for each parameter of the gesture., f 91;
-#X text 147 235 (float);
-#X text 147 255 (float);
-#X text 147 275 (float);
-#X text 147 295 (float);
-#X text 128 332 None;
-#X text 125 361 Dependencies: None;
-#X obj 717 20 cnv 8 83 16 empty empty tdh.lib 14 8 0 14 #dfdfdf #131255
-0;
-#X text 247 165 "Bang" triggers gesture 2 \, messages set parameters
-same as inlet 1 for gesture 2, f 80;
-#X text 207 235 Gesture 1 as a linear ramp of float values;
-#X text 207 255 Gesture 2 as a linear ramp of float values;
-#X text 207 275 Gesture 3 as a linear ramp of float values;
-#X text 207 295 Gesture 4 as a linear ramp of float values;
-#X text 247 185 "Bang" triggers gesture 3 \, messages set parameters
-same as inlet 1 for gesture 2, f 80;
-#X text 247 205 "Bang" triggers gesture 4 \, messages set parameters
-same as inlet 1 for gesture 2, f 80;
-#X text 19 87 A module to send ramps of values in order to generate
-sonic gestures, f 77;
-#X connect 9 0 12 0;
-#X connect 9 1 13 0;
-#X connect 9 2 14 0;
-#X connect 9 3 15 0;
-#X connect 11 0 9 0;
-#X connect 16 0 9 1;
-#X connect 18 0 9 2;
-#X connect 19 0 9 3;
-#X connect 20 0 9 4;
-#X connect 26 0 9 1;
-#X connect 26 1 9 2;
-#X connect 26 2 9 3;
-#X connect 26 3 9 4;
-#X connect 27 0 9 4;
-#X connect 29 0 9 1;
-#X connect 30 0 9 2;
-#X connect 31 0 9 3;
-#X connect 32 0 9 4;
+#X obj 116 307 env~;
+#X obj 366 121 vu 8 80 \$0-audioOutVU2-r empty -1 -8 0 10 #404040 #000000
+0 0;
+#X obj 116 398 s \$0-audioOutVU1-r;
+#X obj 398 118 cnv 14 14 14 empty empty R 6 8 0 8 #fc8000 #7c7c7c 0
+;
+#X obj 229 398 cnv 14 14 14 empty empty S 6 8 0 8 #00fc04 #7c7c7c 0
+;
+#X text 414 148 (mute);
+#X obj 267 308 env~;
+#X obj 380 399 cnv 14 14 14 empty empty S 6 8 0 8 #fc8000 #7c7c7c 0
+;
+#X obj 267 399 s \$0-audioOutVU2-r;
+#X obj 381 118 cnv 14 14 14 empty empty R 6 8 0 8 #00fc04 #7c7c7c 0
+;
+#X text 416 117 (VU);
+#X obj 116 328 - 100;
+#X obj 267 329 - 100;
+#X obj 931 107 r pd;
+#X obj 931 126 route dsp;
+#X msg 931 147 set \$1;
+#X obj 931 166 s \$0-outputDSP-r;
+#X obj 825 105 r \$0-outputDSP-s;
+#X connect 0 0 7 0;
+#X connect 1 0 4 0;
+#X connect 3 0 4 1;
+#X connect 3 0 7 1;
+#X connect 4 0 27 0;
+#X connect 7 0 26 0;
+#X connect 12 0 11 0;
+#X connect 13 0 12 0;
+#X connect 15 0 36 0;
+#X connect 15 0 42 0;
+#X connect 17 0 21 0;
+#X connect 18 0 17 0;
+#X connect 18 0 15 0;
+#X connect 25 0 26 1;
+#X connect 25 0 27 1;
+#X connect 26 0 8 0;
+#X connect 26 0 34 0;
+#X connect 27 0 8 1;
+#X connect 27 0 40 0;
+#X connect 34 0 45 0;
+#X connect 40 0 46 0;
+#X connect 45 0 36 0;
+#X connect 46 0 42 0;
+#X connect 47 0 48 0;
+#X connect 48 0 49 0;
+#X connect 49 0 50 0;
+#X connect 51 0 9 0;
+#X coords 0 -1 1 1 127 110 2 250 100;
+#X restore 55 631 pd help-audio-out;
+#X text 145 130 (sig);
+#X text 195 130 Signal to be filtered;
+#X text 145 150 (float);
+#X text 195 150 Values 0 \, 1 \, 2 to determine the filter type;
+#X text 145 170 (float);
+#X text 195 170 Cutoff frequency;
+#X text 145 190 (float) Resonance/Q/Bandwidth value;
+#X text 145 210 (float) Dry/wet signal output \, where 0 is dry;
+#X text 147 241 (sig);
+#X text 197 241 Filtered signal;
+#X text 121 280 None;
+#X connect 0 0 11 0;
+#X connect 11 0 12 0;
+#X connect 11 0 31 0;
+#X connect 11 0 31 1;
