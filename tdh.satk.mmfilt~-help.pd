@@ -1,0 +1,88 @@
+#N canvas 1941 -160 1053 796 10;
+#X text -4 34 Travis Houldcroft || travishouldcroft.com;
+#X obj -20 0 cnv 15 1018 29 empty empty Multi-Mode\ Filter 20 12 0
+14 #e0e0e0 #404040 0;
+#X obj -20 98 cnv 8 1018 8 empty empty Inlets 20 15 0 14 #e0e0e0 #404040
+0;
+#X text 0 127 0;
+#X text 22 127 -;
+#X obj -20 168 cnv 8 1018 8 empty empty Outlets 20 15 0 14 #e0e0e0
+#404040 0;
+#X text 0 197 0;
+#X text 22 197 -;
+#X text 44 127 (type) inlet description;
+#X text 44 197 (type) outlet description;
+#X obj -20 298 cnv 4 1018 4 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj -20 248 cnv 8 1018 8 empty empty Arguments 20 15 0 14 #e0e0e0
+#404040 0;
+#X obj -20 56 cnv 4 1018 4 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 305 484 tdh.satk.mmfilt~;
+#X obj 305 463 noise~;
+#X text 0 280 TBD;
+#N canvas 495 23 450 300 audio-out 0;
+#X obj 105 104 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X msg -26 139 \; pd dsp \$1;
+#X text 123 104 DSP On/Off;
+#X obj 281 86 inlet~;
+#X obj 326 86 inlet~;
+#X obj 281 160 dac~ 1 2;
+#X obj 105 132 hsl 94 17 0 1 0 0 empty empty Gain -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X msg 47 180 set \$1;
+#X floatatom 105 152 5 0 0 0 - - -, f 5;
+#X msg 47 211 set \$1;
+#X obj 281 121 *~;
+#X obj 324 121 *~;
+#X obj 51 27 loadbang;
+#X msg 51 52 1;
+#X connect 0 0 1 0;
+#X connect 3 0 10 0;
+#X connect 4 0 11 0;
+#X connect 6 0 7 0;
+#X connect 6 0 10 1;
+#X connect 6 0 11 1;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 8 0 10 1;
+#X connect 8 0 11 1;
+#X connect 9 0 6 0;
+#X connect 10 0 5 0;
+#X connect 11 0 5 1;
+#X connect 12 0 13 0;
+#X connect 13 0 0 0;
+#X coords 0 -1 1 1 107 73 2 100 100;
+#X restore 44 635 pd audio-out;
+#X obj 164 638 tdh.satk.spectrograph~;
+#X text 136 515 Change cut-off frequency-->;
+#X text -31 535 Adjust Q (aka bandwidth - for bandpass filter only)
+-->;
+#X text 15 556 Control balance between the original signal (dry->0)
+and the filtered signal (wet->1), f 43;
+#X text 281 554 -->;
+#X text -4 69 A multi-mode filter \, giving you access to LOWPASS \,
+HIGHPASS \, and BANDPASS filters, f 95;
+#X text 563 523 <-- Choose filter type;
+#X text -18 358 This module gives you access to 3 types of audio filters:
+;
+#X text -19 383 LOWPASS - allows partials from the cut-off and lower
+to pass;
+#X text -19 405 HIGHPASS - allows partials from the cut-off and higher
+to pass, f 81;
+#X text -20 427 BANDPASS - allows partials on each side of the cutoff
+frequency to pass \, and the amount of partials allowed to pass on
+each side of the cut-off is controlled by the Q (aka bandwidth) control.
+, f 164;
+#X text -17 310 An audio filter allows certain signal partials (the
+sine waves that combine to make a real-world signal) to pass while
+blocking other partials. point where partials are cut off or allowed
+to pass is known as the CUT-OFF FREQUENCY. The balance between filtered
+and original signal is controlled by the DRY/WET control \, where 0
+is the original signal (dry) \, and 1 is only the filtered signal (wet).
+, f 163;
+#X connect 13 0 16 0;
+#X connect 13 0 17 0;
+#X connect 13 0 16 1;
+#X connect 14 0 13 0;
