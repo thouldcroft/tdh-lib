@@ -1,4 +1,4 @@
-#N canvas 53 40 1390 853 10;
+#N canvas 1280 -27 1390 853 10;
 #X obj -249 328 lop~;
 #X obj -207 328 hip~;
 #X obj -166 328 bp~;
@@ -67,15 +67,15 @@ Ariza's abstration "mgGate4~" \, a part of the Martingale Library (https://code.
 #X obj -89 73 inlet cutoff_freq;
 #X obj -249 74 inlet filter_type;
 #X obj 29 73 inlet res;
-#X floatatom 131 138 5 0 0 0 - - -, f 5;
+#X floatatom 131 138 5 0 0 0 - - - 0;
 #X text 169 136 Cut-off Freq.;
-#X floatatom 131 154 5 0 0 0 - - -, f 5;
+#X floatatom 131 154 5 0 0 0 - - - 0;
 #X text 169 152 Q (BP Only);
 #X obj 192 73 f \$1;
 #X obj 131 73 f \$2;
 #X obj 161 73 f \$3;
-#X floatatom -159 285 5 0 0 1 Cutoff - -, f 5;
-#X floatatom -84 285 5 0 0 1 Q - -, f 5;
+#X floatatom -159 285 5 0 0 1 Cutoff - - 0;
+#X floatatom -84 285 5 0 0 1 Q - - 0;
 #X text -678 101 Arguments:;
 #X text -676 56 Travis Houldcroft;
 #X text -677 69 thouldcroft@gmail.com;
@@ -87,33 +87,33 @@ Ariza's abstration "mgGate4~" \, a part of the Martingale Library (https://code.
 #X text -669 137 3: Resonance/Q (BP Only);
 #X obj -366 540 outlet~;
 #X obj 131 48 loadbang;
-#X obj 296 132 vradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+#X obj 296 132 vradio 15 1 0 3 empty empty empty 0 -8 0 10 #fcfcfc
+#000000 #000000 0;
 #X obj -249 174 r filt_type_select;
 #X obj -249 196 + 1;
 #X obj -249 118 s inlet_filt_select_msg;
 #X text 313 130 LP;
 #X text 313 147 HP;
 #X text 313 163 BP;
-#X obj -152 382 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+#X obj -152 382 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
 #X obj -366 482 *~;
 #X obj -155 405 - 1;
 #X obj -155 427 * -1;
 #X obj -249 482 *~;
-#X obj 134 171 hsl 64 15 0 1 0 0 empty empty empty 70 7 0 10 -262144
--1 -1 0 1;
+#X obj 134 171 hsl 64 15 0 1 0 0 empty empty empty 70 7 0 10 #fcfcfc
+#000000 #000000 0 1;
 #X text -343 481 Dry Sig;
 #X text -225 481 Wet Sig;
-#X floatatom 203 171 5 0 0 0 - - -, f 5;
+#X floatatom 203 171 5 0 0 0 - - - 0;
 #X text 236 170 Dry/Wet;
-#X obj 296 206 s filt_type_select;
-#X floatatom -232 219 5 0 0 0 - - -, f 5;
+#X obj 296 317 s filt_type_select;
+#X floatatom -232 219 5 0 0 0 - - - 0;
 #X text -85 381 Dry/Wet;
 #X text -201 219 DEBUG;
 #X obj 296 79 r inlet_filt_select_msg;
 #X text 220 71 Arguments;
-#X text 100 184 Out;
+#X text 100 295 Out;
 #X text 152 100 Type;
 #X text 212 100 Freq;
 #X text 280 100 Q;
@@ -124,6 +124,9 @@ Ariza's abstration "mgGate4~" \, a part of the Martingale Library (https://code.
 #X obj 29 95 change;
 #X obj 496 55 inlet drywet;
 #X text 326 100 D/W;
+#X text 100 234 Out;
+#X obj 101 204 cnv 15 248 27 empty empty Multi-Mode\ Filter 20 12 0
+14 #e0e0e0 #404040 0;
 #X connect 0 0 39 0;
 #X connect 1 0 39 0;
 #X connect 2 0 39 0;
@@ -164,4 +167,4 @@ Ariza's abstration "mgGate4~" \, a part of the Martingale Library (https://code.
 #X connect 58 0 8 0;
 #X connect 59 0 10 0;
 #X connect 60 0 40 0;
-#X coords 0 -1 1 1 250 100 2 100 100;
+#X coords 0 -1 1 1 250 150 2 100 100;
