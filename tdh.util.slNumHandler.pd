@@ -1,0 +1,31 @@
+#N canvas 351 128 481 197 10;
+#X obj 23 34 hsl 128 15 0 127 0 0 \$0-\$1-s \$0-\$1-r empty -2 -8 0
+10 #fcfcfc #000000 #000000 0 1;
+#X floatatom 20 56 5 0 0 0 - \$0-\$2-r \$0-\$2-s 0;
+#X msg 198 57 set \$1;
+#X msg 348 57 set \$1;
+#X floatatom 188 107 5 0 0 0 - - - 0;
+#X obj 397 33 cnv 14 14 14 empty empty R 6 8 0 8 #404040 #dcdcdc 0
+;
+#X obj 258 79 cnv 14 14 14 empty empty S 6 8 0 8 #404040 #dcdcdc 0
+;
+#X obj 9 56 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #404040
+#fcfcfc 0;
+#X obj 248 33 cnv 14 14 14 empty empty R 6 8 0 8 #9c00fc #b8b8b8 0
+;
+#X obj 408 80 cnv 14 14 14 empty empty S 6 8 0 8 #9c00fc #b8b8b8 0
+;
+#X obj 11 34 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #9c00fc
+#fcfcfc 0;
+#X obj 188 154 outlet;
+#X obj 188 33 r \$0-\$1-s;
+#X obj 198 79 s \$0-\$2-r;
+#X obj 338 33 r \$0-\$2-s;
+#X obj 348 80 s \$0-\$1-r;
+#X connect 2 0 13 0;
+#X connect 3 0 15 0;
+#X connect 4 0 11 0;
+#X connect 12 0 2 0;
+#X connect 12 0 4 0;
+#X connect 14 0 3 0;
+#X connect 14 0 4 0;
