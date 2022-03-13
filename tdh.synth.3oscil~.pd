@@ -1,68 +1,68 @@
-#N canvas 1280 -27 1230 853 10;
-#X obj 135 110 vradio 15 0 0 8 empty empty Shape -5 -8 0 10 #fcfcfc
+#N canvas 1510 -457 1230 967 10;
+#X obj 184 603 vradio 15 0 0 8 empty empty Shape -5 -8 0 10 #fcfcfc
 #000000 #000000 0;
-#X obj 185 260 vsl 15 128 0.01 1 1 0 empty empty Gain -5 -9 0 10 #fcfcfc
+#X obj 234 753 vsl 15 128 0.01 1 1 0 empty empty Gain -5 -9 0 10 #fcfcfc
 #000000 #000000 0 1;
-#X obj 135 260 vsl 15 128 0 11 0 0 empty empty Freq -5 -9 0 10 #fcfcfc
+#X obj 184 753 vsl 15 128 0 11 0 0 empty empty Freq -5 -9 0 10 #fcfcfc
 #000000 #000000 0 1;
-#X obj 185 110 vradio 15 0 0 9 empty empty Octave -7 -8 0 10 #fcfcfc
+#X obj 234 603 vradio 15 0 0 9 empty empty Octave -7 -8 0 10 #fcfcfc
 #000000 #000000 0;
-#X obj 185 500 s \$0-octave1;
-#X obj 135 530 s \$0-freq1;
-#X obj 185 600 s \$0-gain1;
-#X obj 135 480 s \$0-shape1;
-#X obj 189 670 r \$0-octave1;
-#X obj 162 650 r \$0-freq1;
-#X obj 216 690 r \$0-gain1;
-#X obj 135 630 r \$0-shape1;
-#X obj 135 870 outlet~;
-#X obj 10 40 loadbang;
-#X obj 185 560 expr if($f1 < 0.011 \, 0 \, $f1), f 15;
-#X obj 135 75 cnv 5 75 5 empty empty Osc\\\ 1 17 12 0 14 #e0e0e0 #404040
+#X obj 234 993 s \$0-octave1;
+#X obj 184 1023 s \$0-freq1;
+#X obj 234 1093 s \$0-gain1;
+#X obj 184 973 s \$0-shape1;
+#X obj 238 1163 r \$0-octave1;
+#X obj 211 1143 r \$0-freq1;
+#X obj 265 1183 r \$0-gain1;
+#X obj 184 1123 r \$0-shape1;
+#X obj 184 1386 outlet~;
+#X obj 59 533 loadbang;
+#X obj 234 1053 expr if($f1 < 0.011 \, 0 \, $f1), f 15;
+#X obj 184 568 cnv 5 75 5 empty empty Osc\\\ 1 17 12 0 14 #e0e0e0 #404040
 0;
-#X obj 235 70 cnv 5 5 315 empty empty empty 20 12 0 14 #e0e0e0 #404040
+#X obj 284 563 cnv 5 5 315 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X obj 275 110 vradio 15 0 0 8 empty empty Shape -5 -8 0 10 #fcfcfc
+#X obj 324 603 vradio 15 0 0 8 empty empty Shape -5 -8 0 10 #fcfcfc
 #000000 #000000 0;
-#X obj 325 260 vsl 15 128 0.01 1 1 0 empty empty Gain -5 -9 0 10 #fcfcfc
+#X obj 374 753 vsl 15 128 0.01 1 1 0 empty empty Gain -5 -9 0 10 #fcfcfc
 #000000 #000000 0 1;
-#X obj 275 260 vsl 15 128 0 11 0 0 empty empty Freq -5 -9 0 10 #fcfcfc
+#X obj 324 753 vsl 15 128 0 11 0 0 empty empty Freq -5 -9 0 10 #fcfcfc
 #000000 #000000 0 1;
-#X obj 325 110 vradio 15 0 0 9 empty empty Octave -7 -8 0 10 #fcfcfc
+#X obj 374 603 vradio 15 0 0 9 empty empty Octave -7 -8 0 10 #fcfcfc
 #000000 #000000 0;
-#X obj 325 560 expr if($f1 < 0.011 \, 0 \, $f1), f 15;
-#X obj 275 75 cnv 5 75 5 empty empty Osc\\\ 2 17 12 0 14 #e0e0e0 #404040
+#X obj 374 1053 expr if($f1 < 0.011 \, 0 \, $f1), f 15;
+#X obj 324 568 cnv 5 75 5 empty empty Osc\\\ 2 17 12 0 14 #e0e0e0 #404040
 0;
-#X obj 375 70 cnv 5 5 315 empty empty empty 20 12 0 14 #e0e0e0 #404040
+#X obj 424 563 cnv 5 5 315 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X obj 415 110 vradio 15 0 0 8 empty empty Shape -5 -8 0 10 #fcfcfc
+#X obj 464 603 vradio 15 0 0 8 empty empty Shape -5 -8 0 10 #fcfcfc
 #000000 #000000 0;
-#X obj 465 260 vsl 15 128 0.01 1 1 0 empty empty Gain -5 -9 0 10 #fcfcfc
+#X obj 514 753 vsl 15 128 0.01 1 1 0 empty empty Gain -5 -9 0 10 #fcfcfc
 #000000 #000000 0 1;
-#X obj 415 260 vsl 15 128 0 11 0 0 empty empty Freq -5 -9 0 10 #fcfcfc
+#X obj 464 753 vsl 15 128 0 11 0 0 empty empty Freq -5 -9 0 10 #fcfcfc
 #000000 #000000 0 1;
-#X obj 465 110 vradio 15 0 0 9 empty empty Octave -7 -8 0 10 #fcfcfc
+#X obj 514 603 vradio 15 0 0 9 empty empty Octave -7 -8 0 10 #fcfcfc
 #000000 #000000 0;
-#X obj 465 560 expr if($f1 < 0.011 \, 0 \, $f1), f 15;
-#X obj 415 75 cnv 5 75 5 empty empty Osc\\\ 3 17 12 0 14 #e0e0e0 #404040
+#X obj 514 1053 expr if($f1 < 0.011 \, 0 \, $f1), f 15;
+#X obj 464 568 cnv 5 75 5 empty empty Osc\\\ 3 17 12 0 14 #e0e0e0 #404040
 0;
-#X text 109 443 out (sig);
-#X obj 275 480 s \$0-shape2;
-#X obj 325 500 s \$0-octave2;
-#X obj 275 530 s \$0-freq2;
-#X obj 325 600 s \$0-gain2;
-#X obj 275 630 r \$0-shape2;
-#X obj 302 650 r \$0-freq2;
-#X obj 329 670 r \$0-octave2;
-#X obj 356 690 r \$0-gain2;
-#X obj 415 470 s \$0-shape3;
-#X obj 465 500 s \$0-octave3;
-#X obj 415 530 s \$0-freq3;
-#X obj 465 600 s \$0-gain3;
-#X obj 415 630 r \$0-shape3;
-#X obj 442 650 r \$0-freq3;
-#X obj 469 670 r \$0-octave3;
-#X obj 495 690 r \$0-gain3;
+#X text 158 936 out (sig);
+#X obj 324 973 s \$0-shape2;
+#X obj 374 993 s \$0-octave2;
+#X obj 324 1023 s \$0-freq2;
+#X obj 374 1093 s \$0-gain2;
+#X obj 324 1123 r \$0-shape2;
+#X obj 351 1143 r \$0-freq2;
+#X obj 378 1163 r \$0-octave2;
+#X obj 405 1183 r \$0-gain2;
+#X obj 464 963 s \$0-shape3;
+#X obj 514 993 s \$0-octave3;
+#X obj 464 1023 s \$0-freq3;
+#X obj 514 1093 s \$0-gain3;
+#X obj 464 1123 r \$0-shape3;
+#X obj 491 1143 r \$0-freq3;
+#X obj 518 1163 r \$0-octave3;
+#X obj 544 1183 r \$0-gain3;
 #N canvas 50 32 1159 607 oscillators1 0;
 #X obj 62 230 osc~;
 #X obj 62 167 tdh.util.declick;
@@ -458,7 +458,7 @@ floating point) \, and oct# * 12 offsets a MIDI pitch to a new octave
 #X connect 109 0 17 1;
 #X connect 110 0 19 1;
 #X connect 111 0 56 0;
-#X restore 135 720 pd oscillators1;
+#X restore 184 1213 pd oscillators1;
 #N canvas 2574 22 1159 607 oscillators2 0;
 #X obj 70 210 osc~;
 #X obj 70 167 tdh.util.declick;
@@ -810,8 +810,8 @@ floating point) \, and oct# * 12 offsets a MIDI pitch to a new octave
 #X connect 90 0 34 0;
 #X connect 90 0 25 1;
 #X connect 91 0 56 0;
-#X restore 275 730 pd oscillators2;
-#X obj 51 231 spigot;
+#X restore 324 1223 pd oscillators2;
+#X obj 100 724 spigot;
 #N canvas 2577 22 1159 607 oscillators3 0;
 #X obj 70 210 osc~;
 #X obj 70 167 tdh.util.declick;
@@ -1163,8 +1163,8 @@ floating point) \, and oct# * 12 offsets a MIDI pitch to a new octave
 #X connect 90 0 34 0;
 #X connect 90 0 25 1;
 #X connect 91 0 56 0;
-#X restore 415 720 pd oscillators3;
-#X obj 102 410 cnv 15 407 29 empty empty 3\\\ Oscillator\\\ Synth\\\ Module
+#X restore 464 1213 pd oscillators3;
+#X obj 151 903 cnv 15 407 29 empty empty 3\\\ Oscillator\\\ Synth\\\ Module
 20 12 0 14 #e0e0e0 #404040 0;
 #N canvas 197 114 1243 650 mod-maytrix 0;
 #X obj 150 110 tgl 10 0 empty empty FM -1 -9 0 10 #fcfcfc #000000 #000000
@@ -1273,137 +1273,137 @@ floating point) \, and oct# * 12 offsets a MIDI pitch to a new octave
 #X connect 50 0 36 1;
 #X connect 51 0 43 1;
 #X coords 0 -1 1 1 401 91 2 -142 70;
-#X restore 584 301 pd mod-maytrix;
-#X text -19 -352 Number fields for all sliders \, settable via number
+#X restore 707 1270 pd mod-maytrix;
+#X text 642 312 Number fields for all sliders \, settable via number
 fields;
-#X text -42 222 For oscillator sync to OSC1, f 14;
-#X obj 103 8 cnv 5 406 5 empty empty Oscillators 2 10 0 14 #e0e0e0
+#X text 33 708 For oscillator sync to OSC1, f 10;
+#X obj 152 501 cnv 5 406 5 empty empty Oscillators 2 10 0 14 #e0e0e0
 #404040 0;
-#X obj 137 42 tgl 15 0 empty empty Osc\\\ Sync 17 7 0 10 #fcfcfc #000000
+#X obj 186 535 tgl 15 0 empty empty Osc\\\ Sync 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
-#X obj 115 -160 inlet 1-shape;
-#X obj 145 -140 inlet 1-octve;
-#X obj 175 -100 inlet 1-freq;
-#X obj 195 -80 inlet 1-gain;
-#X text 101 -41 1Shp;
-#X text 167 -41 1Frq;
-#X text 203 -41 1Gn;
-#X text 124 -41 |;
-#X text 158 -41 |;
-#X text 193 -41 |;
-#X text 265 -41 |;
-#X text 305 -41 |;
-#X text 340 -41 |;
-#X text 235 -41 2Shp;
-#X text 226 -41 |;
-#X text 313 -41 2Frq;
-#X text 351 -41 2Gn;
-#X text 407 -41 |;
-#X text 447 -41 |;
-#X text 482 -41 |;
-#X text 372 -41 |;
-#X text 381 -41 3Shp;
-#X text 456 -41 3Frq;
-#X text 490 -41 3Gn;
-#X obj 255 -160 inlet 2-shape;
-#X obj 285 -140 inlet 2-octve;
-#X obj 315 -100 inlet 2-freq;
-#X obj 335 -80 inlet 2-gain;
-#X obj 385 -160 inlet 3-shape;
-#X obj 415 -140 inlet 3-octve;
-#X obj 445 -100 inlet 3-freq;
-#X obj 465 -80 inlet 3-gain;
-#X msg 10 70 1;
-#X text -19 -329 Freq and gain inputs in Voltage;
-#X text 152 110 Sin;
-#X text 152 125 Tri;
-#X text 152 140 Saw;
-#X text 152 155 Pls1;
-#X text 152 170 Pls2;
-#X text 152 184 Pls3;
-#X text 152 199 PnkNs;
-#X text 152 214 WhtNs;
-#X text 292 110 Sin;
-#X text 292 125 Tri;
-#X text 292 140 Saw;
-#X text 292 155 Pls1;
-#X text 292 171 Pls2;
-#X text 292 185 Pls3;
-#X text 292 200 PnkNs;
-#X text 292 215 WhtNs;
-#X text 432 110 Sin;
-#X text 432 125 Tri;
-#X text 432 140 Saw;
-#X text 432 155 Pls1;
-#X text 432 171 Pls2;
-#X text 432 185 Pls3;
-#X text 432 200 PnkNs;
-#X text 432 215 WhtNs;
-#X text 202 110 1;
-#X text 202 125 2;
-#X text 202 140 3;
-#X text 202 155 4;
-#X text 202 170 5;
-#X text 202 184 6;
-#X text 202 200 7;
-#X text 202 215 8;
-#X text 202 229 9;
-#X text 342 110 1;
-#X text 342 125 2;
-#X text 342 140 3;
-#X text 342 155 4;
-#X text 342 170 5;
-#X text 342 184 6;
-#X text 342 200 7;
-#X text 342 215 8;
-#X text 342 229 9;
-#X text 482 110 1;
-#X text 482 125 2;
-#X text 482 140 3;
-#X text 482 155 4;
-#X text 482 170 5;
-#X text 482 184 6;
-#X text 482 200 7;
-#X text 482 215 8;
-#X text 482 229 9;
-#X text 615 50 TO CALCULATE THE PC AND OCTAVE FROM A FREQUENCY;
-#X floatatom 750 80 5 0 0 0 - - - 0;
-#X obj 750 100 ftom;
-#X floatatom 710 130 5 0 0 0 - - - 0;
-#X floatatom 710 170 5 0 0 0 - - - 0;
-#X obj 710 150 % 12;
-#X obj 760 150 div 12;
-#X floatatom 760 170 5 0 0 0 - - - 0;
-#X obj 760 190 - 1;
-#X floatatom 760 210 5 0 0 0 - - - 0;
-#X floatatom 710 80 5 0 0 0 - - - 0;
-#X text 677 80 MIDI;
-#X text 784 80 Freq;
-#X text 690 170 PC;
-#X text 800 210 Octave;
-#X text 565 160 This could be omitted since the faders can be floating
+#X obj 675 452 inlet 1-shape;
+#X obj 705 472 inlet 1-octve;
+#X obj 735 512 inlet 1-freq;
+#X obj 755 532 inlet 1-gain;
+#X text 150 452 1Shp;
+#X text 216 452 1Frq;
+#X text 252 452 1Gn;
+#X text 173 452 |;
+#X text 207 452 |;
+#X text 242 452 |;
+#X text 314 452 |;
+#X text 354 452 |;
+#X text 389 452 |;
+#X text 284 452 2Shp;
+#X text 275 452 |;
+#X text 362 452 2Frq;
+#X text 400 452 2Gn;
+#X text 456 452 |;
+#X text 496 452 |;
+#X text 531 452 |;
+#X text 421 452 |;
+#X text 430 452 3Shp;
+#X text 505 452 3Frq;
+#X text 538 452 3Gn;
+#X obj 815 452 inlet 2-shape;
+#X obj 845 472 inlet 2-octve;
+#X obj 875 512 inlet 2-freq;
+#X obj 895 532 inlet 2-gain;
+#X obj 945 452 inlet 3-shape;
+#X obj 975 472 inlet 3-octve;
+#X obj 1005 512 inlet 3-freq;
+#X obj 1025 532 inlet 3-gain;
+#X msg 59 563 1;
+#X text 642 327 Freq and gain inputs in Voltage;
+#X text 201 603 Sin;
+#X text 201 618 Tri;
+#X text 201 633 Saw;
+#X text 201 648 Pls1;
+#X text 201 663 Pls2;
+#X text 201 677 Pls3;
+#X text 201 692 PnkNs;
+#X text 201 707 WhtNs;
+#X text 341 603 Sin;
+#X text 341 618 Tri;
+#X text 341 633 Saw;
+#X text 341 648 Pls1;
+#X text 341 664 Pls2;
+#X text 341 678 Pls3;
+#X text 341 693 PnkNs;
+#X text 341 708 WhtNs;
+#X text 481 603 Sin;
+#X text 481 618 Tri;
+#X text 481 633 Saw;
+#X text 481 648 Pls1;
+#X text 481 664 Pls2;
+#X text 481 678 Pls3;
+#X text 481 693 PnkNs;
+#X text 481 708 WhtNs;
+#X text 251 603 1;
+#X text 251 618 2;
+#X text 251 633 3;
+#X text 251 648 4;
+#X text 251 663 5;
+#X text 251 677 6;
+#X text 251 693 7;
+#X text 251 708 8;
+#X text 251 722 9;
+#X text 391 603 1;
+#X text 391 618 2;
+#X text 391 633 3;
+#X text 391 648 4;
+#X text 391 663 5;
+#X text 391 677 6;
+#X text 391 693 7;
+#X text 391 708 8;
+#X text 391 722 9;
+#X text 531 603 1;
+#X text 531 618 2;
+#X text 531 633 3;
+#X text 531 648 4;
+#X text 531 663 5;
+#X text 531 677 6;
+#X text 531 693 7;
+#X text 531 708 8;
+#X text 531 722 9;
+#X text 791 919 TO CALCULATE THE PC AND OCTAVE FROM A FREQUENCY;
+#X floatatom 926 949 5 0 0 0 - - - 0;
+#X obj 926 969 ftom;
+#X floatatom 886 999 5 0 0 0 - - - 0;
+#X floatatom 886 1039 5 0 0 0 - - - 0;
+#X obj 886 1019 % 12;
+#X obj 936 1019 div 12;
+#X floatatom 936 1039 5 0 0 0 - - - 0;
+#X obj 936 1059 - 1;
+#X floatatom 936 1079 5 0 0 0 - - - 0;
+#X floatatom 886 949 5 0 0 0 - - - 0;
+#X text 853 949 MIDI;
+#X text 960 949 Freq;
+#X text 866 1039 PC;
+#X text 976 1079 Octave;
+#X text 741 1029 This could be omitted since the faders can be floating
 point..., f 15;
-#X text 655 170 ==>;
-#X floatatom 815 170 5 0 0 0 - - - 0;
-#X obj 815 150 / 12;
-#X obj 145 -120 - 1;
-#X obj 285 -120 - 1;
-#X obj 415 -120 - 1;
-#X text 276 -41 28ve;
-#X text 132 -41 18ve;
-#X text 419 -41 3*ve;
-#X text -17 -926 Travis Houldcroft || travishouldcroft.com;
-#X obj -34 -972 cnv 15 1200 40 empty \$0-abstrPatchTitleBar tdh.synth.3oscil~
+#X text 831 1039 ==>;
+#X floatatom 991 1039 5 0 0 0 - - - 0;
+#X obj 991 1019 / 12;
+#X obj 705 492 - 1;
+#X obj 845 492 - 1;
+#X obj 975 492 - 1;
+#X text 325 452 28ve;
+#X text 181 452 18ve;
+#X text 468 452 3*ve;
+#X text 23 52 Travis Houldcroft || travishouldcroft.com;
+#X obj 6 6 cnv 15 1200 40 empty \$0-abstrPatchTitleBar tdh.synth.3oscil~
 9 20 0 18 #3c50fc #a0a0a0 0;
-#X obj -34 -472 cnv 2 1200 3 empty \$0-abstrPatchSecLabelNotes Notes
+#X obj 6 286 cnv 2 1200 3 empty \$0-abstrPatchSecLabelNotes Notes 20
+15 0 16 #a0a0a0 #202020 0;
+#X obj 6 439 cnv 2 1200 2 empty \$0-abstrPatchSecDivider empty 9 20
+0 18 #a0a0a0 #202020 0;
+#X obj 6 386 cnv 2 1200 3 empty \$0-abstrPatchSecLabelRevHist Revision\ History
 20 15 0 16 #a0a0a0 #202020 0;
-#X obj -34 -209 cnv 2 1200 2 empty \$0-abstrPatchSecDivider empty 9
-20 0 18 #a0a0a0 #202020 0;
-#X obj -34 -282 cnv 2 1200 3 empty \$0-abstrPatchSecLabelRevHist Revision\ History
+#X obj 6 76 cnv 2 1200 3 empty \$0-abstrPatchSecLabelArgs Arguments
 20 15 0 16 #a0a0a0 #202020 0;
-#X obj -34 -902 cnv 2 1200 3 empty \$0-abstrPatchSecLabelArgs Arguments
-20 15 0 16 #a0a0a0 #202020 0;
-#X text -11 -251 21/09/30 - ver 0.1, f 21;
+#X text 202 395 21/09/30 - ver 0.1, f 21;
 #N canvas 1280 293 656 414 abstr-init 0;
 #X obj 3 21 cnv 5 5 5 empty empty | 0 0 0 14 #fcfcfc #404040 0;
 #X obj 215 126 loadbang;
@@ -3755,98 +3755,102 @@ in [message( objects get saved to the patch., f 84;
 #X connect 2 0 10 0;
 #X connect 10 0 3 1;
 #X connect 11 0 3 0;
-#X restore 335 -924 pd abstr-init;
-#X obj -34 -832 cnv 2 1200 3 empty \$0-abstrPatchSecLabelInlets Inlets
+#X restore 375 54 pd abstr-init;
+#X obj 6 106 cnv 2 1200 3 empty \$0-abstrPatchSecLabelInlets Inlets
 20 15 0 16 #a0a0a0 #202020 0;
-#X obj -34 -542 cnv 2 1200 3 empty \$0-abstrPatchSecLabelOutlets Outlets
+#X obj 6 246 cnv 2 1200 3 empty \$0-abstrPatchSecLabelOutlets Outlets
 20 15 0 16 #a0a0a0 #202020 0;
-#X text -17 -866 None;
-#X obj -10 -801 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
+#X text 208 82 None;
+#X obj 209 113 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj -10 -741 cnv 14 18 14 empty empty 3 2 8 0 12 #606060 #dcdcdc
+#X obj 209 173 cnv 14 18 14 empty empty 3 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj -10 -781 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
+#X obj 209 133 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj -10 -761 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
+#X obj 209 153 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj -10 -721 cnv 14 18 14 empty empty 4 2 8 0 12 #606060 #dcdcdc
+#X obj 209 193 cnv 14 18 14 empty empty 4 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj -10 -681 cnv 14 18 14 empty empty 6 2 8 0 12 #606060 #dcdcdc
+#X obj 470 113 cnv 14 18 14 empty empty 6 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj -10 -701 cnv 14 18 14 empty empty 5 2 8 0 12 #606060 #dcdcdc
+#X obj 209 213 cnv 14 18 14 empty empty 5 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj -10 -661 cnv 14 18 14 empty empty 7 2 8 0 12 #606060 #dcdcdc
+#X obj 470 133 cnv 14 18 14 empty empty 7 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj -10 -601 cnv 14 18 14 empty empty 10 2 8 0 12 #606060 #dcdcdc
+#X obj 470 193 cnv 14 18 14 empty empty 10 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj -10 -641 cnv 14 18 14 empty empty 8 2 8 0 12 #606060 #dcdcdc
+#X obj 470 153 cnv 14 18 14 empty empty 8 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj -10 -621 cnv 14 18 14 empty empty 9 2 8 0 12 #606060 #dcdcdc
+#X obj 470 173 cnv 14 18 14 empty empty 9 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj -10 -581 cnv 14 18 14 empty empty 11 2 8 0 12 #606060 #dcdcdc
+#X obj 470 213 cnv 14 18 14 empty empty 11 2 8 0 12 #606060 #dcdcdc
 0;
-#X text 12 -803 (float);
-#X text 62 -803 Oscillator 1 Shape (0-7);
-#X text 12 -783 (float);
-#X text 62 -783 Oscillator 1 Octave (1-9);
-#X text 12 -763 (float);
-#X text 62 -763 Oscillator 1 Frequency (Hz);
-#X text 62 -743 Oscillator 1 Volume (0.0-1.0);
-#X text 12 -743 (float);
-#X text 12 -723 (float);
-#X text 12 -703 (float);
-#X text 12 -683 (float);
-#X text 12 -663 (float);
-#X text 12 -643 (float);
-#X text 12 -623 (float);
-#X text 12 -603 (float);
-#X text 12 -583 (float);
-#X text 62 -723 Oscillator 2 Shape (0-7);
-#X text 62 -703 Oscillator 2 Octave (1-9);
-#X text 62 -683 Oscillator 2 Frequency (Hz);
-#X text 62 -663 Oscillator 2 Volume (0.0-1.0);
-#X text 62 -643 Oscillator 3 Shape (0-7);
-#X text 62 -623 Oscillator 3 Octave (1-9);
-#X text 62 -603 Oscillator 3 Frequency (Hz);
-#X text 62 -583 Oscillator 3 Volume (0.0-1.0);
-#X obj -10 -511 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
+#X text 231 111 (float);
+#X text 281 111 Oscillator 1 Shape (0-7);
+#X text 231 131 (float);
+#X text 281 131 Oscillator 1 Octave (1-9);
+#X text 231 151 (float);
+#X text 281 151 Oscillator 1 Frequency (Hz);
+#X text 281 171 Oscillator 1 Volume (0.0-1.0);
+#X text 231 171 (float);
+#X text 231 191 (float);
+#X text 231 211 (float);
+#X text 492 111 (float);
+#X text 492 131 (float);
+#X text 492 151 (float);
+#X text 492 171 (float);
+#X text 492 191 (float);
+#X text 492 211 (float);
+#X text 281 191 Oscillator 2 Shape (0-7);
+#X text 281 211 Oscillator 2 Octave (1-9);
+#X text 542 111 Oscillator 2 Frequency (Hz);
+#X text 542 131 Oscillator 2 Volume (0.0-1.0);
+#X text 542 151 Oscillator 3 Shape (0-7);
+#X text 542 171 Oscillator 3 Octave (1-9);
+#X text 542 191 Oscillator 3 Frequency (Hz);
+#X text 542 211 Oscillator 3 Volume (0.0-1.0);
+#X obj 205 255 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
 0;
-#X text 12 -512 (sig);
-#X text -19 -422 tdhlib (tdh.util.declick \, tdh.synth.oscil-tri~ \,
-tdh.synth.oscil-saw~ \, tdh.synth.oscil-pulse~), f 94;
-#X text -19 -402 cyclone (cyclone/pink~);
-#X text -19 -442 DEPENDENCIES:;
-#X text -19 -372 TO DO:;
-#X text 62 -512 Signal output (linear amplitude 0.0-1.0);
-#X obj 96 -160 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
+#X text 227 254 (sig);
+#X text 642 292 TO DO:;
+#X text 277 254 Signal output (linear amplitude 0.0-1.0);
+#X obj 656 452 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 174 -78 cnv 14 18 14 empty empty 3 2 8 0 12 #606060 #dcdcdc
+#X obj 734 534 cnv 14 18 14 empty empty 3 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 126 -140 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
+#X obj 686 472 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 154 -100 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
+#X obj 714 512 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 237 -159 cnv 14 18 14 empty empty 4 2 8 0 12 #606060 #dcdcdc
+#X obj 797 453 cnv 14 18 14 empty empty 4 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 296 -99 cnv 14 18 14 empty empty 6 2 8 0 12 #606060 #dcdcdc
+#X obj 856 513 cnv 14 18 14 empty empty 6 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 266 -140 cnv 14 18 14 empty empty 5 2 8 0 12 #606060 #dcdcdc
+#X obj 826 472 cnv 14 18 14 empty empty 5 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 317 -80 cnv 14 18 14 empty empty 7 2 8 0 12 #606060 #dcdcdc
+#X obj 877 532 cnv 14 18 14 empty empty 7 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 427 -100 cnv 14 18 14 empty empty 10 2 8 0 12 #606060 #dcdcdc
+#X obj 987 512 cnv 14 18 14 empty empty 10 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 366 -159 cnv 14 18 14 empty empty 8 2 8 0 12 #606060 #dcdcdc
+#X obj 926 453 cnv 14 18 14 empty empty 8 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 396 -140 cnv 14 18 14 empty empty 9 2 8 0 12 #606060 #dcdcdc
+#X obj 956 472 cnv 14 18 14 empty empty 9 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 447 -80 cnv 14 18 14 empty empty 11 2 8 0 12 #606060 #dcdcdc
+#X obj 1007 532 cnv 14 18 14 empty empty 11 2 8 0 12 #606060 #dcdcdc
 0;
-#X text -11 -231 21/12/27 - ver 0.2, f 21;
-#X text -19 -309 Inlets send remotely to GUI \, which sends remotely
-to DSP code, f 71;
-#X text 583 63 To potentially add? It would be nice to be able to input
-via PC, f 64;
+#X text 202 415 21/12/27 - ver 0.2, f 21;
+#X text 759 932 To potentially add? It would be nice to be able to
+input via PC, f 64;
+#X text 204 294 Requires the following libraries:;
+#X text 471 294 Revision History;
+#X text 491 309 • 210415 - ver 0.1;
+#X text 226 309 • tdh.lib;
+#X text 224 326 • Cyclone;
+#X text 491 325 • 210815 - ver 0.2;
+#X obj 674 1258 cnv 4 500 1 empty empty **\\\ TO\\\ DO\\\ ** 0 -6 0
+12 #ff0400 #ff0400 0;
+#X text 641 342 Clean up code with remote sends;
+#X text 641 355 Modulation controls;
 #X connect 0 0 7 0;
 #X connect 1 0 14 0;
 #X connect 2 0 5 0;
@@ -3916,4 +3920,4 @@ via PC, f 64;
 #X connect 161 0 3 0;
 #X connect 162 0 20 0;
 #X connect 163 0 27 0;
-#X coords 0 -1 1 1 411 505 2 100 -45;
+#X coords 0 -1 1 1 411 505 2 150 450;
