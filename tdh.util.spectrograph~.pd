@@ -182,10 +182,10 @@ of "fft".;
 #X text 156 130 1-;
 #X text 156 227 0-;
 #X text 131 138 Magnitude, f 1;
-#X obj 103 291 cnv 15 695 27 empty empty Spectrograph 20 12 0 14 #e0e0e0
+#X obj 102 292 cnv 15 598 27 empty empty Spectrograph 20 12 0 14 #e0e0e0
 #404040 0;
 #X text 101 101 in;
-#X text 757 101 recalc;
+#X text 657 101 recalc;
 #X text 100 333 thru;
 #X connect 3 0 4 1;
 #X connect 4 0 6 0;
@@ -200,4 +200,4 @@ of "fft".;
 #X connect 21 0 0 0;
 #X connect 21 0 20 0;
 #X connect 23 0 13 0;
-#X coords 0 -1 1 1 700 250 2 100 100;
+#X coords 0 -1 1 1 600 250 2 100 100;

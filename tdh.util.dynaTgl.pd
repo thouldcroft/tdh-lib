@@ -1,40 +1,18 @@
-#N canvas 1440 -209 1280 1035 10;
-#X obj 100 576 tgl 15 0   empty 1 8 0 10 #fcfcfc #000000 #000000 0
-1;
-#X obj 79 1096 sel 0 1, f 52;
-#X obj 79 1268 s \$0-\$3-r;
-#X msg 79 1223 color \$1;
-#X msg 283 1221 color \$1 \$1;
-#X obj 125 181 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc
+#N canvas 2433 -314 1280 1035 10;
+#X obj 100 576 tgl 15 0 1020-dynaTgl-s 1020-dynaTgl-r empty 1 8 0 4
+#fcfcfc #fcfcfc #fcfcfc 0 1;
+#X obj 71 1060 sel 0 1, f 19;
+#X text 151 182 \$1 -;
+#X text 185 342 (symbol) send symbol;
+#X text 184 362 (symbol) receive symbol;
+#X obj 49 648 loadbang;
+#X obj 102 649 cnv 14 35 14 empty empty init 4 7 0 10 #c4c4fc #606060
 0;
-#X text 146 180 \$1 -;
-#X obj 125 281 cnv 14 14 14 empty empty 6 4 8 0 12 #606060 #dcdcdc
-0;
-#X obj 125 301 cnv 14 14 14 empty empty 7 4 8 0 12 #606060 #dcdcdc
-0;
-#X text 180 280 (float) off color;
-#X text 180 300 (float) on color;
-#X text 180 320 (symbol) send symbol;
-#X obj 125 321 cnv 14 14 14 empty empty 8 4 8 0 12 #606060 #dcdcdc
-0;
-#X text 180 340 (symbol) receive symbol;
-#X obj 125 221 cnv 14 14 14 empty empty 3 4 8 0 12 #606060 #dcdcdc
-0;
-#X obj 125 341 cnv 14 14 14 empty empty 9 4 8 0 12 #606060 #dcdcdc
-0;
-#X obj 79 1194 f \$3;
-#X obj 58 663 loadbang;
-#X obj 111 664 cnv 14 35 14 empty empty init 4 7 0 10 #c4c4fc #606060
-0;
-#X msg 577 713 0;
-#X obj 487 964 s \$0-initialize;
-#X obj 100 528 r \$0-initialize;
-#X text 322 1180 "on" color gets set here, f 13;
-#X floatatom 33 1072 5 0 0 1 DEBUG - - 0;
+#X floatatom 25 1036 5 0 0 1 DEBUG - - 0;
 #X text 18 48 Travis Houldcroft || travishouldcroft.com;
 #X obj 1 2 cnv 15 700 40 empty \$0-abstrPatchTitleBar abstractionName
 9 20 0 18 #3c50fc #a0a0a0 0;
-#X obj 1 368 cnv 2 700 3 empty \$0-abstrPatchSecLabelNotes Notes 20
+#X obj 1 388 cnv 2 700 3 empty \$0-abstrPatchSecLabelNotes Notes 20
 15 0 16 #a0a0a0 #202020 0;
 #X obj 1 501 cnv 2 700 2 empty \$0-abstrPatchSecDivider empty 9 20
 0 18 #a0a0a0 #202020 0;
@@ -2410,238 +2388,172 @@ in [message( objects get saved to the patch., f 84;
 0;
 #X text 147 150 (float);
 #X text 197 150 Set toggle state;
-#X text 604 712 set [tgl] to OFF, f 6;
-#X obj 125 201 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc
-0;
-#X text 180 180 (char) "off" label;
-#X text 180 200 (char) "on" label;
-#X text 127 375 TO DO: Resize GOP bounds when resizing button;
-#X obj 125 240 cnv 14 14 14 empty empty 4 4 8 0 12 #606060 #dcdcdc
-0;
-#X text 180 220 (float) "off" label color;
-#X text 180 239 (float) "on" label color;
-#X obj 125 260 cnv 14 14 14 empty empty 5 4 8 0 12 #606060 #dcdcdc
-0;
-#X text 180 259 (float) label size;
-#X obj 58 684 t b b b b b b, f 87;
-#X msg 58 927 receive \$1;
-#X obj 58 902 symbol \$6;
-#X obj 161 855 symbol \$5;
-#X msg 161 879 send \$1;
-#X msg 369 840 label \$1;
-#X obj 369 787 symbol \$1;
-#X text 16 883 Set [r] symbol;
-#X text 117 837 Set [s] symbol;
-#X msg 265 833 label_pos 1 8;
-#X text 315 766 set [tgl] to off label;
-#X text 227 814 center label;
-#X text 146 200 \$2 -;
-#X text 146 220 \$3 -;
-#X text 146 239 \$4 -;
-#X text 146 259 \$5 -;
-#X text 146 280 \$6 -;
-#X text 146 299 \$7 -;
-#X text 146 319 \$8 -;
-#X text 146 339 \$9 -;
-#X obj 74 1144 t b b;
-#X obj 283 1192 f \$7;
-#X msg 384 1220 label \$1;
+#X text 385 701 set [tgl] to OFF, f 17;
+#X text 185 182 (char) "off" label;
+#X text 185 202 (char) "on" label;
+#X text 127 395 TO DO: Resize GOP bounds when resizing button;
+#X text 185 222 (float) "off" label color;
+#X text 185 242 (float) "on" label color;
+#X msg 49 873 receive \$1;
+#X obj 49 828 symbol \$6;
+#X obj 152 781 symbol \$5;
+#X msg 152 825 send \$1;
+#X text 7 809 Set [r] symbol;
+#X text 108 763 Set [s] symbol;
+#X msg 256 759 label_pos 1 8;
+#X text 218 740 center label;
+#X text 151 202 \$2 -;
+#X text 151 222 \$3 -;
+#X text 151 242 \$4 -;
+#X text 151 262 \$5 -;
 #X text 147 114 (any);
 #X text 197 114 All appearance messages that toggle recognizes are
 accepted;
 #X text 111 458 220203 - ver 0.1;
 #X text 111 478 220310 - ver 0.2;
-#X obj 291 528 inlet;
+#X obj 320 534 inlet;
 #X obj 100 598 outlet;
-#X obj 272 528 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
+#X obj 301 534 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
 0;
 #X obj 81 598 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc 0
 ;
-#X obj 56 653 cnv 4 150 1 empty empty Argument\\\ Initialization 0
--6 0 12 #606060 #000000 0;
-#X obj 57 1036 cnv 4 150 1 empty empty small\\\ underline 0 -6 0 12
+#X obj 47 638 cnv 4 150 1 empty empty Initialization 0 -6 0 12 #606060
+#000000 0;
+#X obj 49 1000 cnv 4 150 1 empty empty small\\\ underline 0 -6 0 12
 #606060 #000000 0;
-#X obj 1027 958 cnv 14 14 14 empty empty R 6 8 0 8 #404040 #dcdcdc
+#X obj 1140 472 cnv 14 14 14 empty empty R 6 8 0 8 #404040 #dcdcdc
 0;
-#X obj 1027 979 cnv 14 14 14 empty empty S 6 8 0 8 #404040 #dcdcdc
+#X obj 1140 493 cnv 14 14 14 empty empty S 6 8 0 8 #404040 #dcdcdc
 0;
-#X obj 1031 946 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #404040
+#X obj 1144 460 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #404040
 #fcfcfc 0;
-#X obj 745 958 cnv 14 14 14 empty empty R 6 8 0 8 #fce0c4 #7c7c7c 0
+#X obj 858 472 cnv 14 14 14 empty empty R 6 8 0 8 #fce0c4 #7c7c7c 0
 ;
-#X obj 724 958 cnv 14 14 14 empty empty R 6 8 0 8 #fcc4c4 #7c7c7c 0
-;
-#X obj 703 958 cnv 14 14 14 empty empty R 6 8 0 8 #b8b8b8 #404040 0
-;
-#X obj 196 529 cnv 14 14 14 empty empty R 6 8 0 8 #dcdcdc #7c7c7c 0
-;
-#X obj 831 958 cnv 14 14 14 empty empty R 6 8 0 8 #c4c4fc #7c7c7c 0
-;
-#X obj 810 958 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcfc #7c7c7c 0
-;
-#X obj 789 958 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
-;
-#X obj 766 958 cnv 14 14 14 empty empty R 6 8 0 8 #fcfcc4 #7c7c7c 0
-;
-#X obj 852 958 cnv 14 14 14 empty empty R 6 8 0 8 #e0c4fc #7c7c7c 0
-;
-#X obj 745 980 cnv 14 14 14 empty empty S 6 8 0 8 #fce0c4 #7c7c7c 0
-;
-#X obj 724 980 cnv 14 14 14 empty empty S 6 8 0 8 #fcc4c4 #7c7c7c 0
-;
-#X obj 703 980 cnv 14 14 14 empty empty S 6 8 0 8 #b8b8b8 #404040 0
-;
-#X obj 582 965 cnv 14 14 14 empty empty S 6 8 0 8 #dcdcdc #7c7c7c 0
-;
-#X obj 831 980 cnv 14 14 14 empty empty S 6 8 0 8 #c4c4fc #7c7c7c 0
-;
-#X obj 810 980 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcfc #7c7c7c 0
-;
-#X obj 789 980 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcc4 #7c7c7c 0
-;
-#X obj 766 980 cnv 14 14 14 empty empty S 6 8 0 8 #fcfcc4 #7c7c7c 0
-;
-#X obj 852 980 cnv 14 14 14 empty empty S 6 8 0 8 #e0c4fc #7c7c7c 0
-;
-#X obj 724 999 cnv 14 18 14 empty empty R~ 6 8 0 8 #fcc4c4 #606060
+#X obj 155 1014 cnv 14 14 14 empty empty R 6 8 0 8 #fcc4c4 #7c7c7c
 0;
-#X obj 745 999 cnv 14 18 14 empty empty R~ 6 8 0 8 #fce0c4 #606060
+#X obj 816 472 cnv 14 14 14 empty empty R 6 8 0 8 #b8b8b8 #404040 0
+;
+#X obj 233 527 cnv 14 14 14 empty empty R 6 8 0 8 #dcdcdc #7c7c7c 0
+;
+#X obj 944 472 cnv 14 14 14 empty empty R 6 8 0 8 #c4c4fc #7c7c7c 0
+;
+#X obj 902 472 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
+;
+#X obj 879 472 cnv 14 14 14 empty empty R 6 8 0 8 #fcfcc4 #7c7c7c 0
+;
+#X obj 220 1015 cnv 14 14 14 empty empty R 6 8 0 8 #e0c4fc #7c7c7c
 0;
-#X obj 766 999 cnv 14 18 14 empty empty R~ 6 8 0 8 #fcfcc4 #606060
+#X obj 858 494 cnv 14 14 14 empty empty S 6 8 0 8 #fce0c4 #7c7c7c 0
+;
+#X obj 442 724 cnv 14 14 14 empty empty S 6 8 0 8 #fcc4c4 #7c7c7c 0
+;
+#X obj 816 494 cnv 14 14 14 empty empty S 6 8 0 8 #b8b8b8 #404040 0
+;
+#X obj 351 890 cnv 14 14 14 empty empty S 6 8 0 8 #dcdcdc #7c7c7c 0
+;
+#X obj 944 494 cnv 14 14 14 empty empty S 6 8 0 8 #c4c4fc #7c7c7c 0
+;
+#X obj 902 494 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcc4 #7c7c7c 0
+;
+#X obj 879 494 cnv 14 14 14 empty empty S 6 8 0 8 #fcfcc4 #7c7c7c 0
+;
+#X obj 81 576 cnv 14 14 14 empty empty S 6 8 0 8 #e0c4fc #7c7c7c 0
+;
+#X obj 837 513 cnv 14 18 14 empty empty R~ 6 8 0 8 #fcc4c4 #606060
 0;
-#X obj 789 999 cnv 14 18 14 empty empty R~ 6 8 0 8 #c4fcc4 #606060
+#X obj 858 513 cnv 14 18 14 empty empty R~ 6 8 0 8 #fce0c4 #606060
 0;
-#X obj 810 999 cnv 14 18 14 empty empty R~ 6 8 0 8 #c4fcfc #606060
+#X obj 879 513 cnv 14 18 14 empty empty R~ 6 8 0 8 #fcfcc4 #606060
 0;
-#X obj 831 999 cnv 14 18 14 empty empty R~ 6 8 0 8 #c4c4fc #606060
+#X obj 902 513 cnv 14 18 14 empty empty R~ 6 8 0 8 #c4fcc4 #606060
 0;
-#X obj 852 999 cnv 14 18 14 empty empty R~ 6 8 0 8 #e0c4fc #606060
+#X obj 923 513 cnv 14 18 14 empty empty R~ 6 8 0 8 #c4fcfc #606060
 0;
-#X obj 938 958 cnv 14 14 14 empty empty R 6 8 0 8 #00fc04 #7c7c7c 0
-;
-#X obj 915 958 cnv 14 14 14 empty empty R 6 8 0 8 #f8fc00 #7c7c7c 0
-;
-#X obj 894 958 cnv 14 14 14 empty empty R 6 8 0 8 #fc8000 #7c7c7c 0
-;
-#X obj 873 958 cnv 14 14 14 empty empty R 6 8 0 8 #fc0400 #404040 0
-;
-#X obj 1002 958 cnv 14 14 14 empty empty R 6 8 0 8 #9c00fc #b8b8b8
+#X obj 944 513 cnv 14 18 14 empty empty R~ 6 8 0 8 #c4c4fc #606060
 0;
-#X obj 981 958 cnv 14 14 14 empty empty R 6 8 0 8 #0400fc #b8b8b8 0
-;
-#X obj 959 958 cnv 14 14 14 empty empty R 6 8 0 8 #00f8fc #404040 0
-;
-#X obj 938 980 cnv 14 14 14 empty empty S 6 8 0 8 #00fc04 #7c7c7c 0
-;
-#X obj 915 980 cnv 14 14 14 empty empty S 6 8 0 8 #f8fc00 #7c7c7c 0
-;
-#X obj 894 980 cnv 14 14 14 empty empty S 6 8 0 8 #fc8000 #7c7c7c 0
-;
-#X obj 873 980 cnv 14 14 14 empty empty S 6 8 0 8 #fc0400 #404040 0
-;
-#X obj 1002 979 cnv 14 14 14 empty empty S 6 8 0 8 #9c00fc #b8b8b8
+#X obj 965 513 cnv 14 18 14 empty empty R~ 6 8 0 8 #e0c4fc #606060
 0;
-#X obj 981 979 cnv 14 14 14 empty empty S 6 8 0 8 #0400fc #b8b8b8 0
+#X obj 1051 472 cnv 14 14 14 empty empty R 6 8 0 8 #00fc04 #7c7c7c
+0;
+#X obj 1028 472 cnv 14 14 14 empty empty R 6 8 0 8 #f8fc00 #7c7c7c
+0;
+#X obj 1007 472 cnv 14 14 14 empty empty R 6 8 0 8 #fc8000 #7c7c7c
+0;
+#X obj 986 472 cnv 14 14 14 empty empty R 6 8 0 8 #fc0400 #404040 0
 ;
-#X obj 959 980 cnv 14 14 14 empty empty S 6 8 0 8 #00f8fc #404040 0
+#X obj 1115 472 cnv 14 14 14 empty empty R 6 8 0 8 #9c00fc #b8b8b8
+0;
+#X obj 1094 472 cnv 14 14 14 empty empty R 6 8 0 8 #0400fc #b8b8b8
+0;
+#X obj 1072 472 cnv 14 14 14 empty empty R 6 8 0 8 #00f8fc #404040
+0;
+#X obj 1051 494 cnv 14 14 14 empty empty S 6 8 0 8 #00fc04 #7c7c7c
+0;
+#X obj 1028 494 cnv 14 14 14 empty empty S 6 8 0 8 #f8fc00 #7c7c7c
+0;
+#X obj 1007 494 cnv 14 14 14 empty empty S 6 8 0 8 #fc8000 #7c7c7c
+0;
+#X obj 986 494 cnv 14 14 14 empty empty S 6 8 0 8 #fc0400 #404040 0
 ;
-#X obj 687 946 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #e0e0e0
+#X obj 1115 493 cnv 14 14 14 empty empty S 6 8 0 8 #9c00fc #b8b8b8
+0;
+#X obj 1094 493 cnv 14 14 14 empty empty S 6 8 0 8 #0400fc #b8b8b8
+0;
+#X obj 1072 494 cnv 14 14 14 empty empty S 6 8 0 8 #00f8fc #404040
+0;
+#X obj 800 460 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #e0e0e0
 #404040 0;
-#X obj 707 946 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #b8b8b8
+#X obj 820 460 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #b8b8b8
 #404040 0;
-#X obj 729 946 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #fcc4c4
+#X obj 842 460 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #fcc4c4
 #404040 0;
-#X obj 750 946 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #fce0c4
+#X obj 863 460 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #fce0c4
 #404040 0;
-#X obj 794 946 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #c4fcc4
+#X obj 907 460 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #c4fcc4
 #404040 0;
-#X obj 815 946 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #c4fcfc
+#X obj 928 460 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #c4fcfc
 #404040 0;
-#X obj 835 946 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #c4c4fc
+#X obj 950 462 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #c4c4fc
 #404040 0;
-#X obj 857 946 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #e0c4fc
+#X obj 970 460 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #e0c4fc
 #404040 0;
-#X obj 879 945 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #fc0400
+#X obj 992 459 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #fc0400
 #404040 0;
-#X obj 900 945 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #fc8000
+#X obj 1013 459 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #fc8000
 #404040 0;
-#X obj 920 945 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #f8fc00
+#X obj 1033 459 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #f8fc00
 #404040 0;
-#X obj 944 945 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #00fc04
+#X obj 1057 459 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #00fc04
 #404040 0;
-#X obj 965 945 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #00f8fc
+#X obj 1078 459 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #00f8fc
 #404040 0;
-#X obj 987 945 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #0400fc
+#X obj 1100 459 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #0400fc
 #fcfcfc 0;
-#X obj 1008 945 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #9c00fc
+#X obj 1121 459 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #9c00fc
 #fcfcfc 0;
-#X obj 770 947 cnv 5 5 5 empty \$0-vari-tab-1 ☐ 0 1 0 14 #feffc6
+#X obj 883 461 cnv 5 5 5 empty \$0-vari-tab-1 ☐ 0 1 0 14 #feffc6
 #dfdfdf 0;
-#X obj 873 999 cnv 14 18 14 empty empty R~ 6 8 0 8 #ff0400 #606060
+#X obj 986 513 cnv 14 18 14 empty empty R~ 6 8 0 8 #ff0400 #606060
 0;
-#X obj 894 999 cnv 14 18 14 empty empty R~ 6 8 0 8 #ff8300 #606060
+#X obj 1007 513 cnv 14 18 14 empty empty R~ 6 8 0 8 #ff8300 #606060
 0;
-#X obj 915 999 cnv 14 18 14 empty empty R~ 6 8 0 8 #faff00 #606060
+#X obj 1028 513 cnv 14 18 14 empty empty R~ 6 8 0 8 #faff00 #606060
 0;
-#X obj 938 999 cnv 14 18 14 empty empty R~ 6 8 0 8 #00ff04 #606060
+#X obj 1051 513 cnv 14 18 14 empty empty R~ 6 8 0 8 #00ff04 #606060
 0;
-#X obj 959 999 cnv 14 18 14 empty empty R~ 6 8 0 8 #00faff #606060
+#X obj 1072 513 cnv 14 18 14 empty empty R~ 6 8 0 8 #00faff #606060
 0;
-#X obj 981 999 cnv 14 18 14 empty empty R~ 6 8 0 8 #0400ff #dfdfdf
+#X obj 1094 513 cnv 14 18 14 empty empty R~ 6 8 0 8 #0400ff #dfdfdf
 0;
-#X obj 1002 999 cnv 14 18 14 empty empty R~ 6 8 0 8 #9c00ff #dfdfdf
+#X obj 1115 513 cnv 14 18 14 empty empty R~ 6 8 0 8 #9c00ff #dfdfdf
 0;
-#X obj 1027 999 cnv 14 18 14 empty empty R~ 6 8 0 8 #404040 #dfdfdf
+#X obj 1140 513 cnv 14 18 14 empty empty R~ 6 8 0 8 #404040 #dfdfdf
 0;
-#X obj 682 999 cnv 14 18 14 empty empty R~ 6 8 0 8 #dfdfdf #606060
+#X obj 795 513 cnv 14 18 14 empty empty R~ 6 8 0 8 #dfdfdf #606060
 0;
-#X obj 703 999 cnv 14 18 14 empty empty R~ 6 8 0 8 #bbbbbb #606060
+#X obj 816 513 cnv 14 18 14 empty empty R~ 6 8 0 8 #bbbbbb #606060
 0;
-#X obj 714 603 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
-#X obj 170 1050 r \$0-toggleFromInlet;
-#X text 1141 1368 .;
-#X text 468 701 Set "off" background and label colors, f 14;
-#X obj 473 751 pack \$6 0 \$3;
-#N canvas 1280 -209 692 358 argDefaultS 0;
-#X obj 307 269 outlet;
-#X obj 405 236 cnv 15 90 20 empty empty empty 0 8 0 14 #c7c6ff #404040
-0;
-#X text 499 237 Set DEFAULT here;
-#X obj 292 52 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 291 269 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc
-0;
-#X obj 472 50 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 307 52 inlet argument;
-#X obj 307 76 list fromsymbol;
-#X obj 307 127 route list, f 17;
-#X obj 307 238 list tosymbol;
-#X obj 406 213 t b;
-#X obj 487 50 inlet changeDefault;
-#X text 91 51 Use [loadbang]-> [s $#] to send the argument value into
-this subpatch, f 32;
-#X text 67 101 If an argument has been supplied \, it will appear as
-a list \, and [route] will send that list ("[symbol argument(" ) out
-the right outlet. If no argument has been supplied \, only the word
-"symbol" will be delivered to [route] \, and it will not be interpreted
-as a list \, thus sending this data out the right outlet., f 38;
-#X text 50 210 The list from [route]'s right outlet is converted back
-to a symbol and sent to the outlet. The message from [route]'s right
-outlet is just the message [symbol( \, so we use that to trigger a
-"bang" which causes the [symbol default] object to output the symbol
-"default" \, which is send to the outlet., f 37;
-#X obj 406 238 symbol 1;
-#X connect 6 0 7 0;
-#X connect 7 0 8 0;
-#X connect 8 0 9 0;
-#X connect 8 1 10 0;
-#X connect 9 0 0 0;
-#X connect 10 0 15 0;
-#X connect 11 0 15 1;
-#X connect 15 0 0 0;
-#X restore 369 814 pd argDefaultS;
+#X text 1141 1428 .;
 #N canvas 3297 -188 180 416 color-presets 0;
 #X obj 12 11 cnv 32 32 32 empty empty 0 5 18 0 32 #dcdcdc #fcfcfc 0
 ;
@@ -2704,33 +2616,278 @@ outlet is just the message [symbol( \, so we use that to trigger a
 #X obj 123 372 cnv 32 40 32 empty empty 29 5 18 0 32 #dcdcdc #2c004c
 0;
 #X restore 584 184 pd color-presets;
-#X obj 291 589 s \$0-defaultSend-r;
-#X obj 79 1049 r;
-#X connect 0 0 80 0;
-#X connect 3 0 2 0;
-#X connect 4 0 2 0;
-#X connect 16 0 3 0;
-#X connect 17 0 52 0;
-#X connect 19 0 20 0;
-#X connect 21 0 0 0;
-#X connect 52 0 54 0;
-#X connect 52 1 55 0;
-#X connect 52 2 61 0;
-#X connect 52 3 58 0;
-#X connect 52 4 157 0;
-#X connect 52 5 19 0;
-#X connect 53 0 20 0;
-#X connect 54 0 53 0;
-#X connect 55 0 56 0;
-#X connect 56 0 20 0;
-#X connect 57 0 20 0;
-#X connect 58 0 158 0;
-#X connect 61 0 20 0;
-#X connect 73 0 4 0;
-#X connect 79 0 160 0;
-#X connect 154 0 1 0;
-#X connect 157 0 20 0;
-#X connect 158 0 57 0;
-#X connect 161 0 1 0;
-#X connect 161 0 23 0;
+#X obj 256 889 s \$0-tglFormat;
+#X obj 71 1333 s \$0-tglFormat;
+#X obj 160 1333 cnv 14 14 14 empty empty S 6 8 0 8 #dcdcdc #7c7c7c
+0;
+#X obj 71 1013 r \$0-tglValue;
+#X obj 358 723 s \$0-tglValue;
+#X msg 71 1214 label \$1;
+#X obj 71 1177 symbol \$1;
+#X text 203 1138 Set "off" background and label colors, f 14;
+#N canvas 1440 -209 692 358 argDefaultS 0;
+#X obj 307 269 outlet;
+#X obj 405 236 cnv 15 90 20 empty empty empty 0 8 0 14 #c7c6ff #404040
+0;
+#X text 499 237 Set DEFAULT here;
+#X obj 292 52 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc 0
+;
+#X obj 291 269 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc
+0;
+#X obj 472 50 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc 0
+;
+#X obj 307 52 inlet argument;
+#X obj 307 76 list fromsymbol;
+#X obj 307 127 route list, f 17;
+#X obj 307 238 list tosymbol;
+#X obj 406 213 t b;
+#X obj 487 50 inlet changeDefault;
+#X text 91 51 Use [loadbang]-> [s $#] to send the argument value into
+this subpatch, f 32;
+#X text 67 101 If an argument has been supplied \, it will appear as
+a list \, and [route] will send that list ("[symbol argument(" ) out
+the right outlet. If no argument has been supplied \, only the word
+"symbol" will be delivered to [route] \, and it will not be interpreted
+as a list \, thus sending this data out the right outlet., f 38;
+#X text 50 210 The list from [route]'s right outlet is converted back
+to a symbol and sent to the outlet. The message from [route]'s right
+outlet is just the message [symbol( \, so we use that to trigger a
+"bang" which causes the [symbol default] object to output the symbol
+"default" \, which is send to the outlet., f 37;
+#X obj 406 238 symbol 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 8 1 10 0;
+#X connect 9 0 0 0;
+#X connect 10 0 15 0;
+#X connect 11 0 15 1;
+#X connect 15 0 0 0;
+#X restore 71 1196 pd argDefaultS;
+#X msg 183 1196 color \$1 \$2 \$3;
+#X text 83 1148 set to off label, f 9;
+#X obj 142 526 r \$0-tglFormat;
+#X obj 124 527 cnv 14 14 14 empty empty S 6 8 0 8 #fcc4c4 #7c7c7c 0
+;
+#X obj 40 526 r \$0-tglValue;
+#X obj 403 561 cnv 14 14 14 empty empty S 6 8 0 8 #fcc4c4 #7c7c7c 0
+;
+#X obj 320 561 s \$0-tglValue;
+#X msg 358 702 0;
+#X obj 218 624 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 190 1013 r \$5;
+#N canvas 1440 -209 692 358 argDefaultS 0;
+#X obj 307 269 outlet;
+#X obj 405 236 cnv 15 120 20 empty empty empty 0 8 0 14 #c7c6ff #404040
+0;
+#X text 549 237 Set DEFAULT here;
+#X obj 292 52 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc 0
+;
+#X obj 291 269 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc
+0;
+#X obj 502 50 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc 0
+;
+#X obj 307 52 inlet argument;
+#X obj 307 76 list fromsymbol;
+#X obj 307 127 route list, f 17;
+#X obj 307 238 list tosymbol;
+#X obj 406 213 t b;
+#X obj 517 50 inlet changeDefault;
+#X text 91 51 Use [loadbang]-> [s $#] to send the argument value into
+this subpatch, f 32;
+#X text 67 101 If an argument has been supplied \, it will appear as
+a list \, and [route] will send that list ("[symbol argument(" ) out
+the right outlet. If no argument has been supplied \, only the word
+"symbol" will be delivered to [route] \, and it will not be interpreted
+as a list \, thus sending this data out the right outlet., f 38;
+#X text 50 210 The list from [route]'s right outlet is converted back
+to a symbol and sent to the outlet. The message from [route]'s right
+outlet is just the message [symbol( \, so we use that to trigger a
+"bang" which causes the [symbol default] object to output the symbol
+"default" \, which is send to the outlet., f 37;
+#X obj 406 238 symbol \$0-dynaTgl-r;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 8 1 10 0;
+#X connect 9 0 0 0;
+#X connect 10 0 15 0;
+#X connect 11 0 15 1;
+#X connect 15 0 0 0;
+#X restore 49 850 pd argDefaultS;
+#N canvas 1440 -209 692 358 argDefaultS 0;
+#X obj 307 269 outlet;
+#X obj 405 236 cnv 15 120 20 empty empty empty 0 8 0 14 #c7c6ff #404040
+0;
+#X text 549 237 Set DEFAULT here;
+#X obj 292 52 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc 0
+;
+#X obj 291 269 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc
+0;
+#X obj 502 50 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc 0
+;
+#X obj 307 52 inlet argument;
+#X obj 307 76 list fromsymbol;
+#X obj 307 127 route list, f 17;
+#X obj 307 238 list tosymbol;
+#X obj 406 213 t b;
+#X obj 517 50 inlet changeDefault;
+#X text 91 51 Use [loadbang]-> [s $#] to send the argument value into
+this subpatch, f 32;
+#X text 67 101 If an argument has been supplied \, it will appear as
+a list \, and [route] will send that list ("[symbol argument(" ) out
+the right outlet. If no argument has been supplied \, only the word
+"symbol" will be delivered to [route] \, and it will not be interpreted
+as a list \, thus sending this data out the right outlet., f 38;
+#X text 50 210 The list from [route]'s right outlet is converted back
+to a symbol and sent to the outlet. The message from [route]'s right
+outlet is just the message [symbol( \, so we use that to trigger a
+"bang" which causes the [symbol default] object to output the symbol
+"default" \, which is send to the outlet., f 37;
+#X obj 406 238 symbol \$0-dynaTgl-s;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 8 1 10 0;
+#X connect 9 0 0 0;
+#X connect 10 0 15 0;
+#X connect 11 0 15 1;
+#X connect 15 0 0 0;
+#X restore 152 804 pd argDefaultS;
+#X obj 49 669 t b b b b, f 52;
+#X msg 478 1216 label \$1;
+#N canvas 1440 -209 692 358 argDefaultS 0;
+#X obj 307 269 outlet;
+#X obj 405 236 cnv 15 90 20 empty empty empty 0 8 0 14 #c7c6ff #404040
+0;
+#X text 499 237 Set DEFAULT here;
+#X obj 292 52 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc 0
+;
+#X obj 291 269 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc
+0;
+#X obj 472 50 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc 0
+;
+#X obj 307 52 inlet argument;
+#X obj 307 76 list fromsymbol;
+#X obj 307 127 route list, f 17;
+#X obj 307 238 list tosymbol;
+#X obj 406 213 t b;
+#X obj 487 50 inlet changeDefault;
+#X text 91 51 Use [loadbang]-> [s $#] to send the argument value into
+this subpatch, f 32;
+#X text 67 101 If an argument has been supplied \, it will appear as
+a list \, and [route] will send that list ("[symbol argument(" ) out
+the right outlet. If no argument has been supplied \, only the word
+"symbol" will be delivered to [route] \, and it will not be interpreted
+as a list \, thus sending this data out the right outlet., f 38;
+#X text 50 210 The list from [route]'s right outlet is converted back
+to a symbol and sent to the outlet. The message from [route]'s right
+outlet is just the message [symbol( \, so we use that to trigger a
+"bang" which causes the [symbol default] object to output the symbol
+"default" \, which is send to the outlet., f 37;
+#X obj 406 238 symbol 1;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 8 1 10 0;
+#X connect 9 0 0 0;
+#X connect 10 0 15 0;
+#X connect 11 0 15 1;
+#X connect 15 0 0 0;
+#X restore 478 1198 pd argDefaultS;
+#X msg 587 1198 color \$1 \$2 \$3;
+#X text 490 1150 set to on label, f 9;
+#X obj 478 1178 symbol \$2;
+#X text 607 1140 Set "on" background and label colors, f 14;
+#X obj 129 183 cnv 14 18 14 empty empty 1 2 8 0 12 #bbbbbb #ffffff
+0;
+#X obj 129 203 cnv 14 18 14 empty empty 1 2 8 0 12 #bbbbbb #ffffff
+0;
+#X obj 129 223 cnv 14 18 14 empty empty 1 2 8 0 12 #bbbbbb #ffffff
+0;
+#X obj 129 243 cnv 14 18 14 empty empty 1 2 8 0 12 #bbbbbb #ffffff
+0;
+#X obj 129 263 cnv 14 18 14 empty empty 1 2 8 0 12 #bbbbbb #ffffff
+0;
+#X obj 129 283 cnv 14 18 14 empty empty 1 2 8 0 12 #bbbbbb #ffffff
+0;
+#X obj 129 303 cnv 14 18 14 empty empty 1 2 8 0 12 #bbbbbb #ffffff
+0;
+#X obj 129 323 cnv 14 18 14 empty empty 1 2 8 0 12 #bbbbbb #ffffff
+0;
+#X obj 129 343 cnv 14 18 14 empty empty 1 2 8 0 12 #bbbbbb #ffffff
+0;
+#X text 185 262 (float) off label size;
+#X text 185 282 (float) "on" label size;
+#X text 151 282 \$6 -;
+#X text 151 302 \$7 -;
+#X obj 183 1176 pack \$7 0 \$3;
+#X obj 587 1179 pack \$8 0 \$4;
+#X text 151 322 \$8 -;
+#X text 151 342 \$9 -;
+#X text 146 362 \$10 -;
+#X obj 129 363 cnv 14 18 14 empty empty 1 2 8 0 12 #bbbbbb #ffffff
+0;
+#X text 185 302 (float) "off" background color;
+#X text 185 322 (float) "on" background color (also sets color of the
+"check" mark so we do not see the check mark \, we only see the custom
+label), f 129;
+#X obj 697 1179 f \$6;
+#X obj 697 1200 pack 0 f;
+#X msg 697 1221 label_font \$1 \$2;
+#X obj 478 1104 t b b b, f 37;
+#X obj 71 1098 t b b b, f 38;
+#X obj 296 1194 pack 0 f;
+#X msg 296 1215 label_font \$1 \$2;
+#X obj 296 1173 f \$5;
+#X obj 58 924 print;
+#X obj 142 547 print;
+#X obj 671 963 value;
+#X connect 0 0 49 0;
+#X connect 1 0 175 0;
+#X connect 1 1 174 0;
+#X connect 5 0 143 0;
+#X connect 32 0 122 0;
+#X connect 33 0 141 0;
+#X connect 34 0 142 0;
+#X connect 35 0 122 0;
+#X connect 38 0 122 0;
+#X connect 48 0 137 0;
+#X connect 125 0 1 0;
+#X connect 125 0 7 0;
+#X connect 127 0 123 0;
+#X connect 128 0 130 0;
+#X connect 130 0 127 0;
+#X connect 131 0 123 0;
+#X connect 133 0 0 0;
+#X connect 133 0 180 0;
+#X connect 135 0 0 0;
+#X connect 138 0 126 0;
+#X connect 139 0 143 0;
+#X connect 140 0 1 0;
+#X connect 141 0 32 0;
+#X connect 142 0 35 0;
+#X connect 143 0 33 0;
+#X connect 143 1 34 0;
+#X connect 143 2 38 0;
+#X connect 143 3 138 0;
+#X connect 144 0 123 0;
+#X connect 145 0 144 0;
+#X connect 146 0 123 0;
+#X connect 148 0 145 0;
+#X connect 163 0 131 0;
+#X connect 164 0 146 0;
+#X connect 171 0 172 0;
+#X connect 172 0 173 0;
+#X connect 173 0 123 0;
+#X connect 174 0 148 0;
+#X connect 174 1 164 0;
+#X connect 174 2 171 0;
+#X connect 175 0 128 0;
+#X connect 175 1 163 0;
+#X connect 175 2 178 0;
+#X connect 176 0 177 0;
+#X connect 177 0 123 0;
+#X connect 178 0 176 0;
 #X coords 0 -1 1 1 15 15 2 100 575;

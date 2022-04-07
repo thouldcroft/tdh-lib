@@ -1,34 +1,34 @@
-#N canvas 1285 -209 1920 1035 8;
-#X obj 688 1195 outlet~ L;
-#X obj 860 1195 outlet~ R;
-#X obj 120 289 hsl 64 15 0 1 0 0 \$0-panSlider1-s \$0-panSlider1-r
+#N canvas 1280 -209 1920 1035 8;
+#X declare -path tdh.lib.dependencies;
+#X obj 978 1195 outlet~ L;
+#X obj 1150 1195 outlet~ R;
+#X obj 120 699 hsl 64 15 0 1 0 0 \$0-panSlider1-s \$0-panSlider1-r
 empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
-#X text 106 288 L;
-#X text 190 288 R;
-#X obj 1295 255 inlet pan;
-#X floatatom 137 307 5 0 0 0 - \$0-panValue-r \$0-panValue-s 0;
-#X obj 130 142 vsl 14 118 0 2 0 0 \$0-linearFader1-s \$0-linearFader1-r
+#X text 106 698 L;
+#X text 190 698 R;
+#X obj 3396 255 inlet pan;
+#X floatatom 137 717 5 0 0 0 - \$0-panValue1-r \$0-panValue1-s 0;
+#X obj 134 552 vsl 14 118 0.03 3 1 0 \$0-linearFader1-s \$0-linearFader1-r
 empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 1378 352 loadbang;
-#X msg 1378 392 0.5;
-#X obj 1295 391 change;
-#X obj 1295 419 f;
-#X obj 1378 372 t b b;
-#X msg 1295 440 set \$1;
-#X obj 1295 326 expr if($f1 > 0 \, $f1 \, 0);
-#X text 106 194 0dB;
-#X floatatom 130 266 4 0 0 0 - \$0-dBFS-amp1-r \$0-dBFS-amp1-s 0;
-#X text 101 179 +2dB;
-#X text 101 139 +6dB;
-#X text 101 208 -2dB;
-#X text 101 224 -6dB;
-#X text 101 249 -20dB;
-#X msg 1338 983 set \$1;
-#X obj 1089 321 else/db2lin;
-#X obj 961 255 inlet gain-lin;
+#X obj 3479 352 loadbang;
+#X msg 3479 392 0.5;
+#X obj 3396 391 change;
+#X obj 3396 419 f;
+#X obj 3479 372 t b b;
+#X msg 3396 440 set \$1;
+#X obj 3396 326 expr if($f1 > 0 \, $f1 \, 0);
+#X text 110 574 0dB;
+#X floatatom 127 676 4 0 0 0 - \$0-dBFS-amp1-r \$0-dBFS-amp1-s 0;
+#X text 105 567 +2dB;
+#X text 105 556 +6dB;
+#X text 105 581 -2dB;
+#X text 105 591 -6dB;
+#X msg 1458 822 set \$1;
+#X obj 3190 321 else/db2lin;
+#X obj 3062 255 inlet gain-lin;
 #X text 9 6 _;
-#X obj 1089 255 inlet gain-db;
-#X obj 1191 255 inlet~ sig-gain;
+#X obj 3190 255 inlet gain-db;
+#X obj 3292 255 inlet~ sig-gain;
 #N canvas 2048 40 679 731 snapshotter 0;
 #X obj 311 25 inlet~;
 #X obj 311 175 outlet~;
@@ -47,16 +47,16 @@ inlet for gain control \, for display purposes.;
 #X connect 5 0 6 0;
 #X connect 6 0 3 0;
 #X connect 8 0 2 0;
-#X restore 1191 323 pd snapshotter;
-#X obj 1338 963 cyclone/atodb;
-#X obj 1464 963 else/db2lin;
-#X obj 567 344 cnv 14 14 14 empty empty R 6 8 0 8 #fcc4c4 #7c7c7c 0
+#X restore 3292 323 pd snapshotter;
+#X obj 1458 802 cyclone/atodb;
+#X obj 1584 802 else/db2lin;
+#X obj 60 712 cnv 14 14 14 empty empty R 6 8 0 8 #fcc4c4 #7c7c7c 0
 ;
-#X obj 1547 346 cnv 14 14 14 empty empty S 6 8 0 8 #fcc4c4 #7c7c7c
+#X obj 3648 346 cnv 14 14 14 empty empty S 6 8 0 8 #fcc4c4 #7c7c7c
 0;
-#X msg 1447 327 label \$1;
-#X obj 1506 425 s \$0-chStripNameEntry;
-#X obj 1447 309 symbol \$1;
+#X msg 3548 327 label \$1;
+#X obj 3615 448 s \$0-chStripNameEntry;
+#X obj 3548 309 symbol \$1;
 #N canvas 2596 -135 316 281 \$0-chStripNameEntry 0;
 #N canvas 2672 -94 820 638 entryField 0;
 #X symbolatom 108 124 25 0 0 0 - - - 0;
@@ -66,160 +66,125 @@ inlet for gain control \, for display purposes.;
 #X coords 0 -1 1 1 160 50 2 100 100;
 #X restore 5 -20 pd entryField;
 #X coords 0 281 1 280 85 60 0;
-#X restore 1505 451 pd \$0-chStripNameEntry;
-#X obj 1493 383 tgl 8 0 \$0-chStripNameEntryWindow empty empty 17 7
+#X restore 3614 474 pd \$0-chStripNameEntry;
+#X obj 3602 406 tgl 8 0 \$0-chStripNameEntryWindow empty empty 17 7
 0 10 #fcfcfc #000000 #000000 0 1;
-#X msg 1506 404 vis \$1;
-#X obj 1621 452 cnv 14 14 14 empty empty S 6 8 0 8 #fcc4c4 #7c7c7c
+#X msg 3615 427 vis \$1;
+#X obj 3730 475 cnv 14 14 14 empty empty S 6 8 0 8 #fcc4c4 #7c7c7c
 0;
-#X obj 1506 379 r \$0-chStripNameEntryWindow;
-#X text 1501 362 TO BE IMPLEMENTED;
-#X obj 166 142 vu 10 120 \$0-ch1Env empty -1 -8 0 10 #404040 #000000
+#X text 3610 385 TO BE IMPLEMENTED;
+#X obj 152 552 vu 10 120 \$0-chEnv1 empty -1 -8 0 10 #404040 #000000
 1 0;
-#X obj 1024 940 loadbang;
-#X msg 1024 959 scale 0;
-#X msg 1072 960 size 10;
-#X text 1068 939 [vu] visual formatting;
-#X obj 571 137 cnv 14 14 14 empty empty R 6 8 0 8 #fce0c4 #7c7c7c 0
+#X obj 1144 779 loadbang;
+#X msg 1144 798 scale 0;
+#X msg 1192 799 size 10;
+#X text 1188 778 [vu] visual formatting;
+#X obj 75 547 cnv 14 14 14 empty empty R 6 8 0 8 #fce0c4 #7c7c7c 0
 ;
-#X obj 1121 863 cnv 14 14 14 empty empty R 6 8 0 8 #c4c4fc #7c7c7c
-0;
-#X obj 589 137 cnv 14 14 14 empty empty R 6 8 0 8 #fcfcc4 #7c7c7c 0
+#X obj 21 731 cnv 14 14 14 empty empty R 6 8 0 8 #e0c4fc #7c7c7c 0
 ;
-#X obj 61 312 cnv 14 14 14 empty empty R 6 8 0 8 #e0c4fc #7c7c7c 0
+#X obj 3367 349 cnv 14 14 14 empty empty S 6 8 0 8 #c4c4fc #7c7c7c
+0;
+#X obj 1298 939 cnv 14 14 14 empty empty S 6 8 0 8 #e0c4fc #7c7c7c
+0;
+#X obj 987 856 *~;
+#X obj 999 824 line~;
+#X obj 1010 655 env~;
+#X obj 1010 672 - 100;
+#X msg 1000 807 \$1 20;
+#X obj 995 689 cnv 14 14 14 empty empty S 6 8 0 8 #fce0c4 #7c7c7c 0
 ;
-#X obj 1266 349 cnv 14 14 14 empty empty S 6 8 0 8 #c4c4fc #7c7c7c
+#X obj 1128 838 cnv 14 14 14 empty empty S 6 8 0 8 #fce0c4 #7c7c7c
 0;
-#X obj 1169 1001 cnv 14 14 14 empty empty S 6 8 0 8 #fcfcc4 #7c7c7c
+#X text 1316 801 Convert from linear to dBFS;
+#X text 1328 777 Linear fader value (0-2);
+#X text 1683 778 dBFS -90-+6;
+#X text 1648 798 Convert to linear amp;
+#X obj 1107 824 cnv 14 14 14 empty empty R 6 8 0 8 #c4c4fc #7c7c7c
 0;
-#X obj 1105 635 cnv 14 14 14 empty empty S 6 8 0 8 #e0c4fc #7c7c7c
+#X obj 1669 779 cnv 14 14 14 empty empty R 6 8 0 8 #00fc04 #7c7c7c
 0;
-#X obj 745 883 *~;
-#X obj 760 861 line~;
-#X obj 715 935 env~;
-#X obj 715 957 - 100;
-#X msg 761 844 \$1 20;
-#X obj 787 974 cnv 14 14 14 empty empty S 6 8 0 8 #fce0c4 #7c7c7c 0
+#X obj 21 693 cnv 14 14 14 empty empty R 6 8 0 8 #f8fc00 #7c7c7c 0
 ;
-#X obj 947 885 *~;
-#X obj 962 863 line~;
-#X obj 922 946 env~;
-#X obj 922 968 - 100;
-#X msg 963 846 \$1 20;
-#X obj 1008 999 cnv 14 14 14 empty empty S 6 8 0 8 #fce0c4 #7c7c7c
-0;
-#X obj 997 985 cnv 14 14 14 empty empty S 6 8 0 8 #fcfcc4 #7c7c7c 0
+#X obj 21 674 cnv 14 14 14 empty empty R 6 8 0 8 #fc8000 #7c7c7c 0
 ;
-#X text 1196 962 Convert from linear to dBFS;
-#X text 1208 938 Linear fader value (0-2);
-#X text 1563 939 dBFS -90-+6;
-#X text 1528 959 Convert to linear amp;
-#X obj 868 861 cnv 14 14 14 empty empty R 6 8 0 8 #c4c4fc #7c7c7c 0
+#X obj 1099 781 cnv 14 14 14 empty empty R 6 8 0 8 #fc0400 #606060
+0;
+#X obj 1411 907 cnv 14 14 14 empty empty R 6 8 0 8 #9c00fc #b8b8b8
+0;
+#X obj 1299 920 cnv 14 14 14 empty empty R 6 8 0 8 #0400fc #b8b8b8
+0;
+#X obj 21 712 cnv 14 14 14 empty empty R 6 8 0 8 #00f8fc #7c7c7c 0
 ;
-#X obj 1549 940 cnv 14 14 14 empty empty R 6 8 0 8 #00fc04 #7c7c7c
-0;
-#X obj 62 271 cnv 14 14 14 empty empty R 6 8 0 8 #f8fc00 #7c7c7c 0
+#X obj 40 693 cnv 14 14 14 empty empty S 6 8 0 8 #00fc04 #7c7c7c 0
 ;
-#X obj 61 244 cnv 14 14 14 empty empty R 6 8 0 8 #fc8000 #7c7c7c 0
+#X obj 1543 841 cnv 14 14 14 empty empty S 6 8 0 8 #f8fc00 #7c7c7c
+0;
+#X obj 1684 845 cnv 14 14 14 empty empty S 6 8 0 8 #fc8000 #7c7c7c
+0;
+#X obj 40 674 cnv 14 14 14 empty empty S 6 8 0 8 #fc0400 #606060 0
 ;
-#X obj 860 818 cnv 14 14 14 empty empty R 6 8 0 8 #fc0400 #606060 0
+#X obj 40 731 cnv 14 14 14 empty empty S 6 8 0 8 #9c00fc #b8b8b8 0
 ;
-#X obj 1218 603 cnv 14 14 14 empty empty R 6 8 0 8 #9c00fc #b8b8b8
-0;
-#X obj 1106 616 cnv 14 14 14 empty empty R 6 8 0 8 #0400fc #b8b8b8
-0;
-#X obj 64 293 cnv 14 14 14 empty empty R 6 8 0 8 #00f8fc #7c7c7c 0
+#X obj 40 712 cnv 14 14 14 empty empty S 6 8 0 8 #0400fc #b8b8b8 0
 ;
-#X obj 81 272 cnv 14 14 14 empty empty S 6 8 0 8 #00fc04 #7c7c7c 0
-;
-#X obj 1423 1002 cnv 14 14 14 empty empty S 6 8 0 8 #f8fc00 #7c7c7c
+#X obj 3570 473 cnv 14 14 14 empty empty S 6 8 0 8 #00f8fc #7c7c7c
 0;
-#X obj 1564 1006 cnv 14 14 14 empty empty S 6 8 0 8 #fc8000 #7c7c7c
+#X obj 3174 347 cnv 14 14 14 empty empty S 6 8 0 8 #fc8000 #7c7c7c
 0;
-#X obj 80 244 cnv 14 14 14 empty empty S 6 8 0 8 #fc0400 #606060 0
-;
-#X obj 81 311 cnv 14 14 14 empty empty S 6 8 0 8 #9c00fc #b8b8b8 0
-;
-#X obj 82 293 cnv 14 14 14 empty empty S 6 8 0 8 #0400fc #b8b8b8 0
-;
-#X obj 1469 473 cnv 14 14 14 empty empty S 6 8 0 8 #00f8fc #7c7c7c
+#X obj 1558 778 cnv 14 14 14 empty empty R 6 8 0 8 #fc0400 #606060
 0;
-#X obj 1063 819 cnv 14 14 14 empty empty R 6 8 0 8 #fc0400 #606060
+#X msg 1324 926 set \$1;
+#X obj 1414 947 cnv 14 14 14 empty empty S 6 8 0 8 #00f8fc #7c7c7c
 0;
-#X obj 1073 347 cnv 14 14 14 empty empty S 6 8 0 8 #fc8000 #7c7c7c
+#X obj 1084 971 line~;
+#X msg 1084 952 \$1 20;
+#X obj 1170 903 cnv 14 14 14 empty empty R 6 8 0 8 #9c00fc #b8b8b8
 0;
-#X obj 1438 939 cnv 14 14 14 empty empty R 6 8 0 8 #fc0400 #606060
+#X obj 972 246 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc
 0;
-#X msg 1131 622 set \$1;
-#X obj 1221 643 cnv 14 14 14 empty empty S 6 8 0 8 #00f8fc #7c7c7c
+#X obj 3046 255 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc
 0;
-#X obj 735 656 line~;
-#X msg 735 637 \$1 20;
-#X obj 822 579 cnv 14 14 14 empty empty R 6 8 0 8 #9c00fc #b8b8b8 0
-;
-#X obj 735 598 - 1;
-#X obj 735 617 * -1;
-#X obj 961 646 line~;
-#X msg 961 627 \$1 20;
-#X obj 1047 578 cnv 14 14 14 empty empty R 6 8 0 8 #9c00fc #b8b8b8
+#X obj 3174 255 cnv 14 14 14 empty empty 2 4 8 0 12 #606060 #dcdcdc
 0;
-#X obj 682 386 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc
+#X obj 3279 255 cnv 14 14 14 empty empty 3 4 8 0 12 #606060 #dcdcdc
 0;
-#X obj 945 255 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc
+#X obj 3380 255 cnv 14 14 14 empty empty 4 4 8 0 12 #606060 #dcdcdc
 0;
-#X obj 1073 255 cnv 14 14 14 empty empty 2 4 8 0 12 #606060 #dcdcdc
+#X obj 3533 256 cnv 14 14 14 empty empty 5 4 8 0 12 #606060 #dcdcdc
 0;
-#X obj 1178 255 cnv 14 14 14 empty empty 3 4 8 0 12 #606060 #dcdcdc
+#X obj 962 1194 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc
 0;
-#X obj 1279 255 cnv 14 14 14 empty empty 4 4 8 0 12 #606060 #dcdcdc
+#X obj 1134 1195 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc
 0;
-#X obj 1432 256 cnv 14 14 14 empty empty 5 4 8 0 12 #606060 #dcdcdc
-0;
-#X obj 672 1194 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc
-0;
-#X obj 844 1195 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc
-0;
-#X text 117 49 Ln;
-#X text 137 49 dB;
-#X text 157 49 V~;
-#X text 128 122 Vol;
-#X text 191 49 Nm;
-#X text 175 49 Pn;
-#X obj 900 666 *~;
-#X obj 698 676 *~;
-#X text 100 49 In;
-#X obj 101 344 cnv 12 102 14 empty \$0-objectName 4\ Channel\ Mixer
+#X text 117 459 Ln;
+#X text 137 459 dB;
+#X text 157 459 V~;
+#X text 128 532 Vol;
+#X text 191 459 Nm;
+#X text 175 459 Pn;
+#X text 100 459 In;
+#X obj 101 754 cnv 12 102 14 empty \$0-objectName 4\ Channel\ Mixer
 1 7 0 10 #dcdcdc #404040 0;
-#X obj 101 325 cnv 15 102 18 empty \$0-chanStripName1 empty 1 9 0 12
+#X obj 101 735 cnv 15 102 18 empty \$0-chanStripName1 empty 1 9 0 12
 #c4c4fc #404040 0;
-#X obj 1447 256 inlet;
-#X obj 1566 257 loadbang;
-#X obj 1651 347 cnv 14 14 14 empty empty S 6 8 0 8 #dcdcdc #7c7c7c
+#X obj 3548 256 inlet;
+#X obj 3587 255 loadbang;
+#X obj 192 851 cnv 14 14 14 empty empty S 6 8 0 8 #dcdcdc #7c7c7c 0
+;
+#X obj 82 752 cnv 14 14 14 empty empty R 6 8 0 8 #dcdcdc #7c7c7c 0
+;
+#X obj 1022 494 line~;
+#X msg 1023 477 \$1 20;
+#X obj 61 674 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcc4 #7c7c7c 0
+;
+#X obj 1089 419 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c
 0;
-#X obj 568 327 cnv 14 14 14 empty empty R 6 8 0 8 #dcdcdc #7c7c7c 0
+#X obj 81 674 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcfc #7c7c7c 0
 ;
-#X obj 732 494 line~;
-#X msg 733 477 \$1 20;
-#X obj 902 495 line~;
-#X msg 903 478 \$1 20;
-#X obj 1032 424 cnv 14 35 14 empty empty init 4 7 0 10 #e0c4fc #7c7c7c
-0;
-#X obj 567 266 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcc4 #7c7c7c 0
-;
-#X obj 799 419 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
-;
-#X obj 968 424 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
-;
-#X msg 986 444 0;
-#X obj 986 424 loadbang;
-#X obj 582 266 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcfc #7c7c7c 0
-;
-#X obj 1053 462 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcfc #7c7c7c
-0;
-#X obj 698 545 *~;
-#X obj 900 542 *~;
-#X obj 158 267 tgl 12 0 \$0-mute1-s \$0-mute1-r M 3 6 0 10 #fce0e0
-#fce0e0 #404040 0 1;
+#X obj 988 545 *~;
+#X obj 151 677 tgl 12 0 \$0-mute1-s \$0-mute1-r M 3 6 0 10 #fce0e0
+#fc2828 #404040 0 1;
 #N canvas 1738 289 915 515 muteButtonDisplay 0;
 #X obj 152 67 sel 0 1;
 #X text 27 108 When [tgl] is 0 \, change the background color to the
@@ -240,48 +205,41 @@ inlet for gain control \, for display purposes.;
 #X connect 4 0 8 0;
 #X connect 5 0 8 0;
 #X connect 7 0 0 0;
-#X restore 1078 423 pd muteButtonDisplay;
-#X obj 734 439 sel 0 1;
-#X obj 761 457 f 0;
-#X obj 733 457 f 1;
-#X text 784 441 A mute button functions in the opposite of the [tgl]
+#X restore 1138 422 pd muteButtonDisplay;
+#X obj 1024 439 sel 0 1;
+#X obj 1051 457 f 0;
+#X obj 1023 457 f 1;
+#X text 1074 441 A mute button functions in the opposite of the [tgl]
 values \, so we switch them here, f 11;
-#X obj 902 441 sel 0 1;
-#X obj 929 459 f 0;
-#X obj 901 459 f 1;
-#X obj 1299 983 cnv 14 35 14 empty empty init 4 7 0 10 #e0c4fc #7c7c7c
+#X obj 1419 822 cnv 14 35 14 empty empty init 4 7 0 10 #e0c4fc #7c7c7c
 0;
-#X msg 1253 1003 0;
-#X obj 1253 983 loadbang;
-#X obj 1611 257 cnv 14 35 14 empty empty init 4 7 0 10 #e0c4fc #7c7c7c
+#X msg 1373 842 0;
+#X obj 1373 822 loadbang;
+#X obj 3632 255 cnv 14 35 14 empty empty init 4 7 0 10 #e0c4fc #7c7c7c
 0;
-#X obj 101 101 cnv 10 102 12 empty \$0-objectName Mono\ Channel 1 6
-0 10 #bbbbbb #404040 0;
-#X obj 698 1042 throw~ \$0-outL;
-#X obj 900 1042 throw~ \$0-outR;
-#X obj 2061 386 line~;
-#X obj 735 22 cnv 4 2 100 empty empty **\\\ TO\\\ DO\\\ ** 4 8 0 14
+#X obj 987 1042 throw~ \$0-outL;
+#X obj 1072 1042 throw~ \$0-outR;
+#X obj 1035 22 cnv 4 2 100 empty empty **\\\ TO\\\ DO\\\ ** 4 8 0 14
 #ff0400 #ff0400 0;
-#X text 751 45 • Make meter pre/post fader;
-#X obj 705 1132 env~;
-#X obj 705 1154 - 100;
-#X obj 777 1173 cnv 14 14 14 empty empty S 6 8 0 8 #fce0c4 #7c7c7c
+#X obj 995 1132 env~;
+#X obj 995 1154 - 100;
+#X obj 1067 1173 cnv 14 14 14 empty empty S 6 8 0 8 #fce0c4 #7c7c7c
 0;
-#X obj 872 1133 env~;
-#X obj 872 1155 - 100;
-#X obj 942 1172 cnv 14 14 14 empty empty S 6 8 0 8 #fcfcc4 #7c7c7c
+#X obj 1162 1133 env~;
+#X obj 1162 1155 - 100;
+#X obj 1232 1172 cnv 14 14 14 empty empty S 6 8 0 8 #fcfcc4 #7c7c7c
 0;
-#X obj 705 1172 s \$0-mainEnvL;
-#X obj 872 1173 s \$0-mainEnvR;
-#X obj 173 267 tgl 12 0 \$0-preFader1-s \$0-preFader1-r PRE 1 6 0 6
-#d8fcd8 #14e814 #606060 0 1;
-#X obj 720 415 cnv 4 500 1 empty empty Mute 0 -4 0 10 #bbbbbb #7c7c7c
+#X obj 995 1172 s \$0-mainEnvL;
+#X obj 1162 1173 s \$0-mainEnvR;
+#X obj 166 677 tgl 12 0 \$0-preFader1-s \$0-preFader1-r PST 1 6 0 6
+#14e814 #14e814 #606060 0 1;
+#X obj 1010 415 cnv 4 500 1 empty empty Mute 0 -4 0 10 #bbbbbb #7c7c7c
 0;
-#X obj 720 565 cnv 4 500 1 empty empty Pan 0 -4 0 10 #bbbbbb #7c7c7c
+#X obj 1005 881 cnv 4 500 1 empty empty Pan 0 -4 0 10 #bbbbbb #7c7c7c
 0;
-#X obj 721 805 cnv 4 850 1 empty empty Fader\\\ and\\\ Meter\\\ Handling
+#X obj 995 762 cnv 4 450 1 empty empty Fader\\\ and\\\ Meter\\\ Handling
 0 -4 0 10 #bbbbbb #7c7c7c 0;
-#N canvas 1930 103 1048 419 prePostButtonDisplay 0;
+#N canvas 1992 281 1048 419 prePostButtonDisplay 0;
 #X obj 180 56 sel 0 1;
 #X text 8 97 When [tgl] is 0 \, change the background color to the
 "off" color, f 23;
@@ -299,6 +257,8 @@ values \, so we switch them here, f 11;
 "on" color \, AND change the foreground color (the "x") to the "on"
 color \, so we don't see the "x" displayed (it blends into the background
 color), f 23;
+#X obj 315 14 loadbang;
+#X msg 315 34 1;
 #X connect 0 0 6 0;
 #X connect 0 0 9 0;
 #X connect 0 1 7 0;
@@ -308,38 +268,141 @@ color), f 23;
 #X connect 7 0 5 0;
 #X connect 8 0 5 0;
 #X connect 9 0 5 0;
-#X restore 1055 733 pd prePostButtonDisplay;
-#X msg 1566 327 label 4\ Channel\ Mixer;
-#X obj 698 387 inlet~ input1;
-#X obj 963 820 r \$0-linearFader1-s;
-#X obj 1464 1006 s \$0-linearFader1-r;
-#X obj 761 818 r \$0-linearFader1-s;
-#X obj 794 861 r~ \$0-sigGain1;
-#X obj 1007 863 r~ \$0-sigGain1;
-#X obj 734 420 r \$0-mute1-s;
-#X obj 902 423 r \$0-mute1-s;
-#X obj 987 462 s \$0-mute1-r;
-#X obj 1089 348 s \$0-linearFader1-r;
-#X obj 1191 348 s~ \$0-sigGain1;
-#X obj 1378 474 s \$0-panSlider1-r;
-#X obj 1447 346 s \$0-chanStripName1;
-#X obj 1566 347 s \$0-objectName;
-#X obj 735 579 r \$0-panValue1-s;
-#X obj 961 578 r \$0-panValue1-s;
-#X obj 1131 603 r \$0-panValue1-s;
-#X obj 1014 617 r \$0-panSlider1-s;
-#X obj 1014 636 s \$0-panValue1-r;
-#X obj 1131 642 s \$0-panSlider1-r;
-#X obj 715 975 s \$0-leftEnv1;
-#X obj 922 986 s \$0-rightEnv1;
-#X obj 1024 999 s \$0-leftEnv1;
-#X obj 1094 999 s \$0-rightEnv1;
-#X obj 1338 940 r \$0-linearFader1-s;
-#X obj 1338 1002 s \$0-dBFS-amp1-r;
-#X obj 1464 941 r \$0-dBFS-amp1-s;
-#X obj 1032 733 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c
+#X connect 11 0 12 0;
+#X connect 12 0 0 0;
+#X restore 1163 619 pd prePostButtonDisplay;
+#X msg 107 831 label 4\ Channel\ Mixer;
+#X obj 988 247 inlet~ input1;
+#X obj 1584 845 s \$0-linearFader1-r;
+#X obj 1000 781 r \$0-linearFader1-s;
+#X obj 1033 824 r~ \$0-sigGain1;
+#X obj 1024 420 r \$0-mute1-s;
+#X obj 3190 348 s \$0-linearFader1-r;
+#X obj 3292 348 s~ \$0-sigGain1;
+#X obj 3479 474 s \$0-panSlider1-r;
+#X obj 3548 346 s \$0-chanStripName1;
+#X obj 107 851 s \$0-objectName;
+#X obj 1084 903 r \$0-panValue1-s;
+#X obj 1324 907 r \$0-panValue1-s;
+#X obj 1207 921 r \$0-panSlider1-s;
+#X obj 1207 940 s \$0-panValue1-r;
+#X obj 1324 946 s \$0-panSlider1-r;
+#X obj 1458 779 r \$0-linearFader1-s;
+#X obj 1458 841 s \$0-dBFS-amp1-r;
+#X obj 1584 780 r \$0-dBFS-amp1-s;
+#X obj 1057 618 r \$0-preFader1-s;
+#N canvas 1462 397 450 300 router~ 0;
+#X obj 338 122 sel 0 1;
+#X msg 241 149 1, f 1;
+#X msg 258 149 0, f 1;
+#X msg 376 155 1, f 1;
+#X msg 354 155 0, f 1;
+#X obj 43 203 *~;
+#X obj 237 239 *~;
+#X obj 338 39 inlet ctrl;
+#X obj 43 33 inlet~ pre;
+#X obj 103 34 inlet~ post;
+#X obj 42 246 outlet~ pre;
+#X obj 340 253 outlet;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X connect 0 1 3 0;
+#X connect 0 1 4 0;
+#X connect 1 0 5 1;
+#X connect 2 0 6 1;
+#X connect 3 0 6 1;
+#X connect 4 0 5 1;
+#X connect 5 0 10 0;
+#X connect 6 0 10 0;
+#X connect 7 0 0 0;
+#X connect 7 0 11 0;
+#X connect 8 0 5 0;
+#X connect 9 0 6 0;
+#X restore 1010 636 pd router~;
+#X obj 1142 619 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c
 0;
-#X obj 947 734 r \$0-preFader1-s;
+#X obj 1004 587 cnv 4 500 1 empty empty Pre-Post\\\ Routing 0 -4 0
+10 #bbbbbb #7c7c7c 0;
+#X obj 978 1096 catch~ \$0-outL;
+#X obj 1150 1096 catch~ \$0-outR;
+#X text 1020 591 Pre-fader signal, f 9;
+#X text 1032 722 Post-fader signal, f 10;
+#X text 1018 725 <-;
+#X text 1007 596 <-;
+#X text 1075 691 To meter;
+#X obj 987 1011 *~;
+#X obj 1072 1013 *~;
+#X obj 999 993 line~;
+#X msg 999 974 \$1 20;
+#X obj 999 935 - 1;
+#X obj 999 954 * -1;
+#X obj 1010 689 s \$0-chEnv1;
+#X text 100 544 +10dB;
+#X text 100 608 -12dB;
+#X text 100 633 -20dB;
+#X text 101 662 -30dB;
+#X text 127 543 -;
+#X text 127 556 -;
+#X text 127 567 -;
+#X text 127 574 -;
+#X text 127 581 -;
+#X text 127 590 -;
+#X text 127 608 -;
+#X text 127 633 -;
+#X text 127 662 -;
+#X obj 37 506 cnv 5 5 5 {empty} {empty} {+10dB\\\ -} 0 0 0 10 #ffffff
+#ffffff 0;
+#X obj 100 510 cnv 10 20 12 empty empty In1 0 6 0 10 #dfdfdf #404040
+0;
+#X obj 130 510 cnv 10 20 12 empty empty In2 0 6 0 10 #dfdfdf #404040
+0;
+#X obj 160 510 cnv 10 20 12 empty empty In3 0 6 0 10 #dfdfdf #404040
+0;
+#X obj 190 510 cnv 10 20 12 empty empty In4 0 6 0 10 #dfdfdf #404040
+0;
+#X text 1041 55 • Add aux sends;
+#X text 1041 45 • X Make meter pre/post fader;
+#X symbolatom 103 736 16 0 0 0 - \$0-nameEntry1-r \$0-nameEntry1-s
+10;
+#X obj 3615 402 r \$0-NameEntry1;
+#X obj 1144 838 s \$0-\$0-chEnv1;
+#X obj 107 813 loadbang;
+#N canvas 1280 97 450 300 old 0;
+#X obj 2202 1031 cnv 14 14 14 empty empty R 6 8 0 8 #c4c4fc #7c7c7c
+0;
+#X obj 2028 1053 *~;
+#X obj 2043 1031 line~;
+#X obj 2003 1114 env~;
+#X obj 2003 1136 - 100;
+#X msg 2044 1014 \$1 20;
+#X obj 2078 1153 cnv 14 14 14 empty empty S 6 8 0 8 #fcfcc4 #7c7c7c
+0;
+#X obj 2144 987 cnv 14 14 14 empty empty R 6 8 0 8 #fc0400 #606060
+0;
+#X obj 1981 834 *~;
+#X obj 1983 663 line~;
+#X msg 1984 646 \$1 20;
+#X obj 2113 592 cnv 14 35 14 empty empty init 4 7 0 10 #e0c4fc #7c7c7c
+0;
+#X obj 2049 592 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c
+0;
+#X msg 2067 612 0;
+#X obj 2067 592 loadbang;
+#X obj 2134 630 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcfc #7c7c7c
+0;
+#X obj 1981 710 *~;
+#X obj 1983 609 sel 0 1;
+#X obj 2010 627 f 0;
+#X obj 1982 627 f 1;
+#X obj 2061 386 line~;
+#X obj 2044 988 r \$0-linearFader1-s;
+#X obj 2088 1031 r~ \$0-sigGain1;
+#X obj 1983 591 r \$0-mute1-s;
+#X obj 2068 630 s \$0-mute1-r;
+#X obj 2003 1154 s \$0-rightEnv1;
+#X obj 2113 901 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c
+0;
+#X obj 2028 902 r \$0-preFader1-s;
 #N canvas 1463 399 450 300 router~ 0;
 #X obj 178 114 sel 0 1;
 #X msg 178 147 1, f 1;
@@ -365,139 +428,530 @@ color), f 23;
 #X connect 7 0 5 0;
 #X connect 7 0 6 0;
 #X connect 8 0 0 0;
-#X restore 900 762 pd router~;
-#X obj 745 733 r \$0-preFader1-s;
-#N canvas 1463 399 450 300 router~ 0;
-#X obj 178 114 sel 0 1;
-#X msg 178 147 1, f 1;
-#X msg 195 147 0, f 1;
-#X msg 216 147 1, f 1;
-#X msg 233 147 0, f 1;
-#X obj 78 199 *~;
-#X obj 138 198 *~;
-#X obj 78 29 inlet~ signal;
-#X obj 178 31 inlet ctrl;
-#X obj 77 242 outlet~ route1;
-#X obj 170 241 outlet~ route1;
-#X connect 0 0 1 0;
-#X connect 0 0 2 0;
-#X connect 0 1 3 0;
-#X connect 0 1 4 0;
-#X connect 1 0 5 1;
-#X connect 2 0 6 1;
-#X connect 3 0 6 1;
-#X connect 4 0 5 1;
-#X connect 5 0 9 0;
-#X connect 6 0 10 0;
-#X connect 7 0 5 0;
-#X connect 7 0 6 0;
-#X connect 8 0 0 0;
-#X restore 698 761 pd router~;
-#X obj 830 734 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
+#X restore 1981 930 pd router~;
+#X connect 1 0 3 0;
+#X connect 2 0 1 1;
+#X connect 3 0 4 0;
+#X connect 4 0 25 0;
+#X connect 5 0 2 0;
+#X connect 8 0 28 0;
+#X connect 9 0 16 1;
+#X connect 10 0 9 0;
+#X connect 13 0 24 0;
+#X connect 14 0 13 0;
+#X connect 16 0 8 0;
+#X connect 17 0 19 0;
+#X connect 17 1 18 0;
+#X connect 18 0 10 0;
+#X connect 19 0 10 0;
+#X connect 21 0 5 0;
+#X connect 22 0 1 1;
+#X connect 23 0 17 0;
+#X connect 27 0 28 1;
+#X connect 28 0 3 0;
+#X connect 28 1 1 0;
+#X restore 103 1162 pd old code;
+#X obj 3027 208 cnv 4 500 1 empty empty Control\ Inlets 0 -6 0 14 #bbbbbb
+#ffc7c6 0;
+#X msg 2278 822 set \$1;
+#X obj 2278 802 cyclone/atodb;
+#X obj 2404 802 else/db2lin;
+#X obj 1964 779 loadbang;
+#X msg 1964 798 scale 0;
+#X msg 2012 799 size 10;
+#X text 2008 778 [vu] visual formatting;
+#X obj 2118 939 cnv 14 14 14 empty empty S 6 8 0 8 #e0c4fc #7c7c7c
+0;
+#X obj 1807 856 *~;
+#X obj 1819 824 line~;
+#X obj 1830 655 env~;
+#X obj 1830 672 - 100;
+#X msg 1820 807 \$1 20;
+#X obj 1815 689 cnv 14 14 14 empty empty S 6 8 0 8 #fce0c4 #7c7c7c
+0;
+#X obj 1948 838 cnv 14 14 14 empty empty S 6 8 0 8 #fce0c4 #7c7c7c
+0;
+#X text 2136 801 Convert from linear to dBFS;
+#X text 2148 777 Linear fader value (0-2);
+#X text 2503 778 dBFS -90-+6;
+#X text 2468 798 Convert to linear amp;
+#X obj 1927 824 cnv 14 14 14 empty empty R 6 8 0 8 #c4c4fc #7c7c7c
+0;
+#X obj 2489 779 cnv 14 14 14 empty empty R 6 8 0 8 #00fc04 #7c7c7c
+0;
+#X obj 1919 781 cnv 14 14 14 empty empty R 6 8 0 8 #fc0400 #606060
+0;
+#X obj 2231 907 cnv 14 14 14 empty empty R 6 8 0 8 #9c00fc #b8b8b8
+0;
+#X obj 2119 920 cnv 14 14 14 empty empty R 6 8 0 8 #0400fc #b8b8b8
+0;
+#X obj 2363 841 cnv 14 14 14 empty empty S 6 8 0 8 #f8fc00 #7c7c7c
+0;
+#X obj 2504 845 cnv 14 14 14 empty empty S 6 8 0 8 #fc8000 #7c7c7c
+0;
+#X obj 2378 778 cnv 14 14 14 empty empty R 6 8 0 8 #fc0400 #606060
+0;
+#X msg 2144 926 set \$1;
+#X obj 2234 947 cnv 14 14 14 empty empty S 6 8 0 8 #00f8fc #7c7c7c
+0;
+#X obj 1904 971 line~;
+#X msg 1904 952 \$1 20;
+#X obj 1990 903 cnv 14 14 14 empty empty R 6 8 0 8 #9c00fc #b8b8b8
+0;
+#X obj 1792 246 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc
+0;
+#X obj 1842 494 line~;
+#X msg 1843 477 \$1 20;
+#X obj 1909 419 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c
+0;
+#X obj 1808 545 *~;
+#N canvas 1738 289 915 515 muteButtonDisplay 0;
+#X obj 152 67 sel 0 1;
+#X text 27 108 When [tgl] is 0 \, change the background color to the
+"off" color, f 23;
+#X text 284 108 When [tgl] is 1 \, change the background color to the
+"on" color \, AND change the foreground color (the "x") to the on color
+\, so we don't see the "x" displayed, f 23;
+#X obj 217 157 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcfc #7c7c7c 0
 ;
-#X text 652 822 Pre-Fader;
-#X obj 737 718 cnv 4 500 1 empty empty Pre-Post\ Routing 0 -4 0 10
-#bbbbbb #7c7c7c 0;
-#X obj 688 1096 catch~ \$0-outL;
-#X obj 860 1096 catch~ \$0-outR;
+#X msg 222 110 color 13 13;
+#X msg 152 112 color 3;
+#X obj 218 22 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
+;
+#X obj 152 22 r \$0-mute1-s;
+#X obj 152 157 s \$0-mute1-r;
+#X connect 0 0 5 0;
+#X connect 0 1 4 0;
+#X connect 4 0 8 0;
+#X connect 5 0 8 0;
+#X connect 7 0 0 0;
+#X restore 1958 422 pd muteButtonDisplay;
+#X obj 1844 439 sel 0 1;
+#X obj 1871 457 f 0;
+#X obj 1843 457 f 1;
+#X text 1894 441 A mute button functions in the opposite of the [tgl]
+values \, so we switch them here, f 11;
+#X obj 2239 822 cnv 14 35 14 empty empty init 4 7 0 10 #e0c4fc #7c7c7c
+0;
+#X msg 2193 842 0;
+#X obj 2193 822 loadbang;
+#X obj 1807 1042 throw~ \$0-outL;
+#X obj 1892 1042 throw~ \$0-outR;
+#X obj 1830 415 cnv 4 500 1 empty empty Mute 0 -4 0 10 #bbbbbb #7c7c7c
+0;
+#X obj 1825 881 cnv 4 500 1 empty empty Pan 0 -4 0 10 #bbbbbb #7c7c7c
+0;
+#X obj 1815 762 cnv 4 450 1 empty empty Fader\\\ and\\\ Meter\\\ Handling
+0 -4 0 10 #bbbbbb #7c7c7c 0;
+#N canvas 1992 281 1048 419 prePostButtonDisplay 0;
+#X obj 180 56 sel 0 1;
+#X text 8 97 When [tgl] is 0 \, change the background color to the
+"off" color, f 23;
+#X obj 264 145 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcfc #7c7c7c 0
+;
+#X obj 266 10 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
+;
+#X obj 180 11 r \$0-preFader1-s;
+#X obj 180 146 s \$0-preFader1-r;
+#X msg 133 101 color 6;
+#X msg 246 101 color 16 16;
+#X msg 318 102 label PST;
+#X msg 180 101 label PRE;
+#X text 378 78 When [tgl] is 1 \, change the background color to the
+"on" color \, AND change the foreground color (the "x") to the "on"
+color \, so we don't see the "x" displayed (it blends into the background
+color), f 23;
+#X obj 315 14 loadbang;
+#X msg 315 34 1;
+#X connect 0 0 6 0;
+#X connect 0 0 9 0;
+#X connect 0 1 7 0;
+#X connect 0 1 8 0;
+#X connect 4 0 0 0;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
+#X connect 8 0 5 0;
+#X connect 9 0 5 0;
+#X connect 11 0 12 0;
+#X connect 12 0 0 0;
+#X restore 1983 619 pd prePostButtonDisplay;
+#X obj 2404 845 s \$0-linearFader1-r;
+#X obj 1820 781 r \$0-linearFader1-s;
+#X obj 1853 824 r~ \$0-sigGain1;
+#X obj 1844 420 r \$0-mute1-s;
+#X obj 1904 903 r \$0-panValue1-s;
+#X obj 2144 907 r \$0-panValue1-s;
+#X obj 2027 921 r \$0-panSlider1-s;
+#X obj 2027 940 s \$0-panValue1-r;
+#X obj 2144 946 s \$0-panSlider1-r;
+#X obj 2278 779 r \$0-linearFader1-s;
+#X obj 2278 841 s \$0-dBFS-amp1-r;
+#X obj 2404 780 r \$0-dBFS-amp1-s;
+#X obj 1877 618 r \$0-preFader1-s;
+#N canvas 1462 397 450 300 router~ 0;
+#X obj 338 122 sel 0 1;
+#X msg 241 149 1, f 1;
+#X msg 258 149 0, f 1;
+#X msg 376 155 1, f 1;
+#X msg 354 155 0, f 1;
+#X obj 43 203 *~;
+#X obj 237 239 *~;
+#X obj 338 39 inlet ctrl;
+#X obj 43 33 inlet~ pre;
+#X obj 103 34 inlet~ post;
+#X obj 42 246 outlet~ pre;
+#X obj 340 253 outlet;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X connect 0 1 3 0;
+#X connect 0 1 4 0;
+#X connect 1 0 5 1;
+#X connect 2 0 6 1;
+#X connect 3 0 6 1;
+#X connect 4 0 5 1;
+#X connect 5 0 10 0;
+#X connect 6 0 10 0;
+#X connect 7 0 0 0;
+#X connect 7 0 11 0;
+#X connect 8 0 5 0;
+#X connect 9 0 6 0;
+#X restore 1830 636 pd router~;
+#X obj 1962 619 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c
+0;
+#X obj 1824 587 cnv 4 500 1 empty empty Pre-Post\\\ Routing 0 -4 0
+10 #bbbbbb #7c7c7c 0;
+#X text 1840 591 Pre-fader signal, f 9;
+#X text 1852 722 Post-fader signal, f 10;
+#X text 1838 725 <-;
+#X text 1827 596 <-;
+#X text 1895 691 To meter;
+#X obj 1807 1011 *~;
+#X obj 1892 1013 *~;
+#X obj 1819 993 line~;
+#X msg 1819 974 \$1 20;
+#X obj 1819 935 - 1;
+#X obj 1819 954 * -1;
+#X obj 1830 689 s \$0-chEnv1;
+#X obj 1964 838 s \$0-\$0-chEnv1;
+#X obj 1808 247 inlet~ input2;
+#X obj 224 699 hsl 64 15 0 1 0 0 \$0-panSlider1-s \$0-panSlider1-r
+empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X text 210 698 L;
+#X text 294 698 R;
+#X floatatom 241 717 5 0 0 0 - \$0-panValue1-r \$0-panValue1-s 0;
+#X obj 238 552 vsl 14 118 0.03 3 1 0 \$0-linearFader1-s \$0-linearFader1-r
+empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
+#X text 214 574 0dB;
+#X floatatom 231 676 4 0 0 0 - \$0-dBFS-amp1-r \$0-dBFS-amp1-s 0;
+#X text 209 567 +2dB;
+#X text 209 556 +6dB;
+#X text 209 581 -2dB;
+#X text 209 591 -6dB;
+#X obj 256 552 vu 10 120 \$0-chEnv1 empty -1 -8 0 10 #404040 #000000
+1 0;
+#X text 232 532 Vol;
+#X obj 205 735 cnv 15 102 18 empty \$0-chanStripName1 empty 1 9 0 12
+#c4c4fc #404040 0;
+#X obj 255 677 tgl 12 0 \$0-mute1-s \$0-mute1-r M 3 6 0 10 #fce0e0
+#fc2828 #404040 0 1;
+#X obj 270 677 tgl 12 0 \$0-preFader1-s \$0-preFader1-r PST 1 6 0 6
+#14e814 #14e814 #606060 0 1;
+#X text 204 544 +10dB;
+#X text 204 608 -12dB;
+#X text 204 633 -20dB;
+#X text 205 662 -30dB;
+#X text 231 543 -;
+#X text 231 556 -;
+#X text 231 567 -;
+#X text 231 574 -;
+#X text 231 581 -;
+#X text 231 590 -;
+#X text 231 608 -;
+#X text 231 633 -;
+#X text 231 662 -;
+#X symbolatom 207 736 16 0 0 0 - \$0-nameEntry-r \$0-nameEntry-s 10
+;
+#X obj 203 522 cnv 2 2 230 empty empty empty 20 12 0 14 #606060 #ffffff
+0;
+#X obj 328 699 hsl 64 15 0 1 0 0 \$0-panSlider1-s \$0-panSlider1-r
+empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X text 314 698 L;
+#X text 398 698 R;
+#X floatatom 345 717 5 0 0 0 - \$0-panValue1-r \$0-panValue1-s 0;
+#X obj 342 552 vsl 14 118 0.03 3 1 0 \$0-linearFader1-s \$0-linearFader1-r
+empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
+#X text 318 574 0dB;
+#X floatatom 335 676 4 0 0 0 - \$0-dBFS-amp1-r \$0-dBFS-amp1-s 0;
+#X text 313 567 +2dB;
+#X text 313 556 +6dB;
+#X text 313 581 -2dB;
+#X text 313 591 -6dB;
+#X obj 360 552 vu 10 120 \$0-chEnv1 empty -1 -8 0 10 #404040 #000000
+1 0;
+#X text 336 532 Vol;
+#X obj 309 735 cnv 15 102 18 empty \$0-chanStripName1 empty 1 9 0 12
+#c4c4fc #404040 0;
+#X obj 359 677 tgl 12 0 \$0-mute1-s \$0-mute1-r M 3 6 0 10 #fce0e0
+#fc2828 #404040 0 1;
+#X obj 374 677 tgl 12 0 \$0-preFader1-s \$0-preFader1-r PST 1 6 0 6
+#14e814 #14e814 #606060 0 1;
+#X text 308 544 +10dB;
+#X text 308 608 -12dB;
+#X text 308 633 -20dB;
+#X text 309 662 -30dB;
+#X text 335 543 -;
+#X text 335 556 -;
+#X text 335 567 -;
+#X text 335 574 -;
+#X text 335 581 -;
+#X text 335 590 -;
+#X text 335 608 -;
+#X text 335 633 -;
+#X text 335 662 -;
+#X symbolatom 311 736 16 0 0 0 - \$0-nameEntry-r \$0-nameEntry-s 10
+;
+#X obj 307 522 cnv 2 2 230 empty empty empty 20 12 0 14 #606060 #ffffff
+0;
+#X obj 432 699 hsl 64 15 0 1 0 0 \$0-panSlider1-s \$0-panSlider1-r
+empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X text 418 698 L;
+#X text 502 698 R;
+#X floatatom 449 717 5 0 0 0 - \$0-panValue1-r \$0-panValue1-s 0;
+#X obj 446 552 vsl 14 118 0.03 3 1 0 \$0-linearFader1-s \$0-linearFader1-r
+empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
+#X text 422 574 0dB;
+#X floatatom 439 676 4 0 0 0 - \$0-dBFS-amp1-r \$0-dBFS-amp1-s 0;
+#X text 417 567 +2dB;
+#X text 417 556 +6dB;
+#X text 417 581 -2dB;
+#X text 417 591 -6dB;
+#X obj 464 552 vu 10 120 \$0-chEnv1 empty -1 -8 0 10 #404040 #000000
+1 0;
+#X text 440 532 Vol;
+#X obj 413 735 cnv 15 102 18 empty \$0-chanStripName1 empty 1 9 0 12
+#c4c4fc #404040 0;
+#X obj 463 677 tgl 12 0 \$0-mute1-s \$0-mute1-r M 3 6 0 10 #fce0e0
+#fc2828 #404040 0 1;
+#X obj 478 677 tgl 12 0 \$0-preFader1-s \$0-preFader1-r PST 1 6 0 6
+#14e814 #14e814 #606060 0 1;
+#X text 412 544 +10dB;
+#X text 412 608 -12dB;
+#X text 412 633 -20dB;
+#X text 413 662 -30dB;
+#X text 439 543 -;
+#X text 439 556 -;
+#X text 439 567 -;
+#X text 439 574 -;
+#X text 439 581 -;
+#X text 439 590 -;
+#X text 439 608 -;
+#X text 439 633 -;
+#X text 439 662 -;
+#X symbolatom 415 736 16 0 0 0 - \$0-nameEntry-r \$0-nameEntry-s 10
+;
+#X obj 411 522 cnv 2 2 230 empty empty empty 20 12 0 14 #606060 #ffffff
+0;
+#X obj 536 699 hsl 64 15 0 1 0 0 \$0-panSlider1-s \$0-panSlider1-r
+empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X text 522 698 L;
+#X text 606 698 R;
+#X floatatom 553 717 5 0 0 0 - \$0-panValue1-r \$0-panValue1-s 0;
+#X obj 550 552 vsl 14 118 0.03 3 1 0 \$0-linearFader1-s \$0-linearFader1-r
+empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
+#X text 526 574 0dB;
+#X floatatom 543 676 4 0 0 0 - \$0-dBFS-amp1-r \$0-dBFS-amp1-s 0;
+#X text 521 567 +2dB;
+#X text 521 556 +6dB;
+#X text 521 581 -2dB;
+#X text 521 591 -6dB;
+#X obj 581 552 vu 10 120 \$0-chEnv1 empty -1 -8 0 10 #404040 #000000
+1 0;
+#X text 544 532 Vol;
+#X obj 517 735 cnv 15 102 18 empty \$0-chanStripName1 empty 1 9 0 12
+#c4c4fc #404040 0;
+#X obj 567 677 tgl 12 0 \$0-mute1-s \$0-mute1-r M 3 6 0 10 #fce0e0
+#fc2828 #404040 0 1;
+#X obj 582 677 tgl 12 0 \$0-preFader1-s \$0-preFader1-r PST 1 6 0 6
+#14e814 #14e814 #606060 0 1;
+#X text 516 544 +10dB;
+#X text 516 608 -12dB;
+#X text 516 633 -20dB;
+#X text 517 662 -30dB;
+#X text 543 543 -;
+#X text 543 556 -;
+#X text 543 567 -;
+#X text 543 574 -;
+#X text 543 581 -;
+#X text 543 590 -;
+#X text 543 608 -;
+#X text 543 633 -;
+#X text 543 662 -;
+#X symbolatom 519 736 16 0 0 0 - \$0-nameEntry-r \$0-nameEntry-s 10
+;
+#X obj 515 522 cnv 2 2 230 empty empty empty 20 12 0 14 #606060 #ffffff
+0;
+#X obj 568 552 vu 10 120 \$0-chEnv1 empty -1 -8 0 10 #404040 #000000
+0 0;
+#X obj 1996 656 cnv 4 500 1 empty empty Track\ Name 0 -4 0 10 #bbbbbb
+#7c7c7c 0;
+#X obj 1995 664 loadbang;
+#X obj 1996 722 s \$0-nameEntry1-r;
+#X msg 1995 704 set \$1;
+#X msg 1995 685 symbol one;
+#X obj 245 27 declare -path tdh.lib.dependencies;
+#X obj 102 110 1xChannelstrip~;
+#X obj 100 337 cnv 12 103 14 empty \$0-objectName Channel\ Strip 1
+7 0 10 #dcdcdc #404040 0;
+#X obj 195 422 cnv 14 14 14 empty empty S 6 8 0 8 #dcdcdc #7c7c7c 0
+;
+#X obj 81 334 cnv 14 14 14 empty empty R 6 8 0 8 #dcdcdc #7c7c7c 0
+;
+#X obj 110 422 s \$0-objectName;
+#X obj 110 384 loadbang;
+#X obj 100 350 cnv 1 102 2 empty empty empty 1 7 0 10 #404040 #404040
+0;
+#X obj 100 351 cnv 10 90 12 empty empty OutL 0 6 0 8 #dfdfdf #404040
+0;
+#X obj 182 351 cnv 10 20 12 empty empty OutR 0 6 0 8 #dfdfdf #404040
+0;
+#X obj 208 110 1xChannelstrip~;
+#X obj 101 102 cnv 1 102 2 empty empty empty 1 7 0 10 #404040 #404040
+0;
+#X obj 101 91 cnv 10 20 12 empty empty In 0 6 0 8 #dfdfdf #404040 0
+;
+#X obj 118 91 cnv 10 20 12 empty empty Ln 0 6 0 8 #dfdfdf #404040 0
+;
+#X obj 138 91 cnv 10 20 12 empty empty dB 0 6 0 8 #dfdfdf #404040 0
+;
+#X obj 158 91 cnv 10 20 12 empty empty V~ 0 6 0 8 #dfdfdf #404040 0
+;
+#X obj 176 91 cnv 10 20 12 empty empty Pn 0 6 0 8 #dfdfdf #404040 0
+;
+#X obj 193 91 cnv 10 10 12 empty empty Nm 0 6 0 8 #dfdfdf #404040 0
+;
+#X obj 314 110 1xChannelstrip~;
+#X obj 420 110 1xChannelstrip~;
 #X connect 5 0 14 0;
 #X connect 8 0 12 0;
-#X connect 9 0 180 0;
+#X connect 9 0 143 0;
 #X connect 10 0 11 0;
 #X connect 11 0 13 0;
 #X connect 12 0 9 0;
 #X connect 12 1 11 0;
-#X connect 13 0 180 0;
+#X connect 13 0 143 0;
 #X connect 14 0 10 0;
-#X connect 22 0 194 0;
-#X connect 23 0 178 0;
-#X connect 24 0 178 0;
-#X connect 26 0 23 0;
-#X connect 27 0 28 0;
-#X connect 28 0 178 0;
-#X connect 28 1 179 0;
-#X connect 29 0 22 0;
-#X connect 30 0 171 0;
-#X connect 33 0 181 0;
-#X connect 35 0 33 0;
-#X connect 38 0 34 0;
-#X connect 40 0 38 0;
-#X connect 43 0 44 0;
-#X connect 43 0 45 0;
-#X connect 44 0 191 0;
-#X connect 45 0 191 0;
-#X connect 45 0 192 0;
-#X connect 54 0 56 0;
-#X connect 54 0 150 0;
-#X connect 55 0 54 1;
-#X connect 56 0 57 0;
-#X connect 57 0 189 0;
-#X connect 58 0 55 0;
-#X connect 60 0 62 0;
-#X connect 60 0 151 0;
-#X connect 61 0 60 1;
-#X connect 62 0 63 0;
-#X connect 63 0 190 0;
-#X connect 64 0 61 0;
-#X connect 89 0 188 0;
-#X connect 91 0 114 1;
-#X connect 92 0 91 0;
-#X connect 94 0 95 0;
-#X connect 95 0 92 0;
-#X connect 96 0 113 1;
-#X connect 97 0 96 0;
-#X connect 113 0 198 0;
-#X connect 114 0 200 0;
-#X connect 118 0 35 0;
-#X connect 119 0 168 0;
-#X connect 119 0 35 0;
-#X connect 122 0 134 1;
-#X connect 123 0 122 0;
-#X connect 124 0 135 1;
-#X connect 125 0 124 0;
-#X connect 130 0 177 0;
-#X connect 131 0 130 0;
-#X connect 134 0 114 0;
-#X connect 135 0 113 0;
-#X connect 138 0 140 0;
-#X connect 138 1 139 0;
-#X connect 139 0 123 0;
-#X connect 140 0 123 0;
-#X connect 142 0 144 0;
-#X connect 142 1 143 0;
-#X connect 143 0 125 0;
-#X connect 144 0 125 0;
-#X connect 146 0 194 0;
-#X connect 147 0 146 0;
-#X connect 155 0 156 0;
-#X connect 156 0 161 0;
-#X connect 158 0 159 0;
-#X connect 159 0 162 0;
-#X connect 168 0 182 0;
-#X connect 169 0 134 0;
-#X connect 169 0 135 0;
-#X connect 170 0 64 0;
-#X connect 172 0 58 0;
-#X connect 173 0 54 1;
-#X connect 174 0 60 1;
-#X connect 175 0 138 0;
-#X connect 176 0 142 0;
-#X connect 183 0 94 0;
-#X connect 184 0 97 0;
-#X connect 185 0 89 0;
-#X connect 186 0 187 0;
-#X connect 193 0 29 0;
-#X connect 195 0 30 0;
-#X connect 197 0 198 1;
-#X connect 198 0 62 0;
-#X connect 198 0 151 0;
-#X connect 198 1 60 0;
-#X connect 199 0 200 1;
-#X connect 200 0 56 0;
-#X connect 200 0 150 0;
-#X connect 200 1 54 0;
-#X connect 204 0 155 0;
-#X connect 204 0 0 0;
-#X connect 205 0 158 0;
-#X connect 205 0 1 0;
-#X coords 0 -1 1 1 450 275 2 100 100;
+#X connect 21 0 152 0;
+#X connect 22 0 141 0;
+#X connect 23 0 141 0;
+#X connect 25 0 22 0;
+#X connect 26 0 27 0;
+#X connect 27 0 141 0;
+#X connect 27 1 142 0;
+#X connect 28 0 21 0;
+#X connect 29 0 137 0;
+#X connect 32 0 144 0;
+#X connect 34 0 32 0;
+#X connect 37 0 33 0;
+#X connect 41 0 42 0;
+#X connect 41 0 43 0;
+#X connect 42 0 194 0;
+#X connect 43 0 194 0;
+#X connect 49 0 165 0;
+#X connect 49 0 166 0;
+#X connect 49 0 155 1;
+#X connect 50 0 49 1;
+#X connect 51 0 52 0;
+#X connect 52 0 171 0;
+#X connect 53 0 50 0;
+#X connect 77 0 150 0;
+#X connect 79 0 166 1;
+#X connect 80 0 79 0;
+#X connect 99 0 34 0;
+#X connect 103 0 108 1;
+#X connect 104 0 103 0;
+#X connect 108 0 49 0;
+#X connect 108 0 155 0;
+#X connect 111 0 113 0;
+#X connect 111 1 112 0;
+#X connect 112 0 104 0;
+#X connect 113 0 104 0;
+#X connect 116 0 152 0;
+#X connect 117 0 116 0;
+#X connect 122 0 123 0;
+#X connect 123 0 128 0;
+#X connect 125 0 126 0;
+#X connect 126 0 129 0;
+#X connect 135 0 145 0;
+#X connect 136 0 108 0;
+#X connect 138 0 53 0;
+#X connect 139 0 49 1;
+#X connect 140 0 111 0;
+#X connect 146 0 80 0;
+#X connect 146 0 169 0;
+#X connect 147 0 77 0;
+#X connect 148 0 149 0;
+#X connect 151 0 28 0;
+#X connect 153 0 29 0;
+#X connect 154 0 155 2;
+#X connect 155 0 51 0;
+#X connect 158 0 122 0;
+#X connect 158 0 0 0;
+#X connect 159 0 125 0;
+#X connect 159 0 1 0;
+#X connect 165 0 119 0;
+#X connect 166 0 120 0;
+#X connect 167 0 165 1;
+#X connect 168 0 167 0;
+#X connect 169 0 170 0;
+#X connect 170 0 168 0;
+#X connect 193 0 37 0;
+#X connect 195 0 135 0;
+#X connect 198 0 259 0;
+#X connect 199 0 198 0;
+#X connect 200 0 249 0;
+#X connect 201 0 202 0;
+#X connect 201 0 203 0;
+#X connect 202 0 277 0;
+#X connect 203 0 277 0;
+#X connect 206 0 270 0;
+#X connect 206 0 271 0;
+#X connect 206 0 262 1;
+#X connect 207 0 206 1;
+#X connect 208 0 209 0;
+#X connect 209 0 276 0;
+#X connect 210 0 207 0;
+#X connect 225 0 257 0;
+#X connect 227 0 271 1;
+#X connect 228 0 227 0;
+#X connect 231 0 234 1;
+#X connect 232 0 231 0;
+#X connect 234 0 206 0;
+#X connect 234 0 262 0;
+#X connect 236 0 238 0;
+#X connect 236 1 237 0;
+#X connect 237 0 232 0;
+#X connect 238 0 232 0;
+#X connect 241 0 259 0;
+#X connect 242 0 241 0;
+#X connect 250 0 210 0;
+#X connect 251 0 206 1;
+#X connect 252 0 236 0;
+#X connect 253 0 228 0;
+#X connect 253 0 274 0;
+#X connect 254 0 225 0;
+#X connect 255 0 256 0;
+#X connect 258 0 199 0;
+#X connect 260 0 200 0;
+#X connect 261 0 262 2;
+#X connect 262 0 208 0;
+#X connect 270 0 243 0;
+#X connect 271 0 244 0;
+#X connect 272 0 270 1;
+#X connect 273 0 272 0;
+#X connect 274 0 275 0;
+#X connect 275 0 273 0;
+#X connect 278 0 234 0;
+#X connect 405 0 408 0;
+#X connect 407 0 406 0;
+#X connect 408 0 407 0;
+#X coords 0 -1 1 1 525 275 2 100 100;
