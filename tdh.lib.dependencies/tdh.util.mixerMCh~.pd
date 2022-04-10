@@ -31,8 +31,8 @@ empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X text 106 269 L;
 #X text 190 269 R;
 #X floatatom 137 288 5 0 0 0 - \$0-panValue1-r \$0-panValue1-s 0;
-#X obj 134 118 vsl 14 118 0.03 3 1 0 \$0-linearFader1-s \$0-linearFader1-r
-empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 134 118 vsl 14 118 0.03 3 1 1 \$0-linearFader1-s \$0-linearFader1-r
+empty 0 -9 0 10 #fcfcfc #000000 #000000 8909 1;
 #X text 110 140 0dB;
 #X floatatom 127 242 4 0 0 0 - \$0-dBFS-amp1-r \$0-dBFS-amp1-s 0;
 #X text 105 133 +2dB;
@@ -64,7 +64,7 @@ empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X text 131 101 Vol;
 #X obj 101 368 cnv 12 102 14 empty \$0-objectName Channel\\\ Strip
 1 7 0 10 #dcdcdc #404040 0;
-#X obj 101 306 cnv 15 102 18 empty \$0-chanStripName1 empty 1 9 0 12
+#X obj 101 305 cnv 15 102 18 empty \$0-chanStripName1 empty 1 9 0 12
 #c4c4fc #404040 0;
 #X obj 192 471 cnv 14 14 14 empty empty S 6 8 0 8 #dcdcdc #7c7c7c 0
 ;
@@ -94,7 +94,7 @@ empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X text 127 228 -;
 #X obj 37 97 cnv 5 5 5 {empty} {empty} {+10dB\\\ -} 0 0 0 10 #ffffff
 #ffffff 0;
-#X symbolatom 103 307 16 0 0 0 - \$0-nameEntry1-r \$0-nameEntry1-s
+#X symbolatom 103 306 16 0 0 0 - \$0-nameEntry1-r \$0-nameEntry1-s
 10;
 #X obj 107 433 loadbang;
 #X msg 763 516 set \$1;

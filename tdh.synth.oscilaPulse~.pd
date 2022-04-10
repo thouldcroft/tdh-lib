@@ -1,4 +1,4 @@
-#N canvas 2237 -473 1414 855 10;
+#N canvas 2232 -104 1414 855 10;
 #X obj 65 966 *~ 0.125;
 #X obj 65 991 rzero~ -1;
 #X obj 65 1016 rzero~ -1;
@@ -2546,7 +2546,6 @@ is sr/2*oversampleFactor, f 21;
 #X obj 125 182 cnv 14 18 14 empty empty 2 2 8 0 12 #bbbbbb #ffffff
 0;
 #X obj 575 694 delay 5;
-#X obj 491 775 f 20000;
 #X obj 840 641 cnv 2 2 480 empty empty Anti-Aliasing\\\ Filter\\\ (20000\\\ Hz)
 20 200 0 14 #bbbbbb #7c7c7c 0;
 #X obj 65 354 inlet~ frequency;
@@ -2574,10 +2573,10 @@ by Alexandros Drymonitis (drymonitis.me)., f 166;
 #X obj 80 416 sig~;
 #X obj 125 101 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 191 354 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
+#X obj 196 354 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 215 374 loadbang;
-#X obj 215 395 f \$2;
+#X obj 245 375 loadbang;
+#X obj 245 396 f \$2;
 #X text 177 161 (float);
 #X text 227 161 Frequency in Hz;
 #X text 177 181 (float);
@@ -2589,7 +2588,7 @@ by Alexandros Drymonitis (drymonitis.me)., f 166;
 #X text 147 130 (sig);
 #X text 187 130 Oscillator signal;
 #X text 84 652 3-Pole 3-zero Anti-Aliasing Butterworth Filter;
-#X obj 210 354 inlet pulseWidth;
+#X obj 215 354 inlet pulseWidth;
 #X obj 65 454 phasor~;
 #X text 261 476 Pulse Width Control - Values closer to 0 produce larger
 positive pulse width., f 29;
@@ -2607,6 +2606,9 @@ a 1 \, else it outputs a 0, f 43;
 #X text 99 583 Shift range to -1 to 1;
 #X obj 37 622 cnv 2 450 2 empty empty empty 20 12 0 14 #bbbbbb #404040
 0;
+#X obj 675 699 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 491 775 f 22000;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
@@ -2642,20 +2644,22 @@ a 1 \, else it outputs a 0, f 43;
 #X connect 46 0 22 2;
 #X connect 47 0 22 3;
 #X connect 48 0 24 1;
-#X connect 49 0 85 0;
+#X connect 49 0 130 0;
 #X connect 49 1 29 0;
 #X connect 84 0 49 0;
-#X connect 85 0 24 0;
-#X connect 87 0 116 0;
+#X connect 86 0 115 0;
+#X connect 96 0 97 0;
 #X connect 97 0 98 0;
-#X connect 98 0 99 0;
-#X connect 99 0 116 0;
-#X connect 102 0 103 0;
-#X connect 103 0 118 0;
-#X connect 116 0 121 0;
-#X connect 118 0 124 0;
-#X connect 120 0 121 1;
+#X connect 98 0 115 0;
+#X connect 101 0 102 0;
+#X connect 102 0 117 0;
+#X connect 114 0 117 0;
+#X connect 115 0 120 0;
+#X connect 117 0 123 0;
+#X connect 119 0 120 1;
+#X connect 120 0 121 0;
 #X connect 121 0 122 0;
-#X connect 122 0 123 0;
-#X connect 123 0 7 0;
-#X connect 124 0 120 0;
+#X connect 122 0 7 0;
+#X connect 123 0 119 0;
+#X connect 129 0 49 0;
+#X connect 130 0 24 0;
