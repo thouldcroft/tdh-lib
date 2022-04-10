@@ -1,6 +1,6 @@
 #N canvas 1280 -209 1920 1035 8;
 #X declare -path tdh.lib.dependencies;
-#X text 9 -14 _;
+#X text 9 6 _;
 #N canvas 1280 97 1690 649 old 0;
 #X obj 267 465 cnv 14 14 14 empty empty R 6 8 0 8 #c4c4fc #7c7c7c 0
 ;
@@ -891,9 +891,9 @@ inlet for gain control \, for display purposes.;
 #X connect 420 0 402 0;
 #X connect 423 0 424 0;
 #X connect 424 0 422 0;
-#X restore 234 513 pd old code;
+#X restore 103 1162 pd old code;
 #X obj 966 40 declare -path tdh.lib.dependencies;
-#X obj 807 276 cnv 14 14 14 empty empty R 6 8 0 8 #dcdcdc #7c7c7c 0
+#X obj 651 367 cnv 14 14 14 empty empty R 6 8 0 8 #dcdcdc #7c7c7c 0
 ;
 #X obj 718 186 cnv 1 102 2 empty empty empty 1 7 0 10 #404040 #404040
 0;
@@ -917,15 +917,15 @@ inlet for gain control \, for display purposes.;
 #X text 18 -452 Travis Houldcroft || travishouldcroft.com;
 #X obj 1 -498 cnv 15 700 40 empty \$0-abstrPatchTitleBar GOP\ Abstraction\ Name
 9 20 0 18 #3c50fc #a0a0a0 0;
-#X obj 1 -218 cnv 2 700 3 empty \$0-abstrPatchSecLabelNotes Notes 20
+#X obj 1 -138 cnv 2 700 3 empty \$0-abstrPatchSecLabelNotes Notes 20
 15 0 16 #a0a0a0 #202020 0;
-#X obj 1 -95 cnv 2 700 2 empty \$0-abstrPatchSecDivider empty 9 20
+#X obj 1 -15 cnv 2 700 2 empty \$0-abstrPatchSecDivider empty 9 20
 0 18 #a0a0a0 #202020 0;
-#X obj 1 -158 cnv 2 700 3 empty \$0-abstrPatchSecLabelRevHist Revision\ History
+#X obj 1 -78 cnv 2 700 3 empty \$0-abstrPatchSecLabelRevHist Revision\ History
 20 15 0 16 #a0a0a0 #202020 0;
-#X obj 1 -288 cnv 2 700 3 empty \$0-abstrPatchSecLabelArgs Arguments
+#X obj 1 -238 cnv 2 700 3 empty \$0-abstrPatchSecLabelArgs Arguments
 20 15 0 16 #a0a0a0 #202020 0;
-#X text 24 -127 21/09/30 - ver 0.1, f 21;
+#X text 24 -47 21/09/30 - ver 0.1, f 21;
 #N canvas 2422 172 656 414 abstr-init 0;
 #X obj 3 21 cnv 5 5 5 empty empty | 0 0 0 14 #fcfcfc #404040 0;
 #X obj 215 126 loadbang;
@@ -3286,35 +3286,51 @@ in [message( objects get saved to the patch., f 84;
 #X restore 610 -450 pd abstr-init;
 #X obj 1 -428 cnv 2 700 3 empty \$0-abstrPatchSecLabelInlets Inlets
 20 15 0 16 #a0a0a0 #202020 0;
-#X obj 1 -338 cnv 2 700 3 empty \$0-abstrPatchSecLabelOutlets Outlets
+#X obj 1 -328 cnv 2 700 3 empty \$0-abstrPatchSecLabelOutlets Outlets
 20 15 0 16 #a0a0a0 #202020 0;
-#X obj 125 -278 cnv 14 18 14 empty empty \$1 2 8 0 12 #606060 #dcdcdc
+#X obj 125 -228 cnv 14 18 14 empty empty \$1 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 125 -419 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
+#X obj 125 -419 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 125 -399 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
+#X obj 125 -359 cnv 14 18 14 empty empty 10 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 125 -329 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
+#X obj 125 -399 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 125 -309 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
+#X obj 125 -379 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
 0;
-#X text 197 -279 Description;
-#X text 147 -279 (type);
-#X text 197 -259 Description;
-#X text 147 -259 (type);
-#X text 197 -239 Description;
-#X text 147 -239 (type);
+#X obj 125 -319 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 125 -259 cnv 14 18 14 empty empty 10 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 125 -299 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 125 -279 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
+0;
+#X text 197 -229 Description;
+#X text 147 -229 (type);
+#X text 197 -209 Description;
+#X text 147 -209 (type);
+#X text 197 -189 Description;
+#X text 147 -189 (type);
 #X text 197 -420 Description;
 #X text 147 -420 (type);
 #X text 197 -400 Description;
 #X text 147 -400 (type);
-#X text 197 -330 Description;
-#X text 147 -330 (type);
-#X text 197 -310 Description;
-#X text 147 -310 (type);
-#X obj 125 -258 cnv 14 18 14 empty empty \$2 2 8 0 12 #606060 #dcdcdc
+#X text 197 -380 Description;
+#X text 147 -380 (type);
+#X text 197 -360 Description;
+#X text 147 -360 (type);
+#X text 197 -320 Description;
+#X text 147 -320 (type);
+#X text 197 -300 Description;
+#X text 147 -300 (type);
+#X text 197 -280 Description;
+#X text 147 -280 (type);
+#X text 197 -260 Description;
+#X text 147 -260 (type);
+#X obj 125 -208 cnv 14 18 14 empty empty \$2 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 125 -238 cnv 14 18 14 empty empty \$3 2 8 0 12 #606060 #dcdcdc
+#X obj 125 -188 cnv 14 18 14 empty empty \$3 2 8 0 12 #606060 #dcdcdc
 0;
 #N canvas 1280 172 450 300 TO-DO 0;
 #X obj 23 21 cnv 4 2 100 empty empty **\\\ TO\\\ DO\\\ ** 4 8 0 14
@@ -3322,17 +3338,17 @@ in [message( objects get saved to the patch., f 84;
 #X text 29 54 • Add aux sends;
 #X text 29 44 • X Make meter pre/post fader;
 #X text 29 65 • expose all controls to external control;
-#X restore 20 -188 pd TO-DO;
-#X obj 647 350 throw~ \$0-leftBus;
-#X obj 745 350 throw~ \$0-rightBus;
+#X restore 20 -108 pd TO-DO;
+#X obj 671 350 throw~ \$0-leftBus;
+#X obj 769 350 throw~ \$0-rightBus;
 #X obj 536 47 catch~ \$0-rightBus;
-#X obj 520 -14 catch~ \$0-leftBus;
+#X obj 520 6 catch~ \$0-leftBus;
 #X obj 100 125 cnv 1 523 2 empty empty empty 1 7 0 10 #404040 #404040
 0;
-#X obj 100 -14 inlet~ in1;
-#X obj 205 -14 inlet~ in2;
-#X obj 310 -14 inlet~ in3;
-#X obj 415 -14 inlet~ in4;
+#X obj 100 6 inlet~ in1;
+#X obj 205 6 inlet~ in2;
+#X obj 310 6 inlet~ in3;
+#X obj 415 6 inlet~ in4;
 #X obj 100 114 cnv 1 523 2 empty empty empty 1 7 0 10 #404040 #404040
 0;
 #X obj 100 114 cnv 10 523 12 empty empty In 0 6 0 8 #dfdfdf #404040
@@ -3343,60 +3359,26 @@ in [message( objects get saved to the patch., f 84;
 0;
 #X obj 609 114 cnv 10 6 12 empty empty In4 0 6 0 8 #dfdfdf #404040
 0;
-#X obj 101 351 cnv 12 523 14 empty \$0-objectName GOP\ Abstraction\ Name
+#X obj 101 350 cnv 12 523 14 empty \$0-objectName GOP\\\ Abstraction\\\ Name
 1 7 0 10 #dcdcdc #404040 0;
-#X obj 101 364 cnv 1 523 2 empty empty empty 1 7 0 10 #404040 #404040
+#X obj 101 363 cnv 1 523 2 empty empty empty 1 7 0 10 #404040 #404040
 0;
-#X obj 101 365 cnv 10 523 12 empty empty OutL 0 6 0 8 #dfdfdf #404040
+#X obj 101 364 cnv 10 523 12 empty empty OutL 0 6 0 8 #dfdfdf #404040
 0;
-#X obj 603 365 cnv 10 20 12 empty empty OutR 0 6 0 8 #dfdfdf #404040
+#X obj 603 364 cnv 10 20 12 empty empty OutR 0 6 0 8 #dfdfdf #404040
 0;
-#X obj 501 441 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 598 441 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 520 441 outlet~ outL;
-#X obj 617 441 outlet~ outR;
-#X obj 125 -379 cnv 14 18 14 empty empty 3 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 125 -359 cnv 14 18 14 empty empty 4 2 8 0 12 #606060 #dcdcdc
-0;
-#X text 197 -380 Description;
-#X text 147 -380 (type);
-#X text 197 -360 Description;
-#X text 147 -360 (type);
-#X obj 80 -14 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 186 -15 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 291 -14 cnv 14 18 14 empty empty 3 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 395 -15 cnv 14 18 14 empty empty 4 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 610 -14 cnv 14 18 14 empty empty R~ 6 8 0 8 #fcc4c4 #606060
-0;
-#X obj 632 48 cnv 14 18 14 empty empty R~ 6 8 0 8 #fce0c4 #606060 0
-;
-#X obj 628 351 cnv 14 18 14 empty empty S~ 6 8 0 8 #fcc4c4 #606060
-0;
-#X obj 840 350 cnv 14 18 14 empty empty S~ 6 8 0 8 #fce0c4 #606060
-0;
-#X text 869 349 <-- signals to these sends come from the L and R channels
-of each channel strip;
-#X connect 11 0 48 0;
-#X connect 11 1 49 0;
-#X connect 12 0 48 0;
-#X connect 12 1 49 0;
-#X connect 13 0 48 0;
-#X connect 13 1 49 0;
-#X connect 14 0 48 0;
-#X connect 14 1 49 0;
-#X connect 15 0 68 0;
-#X connect 15 1 69 0;
-#X connect 50 0 15 1;
-#X connect 51 0 15 0;
-#X connect 53 0 11 0;
-#X connect 54 0 12 0;
-#X connect 55 0 13 0;
-#X connect 56 0 14 0;
+#X connect 11 0 60 0;
+#X connect 11 1 61 0;
+#X connect 12 0 60 0;
+#X connect 12 1 61 0;
+#X connect 13 0 60 0;
+#X connect 13 1 61 0;
+#X connect 14 0 60 0;
+#X connect 14 1 61 0;
+#X connect 62 0 15 1;
+#X connect 63 0 15 0;
+#X connect 65 0 11 0;
+#X connect 66 0 12 0;
+#X connect 67 0 13 0;
+#X connect 68 0 14 0;
 #X coords 0 -1 1 1 525 270 2 100 110;
