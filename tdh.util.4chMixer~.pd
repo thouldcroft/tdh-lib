@@ -1,6 +1,6 @@
-#N canvas 1280 -209 1920 1035 8;
+#N canvas 1507 -225 713 593 8;
 #X declare -path tdh.lib.dependencies;
-#X text 9 6 _;
+#X text 17 106 _;
 #N canvas 1280 97 1690 649 old 0;
 #X obj 267 465 cnv 14 14 14 empty empty R 6 8 0 8 #c4c4fc #7c7c7c 0
 ;
@@ -891,41 +891,20 @@ inlet for gain control \, for display purposes.;
 #X connect 420 0 402 0;
 #X connect 423 0 424 0;
 #X connect 424 0 422 0;
-#X restore 103 1162 pd old code;
-#X obj 966 40 declare -path tdh.lib.dependencies;
-#X obj 651 367 cnv 14 14 14 empty empty R 6 8 0 8 #dcdcdc #7c7c7c 0
+#X restore 36 556 pd old code;
+#X obj 513 65 declare -path tdh.lib.dependencies;
+#X obj 594 498 cnv 14 14 14 empty empty R 6 8 0 8 #dcdcdc #7c7c7c 0
 ;
-#X obj 718 186 cnv 1 102 2 empty empty empty 1 7 0 10 #404040 #404040
-0;
-#X obj 718 175 cnv 10 20 12 empty empty In 0 6 0 8 #dfdfdf #404040
-0;
-#X obj 735 175 cnv 10 20 12 empty empty Ln 0 6 0 8 #dfdfdf #404040
-0;
-#X obj 755 175 cnv 10 20 12 empty empty dB 0 6 0 8 #dfdfdf #404040
-0;
-#X obj 775 175 cnv 10 20 12 empty empty V~ 0 6 0 8 #dfdfdf #404040
-0;
-#X obj 793 175 cnv 10 20 12 empty empty Pn 0 6 0 8 #dfdfdf #404040
-0;
-#X obj 810 175 cnv 10 10 12 empty empty Nm 0 6 0 8 #dfdfdf #404040
-0;
-#X obj 100 125 tdh.util.mixerMCh~;
-#X obj 205 125 tdh.util.mixerMCh~;
-#X obj 310 125 tdh.util.mixerMCh~;
-#X obj 415 125 tdh.util.mixerMCh~;
-#X obj 520 125 tdh.util.mixerStCh~;
-#X text 18 -452 Travis Houldcroft || travishouldcroft.com;
-#X obj 1 -498 cnv 15 700 40 empty \$0-abstrPatchTitleBar GOP\ Abstraction\ Name
+#X obj 100 225 tdh.util.mixerMCh~;
+#X obj 205 225 tdh.util.mixerMCh~;
+#X obj 310 225 tdh.util.mixerMCh~;
+#X obj 415 225 tdh.util.mixerMCh~;
+#X obj 520 225 tdh.util.mixerStCh~;
+#X text 26 48 Travis Houldcroft || travishouldcroft.com;
+#X obj 9 2 cnv 15 700 40 empty \$0-abstrPatchTitleBar GOP\ Abstraction\ Name
 9 20 0 18 #3c50fc #a0a0a0 0;
-#X obj 1 -138 cnv 2 700 3 empty \$0-abstrPatchSecLabelNotes Notes 20
-15 0 16 #a0a0a0 #202020 0;
-#X obj 1 -15 cnv 2 700 2 empty \$0-abstrPatchSecDivider empty 9 20
-0 18 #a0a0a0 #202020 0;
-#X obj 1 -78 cnv 2 700 3 empty \$0-abstrPatchSecLabelRevHist Revision\ History
-20 15 0 16 #a0a0a0 #202020 0;
-#X obj 1 -238 cnv 2 700 3 empty \$0-abstrPatchSecLabelArgs Arguments
-20 15 0 16 #a0a0a0 #202020 0;
-#X text 24 -47 21/09/30 - ver 0.1, f 21;
+#X obj 9 85 cnv 2 700 2 empty \$0-abstrPatchSecDivider empty 9 20 0
+18 #a0a0a0 #202020 0;
 #N canvas 2422 172 656 414 abstr-init 0;
 #X obj 3 21 cnv 5 5 5 empty empty | 0 0 0 14 #fcfcfc #404040 0;
 #X obj 215 126 loadbang;
@@ -3283,54 +3262,104 @@ in [message( objects get saved to the patch., f 84;
 #X connect 13 0 11 0;
 #X connect 14 0 3 0;
 #X connect 14 0 12 0;
-#X restore 610 -450 pd abstr-init;
-#X obj 1 -428 cnv 2 700 3 empty \$0-abstrPatchSecLabelInlets Inlets
+#X restore 618 46 pd abstr-init;
+#X obj 100 528 throw~ \$0-leftBus;
+#X obj 193 528 throw~ \$0-rightBus;
+#X obj 100 225 cnv 1 523 2 empty empty empty 1 7 0 10 #404040 #404040
+0;
+#X obj 100 106 inlet~ in1;
+#X obj 205 106 inlet~ in2;
+#X obj 310 106 inlet~ in3;
+#X obj 415 106 inlet~ in4;
+#X obj 100 214 cnv 1 523 2 empty empty empty 1 7 0 10 #404040 #404040
+0;
+#X obj 100 214 cnv 10 523 12 empty empty In 0 6 0 8 #dfdfdf #404040
+0;
+#X obj 267 214 cnv 10 20 12 empty empty In2 0 6 0 8 #dfdfdf #404040
+0;
+#X obj 437 214 cnv 10 20 12 empty empty In3 0 6 0 8 #dfdfdf #404040
+0;
+#X obj 609 214 cnv 10 6 12 empty empty In4 0 6 0 8 #dfdfdf #404040
+0;
+#X obj 101 450 cnv 12 523 14 empty \$0-objectName GOP\ Abstraction\ Name
+1 7 0 10 #dcdcdc #404040 0;
+#X obj 101 463 cnv 1 523 2 empty empty empty 1 7 0 10 #404040 #404040
+0;
+#X obj 101 464 cnv 10 523 12 empty empty OutL 0 6 0 8 #dfdfdf #404040
+0;
+#X obj 603 464 cnv 10 20 12 empty empty OutR 0 6 0 8 #dfdfdf #404040
+0;
+#X obj 521 138 catch~ \$0-leftBus;
+#X obj 614 137 catch~ \$0-rightBus;
+#X obj 630 180 loadbang;
+#X msg 630 200 symbol Main;
+#X obj 128 160 loadbang;
+#X obj 222 158 loadbang;
+#X obj 334 157 loadbang;
+#X obj 444 158 loadbang;
+#X msg 444 178 symbol Ch4;
+#X msg 334 177 symbol Ch3;
+#X msg 222 178 symbol Ch2;
+#X msg 128 179 symbol Ch1;
+#X obj 520 497 outlet~ left;
+#X obj 617 497 outlet~ right;
+#N canvas 1440 57 707 488 reference 0;
+#X obj 1 2 cnv 15 700 40 empty \$0-abstrPatchTitleBar GOP\\\ Abstraction\\\ Name
+9 20 0 18 #3c50fc #a0a0a0 0;
+#X obj 1 362 cnv 2 700 3 empty \$0-abstrPatchSecLabelNotes Notes 20
+15 0 16 #a0a0a0 #202020 0;
+#X obj 1 422 cnv 2 700 3 empty \$0-abstrPatchSecLabelRevHist Revision\\\ History
 20 15 0 16 #a0a0a0 #202020 0;
-#X obj 1 -328 cnv 2 700 3 empty \$0-abstrPatchSecLabelOutlets Outlets
+#X obj 1 262 cnv 2 700 3 empty \$0-abstrPatchSecLabelArgs Arguments
 20 15 0 16 #a0a0a0 #202020 0;
-#X obj 125 -228 cnv 14 18 14 empty empty \$1 2 8 0 12 #606060 #dcdcdc
+#X text 24 453 21/09/30 - ver 0.1, f 21;
+#X obj 1 72 cnv 2 700 3 empty \$0-abstrPatchSecLabelInlets Inlets 20
+15 0 16 #a0a0a0 #202020 0;
+#X obj 1 172 cnv 2 700 3 empty \$0-abstrPatchSecLabelOutlets Outlets
+20 15 0 16 #a0a0a0 #202020 0;
+#X obj 125 272 cnv 14 18 14 empty empty \$1 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 125 -419 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
+#X obj 125 81 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc 0
+;
+#X obj 125 141 cnv 14 18 14 empty empty 10 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 125 -359 cnv 14 18 14 empty empty 10 2 8 0 12 #606060 #dcdcdc
+#X obj 125 101 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 125 -399 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
+#X obj 125 121 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 125 -379 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
+#X obj 125 181 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 125 -319 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
+#X obj 125 241 cnv 14 18 14 empty empty 10 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 125 -259 cnv 14 18 14 empty empty 10 2 8 0 12 #606060 #dcdcdc
+#X obj 125 201 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 125 -299 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
+#X obj 125 221 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 125 -279 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
+#X text 197 271 Description;
+#X text 147 271 (type);
+#X text 197 291 Description;
+#X text 147 291 (type);
+#X text 197 311 Description;
+#X text 147 311 (type);
+#X text 197 80 Description;
+#X text 147 80 (type);
+#X text 197 100 Description;
+#X text 147 100 (type);
+#X text 197 120 Description;
+#X text 147 120 (type);
+#X text 197 140 Description;
+#X text 147 140 (type);
+#X text 197 180 Description;
+#X text 147 180 (type);
+#X text 197 200 Description;
+#X text 147 200 (type);
+#X text 197 220 Description;
+#X text 147 220 (type);
+#X text 197 240 Description;
+#X text 147 240 (type);
+#X obj 125 292 cnv 14 18 14 empty empty \$2 2 8 0 12 #606060 #dcdcdc
 0;
-#X text 197 -229 Description;
-#X text 147 -229 (type);
-#X text 197 -209 Description;
-#X text 147 -209 (type);
-#X text 197 -189 Description;
-#X text 147 -189 (type);
-#X text 197 -420 Description;
-#X text 147 -420 (type);
-#X text 197 -400 Description;
-#X text 147 -400 (type);
-#X text 197 -380 Description;
-#X text 147 -380 (type);
-#X text 197 -360 Description;
-#X text 147 -360 (type);
-#X text 197 -320 Description;
-#X text 147 -320 (type);
-#X text 197 -300 Description;
-#X text 147 -300 (type);
-#X text 197 -280 Description;
-#X text 147 -280 (type);
-#X text 197 -260 Description;
-#X text 147 -260 (type);
-#X obj 125 -208 cnv 14 18 14 empty empty \$2 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 125 -188 cnv 14 18 14 empty empty \$3 2 8 0 12 #606060 #dcdcdc
+#X obj 125 312 cnv 14 18 14 empty empty \$3 2 8 0 12 #606060 #dcdcdc
 0;
 #N canvas 1280 172 450 300 TO-DO 0;
 #X obj 23 21 cnv 4 2 100 empty empty **\\\ TO\\\ DO\\\ ** 4 8 0 14
@@ -3338,47 +3367,32 @@ in [message( objects get saved to the patch., f 84;
 #X text 29 54 • Add aux sends;
 #X text 29 44 • X Make meter pre/post fader;
 #X text 29 65 • expose all controls to external control;
-#X restore 20 -108 pd TO-DO;
-#X obj 671 350 throw~ \$0-leftBus;
-#X obj 769 350 throw~ \$0-rightBus;
-#X obj 536 47 catch~ \$0-rightBus;
-#X obj 520 6 catch~ \$0-leftBus;
-#X obj 100 125 cnv 1 523 2 empty empty empty 1 7 0 10 #404040 #404040
-0;
-#X obj 100 6 inlet~ in1;
-#X obj 205 6 inlet~ in2;
-#X obj 310 6 inlet~ in3;
-#X obj 415 6 inlet~ in4;
-#X obj 100 114 cnv 1 523 2 empty empty empty 1 7 0 10 #404040 #404040
-0;
-#X obj 100 114 cnv 10 523 12 empty empty In 0 6 0 8 #dfdfdf #404040
-0;
-#X obj 267 114 cnv 10 20 12 empty empty In2 0 6 0 8 #dfdfdf #404040
-0;
-#X obj 437 114 cnv 10 20 12 empty empty In3 0 6 0 8 #dfdfdf #404040
-0;
-#X obj 609 114 cnv 10 6 12 empty empty In4 0 6 0 8 #dfdfdf #404040
-0;
-#X obj 101 350 cnv 12 523 14 empty \$0-objectName GOP\\\ Abstraction\\\ Name
-1 7 0 10 #dcdcdc #404040 0;
-#X obj 101 363 cnv 1 523 2 empty empty empty 1 7 0 10 #404040 #404040
-0;
-#X obj 101 364 cnv 10 523 12 empty empty OutL 0 6 0 8 #dfdfdf #404040
-0;
-#X obj 603 364 cnv 10 20 12 empty empty OutR 0 6 0 8 #dfdfdf #404040
-0;
-#X connect 11 0 60 0;
-#X connect 11 1 61 0;
-#X connect 12 0 60 0;
-#X connect 12 1 61 0;
-#X connect 13 0 60 0;
-#X connect 13 1 61 0;
-#X connect 14 0 60 0;
-#X connect 14 1 61 0;
-#X connect 62 0 15 1;
-#X connect 63 0 15 0;
-#X connect 65 0 11 0;
-#X connect 66 0 12 0;
-#X connect 67 0 13 0;
-#X connect 68 0 14 0;
-#X coords 0 -1 1 1 525 270 2 100 110;
+#X restore 20 392 pd TO-DO;
+#X restore 550 46 pd reference;
+#X connect 4 0 13 0;
+#X connect 4 1 14 0;
+#X connect 5 0 13 0;
+#X connect 5 1 14 0;
+#X connect 6 0 13 0;
+#X connect 6 1 14 0;
+#X connect 7 0 13 0;
+#X connect 7 1 14 0;
+#X connect 8 0 41 0;
+#X connect 8 1 42 0;
+#X connect 16 0 4 0;
+#X connect 17 0 5 0;
+#X connect 18 0 6 0;
+#X connect 19 0 7 0;
+#X connect 29 0 8 0;
+#X connect 30 0 8 1;
+#X connect 31 0 32 0;
+#X connect 32 0 8 6;
+#X connect 33 0 40 0;
+#X connect 34 0 39 0;
+#X connect 35 0 38 0;
+#X connect 36 0 37 0;
+#X connect 37 0 7 5;
+#X connect 38 0 6 5;
+#X connect 39 0 5 5;
+#X connect 40 0 4 5;
+#X coords 0 -1 1 1 525 270 2 100 210;
