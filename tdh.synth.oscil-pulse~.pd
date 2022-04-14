@@ -3,7 +3,6 @@
 #X text 18 220 All waveform generating code is an implementation of
 code discussed in "Making Voltage Controlled Oscillators in Pure Data"
 by Alexandros Drymonitis (drymonitis.me).;
-#X obj 21 293 inlet;
 #X obj 21 358 phasor~;
 #X obj 21 615 outlet~;
 #X text 61 294 Frequency;
@@ -37,16 +36,14 @@ a 1 \, else it outputs a 0, f 18;
 #X text 56 563 Shift range to 0 to 2;
 #X text 55 587 Shift range to -1 to 1;
 #X obj 77 616 send~ \$0-toScope;
-#X floatatom 21 318 5 0 0 0 - - - 0;
-#X obj 137 292 inlet~;
-#X connect 2 0 30 0;
-#X connect 3 0 21 0;
-#X connect 16 0 18 0;
-#X connect 18 0 24 0;
-#X connect 20 0 21 1;
+#X obj 21 293 inlet~;
+#X connect 2 0 20 0;
+#X connect 15 0 17 0;
+#X connect 17 0 23 0;
+#X connect 19 0 20 1;
+#X connect 20 0 21 0;
 #X connect 21 0 22 0;
-#X connect 22 0 23 0;
-#X connect 23 0 4 0;
-#X connect 23 0 29 0;
-#X connect 24 0 20 0;
-#X connect 30 0 3 0;
+#X connect 22 0 3 0;
+#X connect 22 0 28 0;
+#X connect 23 0 19 0;
+#X connect 29 0 2 0;

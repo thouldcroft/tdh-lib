@@ -1,4 +1,4 @@
-#N canvas 1411 -38 1343 864 8;
+#N canvas 1440 -38 1343 864 8;
 #X obj 306 805 outlet~ L;
 #X obj 469 805 outlet~ R;
 #X obj 794 45 inlet pan;
@@ -76,7 +76,7 @@ empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
 ;
 #X obj 151 268 tgl 12 0 \$0-mute1-s \$0-mute1-r M 3 6 0 10 #fce0e0
 #fc2828 #404040 0 1;
-#X obj 166 268 tgl 12 0 \$0-preFader1-s \$0-preFader1-r PST 1 6 0 6
+#X obj 166 268 tgl 12 0 \$0-preFader1-s \$0-preFader1-r PS 1 6 0 8
 #14e814 #14e814 #606060 0 1;
 #X obj 107 471 s \$0-objectName;
 #X text 100 135 +10dB;
@@ -183,7 +183,7 @@ values \, so we switch them here, f 11;
 0;
 #X obj 300 456 cnv 4 450 1 empty empty Fader\\\ and\\\ Meter\\\ Handling
 0 -4 0 10 #bbbbbb #7c7c7c 0;
-#N canvas 1992 281 1048 419 prePostButtonDisplay 0;
+#N canvas 1992 281 1048 419 prePostButtonDisplay 1;
 #X obj 180 56 sel 0 1;
 #X text 8 97 When [tgl] is 0 \, change the background color to the
 "off" color, f 23;
@@ -193,27 +193,27 @@ values \, so we switch them here, f 11;
 ;
 #X obj 180 11 r \$0-preFader1-s;
 #X obj 180 146 s \$0-preFader1-r;
-#X msg 133 101 color 6;
-#X msg 246 101 color 16 16;
-#X msg 318 102 label PST;
-#X msg 180 101 label PRE;
 #X text 378 78 When [tgl] is 1 \, change the background color to the
 "on" color \, AND change the foreground color (the "x") to the "on"
 color \, so we don't see the "x" displayed (it blends into the background
 color), f 23;
 #X obj 315 14 loadbang;
 #X msg 315 34 1;
-#X connect 0 0 6 0;
+#X msg 179 101 label PR;
+#X msg 318 102 label PS;
+#X msg 133 100 color 16;
+#X msg 246 101 color 6 6;
+#X connect 0 0 11 0;
 #X connect 0 0 9 0;
-#X connect 0 1 7 0;
-#X connect 0 1 8 0;
+#X connect 0 1 12 0;
+#X connect 0 1 10 0;
 #X connect 4 0 0 0;
-#X connect 6 0 5 0;
-#X connect 7 0 5 0;
-#X connect 8 0 5 0;
+#X connect 7 0 8 0;
+#X connect 8 0 0 0;
 #X connect 9 0 5 0;
-#X connect 11 0 12 0;
-#X connect 12 0 0 0;
+#X connect 10 0 5 0;
+#X connect 11 0 5 0;
+#X connect 12 0 5 0;
 #X restore 468 313 pd prePostButtonDisplay;
 #X obj 889 539 s \$0-linearFader1-r;
 #X obj 305 475 r \$0-linearFader1-s;
