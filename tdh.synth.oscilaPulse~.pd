@@ -1,4 +1,4 @@
-#N canvas 2237 -473 1414 855 10;
+#N canvas 1786 -209 1414 855 10;
 #X obj 65 966 *~ 0.125;
 #X obj 65 991 rzero~ -1;
 #X obj 65 1016 rzero~ -1;
@@ -2489,7 +2489,7 @@ DISPLAY NAME, f 20;
 and WIDTH can be changed by editing the [message( boxes below. Text
 in [message( objects get saved to the patch., f 84;
 #X msg 373 195 1390;
-#X msg 165 194 symbol tdh.synth.oscilaTri~;
+#X msg 165 194 symbol tdh.synth.oscilaPulse~;
 #X connect 1 0 2 0;
 #X connect 2 0 11 0;
 #X connect 2 0 10 0;
@@ -2574,10 +2574,10 @@ by Alexandros Drymonitis (drymonitis.me)., f 166;
 #X obj 80 416 sig~;
 #X obj 125 101 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 191 354 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
+#X obj 196 354 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 215 374 loadbang;
-#X obj 215 395 f \$2;
+#X obj 255 374 loadbang;
+#X obj 255 395 f \$2;
 #X text 177 161 (float);
 #X text 227 161 Frequency in Hz;
 #X text 177 181 (float);
@@ -2589,7 +2589,7 @@ by Alexandros Drymonitis (drymonitis.me)., f 166;
 #X text 147 130 (sig);
 #X text 187 130 Oscillator signal;
 #X text 84 652 3-Pole 3-zero Anti-Aliasing Butterworth Filter;
-#X obj 210 354 inlet pulseWidth;
+#X obj 215 354 inlet pulseWidth;
 #X obj 65 454 phasor~;
 #X text 261 476 Pulse Width Control - Values closer to 0 produce larger
 positive pulse width., f 29;
@@ -2652,6 +2652,7 @@ a 1 \, else it outputs a 0, f 43;
 #X connect 99 0 116 0;
 #X connect 102 0 103 0;
 #X connect 103 0 118 0;
+#X connect 115 0 118 0;
 #X connect 116 0 121 0;
 #X connect 118 0 124 0;
 #X connect 120 0 121 1;

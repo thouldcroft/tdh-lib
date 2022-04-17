@@ -1,35 +1,20 @@
-#N canvas 2311 -403 710 1091 10;
-#X text 51 400 From tdh.lib: tdh.util.declick \, tdh.synth.oscil-tri~
-\, tdh.synth.oscil-saw~ \, tdh.synth.oscial-pulse~, f 101;
-#X text 19 380 Requires the following objects or libraries:;
-#X text 49 420 Cyclone library;
-#X floatatom 107 640 5 0 0 0 - - - 0;
-#X floatatom 174 660 5 0 0 0 - - - 0;
-#X floatatom 242 680 5 0 0 0 - - - 0;
-#X floatatom 310 700 5 0 0 0 - - - 0;
-#X text 147 640 Osc1 Waveshape (Set with integers 0-7);
-#X text 214 660 Osc1 Octave (Using standard octave designations 1-9)
-;
-#X text 282 680 Osc1 Frequency in Pitch Class (0-11 in FLOATING POINT)
-;
-#X text 360 700 Osc1 Linear Gain (0-1 in FLOATING POINT);
-#X text 33 400 •;
-#X text 33 420 •;
-#X text 17 48 Travis Houldcroft || travishouldcroft.com;
-#X obj 3 1 cnv 15 700 40 empty \$0-helpPatchTitleBar tdh.synth.1oscil~
-9 20 0 18 #a0a0a0 #202020 0;
-#X obj 2 113 cnv 2 700 3 empty \$0-helpPatchSecLabelInlets Inlets 20
-15 0 16 #a0a0a0 #202020 0;
-#X obj 3 223 cnv 2 700 3 empty \$0-helpPatchSecLabelOutlets Outlets
-20 15 0 16 #a0a0a0 #202020 0;
-#X obj 3 353 cnv 2 700 3 empty \$0-helpPatchSecLabelNotes Notes 20
-15 0 16 #a0a0a0 #202020 0;
-#X obj 3 443 cnv 1 700 1 empty \$0-helpPatchSecDivider empty 9 20 0
+#N canvas 2311 -209 710 722 10;
+#X obj 3 121 cnv 1 700 1 empty \$0-helpPatchSecDivider empty 9 20 0
 18 #a0a0a0 #202020 0;
-#X obj 3 303 cnv 2 700 3 empty \$0-helpPatchSecLabelArgs Arguments
-20 15 0 16 #a0a0a0 #202020 0;
-#X obj 3 67 cnv 1 700 1 empty \$0-helpPatchSecDivider empty 9 20 0
-18 #a0a0a0 #202020 0;
+#X text 5 87 A 1 oscillator synth voice \, akin to a single voice on
+the MiniMoog. Has GUI control of waveshape \, octave \, frequency \,
+and volume \, plus inlets for external control of all parameters.,
+f 95;
+#X floatatom 89 299 5 0 0 0 - - - 0;
+#X floatatom 129 319 5 0 0 0 - - - 0;
+#X floatatom 169 339 5 0 0 0 - - - 0;
+#X floatatom 210 359 5 0 0 0 - - - 0;
+#X text 129 299 Osc1 Waveshape (Set with integers 0-7);
+#X text 169 319 Osc1 Octave (Using standard octave designations 1-9)
+;
+#X text 209 339 Osc1 Frequency in Pitch Class (0-11 in FLOATING POINT)
+;
+#X text 260 359 Osc1 Linear Gain (0-1 in FLOATING POINT);
 #N canvas 1838 -134 1149 842 help-audio-out 0;
 #X obj 32 30 inlet~;
 #X obj 192 30 inlet~;
@@ -170,28 +155,51 @@ Mute 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X connect 49 0 50 0;
 #X connect 51 0 9 0;
 #X coords 0 -1 1 1 127 110 2 250 100;
-#X restore 369 866 pd help-audio-out;
-#X obj 25 139 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc 0
+#X restore 539 550 pd help-audio-out;
+#X text 675 697 _;
+#X obj 89 693 throw~ \$0-1oscHelp;
+#X obj 539 529 catch~ \$0-1oscHelp;
+#X text 5 234 Outlet (0) produces the oscillator signal \, while outlet
+(1) sends out the oscillator's frequency value between 0-11 (floating
+point pitch class) for synchronization with other oscillators., f
+110;
+#X text 5 273 Inlets and outlets have been labelled to provide quick
+implementation and to assist those getting started in sonic arts.,
+f 110;
+#X floatatom 292 694 5 0 0 0 - - - 0;
+#X text 6 144 Integers 0-7 sent to the (0) inlet choose a waveshape
+\, or the GUI controls can be used. Integers 1-9 sent to the (1) inlet
+set the range \, which is in line with standard common-music-practice
+octave designations \, so that a range of "4" will produce 261.63 (middle
+C) when the frequency fader is all the way down \, or a "0" is sent
+to the frequency inlet. You may use this module for 12TET by sending
+the frequency inlet pitch classes as integers 0-11 \, but this inlet
+accepts floating point values \, so frequencies outside of 12TET can
+be produced (quarter tones \, for example \, can easily be heard by
+adding ".5" to a pitch class integer). The final inlet and fader controls
+the signal's volume \, which is on a scale from 0.0-1.0., f 111;
+#X text 6 124 tdh.synth.1oscil~ is a single oscillator voice that can
+be used as the building block to a larger synth source., f 111;
+#X obj 251 389 osc~ 1;
+#X obj 291 419 osc~ 0.5;
+#X text 297 389 Frequency modulation (vibrato) inlet;
+#X text 347 419 Amplitude modulation (tremolo) inlet;
+#X text 327 532 Use the faders here to increase or decrease modulation
+depth, f 32;
+#X obj 309 518 cnv 5 5 5 empty empty ↖︎ -3 3 0 30 #ffffff #202020
+0;
+#X obj 309 567 cnv 5 5 5 empty empty ↙︎ -3 3 0 30 #fcfcfc #202020
+0;
+#X text 328 694 Frequency setting (for sync with other oscillators)
 ;
-#X obj 25 199 cnv 14 18 14 empty empty 3 2 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 25 159 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 25 179 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc 0
-;
-#X text 47 137 (float);
-#X text 97 137 Oscillator 1 Shape (0-7);
-#X text 47 157 (float);
-#X text 97 157 Oscillator 1 Octave (1-9);
-#X text 47 177 (float);
-#X text 97 177 Oscillator 1 Frequency (Hz);
-#X text 97 197 Oscillator 1 Volume (0.0-1.0);
-#X text 47 197 (float);
-#X text 22 329 None;
-#X text 48 252 (sig);
-#X text 98 252 Signal output (linear amplitude 0.0-1.0);
-#N canvas 2342 321 621 281 help-init 0;
-#N canvas 2229 -169 1435 1029 cnv-set 0;
+#X obj 89 442 tdh.lib/tdh.synth.1oscil~;
+#X text 17 48 Travis Houldcroft || travishouldcroft.com;
+#X obj 3 1 cnv 15 700 40 empty \$0-helpPatchTitleBar tdh.synth.1oscil~
+9 20 0 18 #001488 #dce4fc 0;
+#X obj 3 77 cnv 1 700 1 empty \$0-helpPatchSecDivider empty 9 20 0
+18 #a0a0a0 #202020 0;
+#N canvas 1440 319 621 362 help-init 0;
+#N canvas 1813 -209 1435 1029 cnv-set 0;
 #N canvas 1440 23 349 258 canvas-ctrl 0;
 #X obj 291 1 inlet;
 #N canvas 248 270 1089 459 graph 0;
@@ -496,9 +504,6 @@ and pasted for easy initializing formatting)., f 89;
 #X connect 2 0 1 0;
 #X restore 343 355 pd canvas-ctrl;
 #X text 142 332 \$0-helpPatchTitleBar;
-#X msg 343 319 doll 1 \, rec helpPatchTitleBar \, size 15 \, visw 501
-\, vish 40 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 20 \, bgclr 1
-\, lblclr 12, f 123;
 #X msg 438 572 symbol Inlets;
 #X msg 343 549 doll 1 \, rec helpPatchSecLabelInlets \, size 2 \, visw
 501 \, vish 3 \, lblfon 0 \, lblsz 16 \, lblx 20 \, lbly 15 \, bgclr
@@ -2169,37 +2174,40 @@ canbas name has "\$0-" at the start of its receive name., f 123;
 with a message, f 72;
 #X obj 244 155 cnv 5 5 5 empty empty ⟵ -3 3 0 30 #fcfcfc #9c00fc
 0;
-#X connect 2 0 0 0;
-#X connect 3 0 16 1;
-#X connect 4 0 16 0;
-#X connect 5 0 15 0;
-#X connect 6 0 17 0;
-#X connect 7 0 17 1;
-#X connect 9 0 18 1;
-#X connect 10 0 18 0;
-#X connect 12 0 19 0;
-#X connect 13 0 19 1;
-#X connect 21 0 28 0;
-#X connect 22 0 24 0;
-#X connect 24 0 25 0;
-#X connect 25 0 36 0;
-#X connect 28 0 0 1;
-#X connect 34 0 2 0;
-#X connect 35 0 5 0;
-#X connect 37 0 0 0;
+#X msg 343 319 doll 1 \, rec helpPatchTitleBar \, size 15 \, visw 701
+\, vish 40 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 20 \, bgclr 28
+\, lblclr 8, f 123;
+#X connect 2 0 15 1;
+#X connect 3 0 15 0;
+#X connect 4 0 14 0;
+#X connect 5 0 16 0;
+#X connect 6 0 16 1;
+#X connect 8 0 17 1;
+#X connect 9 0 17 0;
+#X connect 11 0 18 0;
+#X connect 12 0 18 1;
+#X connect 20 0 27 0;
+#X connect 21 0 23 0;
+#X connect 23 0 24 0;
+#X connect 24 0 35 0;
+#X connect 27 0 0 1;
+#X connect 33 0 59 0;
+#X connect 34 0 4 0;
+#X connect 36 0 0 0;
+#X connect 37 0 14 0;
 #X connect 38 0 15 0;
-#X connect 39 0 16 0;
-#X connect 40 0 4 0;
-#X connect 40 0 3 0;
-#X connect 41 0 17 0;
-#X connect 42 0 6 0;
-#X connect 42 0 7 0;
-#X connect 43 0 18 0;
-#X connect 44 0 10 0;
-#X connect 44 0 9 0;
-#X connect 45 0 19 0;
-#X connect 46 0 12 0;
-#X connect 46 0 13 0;
+#X connect 39 0 3 0;
+#X connect 39 0 2 0;
+#X connect 40 0 16 0;
+#X connect 41 0 5 0;
+#X connect 41 0 6 0;
+#X connect 42 0 17 0;
+#X connect 43 0 9 0;
+#X connect 43 0 8 0;
+#X connect 44 0 18 0;
+#X connect 45 0 11 0;
+#X connect 45 0 12 0;
+#X connect 59 0 0 0;
 #X restore 191 233 pd cnv-set;
 #X f 34;
 #X obj 3 15 cnv 5 5 5 empty empty | 0 0 0 14 #fcfcfc #404040 0;
@@ -2218,55 +2226,73 @@ in [message( objects get saved to the patch., f 84;
 #X text 16 4 This subpatch (and nested subpatches) helps set the uniform
 titles and graphics for ABSTRACTIONS., f 84;
 #X msg 426 179 700;
+#X obj 188 273 r \$0-showRefButton;
+#X msg 188 294 vis 1;
+#X obj 188 315 s \$0-reference;
 #X msg 191 177 symbol tdh.synth.1oscil~;
 #X connect 2 0 3 0;
-#X connect 3 0 11 0;
+#X connect 3 0 14 0;
 #X connect 3 0 10 0;
 #X connect 10 0 0 1;
-#X connect 11 0 0 0;
-#X restore 623 46 pd help-init;
-#X text 693 1068 _;
-#X obj 107 984 throw~ \$0-1oscHelp;
-#X obj 369 845 catch~ \$0-1oscHelp;
-#X obj 107 733 tdh.synth.1oscil~;
-#X text 15 77 A 1 oscillator synth voice \, akin to a single voice
-on the MiniMoog. Has GUI control of waveshape \, octave \, frequency
-\, and volume \, plus inlets for external control of all parameters.
-, f 111;
-#X obj 25 273 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc 0
-;
-#X text 47 273 (float);
-#X obj 25 253 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc 0
-;
-#X text 97 273 Frequency value in pitch class \, for synchronizing
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 14 0 0 0;
+#X restore 620 49 pd help-init;
+#X obj 612 21 cnv 8 83 16 empty empty tdh.lib 14 8 0 14 #dfdfdf #131255
+0;
+#N canvas 1626 23 705 407 reference 0;
+#X obj 559 50 namecanvas \$0-reference;
+#X obj 2 73 cnv 2 700 3 empty \$0-helpPatchSecLabelInlets Inlets 20
+15 0 16 #a0a0a0 #202020 0;
+#X obj 3 165 cnv 2 700 3 empty \$0-helpPatchSecLabelOutlets Outlets
+20 15 0 16 #a0a0a0 #202020 0;
+#X obj 3 295 cnv 2 700 3 empty \$0-helpPatchSecLabelNotes Notes 20
+15 0 16 #a0a0a0 #202020 0;
+#X obj 3 215 cnv 2 700 3 empty \$0-helpPatchSecLabelArgs Arguments
+20 15 0 16 #a0a0a0 #202020 0;
+#X obj 3 1 cnv 15 700 40 empty \$0-helpPatchTitleBar tdh.synth.1oscil~
+9 20 0 18 #001488 #dce4fc 0;
+#X text 157 342 Cyclone library;
+#X text 141 322 •;
+#X text 141 342 •;
+#X text 147 172 (sig);
+#X text 197 172 Signal output (linear amplitude 0.0-1.0);
+#X obj 124 193 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
+0;
+#X text 146 193 (float);
+#X obj 124 173 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
+0;
+#X text 196 193 Frequency value in pitch class \, for synchronizing
 with other oscillators, f 72;
-#X text 23 555 Outlet (0) produces the oscillator signal \, while outlet
-(1) sends out the oscillator's frequency value between 0-11 (floating
-point pitch class) for synchronization with other oscillators., f
-110;
-#X text 23 594 Inlets and outlets have been labelled to provide quick
-implementation and to assist those getting started in sonic arts.,
-f 110;
-#X floatatom 310 985 5 0 0 0 - - - 0;
-#X text 24 465 Integers 0-7 sent to the (0) inlet choose a waveshape
-\, or the GUI controls can be used. Integers 1-9 sent to the (1) inlet
-set the range \, which is in line with standard common-music-practice
-octave designations \, so that a range of "4" will produce 261.63 (middle
-C) when the frequency fader is all the way down \, or a "0" is sent
-to the frequency inlet. You may use this module for 12TET by sending
-the frequency inlet pitch classes as integers 0-11 \, but this inlet
-accepts floating point values \, so frequencies outside of 12TET can
-be produced (quarter tones \, for example \, can easily be heard by
-adding ".5" to a pitch class integer). The final inlet and fader controls
-the signal's volume \, which is on a scale from 0.0-1.0., f 111;
-#X text 24 445 tdh.synth.1oscil~ is a single oscillator voice that
-can be used as the building block to a larger synth source., f 111
+#X text 127 302 Dependencies:;
+#X text 159 322 tdh.lib Library, f 16;
+#X obj 122 83 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc 0
 ;
-#X connect 3 0 41 0;
-#X connect 4 0 41 1;
-#X connect 5 0 41 2;
-#X connect 6 0 41 3;
-#X connect 40 0 21 0;
-#X connect 40 0 21 1;
-#X connect 41 0 39 0;
-#X connect 41 1 49 0;
+#X obj 122 143 cnv 14 18 14 empty empty 3 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 122 103 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 122 123 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
+0;
+#X text 144 81 (float);
+#X text 194 81 Oscillator 1 Shape (0-7);
+#X text 144 101 (float);
+#X text 194 101 Oscillator 1 Octave (1-9);
+#X text 144 121 (float);
+#X text 194 121 Oscillator 1 Frequency (Hz);
+#X text 194 141 Oscillator 1 Volume (0.0-1.0);
+#X text 144 141 (float);
+#X text 127 224 None;
+#X restore 534 49 pd reference;
+#X obj 598 91 bng 15 250 50 0 \$0-showRefButton empty Show\\\ Reference
+17 7 0 10 #c7c6ff #202020 #404040;
+#X connect 2 0 27 0;
+#X connect 3 0 27 1;
+#X connect 4 0 27 2;
+#X connect 5 0 27 3;
+#X connect 13 0 10 0;
+#X connect 13 0 10 1;
+#X connect 19 0 27 4;
+#X connect 20 0 27 5;
+#X connect 27 0 12 0;
+#X connect 27 1 16 0;

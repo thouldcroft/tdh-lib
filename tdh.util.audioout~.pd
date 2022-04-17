@@ -3,8 +3,6 @@
 #X obj 279 32 inlet~;
 #X obj 753 145 tgl 15 0 empty \$0-output_dsp DSP 17 7 0 10 #fcfcfc
 #000000 #000000 0 1;
-#X obj 757 168 hsl 72 15 0.01 1 1 0 empty empty empty 72 7 0 10 #fcfcfc
-#000000 #000000 0 1;
 #X obj 279 220 *~;
 #X obj 129 220 *~;
 #X obj 145 313 dac~ 1 2, f 9;
@@ -15,11 +13,11 @@
 ;
 #X obj 332 55 cnv 14 14 14 empty empty S 6 8 0 8 #fcc4c4 #7c7c7c 0
 ;
-#X obj 113 342 cnv 14 14 14 empty empty S 6 8 0 8 #c4c4fc #7c7c7c 0
+#X obj 113 392 cnv 14 14 14 empty empty S 6 8 0 8 #c4c4fc #7c7c7c 0
 ;
 #X obj 634 97 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcfc #7c7c7c 0
 ;
-#X obj 715 248 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcc4 #7c7c7c 0
+#X obj 683 311 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcc4 #7c7c7c 0
 ;
 #X obj 741 143 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #fcc4c4
 #404040 0;
@@ -50,10 +48,8 @@
 #X text 803 101 Mute;
 #X text 833 101 Vol;
 #X text 855 80 DSP;
-#X floatatom 755 188 5 -100 12 1 - - - 0;
 #X obj 144 200 r \$0-output_vol;
-#X obj 731 246 s \$0-output_vol;
-#X text 788 188 Vol;
+#X obj 699 309 s \$0-output_vol;
 #X obj 854 125 vu 8 80 empty empty -1 -8 0 10 #404040 #000000 0 0;
 #X obj 866 125 vu 8 80 empty empty -1 -8 0 10 #404040 #000000 0 0;
 #X obj 389 200 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
@@ -75,7 +71,7 @@
 #X connect 1 0 2 0;
 #X connect 2 0 9 0;
 #X connect 3 0 0 0;
-#X restore 703 215 pd lin2dbFS;
+#X restore 830 452 pd lin2dbFS;
 #N canvas 1280 22 584 298 dBFS2lin 0;
 #X obj 119 42 inlet;
 #X msg 119 134 set \$1;
@@ -91,16 +87,16 @@
 #X connect 1 0 9 0;
 #X connect 2 0 3 0;
 #X connect 3 0 1 0;
-#X restore 782 215 pd dBFS2lin;
+#X restore 906 450 pd dBFS2lin;
 #X obj 610 34 inlet;
 #X obj 594 34 cnv 14 14 14 empty empty 4 4 8 0 12 #606060 #dcdcdc 0
 ;
-#X obj 263 342 cnv 14 14 14 empty empty S 6 8 0 8 #e0c4fc #7c7c7c 0
+#X obj 263 392 cnv 14 14 14 empty empty S 6 8 0 8 #e0c4fc #7c7c7c 0
 ;
 #X obj 1040 48 cnv 14 14 14 empty empty R 6 8 0 8 #e0c4fc #7c7c7c 0
 ;
-#X obj 129 342 send~ \$0-out-mtr1;
-#X obj 279 342 send~ \$0-out-mtr2;
+#X obj 129 392 send~ \$0-out-mtr1;
+#X obj 279 392 send~ \$0-out-mtr2;
 #X obj 853 29 receive~ \$0-out-mtr1;
 #X obj 915 49 receive~ \$0-out-mtr2;
 #N canvas 2455 164 453 524 meter1 0;
@@ -190,9 +186,9 @@
 #X obj 460 55 cnv 14 14 14 empty empty S 6 8 0 8 #9c00fc #dcdcdc 0
 ;
 #X obj 476 55 s \$0-out-vol-inlet;
-#X obj 617 169 cnv 14 14 14 empty empty R 6 8 0 8 #9c00fc #dcdcdc 0
+#X obj 816 497 cnv 14 14 14 empty empty R 6 8 0 8 #9c00fc #dcdcdc 0
 ;
-#X obj 633 169 r \$0-out-vol-inlet;
+#X obj 832 497 r \$0-out-vol-inlet;
 #N canvas 1280 22 584 298 dBFS2lin 0;
 #X obj 119 42 inlet;
 #X msg 119 134 set \$1;
@@ -208,103 +204,93 @@
 #X connect 1 0 9 0;
 #X connect 2 0 3 0;
 #X connect 3 0 1 0;
-#X restore 633 188 pd dBFS2lin;
+#X restore 832 516 pd dBFS2lin;
 #X obj 858 103 cnv 15 5 5 empty empty DSP 0 6 0 10 #fcfcfc #000000
 0;
 #X obj 752 119 cnv 2 123 2 empty \$0-GUI_audio_out_label Audio\ Output
 1 9 0 12 #e0e0e0 #404040 0;
 #X obj 348 54 s \$0-outputMute-r;
-#N canvas 2317 271 450 175 mute 1;
-#N canvas 1738 289 915 515 muteButtonDisplay 0;
-#X obj 152 67 sel 0 1;
-#X text 2 112 When [tgl] is 0 \, change the background color to the
-"off" color, f 23;
-#X text 306 96 When [tgl] is 1 \, change the background color to the
-"on" color \, AND change the foreground color (the "x") to the on color
-\, so we don't see the "x" displayed, f 23;
-#X obj 232 159 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcfc #7c7c7c 0
-;
-#X msg 222 110 color 13 13;
-#X msg 152 112 color 3;
-#X obj 231 23 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
-;
-#X obj 152 21 r \$0-mute-s;
-#X obj 152 157 s \$0-mute-r;
-#X connect 0 0 5 0;
-#X connect 0 1 4 0;
-#X connect 4 0 8 0;
-#X connect 5 0 8 0;
-#X connect 7 0 0 0;
-#X restore 298 16 pd muteButtonDisplay;
-#N canvas 1672 401 450 300 muteVolume 0;
-#X obj 97 35 r \$0-mute-s;
-#X obj 97 56 t f b;
-#X obj 127 84 value \$0-volume;
-#X obj 97 123 sel 1 0, f 20;
-#X obj 82 159 pack 0 f;
-#X msg 82 180 \$2 \, \$1 10;
-#X obj 82 221 line~;
-#X obj 82 262 outlet~;
-#X obj 155 159 pack 0 f;
-#X msg 155 180 \$1 \, \$2 10;
-#X connect 0 0 1 0;
-#X connect 1 0 3 0;
-#X connect 1 1 2 0;
-#X connect 2 0 4 1;
-#X connect 2 0 8 1;
-#X connect 3 0 4 0;
-#X connect 3 1 8 0;
-#X connect 4 0 5 0;
-#X connect 5 0 6 0;
-#X connect 6 0 7 0;
-#X connect 8 0 9 0;
-#X connect 9 0 6 0;
-#X restore 298 37 pd muteVolume;
-#X obj 188 16 inlet volume;
-#X obj 188 37 value \$0-volume;
-#X obj 298 112 outlet~ muteVol;
-#X text 190 114 send to [*~] -->;
-#X text 35 15 connect parent patch's volume level, f 20;
-#X text 161 17 -->;
-#X connect 1 0 4 0;
-#X connect 2 0 3 0;
-#X restore 312 220 pd mute;
 #X obj 279 281 *~;
 #X obj 129 281 *~;
-#X obj 793 146 tgl 15 0 \$0-mute-s \$0-mute-r M 4 7 0 12 #fce0e0 #fc2828
-#404040 0 1;
-#X connect 0 0 5 0;
-#X connect 1 0 4 0;
-#X connect 2 0 7 0;
-#X connect 3 0 32 0;
-#X connect 3 0 38 0;
-#X connect 4 0 62 0;
-#X connect 5 0 63 0;
+#X obj 756 166 hsl 72 15 0.01 1 1 0 \$0-slider-s \$0-slider-r empty
+-2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 725 224 r \$0-slider-s;
+#X obj 725 249 tdh.lib/tdh.util.numSlideSet, f 29;
+#X floatatom 753 185 5 0 0 0 - \$0-numbox-r \$0-numbox-s 0;
+#X obj 810 308 s \$0-slider-r;
+#X obj 896 224 r \$0-numbox-s;
+#X obj 896 308 s \$0-numbox-r;
+#X obj 793 145 tgl 15 0 \$0-mute-s \$0-mute-r M 4 7 0 12 #fce0e0 #fce0e0
+#000000 0 1;
+#X obj 714 364 tdh.lib/tdh.util.declick~;
+#X obj 715 338 r \$0-mute-s;
+#N canvas 1815 262 832 483 muteDisplay 0;
+#X obj 368 346 loadbang;
+#X msg 368 367 1;
+#X obj 315 389 s \$0-mute-r;
+#X obj 303 267 sel 0 1;
+#X msg 303 312 color 13;
+#X msg 373 310 color 3 3;
+#X text 314 -17 Using a [tgl] for a mute control is convienient but
+the "state" needs to be swapped a bit. When a mute is "ON" it is going
+to mute the volume \, which requires the gain control to receive a
+"0" \, however when a [tgl] is "ON" it sends a "1". All that ultimately
+needs to be done is to set the [tgl] "ON" when the patch is loaded
+(as long as we want the mute to be "OFF" at the onset) \, and set the
+display colors to respond in an opposite fashion to the [tgl] state
+- when [tgl] is "1" we want the MUTE to display its "OFF" color \,
+while when the [tgl] is "OFF" we want the MUTE to display its "ON"
+color. With this approach \, we don't need to reverse the value that
+[tgl] sends to the gain in order to mute.;
+#X text 484 272 When [tgl] is 1 \, change the background color to the
+"off" color PLUS change the *foreground* color (the "x") to the "OFF"
+color \, so we don't see the "x" displayed, f 23;
+#X text 151 298 When [tgl] is 0 \, change the background color to the
+"on" color, f 23;
+#X obj 304 230 r \$0-mute-s;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 4 0;
+#X connect 3 1 5 0;
+#X connect 4 0 2 0;
+#X connect 5 0 2 0;
+#X connect 9 0 3 0;
+#X restore 886 360 pd muteDisplay;
+#X obj 714 395 s~ \$0-outputMute;
+#X obj 294 246 r~ \$0-outputMute;
+#X obj 650 279 tdh.lib/tdh.util.declick;
+#X connect 0 0 4 0;
+#X connect 1 0 3 0;
+#X connect 2 0 6 0;
+#X connect 3 0 58 0;
+#X connect 4 0 59 0;
+#X connect 17 0 18 0;
 #X connect 18 0 19 0;
-#X connect 19 0 20 0;
-#X connect 20 0 23 0;
-#X connect 21 0 60 0;
-#X connect 30 0 39 0;
-#X connect 31 0 5 1;
-#X connect 37 0 4 1;
-#X connect 37 0 61 0;
-#X connect 38 0 30 0;
-#X connect 39 0 3 0;
-#X connect 39 0 32 0;
-#X connect 40 0 23 0;
-#X connect 46 0 48 0;
-#X connect 47 0 49 0;
-#X connect 48 0 34 0;
-#X connect 48 1 34 1;
-#X connect 49 0 35 0;
-#X connect 49 1 35 1;
-#X connect 51 0 54 0;
-#X connect 56 0 57 0;
-#X connect 57 0 3 0;
-#X connect 61 0 62 1;
-#X connect 61 0 63 1;
-#X connect 62 0 45 0;
-#X connect 62 0 6 1;
-#X connect 63 0 6 0;
-#X connect 63 0 44 0;
+#X connect 19 0 22 0;
+#X connect 20 0 57 0;
+#X connect 29 0 4 1;
+#X connect 34 0 3 1;
+#X connect 37 0 22 0;
+#X connect 43 0 45 0;
+#X connect 44 0 46 0;
+#X connect 45 0 31 0;
+#X connect 45 1 31 1;
+#X connect 46 0 32 0;
+#X connect 46 1 32 1;
+#X connect 48 0 51 0;
+#X connect 53 0 54 0;
+#X connect 58 0 42 0;
+#X connect 58 0 5 1;
+#X connect 59 0 5 0;
+#X connect 59 0 41 0;
+#X connect 61 0 62 0;
+#X connect 62 0 73 0;
+#X connect 62 1 64 0;
+#X connect 62 2 66 0;
+#X connect 65 0 62 1;
+#X connect 68 0 71 0;
+#X connect 69 0 68 0;
+#X connect 72 0 58 1;
+#X connect 72 0 59 1;
+#X connect 73 0 30 0;
 #X coords 0 -1 1 1 127 110 2 750 100;

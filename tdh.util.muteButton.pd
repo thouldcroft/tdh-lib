@@ -1,0 +1,54 @@
+#N canvas 1880 85 797 591 10;
+#X obj 52 143 tgl 15 0 \$0-mute-s \$0-mute-r M 4 7 0 12 #fce0e0 #fce0e0
+#000000 0 1;
+#X obj 241 185 *~;
+#X obj 286 160 tdh.lib/tdh.util.declick~;
+#X obj 287 134 r \$0-mute-s;
+#N canvas 1815 262 832 483 muteDisplay 1;
+#X obj 368 346 loadbang;
+#X msg 368 367 1;
+#X obj 315 389 s \$0-mute-r;
+#X obj 303 267 sel 0 1;
+#X msg 303 312 color 13;
+#X msg 373 310 color 3 3;
+#X text 314 -17 Using a [tgl] for a mute control is convienient but
+the "state" needs to be swapped a bit. When a mute is "ON" it is going
+to mute the volume \, which requires the gain control to receive a
+"0" \, however when a [tgl] is "ON" it sends a "1". All that ultimately
+needs to be done is to set the [tgl] "ON" when the patch is loaded
+(as long as we want the mute to be "OFF" at the onset) \, and set the
+display colors to respond in an opposite fashion to the [tgl] state
+- when [tgl] is "1" we want the MUTE to display its "OFF" color \,
+while when the [tgl] is "OFF" we want the MUTE to display its "ON"
+color. With this approach \, we don't need to reverse the value that
+[tgl] sends to the gain in order to mute.;
+#X text 484 272 When [tgl] is 1 \, change the background color to the
+"off" color PLUS change the *foreground* color (the "x") to the "OFF"
+color \, so we don't see the "x" displayed, f 23;
+#X text 151 298 When [tgl] is 0 \, change the background color to the
+"on" color, f 23;
+#X obj 304 230 r \$0-mute-s;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 4 0;
+#X connect 3 1 5 0;
+#X connect 4 0 2 0;
+#X connect 5 0 2 0;
+#X connect 9 0 3 0;
+#X restore 458 156 pd muteDisplay;
+#X text 79 17 COPY & PASTE INTO PATCH:;
+#X text 122 160 signal to be muted;
+#X obj 238 165 cnv 5 5 5 empty empty ↓ -3 3 0 30 #fcfcfc #fc0400
+0;
+#X obj 241 89 osc~ 440;
+#X obj 241 261 dac~ 1 2;
+#X obj 241 226 *~;
+#X obj 281 226 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X connect 1 0 10 0;
+#X connect 2 0 1 1;
+#X connect 3 0 2 0;
+#X connect 8 0 1 0;
+#X connect 10 0 9 0;
+#X connect 10 0 9 1;
+#X connect 11 0 10 1;
