@@ -1,4 +1,4 @@
-#N canvas 1440 -209 1920 1035 8;
+#N canvas 1560 -210 1920 1035 8;
 #X obj 292 805 outlet~ L;
 #X obj 377 805 outlet~ R;
 #X obj 1329 38 inlet pan;
@@ -6,9 +6,9 @@
 #X text 9 6 _;
 #X obj 1123 38 inlet gain-db;
 #X obj 1225 38 inlet~ sig-gain;
-#X obj 401 32 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc 0
+#X obj 364 47 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc 0
 ;
-#X obj 516 31 cnv 14 14 14 empty empty 2 4 8 0 12 #606060 #dcdcdc 0
+#X obj 623 48 cnv 14 14 14 empty empty 2 4 8 0 12 #606060 #dcdcdc 0
 ;
 #X obj 1028 23 cnv 14 14 14 empty empty 3 4 8 0 12 #606060 #dcdcdc
 0;
@@ -72,9 +72,7 @@ empty 0 -9 0 10 #fcfcfc #000000 #000000 8909 1;
 ;
 #X obj 79 240 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcfc #7c7c7c 0
 ;
-#X obj 151 243 tgl 12 0 \$0-mute1-s \$0-mute1-r M 3 6 0 10 #fc2828
-#fc2828 #404040 0 1;
-#X obj 166 243 tgl 12 0 \$0-preFader1-s \$0-preFader1-r PO 1 6 0 8
+#X obj 166 243 tgl 12 0 \$0-preFader1-s \$0-preFader1-r PS 1 6 0 8
 #d8fcd8 #d8fcd8 #606060 0 1;
 #X obj 107 471 s \$0-objectName;
 #X text 100 110 +10dB;
@@ -140,43 +138,7 @@ empty 0 -9 0 10 #fcfcfc #000000 #000000 8909 1;
 #X msg 389 646 \$1 20;
 #X obj 475 597 cnv 14 14 14 empty empty R 6 8 0 8 #9c00fc #b8b8b8 0
 ;
-#X obj 327 188 line~;
-#X msg 328 171 \$1 20;
-#X obj 394 113 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
-;
 #X obj 293 239 *~;
-#N canvas 1738 289 915 515 muteButtonDisplay 0;
-#X obj 152 67 sel 0 1;
-#X text 27 108 When [tgl] is 0 \, change the background color to the
-"off" color, f 23;
-#X text 284 108 When [tgl] is 1 \, change the background color to the
-"on" color \, AND change the foreground color (the "x") to the on color
-\, so we don't see the "x" displayed, f 23;
-#X obj 217 157 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcfc #7c7c7c 0
-;
-#X msg 222 110 color 13 13;
-#X msg 152 112 color 3;
-#X obj 218 22 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
-;
-#X obj 152 22 r \$0-mute1-s;
-#X obj 152 157 s \$0-mute1-r;
-#X obj 98 145 loadbang;
-#X obj 98 184 pipe 5;
-#X msg 98 165 0;
-#X connect 0 0 5 0;
-#X connect 0 1 4 0;
-#X connect 4 0 8 0;
-#X connect 5 0 8 0;
-#X connect 7 0 0 0;
-#X connect 9 0 11 0;
-#X connect 10 0 8 0;
-#X connect 11 0 10 0;
-#X restore 443 116 pd muteButtonDisplay;
-#X obj 329 133 sel 0 1;
-#X obj 356 151 f 0;
-#X obj 328 151 f 1;
-#X text 379 135 A mute button functions in the opposite of the [tgl]
-values \, so we switch them here, f 11;
 #X obj 999 516 cnv 14 35 14 empty empty init 4 7 0 10 #e0c4fc #7c7c7c
 0;
 #X msg 953 536 0;
@@ -187,55 +149,9 @@ values \, so we switch them here, f 11;
 0;
 #X obj 300 456 cnv 4 450 1 empty empty Fader\\\ and\\\ Meter\\\ Handling
 0 -4 0 10 #bbbbbb #7c7c7c 0;
-#N canvas 1992 281 1048 419 prePostButtonDisplay 0;
-#X obj 180 56 sel 0 1;
-#X text 8 97 When [tgl] is 0 \, change the background color to the
-"off" color, f 23;
-#X obj 264 145 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcfc #7c7c7c 0
-;
-#X obj 266 10 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
-;
-#X obj 180 11 r \$0-preFader1-s;
-#X obj 180 146 s \$0-preFader1-r;
-#X text 378 78 When [tgl] is 1 \, change the background color to the
-"on" color \, AND change the foreground color (the "x") to the "on"
-color \, so we don't see the "x" displayed (it blends into the background
-color), f 23;
-#X obj 315 14 loadbang;
-#X msg 315 34 1;
-#X msg 133 101 color 16;
-#X msg 246 101 color 6 6;
-#X msg 180 101 label PR;
-#X msg 318 102 label PO;
-#X obj 108 133 loadbang;
-#X obj 108 153 t b b;
-#X msg 133 173 0;
-#X msg 108 173 1;
-#X obj 72 133 cnv 14 35 14 empty empty init 4 7 0 10 #e0c4fc #7c7c7c
-0;
-#X obj 108 193 del 5;
-#X connect 0 0 9 0;
-#X connect 0 0 11 0;
-#X connect 0 1 10 0;
-#X connect 0 1 12 0;
-#X connect 4 0 0 0;
-#X connect 7 0 8 0;
-#X connect 8 0 0 0;
-#X connect 9 0 5 0;
-#X connect 10 0 5 0;
-#X connect 11 0 5 0;
-#X connect 12 0 5 0;
-#X connect 13 0 14 0;
-#X connect 14 0 16 0;
-#X connect 14 1 15 0;
-#X connect 15 0 18 0;
-#X connect 16 0 18 0;
-#X connect 18 0 5 0;
-#X restore 378 329 pd prePostButtonDisplay;
 #X obj 1164 539 s \$0-linearFader1-r;
 #X obj 305 475 r \$0-linearFader1-s;
 #X obj 338 518 r~ \$0-sigGain1;
-#X obj 329 114 r \$0-mute1-s;
 #X obj 389 597 r \$0-panValue1-s;
 #X obj 697 600 r \$0-panValue1-s;
 #X obj 580 614 r \$0-panSlider1-s;
@@ -420,40 +336,9 @@ outlet is just the message [symbol( \, so we use that to trigger a
 ;
 #X obj 664 475 cnv 14 14 14 empty empty R 6 8 0 8 #fc0400 #606060 0
 ;
-#X obj 587 188 line~;
-#X msg 588 171 \$1 20;
-#X obj 654 113 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
-;
 #X obj 553 239 *~;
-#N canvas 1738 289 915 515 muteButtonDisplay 0;
-#X obj 152 67 sel 0 1;
-#X text 27 108 When [tgl] is 0 \, change the background color to the
-"off" color, f 23;
-#X text 284 108 When [tgl] is 1 \, change the background color to the
-"on" color \, AND change the foreground color (the "x") to the on color
-\, so we don't see the "x" displayed, f 23;
-#X obj 217 157 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcfc #7c7c7c 0
-;
-#X msg 222 110 color 13 13;
-#X msg 152 112 color 3;
-#X obj 218 22 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
-;
-#X obj 152 22 r \$0-mute1-s;
-#X obj 152 157 s \$0-mute1-r;
-#X connect 0 0 5 0;
-#X connect 0 1 4 0;
-#X connect 4 0 8 0;
-#X connect 5 0 8 0;
-#X connect 7 0 0 0;
-#X restore 703 116 pd muteButtonDisplay;
-#X obj 589 133 sel 0 1;
-#X obj 616 151 f 0;
-#X obj 588 151 f 1;
-#X text 639 135 A mute button functions in the opposite of the [tgl]
-values \, so we switch them here, f 11;
 #X obj 565 475 r \$0-linearFader1-s;
 #X obj 598 518 r~ \$0-sigGain1;
-#X obj 589 114 r \$0-mute1-s;
 #X obj 637 349 r \$0-preFader1-s;
 #N canvas 1462 397 450 300 router~ 0;
 #X obj 338 122 sel 0 1;
@@ -498,95 +383,159 @@ values \, so we switch them here, f 11;
 0;
 #X obj 1465 39 cnv 14 14 14 empty empty 7 4 8 0 12 #606060 #dcdcdc
 0;
-#X obj 412 115 cnv 14 30 14 empty empty init 4 7 0 10 #e0c4fc #7c7c7c
-0;
 #X obj 499 329 cnv 14 30 14 empty empty init 4 7 0 10 #e0c4fc #7c7c7c
 0;
-#X connect 2 0 147 0;
-#X connect 3 0 160 0;
-#X connect 5 0 148 0;
-#X connect 6 0 149 0;
-#X connect 14 0 151 0;
-#X connect 15 0 151 0;
-#X connect 65 0 123 0;
-#X connect 66 0 65 0;
-#X connect 67 0 113 0;
-#X connect 68 0 69 0;
-#X connect 68 0 70 0;
-#X connect 69 0 211 0;
-#X connect 69 0 210 0;
-#X connect 70 0 211 0;
-#X connect 70 0 210 0;
-#X connect 73 0 134 0;
-#X connect 73 0 126 1;
-#X connect 74 0 73 1;
-#X connect 75 0 76 0;
-#X connect 76 0 179 0;
-#X connect 77 0 74 0;
-#X connect 92 0 121 0;
-#X connect 94 0 135 1;
-#X connect 95 0 94 0;
-#X connect 97 0 100 1;
-#X connect 98 0 97 0;
-#X connect 100 0 73 0;
-#X connect 100 0 126 0;
-#X connect 102 0 104 0;
-#X connect 102 1 103 0;
-#X connect 103 0 98 0;
-#X connect 104 0 98 0;
-#X connect 107 0 123 0;
-#X connect 108 0 107 0;
-#X connect 114 0 77 0;
-#X connect 115 0 73 1;
-#X connect 116 0 102 0;
-#X connect 117 0 95 0;
-#X connect 117 0 138 0;
-#X connect 118 0 92 0;
-#X connect 119 0 120 0;
-#X connect 122 0 66 0;
-#X connect 124 0 67 0;
-#X connect 125 0 126 2;
-#X connect 126 0 75 0;
-#X connect 134 0 0 0;
-#X connect 135 0 1 0;
-#X connect 136 0 134 1;
-#X connect 137 0 136 0;
-#X connect 138 0 139 0;
-#X connect 139 0 137 0;
-#X connect 140 0 100 0;
-#X connect 141 0 145 0;
-#X connect 142 0 162 0;
-#X connect 143 0 144 0;
-#X connect 144 0 146 0;
-#X connect 145 0 142 0;
-#X connect 145 1 144 0;
-#X connect 146 0 162 0;
-#X connect 147 0 143 0;
-#X connect 148 0 160 0;
-#X connect 149 0 160 0;
-#X connect 149 1 161 0;
-#X connect 151 0 166 0;
-#X connect 154 0 150 0;
-#X connect 165 0 164 0;
-#X connect 166 0 165 0;
-#X connect 180 0 201 1;
-#X connect 180 0 135 0;
-#X connect 181 0 180 1;
-#X connect 182 0 183 0;
-#X connect 183 0 209 0;
-#X connect 184 0 181 0;
-#X connect 188 0 191 1;
-#X connect 189 0 188 0;
-#X connect 191 0 180 0;
-#X connect 191 0 201 0;
-#X connect 193 0 195 0;
-#X connect 193 1 194 0;
-#X connect 194 0 189 0;
-#X connect 195 0 189 0;
-#X connect 197 0 184 0;
-#X connect 198 0 180 1;
-#X connect 199 0 193 0;
-#X connect 200 0 201 2;
-#X connect 201 0 182 0;
-#X connect 208 0 191 0;
+#X obj 151 243 tgl 12 0 \$0-mute-s \$0-mute-r M 3 7 0 12 #fce0e0 #fce0e0
+#000000 0 1;
+#X obj 566 144 tdh.lib/tdh.util.declick~;
+#X obj 567 118 r \$0-mute-s;
+#N canvas 1815 262 832 483 muteDisplay 0;
+#X obj 368 346 loadbang;
+#X msg 368 367 1;
+#X obj 315 389 s \$0-mute-r;
+#X obj 303 267 sel 0 1;
+#X msg 303 312 color 13;
+#X msg 373 310 color 3 3;
+#X text 314 -17 Using a [tgl] for a mute control is convienient but
+the "state" needs to be swapped a bit. When a mute is "ON" it is going
+to mute the volume \, which requires the gain control to receive a
+"0" \, however when a [tgl] is "ON" it sends a "1". All that ultimately
+needs to be done is to set the [tgl] "ON" when the patch is loaded
+(as long as we want the mute to be "OFF" at the onset) \, and set the
+display colors to respond in an opposite fashion to the [tgl] state
+- when [tgl] is "1" we want the MUTE to display its "OFF" color \,
+while when the [tgl] is "OFF" we want the MUTE to display its "ON"
+color. With this approach \, we don't need to reverse the value that
+[tgl] sends to the gain in order to mute.;
+#X text 484 272 When [tgl] is 1 \, change the background color to the
+"off" color PLUS change the *foreground* color (the "x") to the "OFF"
+color \, so we don't see the "x" displayed, f 23;
+#X text 151 298 When [tgl] is 0 \, change the background color to the
+"on" color, f 23;
+#X obj 304 230 r \$0-mute-s;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 4 0;
+#X connect 3 1 5 0;
+#X connect 4 0 2 0;
+#X connect 5 0 2 0;
+#X connect 9 0 3 0;
+#X restore 738 140 pd muteDisplay;
+#N canvas 2007 281 1034 419 prePostButtonDisplay 0;
+#X obj 180 56 sel 0 1;
+#X text 8 97 When [tgl] is 0 \, change the background color to the
+"off" color, f 23;
+#X obj 264 145 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcfc #7c7c7c 0
+;
+#X obj 266 10 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
+;
+#X obj 180 11 r \$0-preFader1-s;
+#X text 378 78 When [tgl] is 1 \, change the background color to the
+"on" color \, AND change the foreground color (the "x") to the "on"
+color \, so we don't see the "x" displayed (it blends into the background
+color), f 23;
+#X obj 87 135 loadbang;
+#X msg 179 101 label PR;
+#X msg 318 102 label PS;
+#X msg 133 100 color 16;
+#X msg 246 101 color 6 6;
+#X msg 109 218 0;
+#X obj 109 188 del 5;
+#X obj 69 189 del 5;
+#X obj 87 155 t b b;
+#X msg 72 219 1;
+#X obj 180 146 s \$0-preFader1-r;
+#X connect 0 0 9 0;
+#X connect 0 0 7 0;
+#X connect 0 1 10 0;
+#X connect 0 1 8 0;
+#X connect 4 0 0 0;
+#X connect 6 0 14 0;
+#X connect 7 0 16 0;
+#X connect 8 0 16 0;
+#X connect 9 0 16 0;
+#X connect 10 0 16 0;
+#X connect 11 0 16 0;
+#X connect 12 0 11 0;
+#X connect 13 0 15 0;
+#X connect 14 0 13 0;
+#X connect 14 1 12 0;
+#X connect 15 0 16 0;
+#X restore 750 350 pd prePostButtonDisplay;
+#X connect 2 0 136 0;
+#X connect 3 0 149 0;
+#X connect 5 0 137 0;
+#X connect 6 0 138 0;
+#X connect 14 0 140 0;
+#X connect 15 0 140 0;
+#X connect 64 0 112 0;
+#X connect 65 0 64 0;
+#X connect 66 0 103 0;
+#X connect 67 0 68 0;
+#X connect 67 0 69 0;
+#X connect 68 0 191 0;
+#X connect 68 0 190 0;
+#X connect 69 0 191 0;
+#X connect 69 0 190 0;
+#X connect 72 0 123 0;
+#X connect 72 0 115 1;
+#X connect 73 0 72 1;
+#X connect 74 0 75 0;
+#X connect 75 0 168 0;
+#X connect 76 0 73 0;
+#X connect 91 0 110 0;
+#X connect 93 0 124 1;
+#X connect 94 0 93 0;
+#X connect 96 0 72 0;
+#X connect 96 0 115 0;
+#X connect 98 0 112 0;
+#X connect 99 0 98 0;
+#X connect 104 0 76 0;
+#X connect 105 0 72 1;
+#X connect 106 0 94 0;
+#X connect 106 0 127 0;
+#X connect 107 0 91 0;
+#X connect 108 0 109 0;
+#X connect 111 0 65 0;
+#X connect 113 0 66 0;
+#X connect 114 0 115 2;
+#X connect 115 0 74 0;
+#X connect 123 0 0 0;
+#X connect 124 0 1 0;
+#X connect 125 0 123 1;
+#X connect 126 0 125 0;
+#X connect 127 0 128 0;
+#X connect 128 0 126 0;
+#X connect 129 0 96 0;
+#X connect 130 0 134 0;
+#X connect 131 0 151 0;
+#X connect 132 0 133 0;
+#X connect 133 0 135 0;
+#X connect 134 0 131 0;
+#X connect 134 1 133 0;
+#X connect 135 0 151 0;
+#X connect 136 0 132 0;
+#X connect 137 0 149 0;
+#X connect 138 0 149 0;
+#X connect 138 1 150 0;
+#X connect 140 0 155 0;
+#X connect 143 0 139 0;
+#X connect 154 0 153 0;
+#X connect 155 0 154 0;
+#X connect 169 0 181 1;
+#X connect 169 0 124 0;
+#X connect 170 0 169 1;
+#X connect 171 0 172 0;
+#X connect 172 0 189 0;
+#X connect 173 0 170 0;
+#X connect 177 0 169 0;
+#X connect 177 0 181 0;
+#X connect 178 0 173 0;
+#X connect 179 0 169 1;
+#X connect 180 0 181 2;
+#X connect 181 0 171 0;
+#X connect 188 0 177 0;
+#X connect 196 0 177 1;
+#X connect 196 0 96 1;
+#X connect 197 0 196 0;
 #X coords 0 -1 1 1 104 225 2 100 100;

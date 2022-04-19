@@ -1,1 +1,13 @@
-#N canvas 1280 287 450 300 10;
+#N canvas 1745 -278 671 830 10;
+#X obj 266 683 tdh.util.audioOut~;
+#X obj 53 221 tdh.util.4chMixer~;
+#X obj 384 166 osc~ 440;
+#X obj 71 136 osc~ 110;
+#X obj 209 145 osc~ 220;
+#X obj 494 152 osc~ 880;
+#X connect 1 0 0 0;
+#X connect 1 1 0 1;
+#X connect 2 0 1 2;
+#X connect 3 0 1 0;
+#X connect 4 0 1 1;
+#X connect 5 0 1 3;

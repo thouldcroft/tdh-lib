@@ -1,6 +1,6 @@
-#N canvas 1567 -90 1343 864 8;
-#X obj 291 796 outlet~ L;
-#X obj 375 793 outlet~ R;
+#N canvas 2293 -175 1343 864 8;
+#X obj 306 805 outlet~ L;
+#X obj 469 805 outlet~ R;
 #X obj 794 45 inlet pan;
 #X obj 473 46 inlet gain-lin;
 #X text 9 6 _;
@@ -18,81 +18,81 @@
 ;
 #X obj 931 46 cnv 14 14 14 empty empty 5 4 8 0 12 #606060 #dcdcdc 0
 ;
-#X obj 275 795 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc
+#X obj 290 804 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc
 0;
-#X obj 359 793 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc
+#X obj 453 805 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc
 0;
 #X obj 946 46 inlet;
 #X obj 991 45 loadbang;
 #X obj 1036 45 cnv 14 35 14 empty empty init 4 7 0 10 #e0c4fc #7c7c7c
 0;
-#X obj 120 270 hsl 64 15 0 1 0 0 \$0-panSlider1-s \$0-panSlider1-r
+#X obj 120 290 hsl 64 15 0 1 0 0 \$0-panSlider1-s \$0-panSlider1-r
 empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
-#X text 106 269 L;
-#X text 190 269 R;
-#X floatatom 137 288 5 0 0 0 - \$0-panValue1-r \$0-panValue1-s 0;
-#X obj 134 118 vsl 14 118 0.03 3 1 1 \$0-linearFader1-s \$0-linearFader1-r
-empty 0 -9 0 10 #fcfcfc #000000 #000000 11700 1;
-#X text 110 140 0dB;
-#X floatatom 127 242 4 0 0 0 - \$0-dBFS-amp1-r \$0-dBFS-amp1-s 0;
-#X text 105 133 +2dB;
-#X text 105 122 +6dB;
-#X text 105 147 -2dB;
-#X text 105 157 -6dB;
-#X obj 60 283 cnv 14 14 14 empty empty R 6 8 0 8 #fcc4c4 #7c7c7c 0
+#X text 106 289 L;
+#X text 190 289 R;
+#X floatatom 137 308 5 0 0 0 - \$0-panValue1-r \$0-panValue1-s 0;
+#X obj 134 143 vsl 14 118 0.03 3 1 0 \$0-linearFader1-s \$0-linearFader1-r
+empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
+#X text 110 165 0dB;
+#X floatatom 127 267 4 0 0 0 - \$0-dBFS-amp1-r \$0-dBFS-amp1-s 0;
+#X text 105 158 +2dB;
+#X text 105 147 +6dB;
+#X text 105 172 -2dB;
+#X text 105 182 -6dB;
+#X obj 60 303 cnv 14 14 14 empty empty R 6 8 0 8 #fcc4c4 #7c7c7c 0
 ;
-#X obj 152 118 vu 10 120 \$0-chEnv1 empty -1 -8 0 10 #404040 #000000
+#X obj 152 143 vu 10 120 \$0-chEnv1 empty -1 -8 0 10 #404040 #000000
 1 0;
-#X obj 75 118 cnv 14 14 14 empty empty R 6 8 0 8 #fce0c4 #7c7c7c 0
+#X obj 75 138 cnv 14 14 14 empty empty R 6 8 0 8 #fce0c4 #7c7c7c 0
 ;
-#X obj 21 302 cnv 14 14 14 empty empty R 6 8 0 8 #e0c4fc #7c7c7c 0
+#X obj 21 322 cnv 14 14 14 empty empty R 6 8 0 8 #e0c4fc #7c7c7c 0
 ;
-#X obj 21 264 cnv 14 14 14 empty empty R 6 8 0 8 #f8fc00 #7c7c7c 0
+#X obj 21 284 cnv 14 14 14 empty empty R 6 8 0 8 #f8fc00 #7c7c7c 0
 ;
-#X obj 21 245 cnv 14 14 14 empty empty R 6 8 0 8 #fc8000 #7c7c7c 0
+#X obj 21 265 cnv 14 14 14 empty empty R 6 8 0 8 #fc8000 #7c7c7c 0
 ;
-#X obj 21 283 cnv 14 14 14 empty empty R 6 8 0 8 #00f8fc #7c7c7c 0
+#X obj 21 303 cnv 14 14 14 empty empty R 6 8 0 8 #00f8fc #7c7c7c 0
 ;
-#X obj 40 264 cnv 14 14 14 empty empty S 6 8 0 8 #00fc04 #7c7c7c 0
+#X obj 40 284 cnv 14 14 14 empty empty S 6 8 0 8 #00fc04 #7c7c7c 0
 ;
-#X obj 40 245 cnv 14 14 14 empty empty S 6 8 0 8 #fc0400 #606060 0
+#X obj 40 265 cnv 14 14 14 empty empty S 6 8 0 8 #fc0400 #606060 0
 ;
-#X obj 40 302 cnv 14 14 14 empty empty S 6 8 0 8 #9c00fc #b8b8b8 0
+#X obj 40 322 cnv 14 14 14 empty empty S 6 8 0 8 #9c00fc #b8b8b8 0
 ;
-#X obj 40 283 cnv 14 14 14 empty empty S 6 8 0 8 #0400fc #b8b8b8 0
+#X obj 40 303 cnv 14 14 14 empty empty S 6 8 0 8 #0400fc #b8b8b8 0
 ;
-#X text 131 101 Vol;
-#X obj 101 368 cnv 12 102 14 empty \$0-objectName Channel\\\ Strip
-1 7 0 10 #dcdcdc #404040 0;
-#X obj 101 305 cnv 15 102 18 empty \$0-chanStripName1 empty 1 9 0 12
+#X text 128 123 Vol;
+#X obj 101 346 cnv 12 102 14 empty \$0-objectName Mono\ Channel 1 7
+0 10 #dcdcdc #404040 0;
+#X obj 101 326 cnv 15 102 18 empty \$0-chanStripName1 empty 1 9 0 12
 #c4c4fc #404040 0;
 #X obj 192 471 cnv 14 14 14 empty empty S 6 8 0 8 #dcdcdc #7c7c7c 0
 ;
-#X obj 73 359 cnv 14 14 14 empty empty R 6 8 0 8 #dcdcdc #7c7c7c 0
+#X obj 82 343 cnv 14 14 14 empty empty R 6 8 0 8 #dcdcdc #7c7c7c 0
 ;
-#X obj 61 245 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcc4 #7c7c7c 0
+#X obj 61 265 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcc4 #7c7c7c 0
 ;
-#X obj 81 240 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcfc #7c7c7c 0
+#X obj 81 265 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcfc #7c7c7c 0
 ;
-#X obj 166 243 tgl 12 0 \$0-preFader1-s \$0-preFader1-r PS 1 6 0 8
+#X obj 166 268 tgl 12 0 \$0-preFader1-s \$0-preFader1-r PS 1 6 0 8
 #d8fcd8 #d8fcd8 #606060 0 1;
 #X obj 107 471 s \$0-objectName;
-#X text 100 110 +10dB;
-#X text 100 174 -12dB;
-#X text 100 199 -20dB;
-#X text 101 228 -30dB;
-#X text 127 109 -;
-#X text 127 122 -;
-#X text 127 133 -;
-#X text 127 140 -;
+#X text 100 135 +10dB;
+#X text 100 199 -12dB;
+#X text 100 224 -20dB;
+#X text 101 253 -30dB;
+#X text 127 134 -;
 #X text 127 147 -;
-#X text 127 156 -;
-#X text 127 174 -;
+#X text 127 158 -;
+#X text 127 165 -;
+#X text 127 172 -;
+#X text 127 181 -;
 #X text 127 199 -;
-#X text 127 228 -;
+#X text 127 224 -;
+#X text 127 253 -;
 #X obj 37 97 cnv 5 5 5 {empty} {empty} {+10dB\\\ -} 0 0 0 10 #ffffff
 #ffffff 0;
-#X symbolatom 103 306 16 0 0 0 - \$0-nameEntry1-r \$0-nameEntry1-s
+#X symbolatom 103 327 16 0 0 0 - \$0-nameEntry1-r \$0-nameEntry1-s
 10;
 #X obj 107 433 loadbang;
 #X msg 763 516 set \$1;
@@ -140,7 +140,7 @@ empty 0 -9 0 10 #fcfcfc #000000 #000000 11700 1;
 #X msg 389 646 \$1 20;
 #X obj 475 597 cnv 14 14 14 empty empty R 6 8 0 8 #9c00fc #b8b8b8 0
 ;
-#X obj 389 153 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
+#X obj 394 113 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
 ;
 #X obj 293 239 *~;
 #X obj 724 516 cnv 14 35 14 empty empty init 4 7 0 10 #e0c4fc #7c7c7c
@@ -153,6 +153,47 @@ empty 0 -9 0 10 #fcfcfc #000000 #000000 11700 1;
 0;
 #X obj 300 456 cnv 4 450 1 empty empty Fader\\\ and\\\ Meter\\\ Handling
 0 -4 0 10 #bbbbbb #7c7c7c 0;
+#N canvas 2007 281 1034 419 prePostButtonDisplay 0;
+#X obj 180 56 sel 0 1;
+#X text 8 97 When [tgl] is 0 \, change the background color to the
+"off" color, f 23;
+#X obj 264 145 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcfc #7c7c7c 0
+;
+#X obj 266 10 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
+;
+#X obj 180 11 r \$0-preFader1-s;
+#X obj 180 146 s \$0-preFader1-r;
+#X text 378 78 When [tgl] is 1 \, change the background color to the
+"on" color \, AND change the foreground color (the "x") to the "on"
+color \, so we don't see the "x" displayed (it blends into the background
+color), f 23;
+#X obj 87 135 loadbang;
+#X msg 179 101 label PR;
+#X msg 318 102 label PS;
+#X msg 133 100 color 16;
+#X msg 246 101 color 6 6;
+#X msg 109 218 0;
+#X obj 109 188 del 5;
+#X obj 69 189 del 5;
+#X obj 87 155 t b b;
+#X msg 72 219 1;
+#X connect 0 0 10 0;
+#X connect 0 0 8 0;
+#X connect 0 1 11 0;
+#X connect 0 1 9 0;
+#X connect 4 0 0 0;
+#X connect 7 0 15 0;
+#X connect 8 0 5 0;
+#X connect 9 0 5 0;
+#X connect 10 0 5 0;
+#X connect 11 0 5 0;
+#X connect 12 0 5 0;
+#X connect 13 0 12 0;
+#X connect 14 0 16 0;
+#X connect 15 0 14 0;
+#X connect 15 1 13 0;
+#X connect 16 0 5 0;
+#X restore 468 313 pd prePostButtonDisplay;
 #X obj 889 539 s \$0-linearFader1-r;
 #X obj 305 475 r \$0-linearFader1-s;
 #X obj 338 518 r~ \$0-sigGain1;
@@ -307,74 +348,31 @@ outlet is just the message [symbol( \, so we use that to trigger a
 #X connect 11 0 15 1;
 #X connect 15 0 0 0;
 #X restore 942 128 pd argDefaultS;
-#X obj 101 391 cnv 1 102 2 empty empty empty 1 7 0 10 #404040 #404040
+#X obj 101 359 cnv 1 102 2 empty empty empty 1 7 0 10 #404040 #404040
 0;
-#X obj 101 93 cnv 1 102 2 empty empty empty 1 7 0 10 #404040 #404040
+#X obj 101 113 cnv 1 102 2 empty empty empty 1 7 0 10 #404040 #404040
 0;
-#X obj 101 392 cnv 10 90 12 empty empty OutL 0 6 0 8 #dfdfdf #404040
+#X obj 101 360 cnv 10 90 12 empty empty OutL 0 6 0 8 #dfdfdf #404040
 0;
-#X obj 183 392 cnv 10 20 12 empty empty OutR 0 6 0 8 #dfdfdf #404040
+#X obj 183 360 cnv 10 20 12 empty empty OutR 0 6 0 8 #dfdfdf #404040
 0;
-#X obj 101 82 cnv 10 20 12 empty empty In 0 6 0 8 #dfdfdf #404040 0
-;
-#X obj 118 82 cnv 10 20 12 empty empty Ln 0 6 0 8 #dfdfdf #404040 0
-;
-#X obj 138 82 cnv 10 20 12 empty empty dB 0 6 0 8 #dfdfdf #404040 0
-;
-#X obj 158 82 cnv 10 20 12 empty empty V~ 0 6 0 8 #dfdfdf #404040 0
-;
-#X obj 176 82 cnv 10 20 12 empty empty Pn 0 6 0 8 #dfdfdf #404040 0
-;
-#X obj 193 82 cnv 10 10 12 empty empty Nm 0 6 0 8 #dfdfdf #404040 0
-;
-#X text 141 255 Pan;
-#X obj 404 118 cnv 10 28 14 empty empty INIT 2 8 0 10 #9c00ff #dfdfdf
+#X obj 101 102 cnv 10 20 12 empty empty In 0 6 0 8 #dfdfdf #404040
 0;
-#N canvas 2007 281 1034 419 prePostButtonDisplay 0;
-#X obj 180 56 sel 0 1;
-#X text 8 97 When [tgl] is 0 \, change the background color to the
-"off" color, f 23;
-#X obj 264 145 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcfc #7c7c7c 0
-;
-#X obj 266 10 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
-;
-#X obj 180 11 r \$0-preFader1-s;
-#X obj 180 146 s \$0-preFader1-r;
-#X text 378 78 When [tgl] is 1 \, change the background color to the
-"on" color \, AND change the foreground color (the "x") to the "on"
-color \, so we don't see the "x" displayed (it blends into the background
-color), f 23;
-#X obj 87 135 loadbang;
-#X msg 179 101 label PR;
-#X msg 318 102 label PS;
-#X msg 133 100 color 16;
-#X msg 246 101 color 6 6;
-#X msg 109 218 0;
-#X obj 109 188 del 5;
-#X obj 69 189 del 5;
-#X obj 87 155 t b b;
-#X msg 72 219 1;
-#X connect 0 0 10 0;
-#X connect 0 0 8 0;
-#X connect 0 1 11 0;
-#X connect 0 1 9 0;
-#X connect 4 0 0 0;
-#X connect 7 0 15 0;
-#X connect 8 0 5 0;
-#X connect 9 0 5 0;
-#X connect 10 0 5 0;
-#X connect 11 0 5 0;
-#X connect 12 0 5 0;
-#X connect 13 0 12 0;
-#X connect 14 0 16 0;
-#X connect 15 0 14 0;
-#X connect 15 1 13 0;
-#X connect 16 0 5 0;
-#X restore 468 313 pd prePostButtonDisplay;
-#X obj 151 243 tgl 12 0 \$0-mute-s \$0-mute-r M 3 7 0 12 #fce0e0 #fce0e0
+#X obj 118 102 cnv 10 20 12 empty empty Ln 0 6 0 8 #dfdfdf #404040
+0;
+#X obj 138 102 cnv 10 20 12 empty empty dB 0 6 0 8 #dfdfdf #404040
+0;
+#X obj 158 102 cnv 10 20 12 empty empty V~ 0 6 0 8 #dfdfdf #404040
+0;
+#X obj 176 102 cnv 10 20 12 empty empty Pn 0 6 0 8 #dfdfdf #404040
+0;
+#X obj 193 102 cnv 10 10 12 empty empty Nm 0 6 0 8 #dfdfdf #404040
+0;
+#X msg 107 451 label Mono\ Channel;
+#X obj 151 268 tgl 12 0 \$0-mute-s \$0-mute-r M 3 7 0 12 #fce0e0 #fce0e0
 #000000 0 1;
-#X obj 328 179 tdh.lib/tdh.util.declick~;
-#X obj 329 153 r \$0-mute-s;
+#X obj 358 174 tdh.lib/tdh.util.declick~;
+#X obj 359 148 r \$0-mute-s;
 #N canvas 1815 262 832 483 muteDisplay 0;
 #X obj 368 346 loadbang;
 #X msg 368 367 1;
@@ -406,67 +404,69 @@ color \, so we don't see the "x" displayed, f 23;
 #X connect 4 0 2 0;
 #X connect 5 0 2 0;
 #X connect 9 0 3 0;
-#X restore 477 177 pd muteDisplay;
-#X connect 2 0 140 0;
-#X connect 3 0 153 0;
-#X connect 5 0 141 0;
-#X connect 6 0 142 0;
-#X connect 15 0 144 0;
-#X connect 16 0 144 0;
-#X connect 65 0 114 0;
+#X restore 530 170 pd muteDisplay;
+#X connect 2 0 141 0;
+#X connect 3 0 154 0;
+#X connect 5 0 142 0;
+#X connect 6 0 143 0;
+#X connect 15 0 145 0;
+#X connect 16 0 145 0;
+#X connect 64 0 171 0;
+#X connect 65 0 115 0;
 #X connect 66 0 65 0;
-#X connect 67 0 105 0;
+#X connect 67 0 106 0;
 #X connect 68 0 69 0;
 #X connect 68 0 70 0;
-#X connect 69 0 132 0;
-#X connect 70 0 132 0;
-#X connect 73 0 125 0;
+#X connect 69 0 133 0;
+#X connect 70 0 133 0;
 #X connect 73 0 126 0;
-#X connect 73 0 117 1;
+#X connect 73 0 127 0;
+#X connect 73 0 118 1;
 #X connect 74 0 73 1;
 #X connect 75 0 76 0;
-#X connect 76 0 131 0;
+#X connect 76 0 132 0;
 #X connect 77 0 74 0;
-#X connect 92 0 112 0;
-#X connect 94 0 126 1;
+#X connect 92 0 113 0;
+#X connect 94 0 127 1;
 #X connect 95 0 94 0;
 #X connect 98 0 73 0;
-#X connect 98 0 117 0;
-#X connect 100 0 114 0;
+#X connect 98 0 118 0;
+#X connect 100 0 115 0;
 #X connect 101 0 100 0;
-#X connect 106 0 77 0;
-#X connect 107 0 73 1;
-#X connect 108 0 95 0;
-#X connect 108 0 129 0;
-#X connect 109 0 92 0;
-#X connect 110 0 111 0;
-#X connect 113 0 66 0;
-#X connect 115 0 67 0;
-#X connect 116 0 117 2;
-#X connect 117 0 75 0;
-#X connect 125 0 0 0;
-#X connect 126 0 1 0;
-#X connect 127 0 125 1;
-#X connect 128 0 127 0;
-#X connect 129 0 130 0;
-#X connect 130 0 128 0;
-#X connect 133 0 98 0;
-#X connect 134 0 138 0;
-#X connect 135 0 155 0;
-#X connect 136 0 137 0;
-#X connect 137 0 139 0;
-#X connect 138 0 135 0;
-#X connect 138 1 137 0;
-#X connect 139 0 155 0;
-#X connect 140 0 136 0;
-#X connect 141 0 153 0;
-#X connect 142 0 153 0;
-#X connect 142 1 154 0;
-#X connect 144 0 159 0;
-#X connect 147 0 143 0;
-#X connect 156 0 147 0;
-#X connect 158 0 157 0;
+#X connect 107 0 77 0;
+#X connect 108 0 73 1;
+#X connect 109 0 95 0;
+#X connect 109 0 130 0;
+#X connect 110 0 92 0;
+#X connect 111 0 112 0;
+#X connect 114 0 66 0;
+#X connect 116 0 67 0;
+#X connect 117 0 118 2;
+#X connect 118 0 75 0;
+#X connect 126 0 0 0;
+#X connect 127 0 1 0;
+#X connect 128 0 126 1;
+#X connect 129 0 128 0;
+#X connect 130 0 131 0;
+#X connect 131 0 129 0;
+#X connect 134 0 98 0;
+#X connect 135 0 139 0;
+#X connect 136 0 156 0;
+#X connect 137 0 138 0;
+#X connect 138 0 140 0;
+#X connect 139 0 136 0;
+#X connect 139 1 138 0;
+#X connect 140 0 156 0;
+#X connect 141 0 137 0;
+#X connect 142 0 154 0;
+#X connect 143 0 154 0;
+#X connect 143 1 155 0;
+#X connect 145 0 160 0;
+#X connect 148 0 144 0;
+#X connect 157 0 148 0;
 #X connect 159 0 158 0;
-#X connect 174 0 98 1;
-#X connect 175 0 174 0;
-#X coords 0 -1 1 1 104 225 2 100 100;
+#X connect 160 0 159 0;
+#X connect 171 0 48 0;
+#X connect 173 0 98 1;
+#X connect 174 0 173 0;
+#X coords 0 -1 1 1 105 275 2 100 100;
