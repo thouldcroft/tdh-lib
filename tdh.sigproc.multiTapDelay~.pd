@@ -1,4 +1,4 @@
-#N canvas 46 72 1217 820 10;
+#N canvas 2460 -280 1217 820 10;
 #X text -1235 19 Multi-Tap Delay;
 #X obj -361 73 inlet~;
 #X obj -152 26 inlet line1_time;
@@ -10,8 +10,8 @@
 #X obj 95 402 delread~ \$0-delayline3;
 #X obj -115 402 delread~ \$0-delayline2;
 #X obj 315 440 *~;
-#X floatatom 105 149 5 0 0 1 Time - -, f 5;
-#X floatatom 105 169 5 0 0 1 FB - -, f 5;
+#X floatatom 105 149 5 0 0 1 Time - - 0;
+#X floatatom 105 169 5 0 0 1 FB - - 0;
 #X obj 49 26 inlet line2_time;
 #X obj 153 26 inlet line2_fb;
 #X obj 249 26 inlet line3_time;
@@ -20,12 +20,12 @@
 #X obj 561 26 inlet line4_fb;
 #N canvas 0 22 450 300 dry_wet 0;
 #X obj -328 292 outlet~;
-#X obj -76 133 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 865 1;
-#X floatatom -63 162 5 0 0 0 - - -, f 5;
+#X obj -76 133 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X floatatom -63 162 5 0 0 0 - - - 0;
 #X obj -359 253 *~;
 #X obj -78 181 - 1;
-#X floatatom -61 228 5 0 0 0 - - -, f 5;
+#X floatatom -61 228 5 0 0 0 - - - 0;
 #X obj -78 203 * -1;
 #X obj -281 253 *~;
 #X text -411 252 Dry Sig;
@@ -45,12 +45,12 @@
 #X connect 11 0 3 0;
 #X connect 12 0 7 0;
 #X restore -364 530 pd dry_wet;
-#X floatatom 171 149 5 0 0 1 Time - -, f 5;
-#X floatatom 171 169 5 0 0 1 FB - -, f 5;
-#X floatatom 236 149 5 0 0 1 Time - -, f 5;
-#X floatatom 236 169 5 0 0 1 FB - -, f 5;
-#X floatatom 302 149 5 0 0 1 Time - -, f 5;
-#X floatatom 302 169 5 0 0 1 FB - -, f 5;
+#X floatatom 171 149 5 0 0 1 Time - - 0;
+#X floatatom 171 169 5 0 0 1 FB - - 0;
+#X floatatom 236 149 5 0 0 1 Time - - 0;
+#X floatatom 236 169 5 0 0 1 FB - - 0;
+#X floatatom 302 149 5 0 0 1 Time - - 0;
+#X floatatom 302 169 5 0 0 1 FB - - 0;
 #X text 107 131 1;
 #X text 171 131 2;
 #X text 235 131 3;
@@ -79,31 +79,31 @@
 #X obj -48 52 change;
 #X obj -152 52 change;
 #X obj 315 402 delread~ \$0-delayline4;
-#X obj -306 402 delread~ #0-delayline1;
-#X obj -345 360 delwrite~ #0-delayline1 5000;
 #X obj -144 356 delwrite~ \$0-delayline2 5000;
 #X obj 66 356 delwrite~ \$0-delayline3 5000;
 #X obj 276 356 delwrite~ \$0-delayline4 5000;
-#X obj 367 152 hsl 52 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 700 1;
+#X obj 367 152 hsl 52 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj -345 360 delwrite~ \$0-delayline1 5000;
+#X obj -306 402 delread~ \$0-delayline1;
 #X connect 1 0 19 0;
+#X connect 1 0 54 0;
 #X connect 1 0 55 0;
 #X connect 1 0 56 0;
-#X connect 1 0 57 0;
 #X connect 1 0 58 0;
 #X connect 2 0 52 0;
 #X connect 3 0 19 1;
-#X connect 3 0 55 0;
+#X connect 3 0 58 0;
 #X connect 5 0 19 1;
-#X connect 5 0 56 0;
+#X connect 5 0 54 0;
 #X connect 6 0 51 0;
 #X connect 7 0 19 1;
-#X connect 7 0 57 0;
+#X connect 7 0 55 0;
 #X connect 8 0 7 0;
 #X connect 9 0 5 0;
 #X connect 10 0 19 1;
-#X connect 10 0 58 0;
-#X connect 11 0 54 0;
+#X connect 10 0 56 0;
+#X connect 11 0 59 0;
 #X connect 12 0 3 1;
 #X connect 13 0 50 0;
 #X connect 14 0 49 0;
@@ -119,7 +119,7 @@
 #X connect 24 0 53 0;
 #X connect 25 0 10 1;
 #X connect 38 0 44 0;
-#X connect 44 0 59 0;
+#X connect 44 0 57 0;
 #X connect 45 0 25 0;
 #X connect 46 0 24 0;
 #X connect 47 0 23 0;
@@ -129,6 +129,6 @@
 #X connect 51 0 12 0;
 #X connect 52 0 11 0;
 #X connect 53 0 10 0;
-#X connect 54 0 3 0;
-#X connect 59 0 19 2;
+#X connect 57 0 19 2;
+#X connect 59 0 3 0;
 #X coords 0 -1 1 1 325 100 2 100 100;
