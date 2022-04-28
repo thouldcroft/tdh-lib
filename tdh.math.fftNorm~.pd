@@ -1,547 +1,16 @@
-#N canvas 1478 -30 1079 784 10;
-#X obj 109 144 vradio 15 0 0 8 empty empty Shape -5 -8 0 10 #fcfcfc
-#000000 #000000 0;
-#X obj 240 148 vsl 15 128 0.01 1 1 0 empty empty Vol -1 -9 0 10 #ffffff
-#000000 #000000 0 1;
-#X obj 212 147 vsl 15 128 0 11 0 0 empty empty Freq -5 -9 0 10 #fcfcfc
-#000000 #000000 0 1;
-#X obj 169 144 vradio 15 1 0 9 empty empty Range -7 -8 0 10 #fcfcfc
-#000000 #000000 0;
-#X obj 169 365 s \$0-octave1;
-#X obj 212 384 s \$0-freq1;
-#X obj 240 444 s \$0-gain1;
-#X obj 109 346 s \$0-shape1;
-#X obj 76 419 r \$0-octave1;
-#X obj 49 399 r \$0-freq1;
-#X obj 103 439 r \$0-gain1;
-#X obj 22 379 r \$0-shape1;
-#X obj 22 539 outlet~;
-#X obj 58 60 loadbang;
-#X obj 240 404 expr if($f1 < 0.011 \, 0 \, $f1), f 15;
-#N canvas 1280 -209 1920 1035 oscillators1 0;
-#X obj 2 390 osc~;
-#X obj 1171 382 noise~;
-#X obj 1311 392 cyclone/pink~;
-#X msg 52 100 0;
-#X msg 20 100 1;
-#N canvas 1440 218 450 300 on-off 0;
-#X obj 124 63 inlet~;
-#X obj 237 61 inlet onOff;
-#X obj 130 170 *~;
-#X obj 240 140 vline~;
-#X msg 239 103 \$1 25;
-#X obj 130 195 outlet~;
-#X connect 0 0 2 0;
-#X connect 1 0 4 0;
-#X connect 2 0 5 0;
-#X connect 3 0 2 1;
-#X connect 4 0 3 0;
-#X restore 2 440 pd on-off;
-#N canvas 0 22 450 300 on-off 0;
-#X obj 124 63 inlet~;
-#X obj 237 61 inlet onOff;
-#X obj 130 170 *~;
-#X obj 240 140 vline~;
-#X msg 239 103 \$1 25;
-#X obj 130 195 outlet~;
-#X connect 0 0 2 0;
-#X connect 1 0 4 0;
-#X connect 2 0 5 0;
-#X connect 3 0 2 1;
-#X connect 4 0 3 0;
-#X restore 161 440 pd on-off;
-#N canvas 0 22 450 300 on-off 0;
-#X obj 124 63 inlet~;
-#X obj 237 61 inlet onOff;
-#X obj 130 170 *~;
-#X obj 240 140 vline~;
-#X msg 239 103 \$1 25;
-#X obj 130 195 outlet~;
-#X connect 0 0 2 0;
-#X connect 1 0 4 0;
-#X connect 2 0 5 0;
-#X connect 3 0 2 1;
-#X connect 4 0 3 0;
-#X restore 342 440 pd on-off;
-#N canvas 0 22 450 300 on-off 0;
-#X obj 124 63 inlet~;
-#X obj 237 61 inlet onOff;
-#X obj 130 170 *~;
-#X obj 240 140 vline~;
-#X msg 239 103 \$1 25;
-#X obj 130 195 outlet~;
-#X connect 0 0 2 0;
-#X connect 1 0 4 0;
-#X connect 2 0 5 0;
-#X connect 3 0 2 1;
-#X connect 4 0 3 0;
-#X restore 522 440 pd on-off;
-#N canvas 0 22 450 300 on-off 0;
-#X obj 124 63 inlet~;
-#X obj 237 61 inlet onOff;
-#X obj 130 170 *~;
-#X obj 240 140 vline~;
-#X msg 239 103 \$1 25;
-#X obj 130 195 outlet~;
-#X connect 0 0 2 0;
-#X connect 1 0 4 0;
-#X connect 2 0 5 0;
-#X connect 3 0 2 1;
-#X connect 4 0 3 0;
-#X restore 750 440 pd on-off;
-#N canvas 1280 74 450 300 on-off 0;
-#X obj 124 63 inlet~;
-#X obj 237 61 inlet onOff;
-#X obj 130 170 *~;
-#X obj 240 140 vline~;
-#X msg 239 103 \$1 25;
-#X obj 130 195 outlet~;
-#X connect 0 0 2 0;
-#X connect 1 0 4 0;
-#X connect 2 0 5 0;
-#X connect 3 0 2 1;
-#X connect 4 0 3 0;
-#X restore 968 440 pd on-off;
-#X obj 699 230 loadbang;
-#X text 758 231 Set the pulsewidth of the pulse oscil;
-#N canvas 0 22 450 300 on-off 0;
-#X obj 124 63 inlet~;
-#X obj 237 61 inlet onOff;
-#X obj 130 170 *~;
-#X obj 240 140 vline~;
-#X msg 239 103 \$1 25;
-#X obj 130 195 outlet~;
-#X connect 0 0 2 0;
-#X connect 1 0 4 0;
-#X connect 2 0 5 0;
-#X connect 3 0 2 1;
-#X connect 4 0 3 0;
-#X restore 1171 440 pd on-off;
-#N canvas 0 22 450 300 on-off 0;
-#X obj 124 63 inlet~;
-#X obj 237 61 inlet onOff;
-#X obj 130 170 *~;
-#X obj 240 140 vline~;
-#X msg 239 103 \$1 25;
-#X obj 130 195 outlet~;
-#X connect 0 0 2 0;
-#X connect 1 0 4 0;
-#X connect 2 0 5 0;
-#X connect 3 0 2 1;
-#X connect 4 0 3 0;
-#X restore 1311 440 pd on-off;
-#X obj 20 70 sel 0 1 2 3 4 5 6 7, f 100;
-#X msg 124 100 0;
-#X msg 94 100 1;
-#X msg 199 100 0;
-#X msg 169 100 1;
-#X msg 273 100 0;
-#X msg 243 100 1;
-#X msg 348 100 0;
-#X msg 318 100 1;
-#X msg 423 100 0;
-#X msg 393 100 1;
-#X msg 497 100 0;
-#X msg 467 100 1;
-#X msg 572 100 0;
-#X msg 542 100 1;
-#X text 20 3 _;
-#X obj 710 10 inlet freq;
-#X obj 1552 394 *~;
-#X obj 1432 36 inlet gain;
-#X text 110 10 All oscillators are live \, so this code handles the
-radio button input and turns on output for the oscillator that corresponds
-with the radio button input \, and silences all other oscillators;
-#X obj 1552 480 outlet~;
-#X obj 810 10 inlet octave;
-#X obj 810 60 * 12;
-#X obj 710 130 +;
-#X text 753 127 Frequency is handled in MIDI (sort of - it is still
-floating point) \, and oct# * 12 offsets a MIDI pitch to a new octave
-, f 25;
-#X obj 4 300 mtof;
-#X obj 162 300 mtof;
-#X obj 342 300 mtof;
-#X obj 522 300 mtof;
-#X obj 750 300 mtof;
-#X obj 970 300 mtof;
-#X obj 20 40 inlet shape;
-#X floatatom 730 40 5 0 0 0 - - - 0;
-#X floatatom 850 40 5 0 0 0 - - - 0;
-#X floatatom 1457 66 5 0 0 0 - - - 0;
-#X obj 710 98 f;
-#X obj 810 88 t b f;
-#X obj 1537 36 inlet~ fm;
-#X text 1630 519 _;
-#X obj 1627 36 inlet~ am;
-#X obj 1647 66 loadbang;
-#X msg 1647 91 1;
-#X obj 1647 116 sig~;
-#X obj 20 150 s \$0-sin1;
-#X obj 90 150 s \$0-tri1;
-#X obj 170 150 s \$0-saw1;
-#X obj 240 150 s \$0-sqr1a;
-#X obj 330 150 s \$0-sqr1b;
-#X obj 410 150 s \$0-sqr1c;
-#X obj 510 150 s \$0-noise1;
-#X obj 600 150 s \$0-pink1;
-#X obj 53 410 r \$0-sin1;
-#X obj 212 410 r \$0-tri1;
-#X obj 393 410 r \$0-saw1;
-#X obj 573 410 r \$0-sqr1a;
-#X obj 801 410 r \$0-sqr1b;
-#X obj 1019 410 r \$0-sqr1c;
-#X obj 1222 402 r \$0-noise1;
-#X obj 1361 412 r \$0-pink1;
-#X obj 1609 401 r~ \$0-am1;
-#X obj 1627 166 s~ \$0-am1;
-#X obj 2 360 +~;
-#X obj 1557 76 loadbang;
-#X msg 1557 101 1;
-#X obj 1557 126 sig~;
-#X obj 1537 166 s~ \$0-fm1;
-#X obj 1248 294 r~ \$0-fm1;
-#X obj 161 360 +~;
-#X obj 342 360 +~;
-#X obj 522 360 +~;
-#X obj 750 360 +~;
-#X obj 970 360 +~;
-#X obj 810 35 + 2;
-#X msg 927 330 0.75;
-#X msg 1145 327 0.9;
-#X obj 1010 23 cnv 4 500 1 empty empty **\\\ TO\\\ DO\\\ ** 0 -6 0
-12 #ff0400 #ff0400 0;
-#X obj 1248 345 *~;
-#X obj 1287 318 r \$0-fmAmt-s;
-#X msg 699 326 0.5;
-#X obj 2 327 tdh.lib/tdh.util.declick;
-#X obj 161 327 tdh.lib/tdh.util.declick;
-#X obj 342 327 tdh.lib/tdh.util.declick;
-#X obj 750 327 tdh.lib/tdh.util.declick;
-#X obj 522 327 tdh.lib/tdh.util.declick;
-#X obj 750 390 tdh.lib/tdh.synth.oscilaPulse~;
-#X obj 968 392 tdh.lib/tdh.synth.oscilapulse~;
-#X obj 522 390 tdh.lib/tdh.synth.oscilaPulse~;
-#X obj 342 390 tdh.lib/tdh.synth.oscilaSaw~;
-#X obj 161 390 tdh.lib/tdh.synth.oscilaTri~;
-#X obj 2 461 throw~ \$0-oscilOut;
-#X obj 162 461 throw~ \$0-oscilOut;
-#X obj 342 461 throw~ \$0-oscilOut;
-#X obj 522 461 throw~ \$0-oscilOut;
-#X obj 750 461 throw~ \$0-oscilOut;
-#X obj 968 461 throw~ \$0-oscilOut;
-#X obj 1171 461 throw~ \$0-oscilOut;
-#X obj 1312 461 throw~ \$0-oscilOut;
-#X obj 970 327 tdh.lib/tdh.util.declick;
-#X obj 1432 100 s \$0-oscilGain;
-#X obj 1552 337 catch~ \$0-oscilOut;
-#X obj 1567 362 r \$0-oscilGain;
-#X obj 1552 455 *~;
-#X connect 0 0 5 0;
-#X connect 1 0 13 0;
-#X connect 2 0 14 0;
-#X connect 3 0 59 0;
-#X connect 3 0 60 0;
-#X connect 3 0 61 0;
-#X connect 3 0 62 0;
-#X connect 3 0 63 0;
-#X connect 3 0 64 0;
-#X connect 3 0 65 0;
-#X connect 4 0 58 0;
-#X connect 5 0 104 0;
-#X connect 6 0 105 0;
-#X connect 7 0 106 0;
-#X connect 8 0 107 0;
-#X connect 9 0 108 0;
-#X connect 10 0 109 0;
-#X connect 11 0 93 0;
-#X connect 11 0 88 0;
-#X connect 11 0 89 0;
-#X connect 13 0 110 0;
-#X connect 14 0 111 0;
-#X connect 15 0 4 0;
-#X connect 15 0 3 0;
-#X connect 15 1 17 0;
-#X connect 15 1 16 0;
-#X connect 15 2 19 0;
-#X connect 15 2 18 0;
-#X connect 15 3 21 0;
-#X connect 15 3 20 0;
-#X connect 15 4 23 0;
-#X connect 15 4 22 0;
-#X connect 15 5 25 0;
-#X connect 15 5 24 0;
-#X connect 15 6 27 0;
-#X connect 15 6 26 0;
-#X connect 15 7 29 0;
-#X connect 15 7 28 0;
-#X connect 16 0 58 0;
-#X connect 16 0 60 0;
-#X connect 16 0 61 0;
-#X connect 16 0 62 0;
-#X connect 16 0 63 0;
-#X connect 16 0 64 0;
-#X connect 16 0 65 0;
-#X connect 17 0 59 0;
-#X connect 18 0 58 0;
-#X connect 18 0 59 0;
-#X connect 18 0 61 0;
-#X connect 18 0 62 0;
-#X connect 18 0 63 0;
-#X connect 18 0 64 0;
-#X connect 18 0 65 0;
-#X connect 19 0 60 0;
-#X connect 20 0 58 0;
-#X connect 20 0 59 0;
-#X connect 20 0 60 0;
-#X connect 20 0 62 0;
-#X connect 20 0 63 0;
-#X connect 20 0 64 0;
-#X connect 20 0 65 0;
-#X connect 21 0 61 0;
-#X connect 22 0 58 0;
-#X connect 22 0 59 0;
-#X connect 22 0 60 0;
-#X connect 22 0 61 0;
-#X connect 22 0 63 0;
-#X connect 22 0 64 0;
-#X connect 22 0 65 0;
-#X connect 23 0 62 0;
-#X connect 24 0 58 0;
-#X connect 24 0 59 0;
-#X connect 24 0 60 0;
-#X connect 24 0 61 0;
-#X connect 24 0 62 0;
-#X connect 24 0 64 0;
-#X connect 24 0 65 0;
-#X connect 25 0 63 0;
-#X connect 26 0 58 0;
-#X connect 26 0 59 0;
-#X connect 26 0 60 0;
-#X connect 26 0 61 0;
-#X connect 26 0 62 0;
-#X connect 26 0 63 0;
-#X connect 26 0 65 0;
-#X connect 27 0 64 0;
-#X connect 28 0 58 0;
-#X connect 28 0 59 0;
-#X connect 28 0 60 0;
-#X connect 28 0 61 0;
-#X connect 28 0 62 0;
-#X connect 28 0 63 0;
-#X connect 28 0 64 0;
-#X connect 29 0 65 0;
-#X connect 31 0 47 0;
-#X connect 31 0 50 0;
-#X connect 32 0 116 0;
-#X connect 33 0 49 0;
-#X connect 33 0 113 0;
-#X connect 36 0 48 0;
-#X connect 36 0 87 0;
-#X connect 37 0 51 0;
-#X connect 38 0 40 0;
-#X connect 38 0 41 0;
-#X connect 38 0 42 0;
-#X connect 38 0 43 0;
-#X connect 38 0 44 0;
-#X connect 38 0 45 0;
-#X connect 40 0 94 0;
-#X connect 41 0 95 0;
-#X connect 42 0 96 0;
-#X connect 43 0 98 0;
-#X connect 44 0 97 0;
-#X connect 45 0 112 0;
-#X connect 46 0 15 0;
-#X connect 50 0 38 0;
-#X connect 51 0 50 0;
-#X connect 51 1 38 1;
-#X connect 52 0 80 0;
-#X connect 54 0 75 0;
-#X connect 55 0 56 0;
-#X connect 56 0 57 0;
-#X connect 57 0 75 0;
-#X connect 66 0 5 1;
-#X connect 67 0 6 1;
-#X connect 68 0 7 1;
-#X connect 69 0 8 1;
-#X connect 70 0 9 1;
-#X connect 71 0 10 1;
-#X connect 72 0 13 1;
-#X connect 73 0 14 1;
-#X connect 74 0 116 1;
-#X connect 76 0 0 0;
-#X connect 77 0 78 0;
-#X connect 78 0 79 0;
-#X connect 79 0 80 0;
-#X connect 81 0 91 0;
-#X connect 82 0 103 0;
-#X connect 83 0 102 0;
-#X connect 84 0 101 0;
-#X connect 85 0 99 0;
-#X connect 86 0 100 0;
-#X connect 87 0 37 0;
-#X connect 88 0 99 1;
-#X connect 89 0 100 1;
-#X connect 91 0 86 1;
-#X connect 91 0 85 1;
-#X connect 91 0 84 1;
-#X connect 91 0 83 1;
-#X connect 91 0 82 1;
-#X connect 91 0 76 1;
-#X connect 92 0 91 1;
-#X connect 93 0 101 1;
-#X connect 94 0 76 0;
-#X connect 95 0 82 0;
-#X connect 96 0 83 0;
-#X connect 97 0 85 0;
-#X connect 98 0 84 0;
-#X connect 99 0 9 0;
-#X connect 100 0 10 0;
-#X connect 101 0 8 0;
-#X connect 102 0 7 0;
-#X connect 103 0 6 0;
-#X connect 112 0 86 0;
-#X connect 114 0 32 0;
-#X connect 115 0 32 1;
-#X connect 116 0 35 0;
-#X restore 22 509 pd oscillators1;
-#X f 23;
-#X text 17 -162 Number fields for all sliders \, settable via number
-fields;
-#X obj 109 0 inlet 1-shape;
-#X obj 169 20 inlet 1-octve;
-#X obj 212 60 inlet 1-freq;
-#X obj 240 80 inlet 1-gain;
-#X msg 58 90 1;
-#X text 17 -139 Freq and gain inputs in Voltage;
-#X text 126 144 Sin;
-#X text 126 159 Tri;
-#X text 126 174 Saw;
-#X text 126 189 Pls1;
-#X text 126 204 Pls2;
-#X text 126 218 Pls3;
-#X text 126 233 PnkNs;
-#X text 126 248 WhtNs;
-#X text 186 144 1;
-#X text 186 159 2;
-#X text 186 174 3;
-#X text 186 189 4;
-#X text 186 204 5;
-#X text 186 218 6;
-#X text 186 234 7;
-#X text 186 249 8;
-#X text 186 263 9;
-#X obj 169 40 - 1;
-#X text 19 -566 Travis Houldcroft || travishouldcroft.com;
-#X obj 2 -612 cnv 15 1100 40 empty \$0-abstrPatchTitleBar tdh.synth.1oscil~
+#N canvas 200 77 704 801 10;
+#X obj 53 108 cnv 14 18 14 empty empty 1 2 8 0 12 #dfdfdf #606060 0
+;
+#X obj 53 128 cnv 14 18 14 empty empty 2 2 8 0 12 #dfdfdf #606060 0
+;
+#X obj 53 148 cnv 14 18 14 empty empty 3 2 8 0 12 #dfdfdf #606060 0
+;
+#X text 18 48 Travis Houldcroft || travishouldcroft.com;
+#X obj 1 2 cnv 15 700 40 empty \$0-abstrPatchTitleBar tdh.math.fftNorm~
 9 20 0 18 #3c50fc #a0a0a0 0;
-#X obj 2 -282 cnv 2 1100 3 empty \$0-abstrPatchSecLabelNotes Notes
-20 15 0 16 #a0a0a0 #202020 0;
-#X obj 2 -9 cnv 2 1100 2 empty \$0-abstrPatchSecDivider empty 9 20
-0 18 #a0a0a0 #202020 0;
-#X obj 2 -92 cnv 2 1100 3 empty \$0-abstrPatchSecLabelRevHist Revision\ History
-20 15 0 16 #a0a0a0 #202020 0;
-#X obj 2 -542 cnv 2 1100 3 empty \$0-abstrPatchSecLabelArgs Arguments
-20 15 0 16 #a0a0a0 #202020 0;
-#X text 25 -61 21/09/30 - ver 0.1, f 21;
-#X obj 2 -472 cnv 2 1100 3 empty \$0-abstrPatchSecLabelInlets Inlets
-20 15 0 16 #a0a0a0 #202020 0;
-#X obj 2 -352 cnv 2 1100 3 empty \$0-abstrPatchSecLabelOutlets Outlets
-20 15 0 16 #a0a0a0 #202020 0;
-#X text 19 -506 None;
-#X obj 26 -441 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 26 -381 cnv 14 18 14 empty empty 3 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 26 -421 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 26 -401 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
-0;
-#X text 48 -443 (float);
-#X text 98 -443 Oscillator 1 Shape (0-7);
-#X text 48 -423 (float);
-#X text 98 -423 Oscillator 1 Octave (1-9);
-#X text 48 -403 (float);
-#X text 98 -403 Oscillator 1 Frequency (Hz);
-#X text 98 -383 Oscillator 1 Volume (0.0-1.0);
-#X text 48 -383 (float);
-#X obj 26 -321 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
-0;
-#X text 48 -322 (sig);
-#X text 17 -232 tdhlib (tdh.util.declick \, tdh.synth.oscil-tri~ \,
-tdh.synth.oscil-saw~ \, tdh.synth.oscil-pulse~), f 94;
-#X text 17 -212 cyclone (cyclone/pink~);
-#X text 17 -252 DEPENDENCIES:;
-#X text 17 -182 TO DO:;
-#X text 98 -322 Signal output (linear amplitude 0.0-1.0);
-#X obj 90 0 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc 0;
-#X obj 219 80 cnv 14 18 14 empty empty 4 2 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 150 20 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 191 60 cnv 14 18 14 empty empty 3 2 8 0 12 #606060 #dcdcdc 0
-;
-#X text 25 -48 21/12/27 - ver 0.2, f 21;
-#X text 17 -119 Inlets send remotely to GUI \, which sends remotely
-to DSP code, f 71;
-#X obj 212 542 outlet sync;
-#X obj 447 36 cnv 14 18 14 empty empty 6 2 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 331 34 cnv 14 18 14 empty empty 5 2 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 280 146 vsl 15 55 0 500 0 0 \$0-fmAmt-s \$0-fmAmt-r FM\ Amt
--10 -9 0 10 #ffffff #000000 #000000 0 1;
-#X obj 281 222 vsl 15 55 0 250 0 0 \$0-amAmt-s \$0-amAmt-r AM\ Amt
--10 -9 0 10 #ffffff #000000 #000000 0 1;
-#X obj 352 34 inlet~ fm;
-#X obj 352 55 s~ \$0-fm;
-#X obj 468 36 inlet~ am;
-#X obj 468 127 s~ \$0-am;
-#X obj 130 460 r~ \$0-fm;
-#X obj 157 480 r~ \$0-am;
-#X obj 515 77 r \$0-amAmt-s;
-#X obj 468 87 *~;
-#X obj 515 98 tdh.lib/tdh.util.declick;
-#X text 25 -35 22/04/17 - ver 0.3, f 21;
-#X obj 877 33 cnv 14 18 14 empty empty 8 2 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 677 35 cnv 14 18 14 empty empty 7 2 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 698 35 inlet fmAmt;
-#X obj 898 33 inlet amAmt;
-#X obj 697 58 tdh.lib/tdh.util.declick;
-#X obj 697 79 s \$0-fmAmt-r;
-#X obj 898 56 tdh.lib/tdh.util.declick;
-#X obj 898 77 s \$0-amAmt-r;
-#X obj 101 307 cnv 1 208 2 empty \$0-moduleNameBorder-r empty 1 7 0
-10 #404040 #404040 0;
-#X obj 101 308 cnv 12 208 14 empty \$0-moduleName-r Oscillator 1 7
-0 10 #dcdcdc #404040 0;
-#X obj 101 322 cnv 1 208 2 empty \$0-outletBorder-r empty 1 7 0 10
-#404040 #404040 0;
-#X obj 101 323 cnv 10 208 14 empty \$0-outletBar-r Sig 0 6 0 8 #dfdfdf
-#404040 0;
-#X obj 278 323 cnv 10 5 12 empty empty FrSync 0 6 0 8 #dfdfdf #404040
-0;
-#X obj 101 115 cnv 1 208 2 empty \$0-inletBorder-r empty 1 7 0 10 #404040
-#404040 0;
-#X obj 101 102 cnv 10 208 14 empty \$0-inletBar-r Shp 0 6 0 8 #dfdfdf
-#404040 0;
-#X obj 126 102 cnv 10 5 12 empty empty Rng 0 6 0 8 #dfdfdf #404040
-0;
-#X obj 156 102 cnv 10 5 12 empty empty Frq 0 6 0 8 #dfdfdf #404040
-0;
-#X obj 184 102 cnv 10 5 12 empty empty Vol 0 6 0 8 #dfdfdf #404040
-0;
-#X obj 244 102 cnv 10 5 12 empty empty AM 0 6 0 8 #dfdfdf #404040 0
-;
-#X obj 266 102 cnv 10 5 12 empty empty FAmt 0 6 0 8 #dfdfdf #404040
-0;
-#X obj 289 102 cnv 10 5 12 empty empty AAmt 0 6 0 8 #dfdfdf #404040
-0;
-#X obj 215 102 cnv 10 5 12 empty empty FM 0 6 0 8 #dfdfdf #404040 0
-;
-#N canvas 2430 -209 770 905 abstr-init 0;
+#X obj 1 75 cnv 2 700 2 empty \$0-abstrPatchSecDivider empty 9 20 0
+18 #a0a0a0 #202020 0;
+#N canvas 670 23 770 855 abstr-init 0;
 #X obj 3 56 cnv 5 5 5 empty empty | 0 0 0 14 #fcfcfc #404040 0;
 #X obj 215 126 loadbang;
 #X obj 215 152 del 10;
@@ -635,7 +104,7 @@ to DSP code, f 71;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 1100 40 empty \$0-test_canvas tdh.synth.1oscil~
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.math.fftNorm~
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -938,7 +407,7 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 1100 40 empty \$0-test_canvas tdh.synth.1oscil~
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.math.fftNorm~
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -1241,7 +710,7 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 1100 40 empty \$0-test_canvas tdh.synth.1oscil~
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.math.fftNorm~
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -1544,7 +1013,7 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 1100 40 empty \$0-test_canvas tdh.synth.1oscil~
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.math.fftNorm~
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -1847,7 +1316,7 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 1100 40 empty \$0-test_canvas tdh.synth.1oscil~
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.math.fftNorm~
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -2287,7 +1756,7 @@ bgclr 1 \, lblclr 12, f 123;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 1100 40 empty \$0-test_canvas tdh.synth.1oscil~
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.math.fftNorm~
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -2595,7 +2064,7 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 1100 40 empty \$0-test_canvas tdh.synth.1oscil~
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.math.fftNorm~
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -2883,88 +2352,229 @@ titles and graphics for ABSTRACTIONS., f 84;
 #X text 13 80 The two most commonly changed fields \, DISPLAY NAME
 and WIDTH can be changed by editing the [message( boxes below. Text
 in [message( objects get saved to the patch., f 84;
-#X obj 44 315 loadbang;
-#X obj 44 336 del 10;
-#X text 251 343 EDIT HERE text after "label" to change the display
-name shown on the module, f 20;
+#X msg 433 196 700;
 #X text 10 181 EDIT HERE text after "symbol" to change the abstraction
 patch's main display name, f 20;
-#X obj 38 299 cnv 5 5 5 empty empty GOP\\\ Module\\\ Label\\\ +\\\ Width
-0 0 0 14 #ffffff #404040 0;
-#X obj 167 571 s \$0-inletBorder-r;
-#X obj 197 505 s \$0-inletBar-r;
-#X obj 168 591 s \$0-moduleNameBorder-r;
-#X obj 44 377 s \$0-\$0-moduleName-r;
-#X obj 226 358 cnv 5 5 5 empty empty ⟵ -3 3 0 30 #fcfcfc #000000
-0;
-#X obj 262 331 cnv 5 5 5 empty empty Module\\\ Name 0 0 0 12 #ffffff
-#0400ff 0;
-#X obj 169 610 s \$0-outletBorder-r;
-#X obj 198 547 s \$0-outletBar-r;
-#X obj 54 420 loadbang;
-#X msg 84 483 vis_size \$1 14;
 #X obj 15 26 cnv 5 5 5 empty empty Object\\\ Title\\\ Bar 0 0 0 14
 #ffffff #404040 0;
-#X text 144 427 EDIT HERE text after "label" to change the display
-name shown on the module, f 20;
-#X obj 119 442 cnv 5 5 5 empty empty ⟵ -3 3 0 30 #fcfcfc #000000
-0;
-#X obj 155 415 cnv 5 5 5 empty empty Module\\\ Width 0 0 0 12 #ffffff
-#0400ff 0;
-#X msg 54 536 vis_size \$1 2;
-#X obj 198 527 s \$0-moduleName-r;
-#X msg 54 440 208;
-#X msg 44 356 label Oscillator;
-#X msg 166 194 symbol tdh.synth.1oscil~;
-#X msg 433 196 1100;
+#X msg 166 194 symbol tdh.math.fftNorm~;
 #X connect 1 0 2 0;
-#X connect 2 0 32 0;
-#X connect 2 0 33 0;
-#X connect 9 0 10 0;
-#X connect 10 0 31 0;
-#X connect 22 0 30 0;
-#X connect 23 0 15 0;
-#X connect 23 0 21 0;
-#X connect 23 0 29 0;
-#X connect 28 0 14 0;
-#X connect 28 0 16 0;
-#X connect 28 0 20 0;
-#X connect 30 0 23 0;
-#X connect 30 0 28 0;
-#X connect 31 0 17 0;
-#X connect 32 0 3 0;
-#X connect 33 0 3 1;
-#X restore 964 -566 pd abstr-init;
-#X obj 972 -599 cnv 8 83 16 empty empty tdh.lib 14 8 0 14 #dfdfdf #131255
+#X connect 2 0 12 0;
+#X connect 2 0 9 0;
+#X connect 9 0 3 1;
+#X connect 12 0 3 0;
+#X restore 610 50 pd abstr-init;
+#X obj 174 109 inlet;
+#X obj 100 109 inlet;
+#X obj 100 159 outlet;
+#X obj 174 159 outlet;
+#X obj 225 109 cnv 14 18 14 empty empty 10 2 8 0 12 #606060 #dcdcdc
 0;
-#X connect 0 0 7 0;
-#X connect 1 0 14 0;
-#X connect 2 0 5 0;
-#X connect 2 0 76 0;
-#X connect 3 0 4 0;
-#X connect 8 0 15 2;
-#X connect 9 0 15 1;
-#X connect 10 0 15 3;
-#X connect 11 0 15 0;
-#X connect 13 0 21 0;
-#X connect 14 0 6 0;
-#X connect 15 0 12 0;
-#X connect 17 0 0 0;
-#X connect 18 0 40 0;
-#X connect 19 0 2 0;
-#X connect 20 0 1 0;
-#X connect 21 0 0 0;
-#X connect 21 0 3 0;
-#X connect 40 0 3 0;
-#X connect 81 0 82 0;
-#X connect 83 0 88 0;
-#X connect 85 0 15 4;
-#X connect 86 0 15 5;
-#X connect 87 0 89 0;
-#X connect 88 0 84 0;
-#X connect 89 0 88 1;
-#X connect 93 0 95 0;
-#X connect 94 0 97 0;
-#X connect 95 0 96 0;
-#X connect 97 0 98 0;
-#X coords 0 -1 1 1 210 240 2 100 100;
+#X obj 82 109 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc 0
+;
+#X obj 156 109 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 244 109 inlet;
+#X obj 244 159 outlet;
+#X obj 614 21 cnv 8 83 16 empty empty tdh.lib 14 8 0 14 #dfdfdf #131255
+0;
+#N canvas 727 144 713 522 reference 0;
+#X text 18 48 Travis Houldcroft || travishouldcroft.com;
+#X obj 1 2 cnv 15 700 40 empty \$0-abstrPatchTitleBar tdh.math.fftNorm~
+9 20 0 18 #3c50fc #a0a0a0 0;
+#X obj 1 362 cnv 2 700 3 empty \$0-abstrPatchSecLabelNotes Notes 20
+15 0 16 #a0a0a0 #202020 0;
+#X obj 1 485 cnv 2 700 2 empty \$0-abstrPatchSecDivider empty 9 20
+0 18 #a0a0a0 #202020 0;
+#X obj 1 422 cnv 2 700 3 empty \$0-abstrPatchSecLabelRevHist Revision\ History
+20 15 0 16 #a0a0a0 #202020 0;
+#X obj 1 262 cnv 2 700 3 empty \$0-abstrPatchSecLabelArgs Arguments
+20 15 0 16 #a0a0a0 #202020 0;
+#X text 24 453 21/09/30 - ver 0.1, f 21;
+#X obj 1 72 cnv 2 700 3 empty \$0-abstrPatchSecLabelInlets Inlets 20
+15 0 16 #a0a0a0 #202020 0;
+#X obj 1 172 cnv 2 700 3 empty \$0-abstrPatchSecLabelOutlets Outlets
+20 15 0 16 #a0a0a0 #202020 0;
+#X obj 125 121 cnv 14 18 14 empty empty 10 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 125 81 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc 0
+;
+#X obj 125 101 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 125 181 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
+0;
+#X text 227 271 Description;
+#X text 177 271 (type);
+#X text 227 291 Description;
+#X text 177 291 (type);
+#X text 227 311 Description;
+#X text 177 311 (type);
+#X text 197 80 Description;
+#X text 147 80 (type);
+#X text 197 100 Description;
+#X text 147 100 (type);
+#X text 197 120 Description;
+#X text 147 120 (type);
+#X text 197 180 Description;
+#X text 147 180 (type);
+#X text 197 200 Description;
+#X text 147 200 (type);
+#X text 197 220 Description;
+#X text 147 220 (type);
+#X text 147 271 \$1 -;
+#X text 147 291 \$2 -;
+#X text 147 311 \$3 -;
+#X obj 126 272 cnv 14 18 14 empty empty 1 2 8 0 12 #dfdfdf #606060
+0;
+#X obj 126 292 cnv 14 18 14 empty empty 2 2 8 0 12 #dfdfdf #606060
+0;
+#X obj 126 312 cnv 14 18 14 empty empty 3 2 8 0 12 #dfdfdf #606060
+0;
+#X obj 125 201 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
+0;
+#X obj 125 221 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
+0;
+#X restore 526 50 pd reference;
+#X obj 666 226 cnv 14 15 15 empty empty R 6 8 0 8 #404040 #dcdcdc 0
+;
+#X obj 666 247 cnv 14 14 14 empty empty S 6 8 0 8 #404040 #dcdcdc 0
+;
+#X obj 384 226 cnv 14 14 14 empty empty R 6 8 0 8 #fce0c4 #7c7c7c 0
+;
+#X obj 363 226 cnv 14 14 14 empty empty R 6 8 0 8 #fcc4c4 #7c7c7c 0
+;
+#X obj 342 226 cnv 14 14 14 empty empty R 6 8 0 8 #b8b8b8 #404040 0
+;
+#X obj 321 226 cnv 14 15 15 empty empty R 6 8 0 8 #dcdcdc #7c7c7c 0
+;
+#X obj 470 226 cnv 14 14 14 empty empty R 6 8 0 8 #c4c4fc #7c7c7c 0
+;
+#X obj 449 226 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcfc #7c7c7c 0
+;
+#X obj 428 226 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
+;
+#X obj 405 226 cnv 14 14 14 empty empty R 6 8 0 8 #fcfcc4 #7c7c7c 0
+;
+#X obj 491 226 cnv 14 14 14 empty empty R 6 8 0 8 #e0c4fc #7c7c7c 0
+;
+#X obj 384 248 cnv 14 14 14 empty empty S 6 8 0 8 #fce0c4 #7c7c7c 0
+;
+#X obj 363 248 cnv 14 14 14 empty empty S 6 8 0 8 #fcc4c4 #7c7c7c 0
+;
+#X obj 342 248 cnv 14 14 14 empty empty S 6 8 0 8 #b8b8b8 #404040 0
+;
+#X obj 321 248 cnv 14 14 14 empty empty S 6 8 0 8 #dcdcdc #7c7c7c 0
+;
+#X obj 470 248 cnv 14 14 14 empty empty S 6 8 0 8 #c4c4fc #7c7c7c 0
+;
+#X obj 449 248 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcfc #7c7c7c 0
+;
+#X obj 428 248 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcc4 #7c7c7c 0
+;
+#X obj 405 248 cnv 14 14 14 empty empty S 6 8 0 8 #fcfcc4 #7c7c7c 0
+;
+#X obj 491 248 cnv 14 14 14 empty empty S 6 8 0 8 #e0c4fc #7c7c7c 0
+;
+#X obj 363 267 cnv 14 18 14 empty empty R~ 6 8 0 8 #fcc4c4 #606060
+0;
+#X obj 384 267 cnv 14 18 14 empty empty R~ 6 8 0 8 #fce0c4 #606060
+0;
+#X obj 405 267 cnv 14 18 14 empty empty R~ 6 8 0 8 #fcfcc4 #606060
+0;
+#X obj 428 267 cnv 14 18 14 empty empty R~ 6 8 0 8 #c4fcc4 #606060
+0;
+#X obj 449 267 cnv 14 18 14 empty empty R~ 6 8 0 8 #c4fcfc #606060
+0;
+#X obj 470 267 cnv 14 18 14 empty empty R~ 6 8 0 8 #c4c4fc #606060
+0;
+#X obj 491 267 cnv 14 18 14 empty empty R~ 6 8 0 8 #e0c4fc #606060
+0;
+#X obj 577 226 cnv 14 14 14 empty empty R 6 8 0 8 #00fc04 #7c7c7c 0
+;
+#X obj 554 226 cnv 14 14 14 empty empty R 6 8 0 8 #f8fc00 #7c7c7c 0
+;
+#X obj 533 226 cnv 14 14 14 empty empty R 6 8 0 8 #fc8000 #7c7c7c 0
+;
+#X obj 512 226 cnv 14 14 14 empty empty R 6 8 0 8 #fc0400 #404040 0
+;
+#X obj 641 226 cnv 14 14 14 empty empty R 6 8 0 8 #9c00fc #b8b8b8 0
+;
+#X obj 620 226 cnv 14 14 14 empty empty R 6 8 0 8 #0400fc #b8b8b8 0
+;
+#X obj 598 226 cnv 14 14 14 empty empty R 6 8 0 8 #00f8fc #404040 0
+;
+#X obj 577 248 cnv 14 14 14 empty empty S 6 8 0 8 #00fc04 #7c7c7c 0
+;
+#X obj 554 248 cnv 14 14 14 empty empty S 6 8 0 8 #f8fc00 #7c7c7c 0
+;
+#X obj 533 248 cnv 14 14 14 empty empty S 6 8 0 8 #fc8000 #7c7c7c 0
+;
+#X obj 512 248 cnv 14 14 14 empty empty S 6 8 0 8 #fc0400 #404040 0
+;
+#X obj 641 247 cnv 14 14 14 empty empty S 6 8 0 8 #9c00fc #b8b8b8 0
+;
+#X obj 620 247 cnv 14 14 14 empty empty S 6 8 0 8 #0400fc #b8b8b8 0
+;
+#X obj 598 248 cnv 14 14 14 empty empty S 6 8 0 8 #00f8fc #404040 0
+;
+#X obj 512 267 cnv 14 18 14 empty empty R~ 6 8 0 8 #ff0400 #606060
+0;
+#X obj 533 267 cnv 14 18 14 empty empty R~ 6 8 0 8 #ff8300 #606060
+0;
+#X obj 554 267 cnv 14 18 14 empty empty R~ 6 8 0 8 #faff00 #606060
+0;
+#X obj 577 267 cnv 14 18 14 empty empty R~ 6 8 0 8 #00ff04 #606060
+0;
+#X obj 598 267 cnv 14 18 14 empty empty R~ 6 8 0 8 #00faff #606060
+0;
+#X obj 620 267 cnv 14 18 14 empty empty R~ 6 8 0 8 #0400ff #dfdfdf
+0;
+#X obj 641 267 cnv 14 18 15 empty empty R~ 6 8 0 8 #9c00ff #dfdfdf
+0;
+#X obj 666 267 cnv 14 18 15 empty empty R~ 6 8 0 8 #404040 #dfdfdf
+0;
+#X obj 321 267 cnv 14 18 14 empty empty R~ 6 8 0 8 #dfdfdf #606060
+0;
+#X obj 342 267 cnv 14 18 14 empty empty R~ 6 8 0 8 #bbbbbb #606060
+0;
+#X obj 366 214 cnv 4 6 6 empty empty ☐ -1 2 0 14 #ffc7c6 #9f9f9f
+0;
+#X obj 346 214 cnv 4 6 6 empty empty ☐ -1 2 0 14 #bbbbbb #9f9f9f
+0;
+#X obj 326 214 cnv 4 6 6 empty empty ☐ -1 2 0 14 #dfdfdf #9f9f9f
+0;
+#X obj 429 214 cnv 4 6 6 empty empty ☐ -1 2 0 14 #c6ffc7 #9f9f9f
+0;
+#X obj 409 214 cnv 4 6 6 empty empty ☐ -1 2 0 14 #feffc6 #9f9f9f
+0;
+#X obj 389 214 cnv 4 6 6 empty empty ☐ -1 2 0 14 #ffe3c6 #9f9f9f
+0;
+#X obj 494 215 cnv 4 6 6 empty empty ☐ -1 2 0 14 #e3c6ff #9f9f9f
+0;
+#X obj 474 214 cnv 4 6 6 empty empty ☐ -1 2 0 14 #c7c6ff #9f9f9f
+0;
+#X obj 454 214 cnv 4 6 6 empty empty ☐ -1 2 0 14 #c6feff #9f9f9f
+0;
+#X obj 556 214 cnv 4 6 6 empty empty ☐ -1 2 0 14 #faff00 #9f9f9f
+0;
+#X obj 536 214 cnv 4 6 6 empty empty ☐ -1 2 0 14 #ff8300 #9f9f9f
+0;
+#X obj 516 214 cnv 4 6 6 empty empty ☐ -1 2 0 14 #ff0400 #9f9f9f
+0;
+#X obj 621 214 cnv 4 6 6 empty empty ☐ -1 2 0 14 #0400ff #9f9f9f
+0;
+#X obj 601 214 cnv 4 6 6 empty empty ☐ -1 2 0 14 #00faff #9f9f9f
+0;
+#X obj 581 214 cnv 4 6 6 empty empty ☐ -1 2 0 14 #00ff04 #9f9f9f
+0;
+#X obj 666 214 cnv 4 6 6 empty empty ☐ -1 2 0 14 #606060 #9f9f9f
+0;
+#X obj 646 214 cnv 4 6 6 empty empty ☐ -1 2 0 14 #9c00ff #9f9f9f
+0;
+#X obj 81 160 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff 0
+;
+#X obj 155 159 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
+0;
+#X obj 225 159 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
+0;
+#X obj 117 391 print~;
