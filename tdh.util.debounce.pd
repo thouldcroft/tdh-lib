@@ -1,34 +1,10 @@
-#N canvas 2954 -76 707 802 10;
-#X obj 51 140 cnv 1 248 2 empty \$0-inletBorder-r empty 1 7 0 10 #404040
-#404040 0;
-#X obj 51 127 cnv 10 248 14 empty \$0-inletBar-r In1 0 6 0 8 #dfdfdf
-#404040 0;
-#X obj 128 128 cnv 10 5 12 empty empty In2 0 6 0 8 #dfdfdf #404040
-0;
-#X obj 207 128 cnv 10 5 12 empty empty In3 0 6 0 8 #dfdfdf #404040
-0;
-#X obj 279 128 cnv 10 5 12 empty empty In4 0 6 0 8 #dfdfdf #404040
-0;
-#X obj 51 243 cnv 1 248 2 empty \$0-moduleNameBorder-r empty 1 7 0
-10 #404040 #404040 0;
-#X obj 51 244 cnv 12 248 14 empty \$0-moduleName-r abstractionFullname
-1 7 0 10 #dcdcdc #404040 0;
-#X obj 51 258 cnv 1 248 2 empty \$0-outletBorder-r empty 1 7 0 10 #404040
-#404040 0;
-#X obj 51 259 cnv 10 248 14 empty \$0-outletBar-r Out1 0 6 0 8 #dfdfdf
-#404040 0;
-#X obj 129 259 cnv 10 5 12 empty empty Out2 0 6 0 8 #dfdfdf #404040
-0;
-#X obj 206 259 cnv 10 5 12 empty empty Out3 0 6 0 8 #dfdfdf #404040
-0;
-#X obj 279 259 cnv 10 5 12 empty empty Out4 0 6 0 8 #dfdfdf #404040
-0;
+#N canvas 2004 -445 711 604 10;
 #X text 18 48 Travis Houldcroft || travishouldcroft.com;
-#X obj 1 2 cnv 15 700 40 empty \$0-abstrPatchTitleBar abstractionObjectName
+#X obj 1 2 cnv 15 700 40 empty \$0-abstrPatchTitleBar tdh.util.debounce
 9 20 0 18 #3c50fc #a0a0a0 0;
 #X obj 1 75 cnv 2 700 2 empty \$0-abstrPatchSecDivider empty 9 20 0
 18 #a0a0a0 #202020 0;
-#N canvas 2737 -394 770 905 abstr-init 0;
+#N canvas 1440 23 770 855 abstr-init 0;
 #X obj 3 56 cnv 5 5 5 empty empty | 0 0 0 14 #fcfcfc #404040 0;
 #X obj 215 126 loadbang;
 #X obj 215 152 del 10;
@@ -122,7 +98,7 @@
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas abstractionObjectName
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.debounce
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -425,7 +401,7 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas abstractionObjectName
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.debounce
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -728,7 +704,7 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas abstractionObjectName
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.debounce
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -1031,7 +1007,7 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas abstractionObjectName
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.debounce
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -1334,7 +1310,7 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas abstractionObjectName
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.debounce
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -1774,7 +1750,7 @@ bgclr 1 \, lblclr 12, f 123;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas abstractionObjectName
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.debounce
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -2082,7 +2058,7 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas abstractionObjectName
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.debounce
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -2374,7 +2350,6 @@ in [message( objects get saved to the patch., f 84;
 #X obj 44 315 loadbang;
 #X obj 44 336 del 10;
 #X msg 44 356 label abstractionFullname;
-#X msg 166 194 symbol abstractionObjectName;
 #X text 251 343 EDIT HERE text after "label" to change the display
 name shown on the module, f 20;
 #X text 10 181 EDIT HERE text after "symbol" to change the abstraction
@@ -2384,6 +2359,7 @@ patch's main display name, f 20;
 #X obj 167 571 s \$0-inletBorder-r;
 #X obj 197 505 s \$0-inletBar-r;
 #X obj 168 591 s \$0-moduleNameBorder-r;
+#X obj 44 377 s \$0-\$0-moduleName-r;
 #X obj 226 358 cnv 5 5 5 empty empty ⟵ -3 3 0 30 #fcfcfc #000000
 0;
 #X obj 262 331 cnv 5 5 5 empty empty Module\\\ Name 0 0 0 12 #ffffff
@@ -2403,434 +2379,165 @@ name shown on the module, f 20;
 #X msg 54 536 vis_size \$1 2;
 #X obj 198 527 s \$0-moduleName-r;
 #X msg 54 440 248;
-#X obj 44 377 s \$0-moduleName-r;
+#X msg 166 194 symbol tdh.util.debounce;
 #X connect 1 0 2 0;
-#X connect 2 0 13 0;
+#X connect 2 0 33 0;
 #X connect 2 0 9 0;
 #X connect 9 0 3 1;
 #X connect 10 0 11 0;
 #X connect 11 0 12 0;
-#X connect 12 0 33 0;
-#X connect 13 0 3 0;
+#X connect 12 0 19 0;
 #X connect 24 0 32 0;
-#X connect 25 0 18 0;
+#X connect 25 0 17 0;
 #X connect 25 0 23 0;
 #X connect 25 0 31 0;
-#X connect 30 0 17 0;
-#X connect 30 0 19 0;
+#X connect 30 0 16 0;
+#X connect 30 0 18 0;
 #X connect 30 0 22 0;
 #X connect 32 0 25 0;
 #X connect 32 0 30 0;
+#X connect 33 0 3 0;
 #X restore 610 50 pd abstr-init;
+#X obj 134 100 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 318 100 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
+0;
 #X obj 614 21 cnv 8 83 16 empty empty tdh.lib 14 8 0 14 #dfdfdf #131255
 0;
-#N canvas 727 144 713 522 reference 0;
+#N canvas 1440 144 713 522 reference 1;
 #X text 18 48 Travis Houldcroft || travishouldcroft.com;
-#X obj 1 2 cnv 15 700 40 empty \$0-abstrPatchTitleBar abstractionObjectName
+#X obj 1 2 cnv 15 700 40 empty \$0-abstrPatchTitleBar tdh.util.debounce
 9 20 0 18 #3c50fc #a0a0a0 0;
-#X obj 1 362 cnv 2 700 3 empty \$0-abstrPatchSecLabelNotes Notes 20
+#X obj 1 232 cnv 2 700 3 empty \$0-abstrPatchSecLabelNotes Notes 20
 15 0 16 #a0a0a0 #202020 0;
-#X obj 1 485 cnv 2 700 2 empty \$0-abstrPatchSecDivider empty 9 20
+#X obj 1 355 cnv 2 700 2 empty \$0-abstrPatchSecDivider empty 9 20
 0 18 #a0a0a0 #202020 0;
-#X obj 1 422 cnv 2 700 3 empty \$0-abstrPatchSecLabelRevHist Revision\ History
+#X obj 1 292 cnv 2 700 3 empty \$0-abstrPatchSecLabelRevHist Revision\ History
 20 15 0 16 #a0a0a0 #202020 0;
-#X obj 1 262 cnv 2 700 3 empty \$0-abstrPatchSecLabelArgs Arguments
+#X obj 1 182 cnv 2 700 3 empty \$0-abstrPatchSecLabelArgs Arguments
 20 15 0 16 #a0a0a0 #202020 0;
-#X text 24 453 21/09/30 - ver 0.1, f 21;
 #X obj 1 72 cnv 2 700 3 empty \$0-abstrPatchSecLabelInlets Inlets 20
 15 0 16 #a0a0a0 #202020 0;
-#X obj 1 172 cnv 2 700 3 empty \$0-abstrPatchSecLabelOutlets Outlets
+#X obj 1 132 cnv 2 700 3 empty \$0-abstrPatchSecLabelOutlets Outlets
 20 15 0 16 #a0a0a0 #202020 0;
-#X obj 125 121 cnv 14 18 14 empty empty 10 2 8 0 12 #606060 #dcdcdc
-0;
 #X obj 125 81 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc 0
 ;
 #X obj 125 101 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
 0;
-#X text 227 271 Description;
-#X text 177 271 (type);
-#X text 227 291 Description;
-#X text 177 291 (type);
-#X text 227 311 Description;
-#X text 177 311 (type);
-#X text 197 80 Description;
-#X text 147 80 (type);
-#X text 197 100 Description;
-#X text 147 100 (type);
-#X text 197 120 Description;
-#X text 147 120 (type);
-#X text 197 180 Description;
-#X text 147 180 (type);
-#X text 197 200 Description;
-#X text 147 200 (type);
-#X text 197 220 Description;
-#X text 147 220 (type);
-#X text 147 271 \$1 -;
-#X text 147 291 \$2 -;
-#X text 147 311 \$3 -;
-#X obj 125 181 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
+#X obj 125 141 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
 0;
-#X obj 126 272 cnv 14 18 14 empty empty 1 2 8 0 12 #dfdfdf #606060
+#X text 147 191 \$1 -;
+#X obj 126 192 cnv 14 18 14 empty empty 1 2 8 0 12 #dfdfdf #606060
 0;
-#X obj 126 292 cnv 14 18 14 empty empty 2 2 8 0 12 #dfdfdf #606060
-0;
-#X obj 126 312 cnv 14 18 14 empty empty 3 2 8 0 12 #dfdfdf #606060
-0;
-#X obj 125 201 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
-0;
-#X obj 125 221 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
-0;
+#X text 147 80 (any);
+#X text 198 80 Incoming message stream;
+#X text 147 100 (float);
+#X text 147 139 (any);
+#X text 197 140 Gated message stream;
+#X text 177 191 (float);
+#X text 227 191 Time interval to gate incoming messages;
+#X text 197 101 Time interval to gate incoming messages;
+#X text 24 323 220517 - v0.1, f 21;
 #X restore 526 50 pd reference;
-#X obj 676 186 cnv 14 15 15 empty empty R 6 8 0 8 #404040 #dcdcdc 0
+#X obj 286 171 cnv 14 14 14 empty empty R 6 8 0 8 #fce0c4 #7c7c7c 0
 ;
-#X obj 676 207 cnv 14 14 14 empty empty S 6 8 0 8 #404040 #dcdcdc 0
+#X obj 262 271 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcfc #7c7c7c 0
 ;
-#X obj 394 186 cnv 14 14 14 empty empty R 6 8 0 8 #fce0c4 #7c7c7c 0
+#X obj 653 146 cnv 14 14 14 empty empty S 6 8 0 8 #fce0c4 #7c7c7c 0
 ;
-#X obj 373 186 cnv 14 14 14 empty empty R 6 8 0 8 #fcc4c4 #7c7c7c 0
+#X obj 536 179 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcfc #7c7c7c 0
 ;
-#X obj 352 186 cnv 14 14 14 empty empty R 6 8 0 8 #b8b8b8 #404040 0
+#X obj 284 384 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
+0;
+#X obj 152 221 spigot;
+#X obj 185 194 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 552 99 loadbang;
+#X obj 152 246 t b f b, f 51;
+#X msg 455 315 0;
+#X obj 152 293 del 5;
+#X text 199 294 De-bounce time;
+#X msg 152 314 1;
+#X obj 152 335 s \$0-spigotState;
+#X obj 185 171 r \$0-spigotState;
+#X obj 455 339 s \$0-spigotState;
+#X obj 482 124 cnv 14 18 14 empty empty 1 2 8 0 12 #dfdfdf #606060
+0;
+#X obj 453 124 f \$1;
+#X obj 453 99 loadbang;
+#X text 469 267 1 When a message comes in \, immediately close the
+[spigot] so no other messages come in, f 25;
+#X text 404 383 2 Then send the message out;
+#X text 22 313 3 Finally \, once the message has been sent out \, open
+the [spigot] to allow the next message through \, after a certain amount
+of time based on the de-bounce time., f 19;
+#X obj 552 146 s \$0-spigotState;
+#X msg 552 120 1;
+#X text 579 116 Initalize [spigot] to "open", f 18;
+#N canvas 1440 217 719 510 argDefaultF 0;
+#X obj 213 103 == 0;
+#X obj 264 47 t f f;
+#X obj 213 139 sel 1 0;
+#X obj 278 176 f;
+#X obj 213 222 outlet;
+#X obj 211 176 cnv 15 35 20 empty empty empty 0 8 0 14 #c4c4fc #404040
+0;
+#X text 56 133 Yes \, use the default \, else use the argument, f
+21;
+#X text 93 177 Set DEFAULT here;
+#X obj 249 16 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc 0
 ;
-#X obj 331 186 cnv 14 15 15 empty empty R 6 8 0 8 #dcdcdc #7c7c7c 0
+#X obj 200 222 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc
+0;
+#X text 24 83 Check if argument is 0 (if no argument is supplied \,
+the argument variable will output "0"), f 29;
+#X obj 447 14 inlet;
+#X obj 432 14 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc 0
 ;
-#X obj 480 186 cnv 14 14 14 empty empty R 6 8 0 8 #c4c4fc #7c7c7c 0
+#X text 36 17 Use [loadbang]-> [f $#] to send the argument value into
+this subpatch, f 32;
+#X obj 264 16 inlet argument;
+#X text 338 109 ( <-- Can't use [send] or [receive] because a patch
+might have multiple versions of this subpatch \, and the unique ID
+sends/receives are SHARED FOR SUBPATCHES);
+#X obj 213 177 f 5;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 1 1 3 1;
+#X connect 2 0 16 0;
+#X connect 2 1 3 0;
+#X connect 3 0 4 0;
+#X connect 11 0 16 1;
+#X connect 14 0 1 0;
+#X connect 16 0 4 0;
+#X restore 453 147 pd argDefaultF;
+#X f 11;
+#X obj 453 179 s \$0-debounce;
+#X obj 336 100 inlet debounceTime;
+#X obj 152 100 inlet message;
+#X obj 303 384 outlet gatedMsg;
+#X obj 556 339 cnv 14 14 14 empty empty S 6 8 0 8 #fce0c4 #7c7c7c 0
 ;
-#X obj 459 186 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcfc #7c7c7c 0
-;
-#X obj 438 186 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
-;
-#X obj 415 186 cnv 14 14 14 empty empty R 6 8 0 8 #fcfcc4 #7c7c7c 0
-;
-#X obj 501 186 cnv 14 14 14 empty empty R 6 8 0 8 #e0c4fc #7c7c7c 0
-;
-#X obj 394 208 cnv 14 14 14 empty empty S 6 8 0 8 #fce0c4 #7c7c7c 0
-;
-#X obj 373 208 cnv 14 14 14 empty empty S 6 8 0 8 #fcc4c4 #7c7c7c 0
-;
-#X obj 352 208 cnv 14 14 14 empty empty S 6 8 0 8 #b8b8b8 #404040 0
-;
-#X obj 331 208 cnv 14 14 14 empty empty S 6 8 0 8 #dcdcdc #7c7c7c 0
-;
-#X obj 480 208 cnv 14 14 14 empty empty S 6 8 0 8 #c4c4fc #7c7c7c 0
-;
-#X obj 459 208 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcfc #7c7c7c 0
-;
-#X obj 438 208 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcc4 #7c7c7c 0
-;
-#X obj 415 208 cnv 14 14 14 empty empty S 6 8 0 8 #fcfcc4 #7c7c7c 0
-;
-#X obj 501 208 cnv 14 14 14 empty empty S 6 8 0 8 #e0c4fc #7c7c7c 0
-;
-#X obj 373 227 cnv 14 18 14 empty empty R~ 6 8 0 8 #fcc4c4 #606060
+#X obj 179 272 r \$0-debounce;
+#X text 352 200 De-bounce set via inlet or arugment;
+#X obj 505 99 cnv 10 28 14 empty empty INIT 2 8 0 10 #9c00ff #dfdfdf
 0;
-#X obj 394 227 cnv 14 18 14 empty empty R~ 6 8 0 8 #fce0c4 #606060
+#X obj 605 99 cnv 10 28 14 empty empty INIT 2 8 0 10 #9c00ff #dfdfdf
 0;
-#X obj 415 227 cnv 14 18 14 empty empty R~ 6 8 0 8 #fcfcc4 #606060
-0;
-#X obj 438 227 cnv 14 18 14 empty empty R~ 6 8 0 8 #c4fcc4 #606060
-0;
-#X obj 459 227 cnv 14 18 14 empty empty R~ 6 8 0 8 #c4fcfc #606060
-0;
-#X obj 480 227 cnv 14 18 14 empty empty R~ 6 8 0 8 #c4c4fc #606060
-0;
-#X obj 501 227 cnv 14 18 14 empty empty R~ 6 8 0 8 #e0c4fc #606060
-0;
-#X obj 587 186 cnv 14 14 14 empty empty R 6 8 0 8 #00fc04 #7c7c7c 0
-;
-#X obj 564 186 cnv 14 14 14 empty empty R 6 8 0 8 #f8fc00 #7c7c7c 0
-;
-#X obj 543 186 cnv 14 14 14 empty empty R 6 8 0 8 #fc8000 #7c7c7c 0
-;
-#X obj 522 186 cnv 14 14 14 empty empty R 6 8 0 8 #fc0400 #404040 0
-;
-#X obj 651 186 cnv 14 14 14 empty empty R 6 8 0 8 #9c00fc #b8b8b8 0
-;
-#X obj 630 186 cnv 14 14 14 empty empty R 6 8 0 8 #0400fc #b8b8b8 0
-;
-#X obj 608 186 cnv 14 14 14 empty empty R 6 8 0 8 #00f8fc #404040 0
-;
-#X obj 587 208 cnv 14 14 14 empty empty S 6 8 0 8 #00fc04 #7c7c7c 0
-;
-#X obj 564 208 cnv 14 14 14 empty empty S 6 8 0 8 #f8fc00 #7c7c7c 0
-;
-#X obj 543 208 cnv 14 14 14 empty empty S 6 8 0 8 #fc8000 #7c7c7c 0
-;
-#X obj 522 208 cnv 14 14 14 empty empty S 6 8 0 8 #fc0400 #404040 0
-;
-#X obj 651 207 cnv 14 14 14 empty empty S 6 8 0 8 #9c00fc #b8b8b8 0
-;
-#X obj 630 207 cnv 14 14 14 empty empty S 6 8 0 8 #0400fc #b8b8b8 0
-;
-#X obj 608 208 cnv 14 14 14 empty empty S 6 8 0 8 #00f8fc #404040 0
-;
-#X obj 522 227 cnv 14 18 14 empty empty R~ 6 8 0 8 #ff0400 #606060
-0;
-#X obj 543 227 cnv 14 18 14 empty empty R~ 6 8 0 8 #ff8300 #606060
-0;
-#X obj 564 227 cnv 14 18 14 empty empty R~ 6 8 0 8 #faff00 #606060
-0;
-#X obj 587 227 cnv 14 18 14 empty empty R~ 6 8 0 8 #00ff04 #606060
-0;
-#X obj 608 227 cnv 14 18 14 empty empty R~ 6 8 0 8 #00faff #606060
-0;
-#X obj 630 227 cnv 14 18 14 empty empty R~ 6 8 0 8 #0400ff #dfdfdf
-0;
-#X obj 651 227 cnv 14 18 15 empty empty R~ 6 8 0 8 #9c00ff #dfdfdf
-0;
-#X obj 676 227 cnv 14 18 15 empty empty R~ 6 8 0 8 #404040 #dfdfdf
-0;
-#X obj 331 227 cnv 14 18 14 empty empty R~ 6 8 0 8 #dfdfdf #606060
-0;
-#X obj 352 227 cnv 14 18 14 empty empty R~ 6 8 0 8 #bbbbbb #606060
-0;
-#X obj 376 174 cnv 4 6 6 empty empty ☐ -1 2 0 14 #ffc7c6 #9f9f9f
-0;
-#X obj 356 174 cnv 4 6 6 empty empty ☐ -1 2 0 14 #bbbbbb #9f9f9f
-0;
-#X obj 336 174 cnv 4 6 6 empty empty ☐ -1 2 0 14 #dfdfdf #9f9f9f
-0;
-#X obj 439 174 cnv 4 6 6 empty empty ☐ -1 2 0 14 #c6ffc7 #9f9f9f
-0;
-#X obj 419 174 cnv 4 6 6 empty empty ☐ -1 2 0 14 #feffc6 #9f9f9f
-0;
-#X obj 399 174 cnv 4 6 6 empty empty ☐ -1 2 0 14 #ffe3c6 #9f9f9f
-0;
-#X obj 504 175 cnv 4 6 6 empty empty ☐ -1 2 0 14 #e3c6ff #9f9f9f
-0;
-#X obj 484 174 cnv 4 6 6 empty empty ☐ -1 2 0 14 #c7c6ff #9f9f9f
-0;
-#X obj 464 174 cnv 4 6 6 empty empty ☐ -1 2 0 14 #c6feff #9f9f9f
-0;
-#X obj 566 174 cnv 4 6 6 empty empty ☐ -1 2 0 14 #faff00 #9f9f9f
-0;
-#X obj 546 174 cnv 4 6 6 empty empty ☐ -1 2 0 14 #ff8300 #9f9f9f
-0;
-#X obj 526 174 cnv 4 6 6 empty empty ☐ -1 2 0 14 #ff0400 #9f9f9f
-0;
-#X obj 631 174 cnv 4 6 6 empty empty ☐ -1 2 0 14 #0400ff #9f9f9f
-0;
-#X obj 611 174 cnv 4 6 6 empty empty ☐ -1 2 0 14 #00faff #9f9f9f
-0;
-#X obj 591 174 cnv 4 6 6 empty empty ☐ -1 2 0 14 #00ff04 #9f9f9f
-0;
-#X obj 676 174 cnv 4 6 6 empty empty ☐ -1 2 0 14 #606060 #9f9f9f
-0;
-#X obj 656 174 cnv 4 6 6 empty empty ☐ -1 2 0 14 #9c00ff #9f9f9f
-0;
-#X obj 427 89 cnv 14 18 14 empty empty 1 2 8 0 12 #dfdfdf #606060 0
-;
-#X obj 427 109 cnv 14 18 14 empty empty 2 2 8 0 12 #dfdfdf #606060
-0;
-#X obj 427 129 cnv 14 18 14 empty empty 3 2 8 0 12 #dfdfdf #606060
-0;
-#X obj 599 90 cnv 14 18 14 empty empty 10 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 456 90 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 530 90 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 455 141 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
-0;
-#X obj 529 140 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
-0;
-#X obj 599 140 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
-0;
-#X obj 143 1103 lop~;
-#X obj 185 1103 hip~;
-#X obj 226 1102 bp~, f 6;
-#N canvas 130 159 906 516 gate4~ 0;
-#X obj 130 438 *~;
-#X obj 205 443 *~;
-#X obj 145 413 line~;
-#X obj 220 417 line~;
-#X obj 399 14 inlet~;
-#X obj 130 474 outlet~;
-#X obj 145 382 pack f 20;
-#X obj 223 380 pack f 20;
-#X obj 205 472 outlet~;
-#X obj 295 437 *~;
-#X obj 370 442 *~;
-#X obj 310 412 line~;
-#X obj 385 416 line~;
-#X obj 295 473 outlet~;
-#X obj 310 381 pack f 20;
-#X obj 388 379 pack f 20;
-#X obj 370 471 outlet~;
-#X msg 44 93 0 0 0 0 0 0 0 0;
-#X msg 56 118 1 0 0 0 0 0 0 0;
-#X msg 66 137 0 1 0 0 0 0 0 0;
-#X msg 76 158 0 0 1 0 0 0 0 0;
-#X msg 84 182 0 0 0 1 0 0 0 0;
-#X obj 43 24 inlet controlInteger;
-#X obj 68 320 unpack f f f f f f f f;
-#X obj 42 59 sel 0 1 2 3 4;
-#X text 462 10 This code is based (read: copied) entirely from Christopher
-Ariza's abstration "mgGate4~" \, a part of the Martingale Library (https://code.google.com/p/martingale/).
-;
-#X connect 0 0 5 0;
-#X connect 1 0 8 0;
-#X connect 2 0 0 1;
-#X connect 3 0 1 1;
-#X connect 4 0 0 0;
-#X connect 4 0 1 0;
-#X connect 4 0 9 0;
-#X connect 4 0 10 0;
-#X connect 6 0 2 0;
-#X connect 7 0 3 0;
-#X connect 9 0 13 0;
-#X connect 10 0 16 0;
-#X connect 11 0 9 1;
-#X connect 12 0 10 1;
-#X connect 14 0 11 0;
-#X connect 15 0 12 0;
+#X connect 13 0 16 0;
+#X connect 14 0 13 1;
+#X connect 15 0 31 0;
+#X connect 16 0 18 0;
+#X connect 16 1 37 0;
+#X connect 16 2 17 0;
 #X connect 17 0 23 0;
-#X connect 18 0 23 0;
-#X connect 19 0 23 0;
-#X connect 20 0 23 0;
-#X connect 21 0 23 0;
-#X connect 22 0 24 0;
-#X connect 23 0 6 0;
-#X connect 23 1 7 0;
-#X connect 23 2 14 0;
-#X connect 23 3 15 0;
-#X connect 24 0 17 0;
-#X connect 24 1 18 0;
-#X connect 24 2 19 0;
-#X connect 24 3 20 0;
-#X connect 24 4 21 0;
-#X restore 143 1041 pd gate4~;
-#X obj 26 499 inlet~ signal;
-#X obj 269 488 inlet cutoff_freq;
-#X obj 118 496 inlet filter_type;
-#X obj 387 488 inlet res;
-#X floatatom 81 378 5 0 0 0 - - - 0;
-#X text 119 376 Cut-off Freq.;
-#X floatatom 81 394 5 0 0 0 - - - 0;
-#X text 119 392 Q (BP Only);
-#X obj 142 313 f \$1;
-#X obj 81 313 f \$2;
-#X obj 111 313 f \$3;
-#X floatatom 233 1060 5 0 0 1 Cutoff - - 0;
-#X floatatom 308 1060 5 0 0 1 Q - - 0;
-#X text 1094 907 Arguments:;
-#X text 1096 862 Travis Houldcroft;
-#X text 1095 875 thouldcroft@gmail.com;
-#X text 1095 887 travishouldcroft.com;
-#X text 1094 824 Multi-Mode Filter;
-#X text 1094 835 tdh.sigproc.mmfilt~.pd;
-#X text 1103 921 1: Filter Type (0: LP \, 1: HP \, 2: BP);
-#X text 1103 932 2: Cut-off Frequency;
-#X text 1103 943 3: Resonance/Q (BP Only);
-#X obj 26 1405 outlet~;
-#X obj 81 288 loadbang;
-#X obj 246 372 vradio 15 1 0 3 empty empty empty 0 -8 0 10 #fcfcfc
-#000000 #000000 0;
-#X obj 143 949 r filt_type_select;
-#X obj 143 971 + 1;
-#X obj 118 540 s inlet_filt_select_msg;
-#X text 263 370 LP;
-#X text 263 387 HP;
-#X text 263 403 BP;
-#X obj 240 1247 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc
-#000000 #000000 0 1;
-#X obj 26 1347 *~;
-#X obj 237 1270 - 1;
-#X obj 237 1292 * -1;
-#X obj 143 1347 *~;
-#X obj 84 411 hsl 64 15 0 1 0 0 empty empty empty 70 7 0 10 #fcfcfc
-#000000 #000000 0 1;
-#X text 49 1346 Dry Sig;
-#X text 167 1346 Wet Sig;
-#X floatatom 153 411 5 0 0 0 - - - 0;
-#X text 186 410 Dry/Wet;
-#X obj 306 418 s filt_type_select;
-#X floatatom 160 994 5 0 0 0 - - - 0;
-#X text 307 1246 Dry/Wet;
-#X text 191 994 DEBUG;
-#X obj 246 319 r inlet_filt_select_msg;
-#X text 170 311 Arguments;
-#X text 131 783 Out;
-#X text 102 340 Type;
-#X text 162 340 Freq;
-#X text 230 340 Q;
-#X text 50 340 Sig;
-#X text 65 356 Multi-Mode Filter;
-#X obj 118 518 change;
-#X obj 269 510 change;
-#X obj 387 510 change;
-#X obj 527 494 inlet drywet;
-#X text 276 340 D/W;
-#X obj 51 444 cnv 15 248 27 empty empty Multi-Mode\\\ Filter 20 12
-0 14 #e0e0e0 #404040 0;
-#X obj 226 1123 bp~, f 6;
-#X obj 226 1144 bp~, f 6;
-#X obj 226 1165 bp~, f 6;
-#X obj 143 1124 lop~;
-#X obj 143 1145 lop~;
-#X obj 143 1166 lop~;
-#X obj 185 1124 hip~;
-#X obj 185 1145 hip~;
-#X obj 185 1166 hip~;
-#X obj 629 494 inlet~ modulation;
-#X connect 95 0 161 0;
-#X connect 96 0 164 0;
-#X connect 97 0 158 0;
-#X connect 98 0 95 0;
-#X connect 98 1 96 0;
-#X connect 98 2 97 0;
-#X connect 99 0 98 1;
-#X connect 99 0 131 0;
-#X connect 100 0 153 0;
-#X connect 101 0 152 0;
-#X connect 102 0 154 0;
-#X connect 103 0 110 0;
-#X connect 105 0 111 0;
-#X connect 107 0 123 0;
-#X connect 108 0 103 0;
-#X connect 109 0 105 0;
-#X connect 110 0 95 1;
-#X connect 110 0 96 1;
-#X connect 110 0 97 1;
-#X connect 110 0 161 1;
-#X connect 110 0 163 1;
-#X connect 110 0 162 1;
-#X connect 110 0 164 1;
-#X connect 110 0 166 1;
-#X connect 110 0 165 1;
-#X connect 110 0 160 1;
-#X connect 110 0 159 1;
-#X connect 110 0 158 1;
-#X connect 111 0 97 2;
-#X connect 111 0 158 2;
-#X connect 111 0 160 2;
-#X connect 111 0 159 2;
-#X connect 122 0 109 0;
-#X connect 122 0 108 0;
-#X connect 122 0 107 0;
-#X connect 123 0 140 0;
-#X connect 124 0 125 0;
-#X connect 125 0 141 0;
-#X connect 125 0 98 0;
-#X connect 130 0 132 0;
-#X connect 130 0 134 1;
-#X connect 131 0 121 0;
-#X connect 132 0 133 0;
-#X connect 133 0 131 1;
-#X connect 134 0 121 0;
-#X connect 135 0 130 0;
-#X connect 135 0 138 0;
-#X connect 144 0 123 0;
-#X connect 152 0 126 0;
-#X connect 153 0 103 0;
-#X connect 154 0 105 0;
-#X connect 155 0 135 0;
-#X connect 158 0 159 0;
-#X connect 159 0 160 0;
-#X connect 160 0 134 0;
-#X connect 161 0 162 0;
-#X connect 162 0 163 0;
-#X connect 163 0 134 0;
-#X connect 164 0 165 0;
-#X connect 165 0 166 0;
-#X connect 166 0 134 0;
-#X coords 0 -1 1 1 250 150 2 50 125;
+#X connect 18 0 20 0;
+#X connect 20 0 21 0;
+#X connect 22 0 14 0;
+#X connect 25 0 33 0;
+#X connect 26 0 25 0;
+#X connect 31 0 30 0;
+#X connect 33 0 34 0;
+#X connect 35 0 34 0;
+#X connect 36 0 13 0;
+#X connect 39 0 18 1;

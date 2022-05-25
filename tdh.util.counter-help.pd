@@ -1,6 +1,6 @@
-#N canvas 3175 15 706 658 10;
+#N canvas 3171 21 706 658 10;
 #X text 17 48 Travis Houldcroft || travishouldcroft.com;
-#X obj 3 1 cnv 15 700 40 empty \$0-helpPatchTitleBar helpfileTemplate
+#X obj 3 1 cnv 15 700 40 empty \$0-helpPatchTitleBar tdh.util.counter
 9 20 0 18 #001488 #dce4fc 0;
 #X obj 3 133 cnv 1 700 1 empty \$0-helpPatchSecDivider empty 9 20 0
 18 #a0a0a0 #202020 0;
@@ -94,7 +94,7 @@
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas helpfileTemplate
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.counter
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -420,7 +420,7 @@ bgclr 1 \, lblclr 12, f 123;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas helpfileTemplate
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.counter
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -723,7 +723,7 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas helpfileTemplate
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.counter
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -1026,7 +1026,7 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas helpfileTemplate
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.counter
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -1329,7 +1329,7 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas helpfileTemplate
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.counter
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -1632,7 +1632,7 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas helpfileTemplate
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.counter
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -2034,21 +2034,21 @@ in [message( objects get saved to the patch., f 84;
 #X text 16 4 This subpatch (and nested subpatches) helps set the uniform
 titles and graphics for ABSTRACTIONS., f 84;
 #X msg 426 179 700;
-#X msg 191 177 symbol helpfileTemplate;
 #X obj 188 273 r \$0-showRefButton;
 #X msg 188 294 vis 1;
 #X obj 188 315 s \$0-reference;
+#X msg 191 176 symbol tdh.util.counter;
 #X connect 2 0 3 0;
-#X connect 3 0 11 0;
+#X connect 3 0 14 0;
 #X connect 3 0 10 0;
 #X connect 10 0 0 1;
-#X connect 11 0 0 0;
+#X connect 11 0 12 0;
 #X connect 12 0 13 0;
-#X connect 13 0 14 0;
+#X connect 14 0 0 0;
 #X restore 620 49 pd help-init;
 #X obj 612 21 cnv 8 83 16 empty empty tdh.lib 14 8 0 14 #dfdfdf #131255
 0;
-#N canvas 1626 23 713 443 reference 1;
+#N canvas 1626 22 713 443 reference 1;
 #X obj 559 50 namecanvas \$0-reference;
 #X obj 2 73 cnv 2 700 3 empty \$0-helpPatchSecLabelInlets Inlets 20
 15 0 16 #a0a0a0 #202020 0;
@@ -2071,7 +2071,7 @@ titles and graphics for ABSTRACTIONS., f 84;
 #X text 145 100 (type);
 #X text 195 120 Description;
 #X text 145 120 (type);
-#X obj 3 1 cnv 15 700 40 empty \$0-helpPatchTitleBar helpfileTemplate
+#X obj 3 1 cnv 15 700 40 empty \$0-helpPatchTitleBar tdh.util.counter
 9 20 0 18 #001488 #dce4fc 0;
 #X obj 125 161 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
 0;
@@ -2105,3 +2105,5 @@ titles and graphics for ABSTRACTIONS., f 84;
 17 7 0 10 #c7c6ff #202020 #404040;
 #X text 23 97 Counts the number of messages (any type) that are sent
 to it., f 62;
+#X obj 63 236 tdh.util.counter 0 100 10;
+#X text 226 236 <-- Arguments:;
