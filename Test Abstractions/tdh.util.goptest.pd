@@ -1,0 +1,20 @@
+#N canvas 1643 140 1199 676 12;
+#X msg 479 553 donecanvasdialog <x-units> <y-units> <gop> <x-from>
+<y-from> <x-to> <y-to> <x-size> <y-size> <x-margin> <y-margin>;
+#X obj 882 21 namecanvas \$0-myAbs;
+#X obj 761 443 s \$0-myAbs;
+#X obj 536 220 inlet;
+#X obj 536 244 t b b b;
+#X msg 759 407 donecanvasdialog 1 -1 2 0 -1 1 1 \$1 \$2 100 100;
+#X obj 853 245 f \$1;
+#X obj 906 244 f \$2;
+#X obj 853 289 pack f f;
+#X obj 852 181 loadbang;
+#X obj 852 205 t b b;
+#X connect 3 0 4 0;
+#X connect 6 0 8 0;
+#X connect 7 0 8 1;
+#X connect 9 0 10 0;
+#X connect 10 0 6 0;
+#X connect 10 1 7 0;
+#X coords 0 -1 1 1 85 60 2 100 100;

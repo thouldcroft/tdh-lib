@@ -1,0 +1,8 @@
+#N canvas 1945 127 450 300 10;
+#X obj 175 48 loadbang;
+#X obj 175 68 f \$0;
+#X obj 175 89 print \$0-print;
+#X obj 58 48 inlet sendAgain;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 1 0;
