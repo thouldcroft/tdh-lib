@@ -1,7 +1,4 @@
-#N canvas 384 23 1056 816 10;
-#X obj 102 630 cnv 14 14 14 empty empty R 6 8 0 8 #9c00fc #b8b8b8 0
-;
-#X obj 37 630 r \$0-value;
+#N canvas 384 38 1056 816 10;
 #X obj 17 651 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc 0
 ;
 #X obj 37 651 outlet;
@@ -2411,17 +2408,11 @@ displays., f 64;
 #X msg 646 587 set \$1;
 #X obj 206 651 outlet toSlider;
 #X obj 646 651 outlet toNumBox;
-#X obj 646 416 inlet fromNumBox;
-#X obj 206 416 inlet fromSlider;
-#X obj 326 587 cnv 14 14 14 empty empty S 6 8 0 8 #9c00fc #b8b8b8 0
-;
-#X obj 261 587 s \$0-value;
-#X obj 669 437 s \$0-value;
-#X obj 734 437 cnv 14 14 14 empty empty S 6 8 0 8 #9c00fc #b8b8b8 0
-;
-#X obj 186 416 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
+#X obj 646 446 inlet fromNumBox;
+#X obj 206 446 inlet fromSlider;
+#X obj 186 446 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 626 416 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
+#X obj 626 446 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
 0;
 #X obj 186 651 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
 0;
@@ -2443,12 +2434,11 @@ displays., f 64;
 0 6 0 14 #ffffff #0400ff 0;
 #X connect 0 0 1 0;
 #X restore 646 487 pd numbox2slider;
-#X connect 1 0 3 0;
-#X connect 37 0 40 0;
-#X connect 38 0 39 0;
-#X connect 41 0 45 0;
-#X connect 41 0 52 0;
-#X connect 42 0 51 0;
-#X connect 51 0 37 0;
-#X connect 51 0 44 0;
-#X connect 52 0 38 0;
+#X connect 35 0 38 0;
+#X connect 36 0 37 0;
+#X connect 39 0 46 0;
+#X connect 39 0 1 0;
+#X connect 40 0 45 0;
+#X connect 45 0 35 0;
+#X connect 45 0 1 0;
+#X connect 46 0 36 0;

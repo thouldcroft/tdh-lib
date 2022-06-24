@@ -1,5 +1,5 @@
-#N canvas 1606 -206 705 598 10;
-#X obj 232 557 outlet;
+#N canvas 1683 -446 705 1125 10;
+#X obj 232 637 outlet;
 #X obj 205 350 inlet;
 #N canvas 1606 278 719 510 argDefaultHandling 0;
 #X obj 213 103 == 0;
@@ -28,14 +28,13 @@
 #X connect 3 0 5 0;
 #X connect 8 0 1 0;
 #X connect 13 0 5 0;
-#X restore 232 416 pd argDefaultHandling;
-#X obj 205 440 moses;
-#X obj 205 534 moses;
-#X obj 232 373 loadbang;
-#X msg 232 394 \$2;
-#X text 130 535 Low value;
-#X text 129 440 High value;
-#X text 366 416 Default high value is 1;
+#X restore 262 496 pd argDefaultHandling;
+#X obj 205 520 moses, f 10;
+#X obj 205 614 moses;
+#X obj 295 413 loadbang;
+#X text 130 615 Low value;
+#X text 129 520 High value;
+#X text 351 412 Default high value is 1;
 #N canvas 1606 278 719 510 argDefaultHandling 0;
 #X obj 213 103 == 0;
 #X obj 264 47 t f f;
@@ -63,22 +62,21 @@
 #X connect 3 0 5 0;
 #X connect 8 0 1 0;
 #X connect 13 0 5 0;
-#X restore 232 510 pd argDefaultHandling;
-#X obj 232 467 loadbang;
-#X msg 232 488 \$2;
-#X text 366 510 Default low value is 0;
+#X restore 233 590 pd argDefaultHandling;
+#X obj 266 567 loadbang;
+#X text 331 567 Default low value is 0;
 #X text 18 48 Travis Houldcroft || travishouldcroft.com;
-#X obj 1 2 cnv 15 700 40 empty \$0-abstrPatchTitleBar tdh.util.valueClamp
+#X obj 1 2 cnv 15 700 40 empty \$0-abstrPatchTitleBar tdh.math.valueClamp
 9 20 0 18 #3c50fc #a0a0a0 0;
-#X obj 1 222 cnv 2 700 3 empty \$0-abstrPatchSecLabelNotes Notes 20
+#X obj 1 250 cnv 2 700 3 empty \$0-abstrPatchSecLabelNotes Notes 20
 15 0 16 #a0a0a0 #202020 0;
-#X obj 1 325 cnv 2 700 2 empty \$0-abstrPatchSecDivider empty 9 20
+#X obj 1 343 cnv 2 700 2 empty \$0-abstrPatchSecDivider empty 9 20
 0 18 #a0a0a0 #202020 0;
-#X obj 1 262 cnv 2 700 3 empty \$0-abstrPatchSecLabelRevHist Revision\ History
+#X obj 1 290 cnv 2 700 3 empty \$0-abstrPatchSecLabelRevHist Revision\ History
 20 15 0 16 #a0a0a0 #202020 0;
-#X obj 1 162 cnv 2 700 3 empty \$0-abstrPatchSecLabelArgs Arguments
+#X obj 1 190 cnv 2 700 3 empty \$0-abstrPatchSecLabelArgs Arguments
 20 15 0 16 #a0a0a0 #202020 0;
-#X text 24 293 21/09/30 - ver 0.1, f 21;
+#X text 24 321 21/09/30 - ver 0.1, f 21;
 #N canvas 1440 293 656 414 abstr-init 0;
 #X obj 3 21 cnv 5 5 5 empty empty | 0 0 0 14 #fcfcfc #404040 0;
 #X obj 215 126 loadbang;
@@ -173,7 +171,7 @@
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas abstraction\ name
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.math.valueClamp
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -476,7 +474,7 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas abstraction\ name
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.math.valueClamp
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -779,7 +777,7 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas abstraction\ name
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.math.valueClamp
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -1082,7 +1080,7 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas abstraction\ name
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.math.valueClamp
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -1385,7 +1383,7 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas abstraction\ name
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.math.valueClamp
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -1825,7 +1823,7 @@ bgclr 1 \, lblclr 12, f 123;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas abstraction\ name
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.math.valueClamp
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -2133,7 +2131,7 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas abstraction\ name
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.math.valueClamp
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -2423,44 +2421,72 @@ DISPLAY NAME, f 20;
 #X text 13 60 The two most commonly changed fields \, DISPLAY NAME
 and WIDTH can be changed by editing the [message( boxes below. Text
 in [message( objects get saved to the patch., f 84;
-#X msg 166 194 symbol abstraction\ name;
 #X msg 373 196 700;
+#X msg 166 194 symbol tdh.math.valueClamp;
 #X connect 1 0 2 0;
-#X connect 2 0 10 0;
 #X connect 2 0 11 0;
-#X connect 10 0 3 0;
-#X connect 11 0 3 1;
+#X connect 2 0 10 0;
+#X connect 10 0 3 1;
+#X connect 11 0 3 0;
 #X restore 610 50 pd abstr-init;
 #X obj 1 72 cnv 2 700 3 empty \$0-abstrPatchSecLabelInlets Inlets 20
 15 0 16 #a0a0a0 #202020 0;
-#X obj 1 122 cnv 2 700 3 empty \$0-abstrPatchSecLabelOutlets Outlets
+#X obj 1 150 cnv 2 700 3 empty \$0-abstrPatchSecLabelOutlets Outlets
 20 15 0 16 #a0a0a0 #202020 0;
-#X obj 125 172 cnv 14 18 14 empty empty \$1 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 125 192 cnv 14 18 14 empty empty \$2 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 125 81 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc 0
+#X obj 125 81 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc 0
 ;
-#X obj 125 131 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
+#X obj 125 159 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
 0;
 #X obj 186 350 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 214 557 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
+#X obj 214 637 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
 0;
 #X text 147 80 (float);
 #X text 197 80 Value stream to be clamped down;
-#X text 147 130 (type);
-#X text 197 130 Clamped value betweem the low and high values;
-#X text 146 171 (float);
-#X text 146 191 (float);
-#X text 196 171 Clamp range low value;
-#X text 196 191 Clamp range high value;
-#X connect 1 0 3 0;
+#X text 147 158 (type);
+#X text 197 158 Clamped value betweem the low and high values;
+#X text 146 199 (float);
+#X text 146 219 (float);
+#X text 196 199 Clamp range low value;
+#X text 196 219 Clamp range high value;
+#X obj 266 350 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 392 350 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 205 371 t f b b, f 10;
+#X obj 125 101 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
+0;
+#X text 147 100 (float);
+#X obj 125 121 cnv 14 18 14 empty empty 3 2 8 0 12 #606060 #dcdcdc
+0;
+#X text 147 120 (float);
+#X obj 262 414 f \$2;
+#X obj 233 568 f \$1;
+#X obj 285 350 inlet lowVal;
+#X obj 411 350 inlet highVal;
+#X text 197 100 Low value to clamp stream to;
+#X text 197 120 High value to clamp stream to;
+#X obj 246 414 cnv 14 14 14 empty empty 2 2 8 0 12 #dfdfdf #606060
+0;
+#X obj 217 568 cnv 14 14 14 empty empty 1 2 8 0 12 #dfdfdf #606060
+0;
+#X obj 126 199 cnv 14 18 14 empty empty 1 2 8 0 12 #dfdfdf #606060
+0;
+#X obj 126 219 cnv 14 18 14 empty empty 2 2 8 0 12 #dfdfdf #606060
+0;
+#X obj 262 445 + 1;
+#X connect 1 0 36 0;
 #X connect 2 0 3 1;
 #X connect 3 0 4 0;
 #X connect 4 1 0 0;
-#X connect 5 0 6 0;
-#X connect 6 0 2 0;
-#X connect 10 0 4 1;
-#X connect 11 0 12 0;
-#X connect 12 0 10 0;
+#X connect 5 0 41 0;
+#X connect 9 0 4 1;
+#X connect 10 0 42 0;
+#X connect 36 0 3 0;
+#X connect 36 1 42 0;
+#X connect 36 2 41 0;
+#X connect 41 0 51 0;
+#X connect 42 0 9 0;
+#X connect 43 0 42 1;
+#X connect 44 0 41 1;
+#X connect 51 0 2 0;

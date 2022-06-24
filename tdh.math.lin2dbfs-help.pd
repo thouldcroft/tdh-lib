@@ -1,0 +1,66 @@
+#N canvas 1846 -65 600 746 10;
+#X obj 71 203 vsl 14 118 0 2 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 5800 1;
+#X text 86 200 +6dB;
+#X text 86 269 -2dB;
+#X text 86 285 -6dB;
+#X text 86 307 -20dB;
+#X text 91 320 inf;
+#X text 19 -106 Travis Houldcroft || travishouldcroft.com;
+#X obj 0 -160 cnv 8 599 45 empty empty tdh.util.lin2dbfs.dbfs2lin 20
+12 0 14 #e0e0e0 #404040 0;
+#X obj 0 -72 cnv 8 598 8 empty empty Inlets 20 15 0 14 #e0e0e0 #404040
+0;
+#X text 22 -43 0;
+#X text 44 -43 -;
+#X obj 0 8 cnv 8 598 8 empty empty Outlets 20 15 0 14 #e0e0e0 #404040
+0;
+#X text 22 37 0;
+#X text 44 37 -;
+#X obj 0 98 cnv 8 599 8 empty empty Note 20 15 0 14 #e0e0e0 #404040
+0;
+#X text 20 130 Notes;
+#X obj 0 160 cnv 4 598 4 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X text 87 173 dBFS;
+#X text 87 173 ____;
+#X text 47 173 lin;
+#X text 47 173 ___;
+#X text 52 200 2;
+#X text 53 255 1;
+#X text 54 321 0;
+#X text 48 285 0.5;
+#X text 43 308 0.09;
+#X text 48 269 0.7;
+#X text 87 230 +3dB;
+#X text 47 229 1.5;
+#X obj 224 203 vu 15 120 empty empty -1 -8 0 10 #404040 #000000 1 0
+;
+#X text 86 255 -0dB;
+#X text 19 -136 Convert from a linear scale gain to dBFS \, and dBFS
+to linear scale gain, f 73;
+#X text 66 -43 (float) a linear gain scale from 0 to 2;
+#X text 22 -43 0;
+#X text 44 -43 -;
+#X text 66 -43 (float) a linear gain scale from 0 to 2;
+#X text 44 -23 -;
+#X text 22 -23 1;
+#X text 66 -23 (float) a gain value in deciBel full scale;
+#X text 22 57 0;
+#X text 44 57 -;
+#X text 66 37 (float) a gain value in dBFS;
+#X text 66 57 (float) a gain value in linear scale;
+#X obj 71 387 tdh.util.lin2dbfs.dbfs2lin;
+#X floatatom 71 354 5 0 0 0 - - -, f 5;
+#X floatatom 71 412 5 0 0 0 - - -, f 5;
+#X floatatom 224 410 5 0 0 0 - - -, f 5;
+#X text 310 249 d = log10(l) * 20;
+#X text 359 277 d = gain in dBFS;
+#X text 359 297 l = gain in linear scale;
+#X text 453 249 l = 10^(d/20);
+#X connect 0 0 44 0;
+#X connect 29 0 43 1;
+#X connect 43 0 45 0;
+#X connect 43 1 46 0;
+#X connect 44 0 43 0;
+#X connect 45 0 29 0;
