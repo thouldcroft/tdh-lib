@@ -1,3 +1,0 @@
-#N canvas 2576 286 450 300 12;
-#X obj 57 21 tdh.test.uniqueIdTest;
-#X obj 267 72 tdh.test.uniqueIdTest;
