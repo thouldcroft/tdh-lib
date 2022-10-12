@@ -1,20 +1,13 @@
-#N canvas 2311 -209 710 722 10;
+#N canvas 265 38 710 888 10;
 #X obj 3 121 cnv 1 700 1 empty \$0-helpPatchSecDivider empty 9 20 0
 18 #a0a0a0 #202020 0;
 #X text 5 87 A 1 oscillator synth voice \, akin to a single voice on
 the MiniMoog. Has GUI control of waveshape \, octave \, frequency \,
 and volume \, plus inlets for external control of all parameters.,
 f 95;
-#X floatatom 89 299 5 0 0 0 - - - 0;
-#X floatatom 129 319 5 0 0 0 - - - 0;
-#X floatatom 169 339 5 0 0 0 - - - 0;
-#X floatatom 210 359 5 0 0 0 - - - 0;
-#X text 129 299 Osc1 Waveshape (Set with integers 0-7);
-#X text 169 319 Osc1 Octave (Using standard octave designations 1-9)
-;
-#X text 209 339 Osc1 Frequency in Pitch Class (0-11 in FLOATING POINT)
-;
-#X text 260 359 Osc1 Linear Gain (0-1 in FLOATING POINT);
+#X floatatom 100 172 5 0 0 0 - - - 0;
+#X floatatom 126 194 5 0 0 0 - - - 0;
+#X floatatom 180 350 5 0 0 0 - - - 0;
 #N canvas 1838 -134 1149 842 help-audio-out 0;
 #X obj 32 30 inlet~;
 #X obj 192 30 inlet~;
@@ -155,50 +148,39 @@ Mute 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X connect 49 0 50 0;
 #X connect 51 0 9 0;
 #X coords 0 -1 1 1 127 110 2 250 100;
-#X restore 539 550 pd help-audio-out;
-#X text 675 697 _;
-#X obj 89 693 throw~ \$0-1oscHelp;
-#X obj 539 529 catch~ \$0-1oscHelp;
-#X text 5 234 Outlet (0) produces the oscillator signal \, while outlet
+#X restore 550 595 pd help-audio-out;
+#X obj 100 749 throw~ \$0-1oscHelp, f 11;
+#X obj 549 574 catch~ \$0-1oscHelp;
+#X text 5 794 Outlet (0) produces the oscillator signal \, while outlet
 (1) sends out the oscillator's frequency value between 0-11 (floating
 point pitch class) for synchronization with other oscillators., f
 110;
-#X text 5 273 Inlets and outlets have been labelled to provide quick
+#X text 5 833 Inlets and outlets have been labelled to provide quick
 implementation and to assist those getting started in sonic arts.,
 f 110;
-#X floatatom 292 694 5 0 0 0 - - - 0;
-#X text 6 144 Integers 0-7 sent to the (0) inlet choose a waveshape
-\, or the GUI controls can be used. Integers 1-9 sent to the (1) inlet
-set the range \, which is in line with standard common-music-practice
-octave designations \, so that a range of "4" will produce 261.63 (middle
-C) when the frequency fader is all the way down \, or a "0" is sent
-to the frequency inlet. You may use this module for 12TET by sending
-the frequency inlet pitch classes as integers 0-11 \, but this inlet
-accepts floating point values \, so frequencies outside of 12TET can
-be produced (quarter tones \, for example \, can easily be heard by
-adding ".5" to a pitch class integer). The final inlet and fader controls
-the signal's volume \, which is on a scale from 0.0-1.0., f 111;
+#X floatatom 314 740 5 0 0 0 - - - 0;
 #X text 6 124 tdh.synth.1oscil~ is a single oscillator voice that can
 be used as the building block to a larger synth source., f 111;
-#X obj 251 389 osc~ 1;
-#X obj 291 419 osc~ 0.5;
-#X text 297 389 Frequency modulation (vibrato) inlet;
-#X text 347 419 Amplitude modulation (tremolo) inlet;
-#X text 327 532 Use the faders here to increase or decrease modulation
+#X obj 207 371 osc~ 1;
+#X obj 234 391 osc~ 0.5;
+#X text 253 371 Frequency modulation (vibrato) inlet;
+#X text 290 391 Amplitude modulation (tremolo) inlet;
+#X text 338 577 Use the faders here to increase or decrease modulation
 depth, f 32;
-#X obj 309 518 cnv 5 5 5 empty empty ↖︎ -3 3 0 30 #ffffff #202020
+#X obj 320 563 cnv 5 5 5 empty empty ↖︎ -3 3 0 30 #ffffff #202020
 0;
-#X obj 309 567 cnv 5 5 5 empty empty ↙︎ -3 3 0 30 #fcfcfc #202020
+#X obj 320 612 cnv 5 5 5 empty empty ↙︎ -3 3 0 30 #fcfcfc #202020
 0;
-#X text 328 694 Frequency setting (for sync with other oscillators)
-;
-#X obj 89 442 tdh.lib/tdh.synth.1oscil~;
+#X text 348 730 Frequency setting (for sync with other oscillators)
+, f 19;
+#X obj 100 487 tdh.lib/tdh.synth.1oscil~;
+#A saved 1 9 15804.3 0 0 0 500 1;
 #X text 17 48 Travis Houldcroft || travishouldcroft.com;
 #X obj 3 1 cnv 15 700 40 empty \$0-helpPatchTitleBar tdh.synth.1oscil~
 9 20 0 18 #001488 #dce4fc 0;
 #X obj 3 77 cnv 1 700 1 empty \$0-helpPatchSecDivider empty 9 20 0
 18 #a0a0a0 #202020 0;
-#N canvas 1440 319 621 362 help-init 0;
+#N canvas 2695 126 621 362 help-init 0;
 #N canvas 1813 -209 1435 1029 cnv-set 0;
 #N canvas 1440 23 349 258 canvas-ctrl 0;
 #X obj 291 1 inlet;
@@ -2240,59 +2222,149 @@ titles and graphics for ABSTRACTIONS., f 84;
 #X restore 620 49 pd help-init;
 #X obj 612 21 cnv 8 83 16 empty empty tdh.lib 14 8 0 14 #dfdfdf #131255
 0;
-#N canvas 1626 23 705 407 reference 0;
+#N canvas 743 237 712 535 reference 0;
 #X obj 559 50 namecanvas \$0-reference;
 #X obj 2 73 cnv 2 700 3 empty \$0-helpPatchSecLabelInlets Inlets 20
 15 0 16 #a0a0a0 #202020 0;
-#X obj 3 165 cnv 2 700 3 empty \$0-helpPatchSecLabelOutlets Outlets
+#X obj 3 357 cnv 2 700 3 empty \$0-helpPatchSecLabelOutlets Outlets
 20 15 0 16 #a0a0a0 #202020 0;
-#X obj 3 295 cnv 2 700 3 empty \$0-helpPatchSecLabelNotes Notes 20
+#X obj 3 457 cnv 2 700 3 empty \$0-helpPatchSecLabelNotes Notes 20
 15 0 16 #a0a0a0 #202020 0;
-#X obj 3 215 cnv 2 700 3 empty \$0-helpPatchSecLabelArgs Arguments
+#X obj 3 407 cnv 2 700 3 empty \$0-helpPatchSecLabelArgs Arguments
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 3 1 cnv 15 700 40 empty \$0-helpPatchTitleBar tdh.synth.1oscil~
 9 20 0 18 #001488 #dce4fc 0;
-#X text 157 342 Cyclone library;
-#X text 141 322 •;
-#X text 141 342 •;
-#X text 147 172 (sig);
-#X text 197 172 Signal output (linear amplitude 0.0-1.0);
-#X obj 124 193 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
+#X text 157 504 Cyclone library;
+#X text 141 484 •;
+#X text 141 504 •;
+#X text 147 364 (sig);
+#X text 197 364 Signal output (linear amplitude 0.0-1.0);
+#X obj 124 385 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
 0;
-#X text 146 193 (float);
-#X obj 124 173 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
+#X text 146 385 (float);
+#X obj 124 365 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
 0;
-#X text 196 193 Frequency value in pitch class \, for synchronizing
-with other oscillators, f 72;
-#X text 127 302 Dependencies:;
-#X text 159 322 tdh.lib Library, f 16;
-#X obj 122 83 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc 0
+#X text 127 464 Dependencies:;
+#X text 159 484 tdh.lib Library, f 16;
+#X obj 122 237 cnv 14 18 14 empty empty 4 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 122 83 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc 0
 ;
-#X obj 122 143 cnv 14 18 14 empty empty 3 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 122 103 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 122 123 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
+#X obj 122 103 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
 0;
 #X text 144 81 (float);
-#X text 194 81 Oscillator 1 Shape (0-7);
 #X text 144 101 (float);
-#X text 194 101 Oscillator 1 Octave (1-9);
-#X text 144 121 (float);
-#X text 194 121 Oscillator 1 Frequency (Hz);
-#X text 194 141 Oscillator 1 Volume (0.0-1.0);
-#X text 144 141 (float);
-#X text 127 224 None;
+#X text 144 235 (float);
+#X text 127 416 None;
+#X text 194 81 Oscillator Shape (0-7);
+#X text 194 101 Oscillator range designation (in CMP octaves where
+C4 = 261.62 Hz, f 66;
+#X text 144 121 (symbol);
+#X text 194 121 freq <frequency> - Set oscillator frequency in Hz;
+#X text 194 138 midi <pitch-number> - Set oscillator frequency in MIDI
+pitch;
+#X text 257 172 0 = C and 11 = B. Octave controlled by range setting
+;
+#X text 194 158 pc <pitch-class> - Set oscillator frequency in pitch
+class \, where, f 66;
+#X text 195 193 NOTE: for FREQ and MIDI designations \, RANGE is changed
+based on the, f 67;
+#X text 257 207 indicated value (Example: MIDI pitch 60 will change
+the range to "4");
+#X obj 122 257 cnv 14 18 14 empty empty 5 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 122 277 cnv 14 18 14 empty empty 6 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 122 297 cnv 14 18 14 empty empty 7 2 8 0 12 #606060 #dcdcdc
+0;
+#X text 144 295 (float);
+#X obj 122 317 cnv 14 18 14 empty empty 8 2 8 0 12 #606060 #dcdcdc
+0;
+#X text 144 315 (float);
+#X obj 122 337 cnv 14 18 14 empty empty 9 2 8 0 12 #606060 #dcdcdc
+0;
+#X text 144 335 (float);
+#X text 194 235 Oscillator Volume (0.0-100.0);
+#X text 144 255 (signal);
+#X text 194 255 Input for frequency modulation;
+#X text 144 275 (signal);
+#X text 194 275 Input for amplitude modulation;
+#X text 194 295 Oscillator frequency modulation depth (0-500%);
+#X text 194 315 Oscillator amplitude modulation depth (0-100%);
+#X text 194 335 Oscillator pitch glide time (0-500 ms);
+#X text 196 385 Frequency value in Hz \, for synchronizing with other
+oscillators, f 72;
+#X obj 122 123 cnv 14 18 14 empty empty 3 2 8 0 12 #606060 #dcdcdc
+0;
 #X restore 534 49 pd reference;
 #X obj 598 91 bng 15 250 50 0 \$0-showRefButton empty Show\\\ Reference
 17 7 0 10 #c7c6ff #202020 #404040;
-#X connect 2 0 27 0;
-#X connect 3 0 27 1;
-#X connect 4 0 27 2;
-#X connect 5 0 27 3;
-#X connect 13 0 10 0;
-#X connect 13 0 10 1;
-#X connect 19 0 27 4;
-#X connect 20 0 27 5;
-#X connect 27 0 12 0;
-#X connect 27 1 16 0;
+#X msg 153 236 freq \$1;
+#X floatatom 153 216 5 0 0 0 - - - 0;
+#X floatatom 163 259 5 0 0 0 - - - 0;
+#X floatatom 173 303 5 0 0 0 - - - 0;
+#X msg 173 322 pc \$1;
+#X msg 163 279 midi \$1;
+#X text 290 270 NOTE: specification in Hz or MIDI note will automatically
+change the "Range" parameter, f 42;
+#X text 278 280 *;
+#X text 6 144 All oscillator parameters may be set via the GUI or via
+external messages., f 111;
+#X text 140 172 Oscil Waveshape (Set with integers 0-7);
+#X text 166 194 Oscil Range (Using common-music-practice octave designations
+0-9 - C4 = 261.62 Hz), f 85;
+#X obj 256 222 cnv 5 5 5 empty empty ⎤ 0 0 0 14 #fcfcfc #404040 0
+;
+#X obj 259 238 cnv 5 5 5 empty empty ⎜ 0 0 0 14 #fcfcfc #404040 0
+;
+#X obj 256 332 cnv 5 5 5 empty empty ⎦ 0 0 0 14 #fcfcfc #404040 0
+;
+#X obj 259 254 cnv 5 5 5 empty empty ⎜ 0 0 0 14 #fcfcfc #404040 0
+;
+#X obj 259 270 cnv 5 5 5 empty empty ⎜ 0 0 0 14 #fcfcfc #404040 0
+;
+#X obj 259 286 cnv 5 5 5 empty empty ⎜ 0 0 0 14 #fcfcfc #404040 0
+;
+#X obj 259 302 cnv 5 5 5 empty empty ⎜ 0 0 0 14 #fcfcfc #404040 0
+;
+#X obj 259 319 cnv 5 5 5 empty empty ⎜ 0 0 0 14 #fcfcfc #404040 0
+;
+#X text 186 216 16-15000 Hz;
+#X text 196 258 12-127;
+#X text 207 303 0-11;
+#X text 521 280 *;
+#X text 276 228 Oscil Frequency/Pitch in Hz \, MIDI \, or Pitch Class
+;
+#X text 289 247 Use the messages;
+#X msg 393 248 freq x;
+#X msg 453 248 midi y;
+#X msg 513 248 pc z;
+#X text 12 655 Toggle "Embed" to save parameters settings at patch
+save., f 14;
+#X floatatom 261 412 5 0 0 1 Frequency\ modulation\ amount\ (0-100)
+- - 0;
+#X floatatom 287 432 5 0 0 1 Amplitude\ modulation\ amount\ (0-100)
+- - 0;
+#X floatatom 314 452 5 0 0 1 Glide\ time\ in\ milliseconds\ (0-500ms)
+- - 0;
+#X text 172 741 Signal output (remotely sent here to to th e[Audio
+Output] module), f 20;
+#X text 218 350 Logarithmic oscillator gain (0-100);
+#X connect 2 0 20 0;
+#X connect 3 0 20 1;
+#X connect 4 0 20 3;
+#X connect 7 0 5 0;
+#X connect 7 0 5 1;
+#X connect 12 0 20 4;
+#X connect 13 0 20 5;
+#X connect 20 0 6 0;
+#X connect 20 1 10 0;
+#X connect 28 0 20 2;
+#X connect 29 0 28 0;
+#X connect 30 0 33 0;
+#X connect 31 0 32 0;
+#X connect 32 0 20 2;
+#X connect 33 0 20 2;
+#X connect 57 0 20 6;
+#X connect 58 0 20 7;
+#X connect 59 0 20 8;

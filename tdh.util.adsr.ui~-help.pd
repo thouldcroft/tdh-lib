@@ -1,79 +1,45 @@
-#N canvas 2245 -309 1026 844 10;
-#X text 0 818 _;
-#X obj 100 278 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#N canvas 253 38 1026 881 10;
+#X text 10 818 _;
+#X obj 74 272 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
-#X floatatom 148 318 5 0 0 0 - - - 0;
-#X floatatom 197 358 5 0 0 0 - - - 0;
-#X floatatom 245 400 5 0 0 0 - - - 0;
-#X floatatom 294 480 5 0 0 0 - - - 0;
-#X text 363 670 All parameters/controls can be set through inlets or
-GUI, f 23;
-#X obj 20 668 osc~ 440;
-#X obj 20 698 *~;
-#X obj 20 726 dac~ 1 2;
-#X obj 831 803 dac~ 1 2;
-#X obj 831 743 osc~ 220;
-#X obj 552 531 dac~ 1 2;
-#X obj 552 469 osc~ 220;
-#X obj 552 388 *~ 1540;
-#X obj 552 433 +~ 220;
-#X text 612 388 Maximum value minus starting value (produces 0 to (max_val
-- start_val) ), f 61;
-#X text 610 438 Starting value (produces start_val to max_val), f
-61;
-#X text 642 348 <-- 0 to 1;
-#X obj 552 498 *~, f 15;
-#X text 522 258 Using the envelope change the oscillator's frequency
-from 220 Hz to 1760 Hz, f 17;
-#X text 659 487 Using the same envelope to also change the volume of
-the oscillator (otherwise you would hear it done on when you open the
-help patch!), f 35;
-#X text 10 128 An envelope in synthesizer terminology is a ramp of
+#X floatatom 104 312 5 0 0 0 - - - 0;
+#X floatatom 135 346 5 0 0 0 - - - 0;
+#X floatatom 165 382 5 0 0 0 - - - 0;
+#X floatatom 196 434 5 0 0 0 - - - 0;
+#X obj 641 807 osc~ 220;
+#X text 10 120 An envelope in synthesizer terminology is a ramp of
 values \, typically from a minimum to a maximum \, and then back down
 to a minimum. An ADSR envelope has four stages in its ramp from start
 to finish \, and the start is triggered by a gate signal to start (a
 number greater than 0 in this case) \, and then a gate signal to end
-(a 0 in this case)., f 81;
-#X text 188 318 Attack Time - Determines the time in ms that the envelope
-ramps from 0 to 1, f 52;
-#X text 236 358 Decay Time - Determines the time the envelope ramps
-from 1 to the sustain level, f 44;
-#X text 340 468 Release Time - Time in ms to ramp from the sustain
-level to 0, f 27;
-#X obj 831 775 *~ 0.5;
-#X obj 831 723 mtof;
-#X obj 918 723 / 127;
-#X obj 831 698 makenote 64 150;
-#X obj 831 672 * 80;
-#X text 586 146 You can use the ramp of envelope values 0 to 1 as a
-scalar by multiplying a fixed value (produces 0 to fixed-value);
-#X text 550 565 Also outputs envelope at data rate \, so you can use
-it to control MIDI if you want to!;
-#X text 810 614 (Using the envelope ramp to change MIDI pitch with
-[makenote], f 26;
-#X text 19 90 A multi-sement ramp generator in the style of common
-synthesizer envelope, f 76;
-#X obj 343 526 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+(a 0 in this case)., f 89;
+#X text 144 312 Attack Time - Determines the time in ms that the envelope
+ramps from 0 to 1, f 55;
+#X text 173 346 Decay Time - Determines the time the envelope ramps
+from 1 to the sustain level, f 50;
+#X text 232 422 Release Time - Time in ms to ramp from the sustain
+level to 0, f 40;
+#X obj 601 780 mtof;
+#X obj 227 456 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
-#X text 361 525 MIDI Velocity - When enabled \, the signal sent to
+#X text 245 455 MIDI Velocity - When enabled \, the signal sent to
 the gate inlet will be interpreted as a MIDI velocity value \, adn
 the sustain level will be set according to that MIDI velocity., f
-23;
-#X text 10 198 When the envelope module receives a value > 0 at its
+38;
+#X text 10 176 When the envelope module receives a value > 0 at its
 GATE inlet (or from the graphic control) \, it ramps up from 0 to 1
 over the ATTACK time \, in ms. Once it hits 1 it ramps to the SUSTAIN
 LEVEL over the DECAY TIME in ms. The envelope will then remain at the
 sustain level until the module receives a "0" \, when it will then
-ramp from the SUSTAIN LEVEL to 0 over the RELEASE time., f 81;
-#X text 120 275 Gate - (> 0) starts the envelope and then remains at
+ramp from the SUSTAIN LEVEL to 0 over the RELEASE time., f 89;
+#X text 96 269 Gate - (> 0) starts the envelope and then remains at
 the sustain stage until a (0) is sent here \, ending the envelope by
 ramping from the sustain to 0, f 63;
-#X text 283 391 Sustain Level - The level the envelope will sustain
+#X text 203 373 Sustain Level - The level the envelope will sustain
 at following the release until the gate signal is 0 This level is ignored
-when MIDI values are used for the sustain., f 36;
-#X obj 100 544 tdh.lib/tdh.util.adsr.UI~;
-#X obj 547 603 tdh.satk/satk.util.adsr~;
-#X obj 640 184 tdh.satk/satk.util.adsr~;
+when MIDI values are used for the sustain., f 45;
+#X obj 74 518 tdh.lib/tdh.util.adsr.UI~;
+#A saved 500 600 0.5 64 0 1;
 #X text 17 48 Travis Houldcroft || travishouldcroft.com;
 #X obj 3 1 cnv 15 1000 40 empty \$0-helpPatchTitleBar tdh.util.adsr~
 9 20 0 18 #001488 #dce4fc 0;
@@ -81,7 +47,7 @@ when MIDI values are used for the sustain., f 36;
 0 18 #a0a0a0 #202020 0;
 #X obj 3 77 cnv 1 1000 1 empty \$0-helpPatchSecDivider empty 9 20 0
 18 #a0a0a0 #202020 0;
-#N canvas 1440 319 621 362 help-init 1;
+#N canvas 1512 319 621 362 help-init 0;
 #N canvas 1813 -209 1435 1029 cnv-set 0;
 #N canvas 1440 23 349 258 canvas-ctrl 0;
 #X obj 291 1 inlet;
@@ -2092,7 +2058,7 @@ with a message, f 72;
 #X connect 45 0 12 0;
 #X connect 59 0 0 0;
 #X restore 191 233 pd cnv-set;
-#X f 34;
+#X f 24;
 #X obj 3 15 cnv 5 5 5 empty empty | 0 0 0 14 #fcfcfc #404040 0;
 #X obj 274 107 loadbang;
 #X obj 274 133 del 10;
@@ -2101,18 +2067,23 @@ DISPLAY NAME, f 20;
 #X text 17 47 The two most commonly changed fields \, DISPLAY NAME
 and WIDTH can be changed by editing the [message( boxes below. Text
 in [message( objects get saved to the patch., f 84;
-#X obj 167 181 cnv 5 5 5 empty empty ⟶ -3 3 0 30 #fcfcfc #000000
+#X obj 157 177 cnv 5 5 5 empty empty ⟶ -3 3 0 30 #fcfcfc #000000
 0;
-#X obj 465 180 cnv 5 5 5 empty empty ⟵ -3 3 0 30 #fcfcfc #000000
+#X obj 373 176 cnv 5 5 5 empty empty ⟵ -3 3 0 30 #fcfcfc #000000
 0;
-#X text 486 168 EDIT HERE to change patch WIDTH, f 12;
+#X text 400 166 EDIT HERE to change patch WIDTH, f 12;
 #X text 16 4 This subpatch (and nested subpatches) helps set the uniform
 titles and graphics for ABSTRACTIONS., f 84;
 #X obj 188 273 r \$0-showRefButton;
 #X msg 188 294 vis 1;
 #X obj 188 315 s \$0-reference;
 #X msg 191 177 symbol tdh.util.adsr~;
-#X msg 426 179 1000;
+#X msg 334 175 1000;
+#X obj 368 250 loadbang;
+#X msg 368 271 64;
+#X obj 368 292 s \$0-adsrHelpVelocity-r;
+#X obj 403 337 s \$0-adsrHelpNoteDur-r;
+#X msg 406 315 800;
 #X connect 2 0 3 0;
 #X connect 3 0 13 0;
 #X connect 3 0 14 0;
@@ -2120,6 +2091,10 @@ titles and graphics for ABSTRACTIONS., f 84;
 #X connect 11 0 12 0;
 #X connect 13 0 0 0;
 #X connect 14 0 0 1;
+#X connect 15 0 16 0;
+#X connect 15 0 19 0;
+#X connect 16 0 17 0;
+#X connect 19 0 18 0;
 #X restore 920 49 pd help-init;
 #X obj 912 21 cnv 8 83 16 empty empty tdh.lib 14 8 0 14 #dfdfdf #131255
 0;
@@ -2178,30 +2153,136 @@ titles and graphics for ABSTRACTIONS., f 84;
 #X restore 834 49 pd reference;
 #X obj 898 91 bng 15 250 50 0 \$0-showRefButton empty Show\\\ Reference
 17 7 0 10 #c7c6ff #202020 #404040;
-#X connect 1 0 40 0;
-#X connect 2 0 40 1;
-#X connect 3 0 40 2;
-#X connect 4 0 40 3;
-#X connect 5 0 40 4;
-#X connect 7 0 8 0;
-#X connect 8 0 9 0;
-#X connect 8 0 9 1;
-#X connect 11 0 26 0;
-#X connect 13 0 19 0;
-#X connect 14 0 15 0;
-#X connect 15 0 13 0;
-#X connect 19 0 12 0;
-#X connect 19 0 12 1;
-#X connect 26 0 10 0;
-#X connect 26 0 10 1;
-#X connect 27 0 11 0;
-#X connect 28 0 26 1;
-#X connect 29 0 27 0;
-#X connect 29 1 28 0;
-#X connect 30 0 29 0;
-#X connect 35 0 40 5;
-#X connect 40 0 8 1;
-#X connect 41 1 30 0;
-#X connect 42 0 14 0;
-#X connect 42 0 19 1;
+#X obj 59 686 *~;
+#X obj 59 711 tdh.lib/tdh.util.audioOutSm~;
+#X obj 703 567 tdh.lib/tdh.util.adsr.UI~;
+#A saved 50 400 0.8 1000 0 1;
+#X text 250 619 Toggle "EMBED" to save parameters when the patch is
+saved., f 23;
+#X obj 810 306 tdh.lib/tdh.util.adsr.UI~;
+#A saved 500 300 0 700 1 1;
+#X obj 795 494 *~;
+#X msg 623 234 60;
+#X obj 653 473 tdh.synth.oscilaTri~;
+#X obj 653 453 mtof;
+#X obj 653 262 makenote 64 800;
+#X text 773 282 <- velocity;
+#X floatatom 740 283 5 0 0 0 - - - 0;
+#X msg 653 234 64;
+#X msg 683 234 67;
+#X text 791 395 ->;
+#X text 19 90 A multi-segment ramp generator in the style of common
+synthesizer envelope, f 76;
+#X floatatom 740 234 5 0 0 0 - \$0-adsrHelpVelocity-r - 0;
+#X text 776 233 Velocity;
+#X text 674 312 Velocity will be scaled to a linear amplitude value
+, f 18;
+#X text 679 377 The sustain display for the GUI will reflect the velocity
+value in linear amplitude., f 19;
+#X text 636 263 ->;
+#X text 573 262 produces a MIDI note on/off message, f 11;
+#X floatatom 838 234 5 0 0 0 - \$0-adsrHelpNoteDur-r - 0;
+#X text 572 147 When "MIDI-Velocity" is checked \, you can send the
+velocity value (0-127) of a note-on message to the GATE inlet of the
+module and the note-on veloicty will start the envelope and also set
+the sustain value. The note-off message with 0 for velocity will put
+the envelope into the release stage.;
+#X text 569 542 Also outputs envelope at data rate \, so you can use
+it to control any data controls you need:, f 68;
+#N canvas 1845 265 522 403 movingSquare 0;
+#X obj 0 40 cnv 15 20 20 \$0-block-s \$0-block-r empty 20 12 0 14 #ff0400
+#404040 0;
+#X obj 120 113 inlet;
+#X msg 339 278 pos \$1 \$2;
+#X obj 339 231 sel 0;
+#X obj 120 255 pack f f, f 9;
+#X obj 120 304 s \$0-block-r;
+#X obj 120 135 change;
+#X msg 120 278 pos \$1 \$2;
+#X msg 339 255 0 40;
+#X obj 229 208 * -40;
+#X obj 229 231 + 40;
+#X obj 120 171 t b f f, f 37;
+#X obj 147 208 + 1;
+#X obj 120 208 f 0;
+#X msg 379 231 0;
+#X obj 120 231 clip 0 65;
+#X text 266 203 y coord.;
+#X text 60 207 x coord.;
+#X obj 339 208 pipe 100;
+#X connect 1 0 6 0;
+#X connect 2 0 5 0;
+#X connect 3 0 8 0;
+#X connect 3 0 14 0;
+#X connect 4 0 7 0;
+#X connect 6 0 11 0;
+#X connect 7 0 5 0;
+#X connect 8 0 2 0;
+#X connect 9 0 10 0;
+#X connect 10 0 4 1;
+#X connect 11 0 13 0;
+#X connect 11 1 9 0;
+#X connect 11 2 18 0;
+#X connect 12 0 13 1;
+#X connect 13 0 12 0;
+#X connect 13 0 15 0;
+#X connect 14 0 13 1;
+#X connect 15 0 4 0;
+#X connect 18 0 3 0;
+#X coords 0 -1 1 1 85 60 2 0 0;
+#X restore 869 788 pd movingSquare;
+#X obj 601 739 * 96;
+#X text 872 233 Duration (msec);
+#X obj 126 684 catch~ \$0-audioOut;
+#X obj 795 515 throw~ \$0-audioOut;
+#X obj 687 855 throw~ \$0-audioOut;
+#X obj 601 758 makenote 64 20;
+#X obj 687 832 *~;
+#X text 930 761 |V, f 1;
+#X text 494 819 simultaneously using the signal rate outlet to control
+the oscillator amplitude, f 22;
+#X obj 8 636 tdh.synth.oscilaSaw~ 440, f 10;
+#X text 622 208 Pitch - click to make note:, f 14;
+#X text 567 628 Using the envelope data-rate ramp to change MIDI pitch
+with [makenote] (multiplying by 96 to get values between 0 and 96 instead
+of 0 and 1), f 21;
+#X text 629 832 -------->;
+#X text 892 712 Using envelope data-rate ramp to move a [cnv] around
+, f 15;
+#X text 640 711 |v, f 1;
+#X text 138 776 * Control DSP and volume here!*;
+#X text 280 560 All parameters/controls can be set through inlets or
+GUI (except embed), f 23;
+#X connect 1 0 17 0;
+#X connect 2 0 17 1;
+#X connect 3 0 17 2;
+#X connect 4 0 17 3;
+#X connect 5 0 17 4;
+#X connect 6 0 58 0;
+#X connect 11 0 6 0;
+#X connect 12 0 17 5;
+#X connect 17 0 26 1;
+#X connect 26 0 27 0;
+#X connect 26 0 27 1;
+#X connect 28 0 58 1;
+#X connect 28 1 51 0;
+#X connect 28 1 52 0;
+#X connect 30 0 31 1;
+#X connect 31 0 55 0;
+#X connect 32 0 35 0;
+#X connect 33 0 31 0;
+#X connect 34 0 33 0;
+#X connect 35 0 34 0;
+#X connect 35 1 37 0;
+#X connect 37 0 30 0;
+#X connect 38 0 35 0;
+#X connect 39 0 35 0;
+#X connect 42 0 35 1;
+#X connect 48 0 35 2;
+#X connect 52 0 57 0;
+#X connect 54 0 27 0;
+#X connect 54 0 27 1;
+#X connect 57 0 11 0;
+#X connect 58 0 56 0;
+#X connect 61 0 26 0;
 #X coords 0 0 1 1 250 150 0;

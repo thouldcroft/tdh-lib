@@ -1,4 +1,4 @@
-#N canvas 410 23 1008 620 10;
+#N canvas 410 38 1008 620 10;
 #X obj 395 411 line~;
 #X obj 395 213 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
@@ -2537,7 +2537,7 @@ name shown on the module, f 20;
 #X obj 391 89 inlet trig;
 #X obj 101 116 cnv 1 148 2 empty \$0-inletBorder-r empty 1 7 0 10 #404040
 #404040 0;
-#X obj 101 103 cnv 10 148 14 empty \$0-inletBar-r In1 0 6 0 8 #dfdfdf
+#X obj 101 103 cnv 10 148 14 empty \$0-inletBar-r T 0 6 0 8 #dfdfdf
 #404040 0;
 #X obj 102 212 cnv 1 148 2 empty \$0-moduleNameBorder-r empty 1 7 0
 10 #404040 #404040 0;
@@ -2590,4 +2590,4 @@ name shown on the module, f 20;
 #X connect 35 0 33 0;
 #X connect 60 0 61 0;
 #X connect 62 0 52 0;
-#X coords 0 -1 1 1 150 145 2 100 100;
+#X coords 0 620 1 619 150 145 0;

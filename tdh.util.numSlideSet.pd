@@ -1,4 +1,4 @@
-#N canvas 384 38 1056 816 10;
+#N canvas 1971 20 1056 816 10;
 #X obj 17 651 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc 0
 ;
 #X obj 37 651 outlet;
@@ -2400,19 +2400,19 @@ displays., f 64;
 #X text 199 189 Value output from [numbox];
 #X text 114 366 220504 - ver 0.2, f 21;
 #X text 127 260 None;
-#X obj 206 488 cnv 12 100 14 empty empty empty 0 8 0 10 #c7c6ff #404040
+#X obj 206 468 cnv 12 100 14 empty empty empty 0 8 0 10 #c7c6ff #404040
 0;
-#X obj 646 488 cnv 12 100 14 empty empty empty 0 8 0 10 #c4c4fc #404040
+#X obj 646 468 cnv 12 100 14 empty empty empty 0 8 0 10 #c4c4fc #404040
 0;
 #X msg 206 587 set \$1;
 #X msg 646 587 set \$1;
 #X obj 206 651 outlet toSlider;
 #X obj 646 651 outlet toNumBox;
-#X obj 646 446 inlet fromNumBox;
-#X obj 206 446 inlet fromSlider;
-#X obj 186 446 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
+#X obj 646 406 inlet fromNumBox;
+#X obj 206 406 inlet fromSlider;
+#X obj 186 406 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 626 446 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
+#X obj 626 406 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
 0;
 #X obj 186 651 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
 0;
@@ -2425,7 +2425,7 @@ displays., f 64;
 #X obj 37 258 outlet;
 #X text 48 129 <-- conversion code;
 #X connect 0 0 2 0;
-#X restore 206 487 pd slider2numbox;
+#X restore 206 467 pd slider2numbox;
 #N canvas 728 82 450 300 numbox2slider 0;
 #X obj 47 37 inlet;
 #X obj 47 258 outlet;
@@ -2433,12 +2433,14 @@ displays., f 64;
 #X obj 122 32 cnv 5 5 5 empty empty Conversion\\\ from\\\ Numbox\\\ to\\\ Slider
 0 6 0 14 #ffffff #0400ff 0;
 #X connect 0 0 1 0;
-#X restore 646 487 pd numbox2slider;
+#X restore 646 467 pd numbox2slider;
+#X obj 37 465 f;
 #X connect 35 0 38 0;
 #X connect 36 0 37 0;
 #X connect 39 0 46 0;
-#X connect 39 0 1 0;
+#X connect 39 0 47 0;
 #X connect 40 0 45 0;
 #X connect 45 0 35 0;
 #X connect 45 0 1 0;
 #X connect 46 0 36 0;
+#X connect 47 0 1 0;

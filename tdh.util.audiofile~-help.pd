@@ -1,4 +1,4 @@
-#N canvas 1453 -126 933 779 10;
+#N canvas 140 144 994 795 10;
 #X obj 133 132 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X floatatom 352 181 5 0 0 0 - - - 0;
@@ -2138,7 +2138,7 @@ for data mangling/data sonification., f 92;
 #X obj 133 313 tdh.lib/tdh.util.audioFile~;
 #X text 777 264 Externally load a file* (see below), f 23;
 #X text 518 678 * Click for file loading information;
-#N canvas 1496 -457 1034 300 fileLoading 1;
+#N canvas 890 398 391 197 fileLoading 0;
 #X text 15 59 This won't be the world's most exhaustive collection
 of information \, but it should be helpful if you are like me and don't
 have a super strong computer science background \, or maybe you are
@@ -2155,6 +2155,7 @@ filename information as a symbol.;
 #X obj 193 242 cnv 3 1 60 empty empty empty 20 12 0 14 #000000 #404040
 0;
 #X obj 190 304 cnv 5 5 5 empty empty V 0 0 0 14 #ffffff #404040 0;
+#X obj 571 243 loadbang;
 #X connect 0 0 37 0;
 #X connect 1 0 37 3;
 #X connect 2 0 37 4;
@@ -2166,4 +2167,5 @@ filename information as a symbol.;
 #X connect 37 1 31 1;
 #X connect 37 2 35 0;
 #X connect 41 0 37 6;
+#X connect 44 0 41 0;
 #X coords 0 0 1 1 516 261 0;

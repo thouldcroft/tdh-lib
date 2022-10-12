@@ -1,30 +1,212 @@
-#N canvas 1512 25 800 847 10;
-#X obj 26 117 cnv 1 158 2 empty \$0-inletBorder-r empty 1 7 0 10 #404040
-#404040 0;
-#X obj 26 104 cnv 10 158 14 empty \$0-inletBar-r GATE 0 6 0 8 #dfdfdf
-#404040 0;
-#X obj 54 104 cnv 10 5 12 empty empty ATT 0 6 0 8 #dfdfdf #404040 0
+#N canvas 1512 -433 2560 1387 10;
+#X obj 102 257 bng 15 250 50 0 \$0-loadfile-s \$0-loadfile-r Load 17
+7 0 10 #fcfcfc #000000 #000000;
+#X obj 751 104 nbx 10 14 -1e+37 1e+37 0 0 empty \$0-file-dur File\\\ Duration(ms)
+1 -8 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 102 223 bng 15 250 50 0 \$0-play-s \$0-play-r Play 17 7 0 10
+#fcfcfc #000000 #000000;
+#X obj 147 223 bng 15 250 50 0 \$0-normalize-file empty Norm 17 7 0
+10 #fcfcfc #000000 #000000;
+#X obj 953 499 samplerate~;
+#X floatatom 938 829 5 0 0 0 - - - 0;
+#X obj 938 848 * 1000;
+#X obj 938 808 /;
+#X floatatom 953 519 5 0 0 0 - - - 0;
+#X text 991 520 <-- sample rate (samples per second), f 13;
+#X text 986 828 <-- array duration in seconds, f 12;
+#X obj 762 496 openpanel;
+#X obj 762 757 soundfiler;
+#X obj 762 467 trigger bang bang;
+#X obj 938 871 nbx 10 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0
+10 #fcfcfc #000000 #000000 0 256;
+#X obj 1602 747 r \$0-normalize-file;
+#X obj 1602 770 list append \$0;
+#X obj 762 557 list append \$0;
+#X obj 102 240 bng 15 250 50 0 \$0-stop-s \$0-stop-r Stop 17 7 0 10
+#fcfcfc #000000 #000000;
+#X obj 147 240 tgl 15 0 \$0-loop-s \$0-loop-r Loop 17 7 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 11 92 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc 0
 ;
-#X obj 82 104 cnv 10 5 12 empty empty DEC 0 6 0 8 #dfdfdf #404040 0
+#X obj 104 92 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc 0
 ;
-#X obj 111 104 cnv 10 5 12 empty empty SUS 0 6 0 8 #dfdfdf #404040
+#X obj 192 92 cnv 14 14 14 empty empty 2 4 8 0 12 #606060 #dcdcdc 0
+;
+#X obj 284 92 cnv 14 14 14 empty empty 3 4 8 0 12 #606060 #dcdcdc 0
+;
+#X msg 762 706 read -resize \$1 \$2-ch1 \$2-ch2;
+#X msg 1602 795 \; \$1-ch1 normalize \, \; \$1-ch2 normalize;
+#X obj 40 163 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #e0e0e0
+#404040 0;
+#X obj 953 461 loadbang;
+#X obj 1007 463 cnv 10 28 14 empty empty INIT 2 8 0 10 #fcc4c4 #404040
 0;
-#X obj 26 224 cnv 1 158 2 empty \$0-moduleNameBorder-r empty 1 7 0
+#X obj 795 526 s \$0-filename;
+#X obj 778 526 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcc4 #7c7c7c 0
+;
+#X msg 1777 791 label \$1;
+#X obj 1777 815 s \$0-filenameDisp;
+#X obj 1777 748 r \$0-filename;
+#X obj 1761 748 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c
+0;
+#X obj 1761 818 cnv 14 14 14 empty empty S 6 8 0 8 #dcdcdc #7c7c7c
+0;
+#X obj 1753 720 cnv 15 150 5 empty empty Filename_Display 0 12 0 14
+#dfdfdf #404040 0;
+#X text 856 815 array length in samp, f 12;
+#X obj 756 397 cnv 15 350 5 empty empty Audiofile_Loading 0 12 0 14
+#dfdfdf #404040 0;
+#X obj 80 238 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #e0c4fc
+#404040 0;
+#X obj 27 112 s \$0-play-r;
+#X obj 11 111 cnv 14 14 14 empty empty S 6 8 0 8 #e0c4fc #7c7c7c 0
+;
+#X obj 80 229 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #9c00fc
+#fcfcfc 0;
+#X obj 80 249 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #fc0400
+#404040 0;
+#X obj 762 429 r \$0-loadfile-s;
+#X obj 120 112 s \$0-stop-r;
+#X obj 80 258 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #fcc4c4
+#404040 0;
+#X obj 104 111 cnv 14 14 14 empty empty S 6 8 0 8 #fcc4c4 #7c7c7c 0
+;
+#X obj 27 92 inlet play;
+#X obj 120 92 inlet stop;
+#X obj 208 92 inlet loop;
+#X obj 300 92 inlet startPt;
+#X obj 208 113 s \$0-loop-r;
+#X obj 192 114 cnv 14 14 14 empty empty S 6 8 0 8 #00faff #7c7c7c 0
+;
+#X floatatom 1289 616 5 0 0 0 - - - 0;
+#X obj 1289 568 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 1289 639 == 0;
+#X obj 1380 534 symbol;
+#X text 1428 533 store filename;
+#X obj 1289 498 trigger bang symbol;
+#X text 1310 565 Check if audiofile is mono;
+#X text 1339 614 If array \$0-sf2 sums to 0 \, then the file was mono
+because a mono file only loads into \$0-sf1, f 14;
+#X obj 1289 733 sel 1;
+#X text 1333 719 If file is mono \, get the file name from [symbol]
+and load a duplicate into \$0-sf2 so that the file plays out of both
+speakers, f 32;
+#X obj 1383 793 list append \$0;
+#X obj 1383 844 soundfiler;
+#X obj 1289 472 r \$0-filename;
+#X obj 1374 474 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c
+0;
+#X obj 1280 399 cnv 15 300 5 empty empty Mono_File_Handling 0 12 0
+14 #dfdfdf #404040 0;
+#X obj 1289 592 array sum \$0-ch2;
+#X msg 1383 818 read -resize \$1 \$2-ch2;
+#N canvas 1440 126 746 547 getFileName 0;
+#X obj 271 82 list fromsymbol;
+#X obj 191 141 list length;
+#X obj 191 189 until;
+#X obj 191 219 f;
+#X obj 230 220 - 1;
+#X obj 233 275 list store;
+#X obj 191 164 t f f;
+#X msg 191 248 get \$1 1;
+#X obj 279 333 sel 47;
+#X obj 358 268 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X text 279 144 Get list size (total # char in file path);
+#X text 332 102 Store entire filepath as a list;
+#X text 25 209 loop through list indicies descending from the largest
+index (list_length) down, f 22;
+#X text 344 296 stop looping once a "/" is reached \, as this tells
+us we have read through the filename chars and have hit the name of
+the subdirectory the file is contained in, f 28;
+#X obj 252 445 list store 0;
+#X msg 252 421 prepend \$1;
+#X obj 252 469 list tosymbol;
+#X msg 176 416 get 1 -1;
+#X obj 279 357 t b b;
+#X obj 271 102 t l l b;
+#X obj 233 299 t b f f;
+#X obj 176 389 delay 1;
+#X obj 252 494 outlet filename;
+#X text 354 417 Add each character to the start of the list \, since
+we are reading the characters from the path starting at the end of
+the path until the "/" - this will put them in the correct order at
+this list;
+#X text 35 386 once we have reached "/" \, we have read the full filename
+\, and so we can output the text as a symbol, f 18;
+#X obj 256 16 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc 0
+;
+#X obj 237 494 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc
+0;
+#X obj 271 16 inlet getFilePath;
+#X connect 0 0 19 0;
+#X connect 1 0 6 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 7 0;
+#X connect 4 0 3 1;
+#X connect 5 0 20 0;
+#X connect 6 0 2 0;
+#X connect 6 1 3 1;
+#X connect 7 0 5 0;
+#X connect 8 0 18 0;
+#X connect 9 0 2 1;
+#X connect 14 0 16 0;
+#X connect 15 0 14 0;
+#X connect 16 0 22 0;
+#X connect 17 0 14 0;
+#X connect 18 0 21 0;
+#X connect 18 1 9 0;
+#X connect 19 0 1 0;
+#X connect 19 1 5 1;
+#X connect 19 2 14 1;
+#X connect 20 1 15 0;
+#X connect 20 2 8 0;
+#X connect 21 0 17 0;
+#X connect 27 0 0 0;
+#X restore 1777 768 pd getFileName;
+#X obj 1592 720 cnv 15 150 5 empty empty Normalize 0 12 0 14 #dfdfdf
+#404040 0;
+#X text 1062 870 array duration in ms, f 8;
+#X text 1038 870 <--;
+#X obj 12 400 cnv 15 700 5 empty empty File\\\ Playback 0 12 0 14 #dfdfdf
+#404040 0;
+#X obj 938 1070 outlet fileDuration;
+#X text 889 801 |;
+#X text 889 797 ^;
+#X obj 41 230 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #fce0c4
+#404040 0;
+#X obj 1134 932 cnv 14 14 14 empty empty S 6 8 0 8 #fce0c4 #7c7c7c
+0;
+#X obj 101 218 cnv 1 248 2 empty \$0-inletBorder-r empty 1 7 0 10 #404040
+#404040 0;
+#X obj 101 205 cnv 10 248 14 empty \$0-inletBar-r PLAY 0 6 0 8 #dfdfdf
+#404040 0;
+#X obj 133 205 cnv 10 5 12 empty empty STOP 0 6 0 8 #dfdfdf #404040
+0;
+#X obj 164 205 cnv 10 5 12 empty empty LOOP 0 6 0 8 #dfdfdf #404040
+0;
+#X obj 199 205 cnv 10 5 12 empty empty STA 0 6 0 8 #dfdfdf #404040
+0;
+#X obj 101 291 cnv 1 248 2 empty \$0-moduleNameBorder-r empty 1 7 0
 10 #404040 #404040 0;
-#X obj 26 225 cnv 12 158 14 empty \$0-moduleName-r ADSR\ Envelope\ Generator
+#X obj 101 292 cnv 12 248 14 empty \$0-moduleName-r Audio\ File\ Player\ -\ Small
 1 7 0 10 #dcdcdc #404040 0;
-#X obj 26 239 cnv 1 158 2 empty \$0-outletBorder-r empty 1 7 0 10 #404040
+#X obj 101 306 cnv 1 248 2 empty \$0-outletBorder-r empty 1 7 0 10
+#404040 #404040 0;
+#X obj 101 307 cnv 10 248 14 empty \$0-outletBar-r Ch1 0 6 0 8 #dfdfdf
 #404040 0;
-#X obj 26 240 cnv 10 158 14 empty \$0-outletBar-r ENV~ 0 6 0 8 #dfdfdf
-#404040 0;
-#X obj 167 240 cnv 10 5 12 empty empty ENV 0 6 0 8 #dfdfdf #404040
+#X obj 217 307 cnv 10 5 12 empty empty Ch2 0 6 0 8 #dfdfdf #404040
+0;
+#X obj 332 307 cnv 10 5 12 empty empty Dur 0 6 0 8 #dfdfdf #404040
 0;
 #X text 18 48 Travis Houldcroft || travishouldcroft.com;
-#X obj 1 2 cnv 15 700 40 empty \$0-abstrPatchTitleBar tdh.util.adsr.ui~
+#X obj 1 2 cnv 15 700 40 empty \$0-abstrPatchTitleBar tdh.util.audioFileSm~
 9 20 0 18 #3c50fc #a0a0a0 0;
 #X obj 1 75 cnv 2 700 2 empty \$0-abstrPatchSecDivider empty 9 20 0
 18 #a0a0a0 #202020 0;
-#N canvas 2342 25 770 847 abstr-init 0;
+#N canvas 474 107 572 741 abstr-init 0;
 #X obj 3 56 cnv 5 5 5 empty empty | 0 0 0 14 #fcfcfc #404040 0;
 #X obj 176 122 loadbang;
 #X obj 176 148 del 10;
@@ -118,7 +300,7 @@
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.adsr.ui~
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.audioFileSm~
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -421,7 +603,7 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.adsr.ui~
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.audioFileSm~
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -724,7 +906,7 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.adsr.ui~
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.audioFileSm~
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -1027,7 +1209,7 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.adsr.ui~
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.audioFileSm~
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -1330,7 +1512,7 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.adsr.ui~
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.audioFileSm~
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -1770,7 +1952,7 @@ bgclr 1 \, lblclr 12, f 123;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.adsr.ui~
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.audioFileSm~
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -2078,7 +2260,7 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.adsr.ui~
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.audioFileSm~
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -2393,393 +2575,611 @@ patch's main display name, f 20;
 #0400ff 0;
 #X msg 17 358 vis_size \$1 2;
 #X obj 217 400 s \$0-moduleName-r;
+#X msg 17 318 248;
 #X obj 21 542 s \$0-moduleName-r;
 #X msg 365 178 700;
+#X msg 21 522 label Audio\ File\ Player\ -\ Small;
+#X msg 176 177 symbol tdh.util.audioFileSm~;
 #X obj 18 600 loadbang;
+#X obj 18 681 print tdh.util.audioFileSm~;
+#X obj 18 661 list trim;
+#X msg 18 630 ** PLEASE NOTE ** This object requires the [range.hsl]
+object from the ELSE library.;
 #X text 82 316 EDIT HERE to set the GOP label width;
 #X obj 17 585 cnv 5 5 5 empty empty Module\\\ Specific\\\ Initializations\\\ ---------------------------------
 0 0 0 14 #ffffff #404040 0;
-#X msg 176 177 symbol tdh.util.adsr.ui~;
-#X msg 21 522 label ADSR\ Envelope\ Generator;
-#X msg 17 317 158;
 #X connect 1 0 2 0;
-#X connect 2 0 33 0;
-#X connect 2 0 29 0;
+#X connect 2 0 32 0;
+#X connect 2 0 30 0;
 #X connect 9 0 10 0;
-#X connect 10 0 34 0;
-#X connect 21 0 35 0;
+#X connect 10 0 31 0;
+#X connect 21 0 28 0;
 #X connect 22 0 15 0;
 #X connect 22 0 20 0;
 #X connect 22 0 27 0;
 #X connect 26 0 14 0;
 #X connect 26 0 16 0;
 #X connect 26 0 19 0;
-#X connect 29 0 3 1;
-#X connect 33 0 3 0;
-#X connect 34 0 28 0;
-#X connect 35 0 22 0;
-#X connect 35 0 26 0;
+#X connect 28 0 22 0;
+#X connect 28 0 26 0;
+#X connect 30 0 3 1;
+#X connect 31 0 29 0;
+#X connect 32 0 3 0;
+#X connect 35 0 34 0;
+#X connect 36 0 35 0;
 #X restore 610 50 pd abstr-init;
 #X obj 614 21 cnv 8 83 16 empty empty tdh.lib 14 8 0 14 #dfdfdf #131255
 0;
-#N canvas 727 144 713 522 reference 0;
+#N canvas 1440 144 712 471 reference 0;
 #X text 18 48 Travis Houldcroft || travishouldcroft.com;
-#X obj 1 2 cnv 15 700 40 empty \$0-abstrPatchTitleBar tdh.util.adsr.ui~
+#X obj 1 2 cnv 15 700 40 empty \$0-abstrPatchTitleBar tdh.util.audioFileSm~
 9 20 0 18 #3c50fc #a0a0a0 0;
-#X obj 1 362 cnv 2 700 3 empty \$0-abstrPatchSecLabelNotes Notes 20
+#X obj 1 312 cnv 2 700 3 empty \$0-abstrPatchSecLabelNotes Notes 20
 15 0 16 #a0a0a0 #202020 0;
-#X obj 1 485 cnv 2 700 2 empty \$0-abstrPatchSecDivider empty 9 20
+#X obj 1 435 cnv 2 700 2 empty \$0-abstrPatchSecDivider empty 9 20
 0 18 #a0a0a0 #202020 0;
-#X obj 1 422 cnv 2 700 3 empty \$0-abstrPatchSecLabelRevHist Revision\ History
+#X obj 1 372 cnv 2 700 3 empty \$0-abstrPatchSecLabelRevHist Revision\ History
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 1 262 cnv 2 700 3 empty \$0-abstrPatchSecLabelArgs Arguments
 20 15 0 16 #a0a0a0 #202020 0;
-#X text 24 453 21/09/30 - ver 0.1, f 21;
 #X obj 1 72 cnv 2 700 3 empty \$0-abstrPatchSecLabelInlets Inlets 20
 15 0 16 #a0a0a0 #202020 0;
 #X obj 1 172 cnv 2 700 3 empty \$0-abstrPatchSecLabelOutlets Outlets
 20 15 0 16 #a0a0a0 #202020 0;
-#X obj 125 121 cnv 14 18 14 empty empty 10 2 8 0 12 #606060 #dcdcdc
+#X obj 125 121 cnv 14 18 14 empty empty 3 2 8 0 12 #606060 #dcdcdc
 0;
 #X obj 125 81 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc 0
 ;
 #X obj 125 101 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
 0;
-#X text 227 271 Description;
-#X text 177 271 (type);
-#X text 227 291 Description;
-#X text 177 291 (type);
-#X text 227 311 Description;
-#X text 177 311 (type);
-#X text 197 80 Description;
-#X text 147 80 (type);
-#X text 197 100 Description;
-#X text 147 100 (type);
-#X text 197 120 Description;
-#X text 147 120 (type);
-#X text 197 180 Description;
-#X text 147 180 (type);
-#X text 197 200 Description;
-#X text 147 200 (type);
-#X text 197 220 Description;
-#X text 147 220 (type);
-#X text 147 271 \$1 -;
-#X text 147 291 \$2 -;
-#X text 147 311 \$3 -;
 #X obj 125 181 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
 0;
-#X obj 126 272 cnv 14 18 14 empty empty 1 2 8 0 12 #dfdfdf #606060
+#X obj 125 201 cnv 14 18 14 empty empty 2 2 8 0 12 #9f9f9f #ffffff
 0;
-#X obj 126 292 cnv 14 18 14 empty empty 2 2 8 0 12 #dfdfdf #606060
+#X obj 125 221 cnv 14 18 14 empty empty 3 2 8 0 12 #9f9f9f #ffffff
 0;
-#X obj 126 312 cnv 14 18 14 empty empty 3 2 8 0 12 #dfdfdf #606060
+#X text 123 271 None;
+#X obj 125 141 cnv 14 18 14 empty empty 4 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 125 201 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
-0;
-#X obj 125 221 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
-0;
+#X text 147 80 (bang);
+#X text 197 80 Start playback;
+#X text 147 100 (bang);
+#X text 197 100 Stop playback;
+#X text 147 120 (float);
+#X text 197 120 Toggle loop on/off (1/0);
+#X text 147 140 (float);
+#X text 197 140 Playback start in ms;
+#X text 147 181 (sig);
+#X text 197 180 Ch1 (left) output;
+#X text 147 200 (sig);
+#X text 197 200 Ch2 (right) output;
+#X text 147 220 (float);
+#X text 197 220 File duration;
+#X text 24 403 22/05/25 - ver 0.1, f 21;
 #X restore 526 50 pd reference;
-#X obj 473 458 cnv 14 14 14 empty empty R 6 8 0 8 #fce0c4 #7c7c7c 0
-;
-#X obj 473 435 cnv 14 14 14 empty empty R 6 8 0 8 #fcc4c4 #7c7c7c 0
-;
-#X obj 1252 420 cnv 14 14 14 empty empty R 6 8 0 8 #c4c4fc #7c7c7c
+#X obj 1952 418 cnv 14 14 14 empty empty R 6 8 0 8 #00fc04 #7c7c7c
 0;
-#X obj 473 504 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
+#X obj 88 930 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff 0
 ;
-#X obj 473 481 cnv 14 14 14 empty empty R 6 8 0 8 #fcfcc4 #7c7c7c 0
+#X obj 214 930 cnv 14 18 14 empty empty 2 2 8 0 12 #9f9f9f #ffffff
+0;
+#X obj 919 1070 cnv 14 18 14 empty empty 3 2 8 0 12 #9f9f9f #ffffff
+0;
+#X obj 750 124 nbx 8 10 -1e+37 1e+37 0 0 \$0-progNumbox-s \$0-progNumbox-r
+empty 1 -8 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 1826 498 tdh.lib/tdh.math.samp2ms~;
+#N canvas 1440 42 1068 790 numSlideSet 0;
+#X obj 102 520 cnv 14 14 14 empty empty R 6 8 0 8 #9c00fc #b8b8b8 0
 ;
-#X obj 534 184 cnv 14 14 14 empty empty S 6 8 0 8 #fce0c4 #7c7c7c 0
+#X obj 37 520 r \$0-value;
+#X obj 17 541 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc 0
 ;
-#X obj 423 184 cnv 14 14 14 empty empty S 6 8 0 8 #fcc4c4 #7c7c7c 0
+#X obj 37 541 outlet;
+#X text 26 48 Travis Houldcroft || travishouldcroft.com;
+#X obj 145 123 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 145 143 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
+0;
+#X text 142 250 220306 - ver 0.1, f 21;
+#X text 167 122 (float);
+#X text 167 142 (float);
+#X text 217 122 Value from the [slider];
+#X text 217 142 Value from the [numbox];
+#X text 167 179 (float);
+#X text 167 199 (float);
+#X text 217 199 Set value FOR [slider] FROM [numbox];
+#X text 167 219 (float);
+#X text 217 219 Set value FOR [numbox] FROM [slider];
+#X text 25 76 An abstraction to handle sliders and their number-box
+displays., f 64;
+#X obj 23 92 cnv 15 5 5 empty empty Number-boxes\\\ always\\\ output\\\ true\\\ working\\\ code\\\ value\\\ -\\\ sliders\\\ are\\\ alw*
+5 8 0 10 #ffffff #ff0400 0;
+#X obj 145 179 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
+0;
+#X obj 145 199 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
+0;
+#X obj 145 219 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
+0;
+#X text 219 179 Value output from [numbox];
+#X text 142 259 220504 - ver 0.2, f 21;
+#X obj 206 378 cnv 12 100 14 empty empty empty 0 8 0 10 #c7c6ff #404040
+0;
+#X obj 546 378 cnv 12 100 14 empty empty empty 0 8 0 10 #c4c4fc #404040
+0;
+#X msg 206 477 set \$1;
+#X msg 546 477 set \$1;
+#X obj 206 541 outlet toSlider;
+#X obj 546 541 outlet toNumBox;
+#X obj 546 306 inlet fromNumBox;
+#X obj 206 306 inlet fromSlider;
+#X obj 326 477 cnv 14 14 14 empty empty S 6 8 0 8 #9c00fc #b8b8b8 0
 ;
-#X obj 927 185 cnv 14 14 14 empty empty S 6 8 0 8 #c4c4fc #7c7c7c 0
+#X obj 261 477 s \$0-value;
+#X obj 569 327 s \$0-value;
+#X obj 634 327 cnv 14 14 14 empty empty S 6 8 0 8 #9c00fc #b8b8b8 0
 ;
-#X obj 297 124 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcfc #7c7c7c 0
+#X obj 186 306 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 526 306 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 186 541 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 526 541 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
+0;
+#N canvas 3216 96 450 300 slider2numbox 0;
+#X obj 37 17 inlet;
+#X obj 104 19 cnv 10 5 5 empty empty Conversion\\\ from\\\ Slider\\\ to\\\ Numbox
+0 6 0 14 #ffffff #0400ff 0;
+#X obj 37 258 outlet;
+#X text 78 129 <-- conversion code;
+#X obj 37 108 *;
+#X obj 91 60 r \$0-file-dur;
+#X connect 0 0 4 0;
+#X connect 4 0 2 0;
+#X connect 5 0 4 1;
+#X restore 206 377 pd slider2numbox;
+#N canvas 1805 482 450 300 numbox2slider 0;
+#X obj 62 37 inlet;
+#X obj 176 258 outlet;
+#X text 228 129 <-- conversion code;
+#X obj 142 32 cnv 5 5 5 empty empty Conversion\\\ from\\\ Numbox\\\ to\\\ Slider
+0 6 0 14 #ffffff #0400ff 0;
+#X obj 176 138 /;
+#X obj 191 103 v \$0-arrayInMs;
+#X obj 62 57 t f b, f 22;
+#X connect 0 0 6 0;
+#X connect 4 0 1 0;
+#X connect 5 0 4 1;
+#X connect 6 0 4 0;
+#X connect 6 1 5 0;
+#X restore 546 377 pd numbox2slider;
+#X obj 22 17 cnv 15 5 5 empty empty numSlideSet 5 8 0 24 #ffffff #606060
+0;
+#X obj 14 67 cnv 2 500 2 empty empty empty 20 12 0 14 #9f9f9f #404040
+0;
+#X obj 10 116 cnv 2 500 2 empty empty Inlets 20 12 0 14 #9f9f9f #606060
+0;
+#X obj 10 166 cnv 2 500 2 empty empty Outlets 20 12 0 14 #9f9f9f #606060
+0;
+#X obj 10 246 cnv 2 500 2 empty empty Rev.\\\ History 20 12 0 14 #9f9f9f
+#606060 0;
+#X obj 316 378 cnv 15 5 5 empty empty Convert\\\ from\\\ slider\\\ to\\\ number-box
+5 8 0 10 #ffffff #9c00ff 0;
+#X obj 652 376 cnv 15 5 5 empty empty Convert\\\ from\\\ number-box\\\ to\\\ slider
+5 8 0 10 #ffffff #9c00ff 0;
+#X connect 1 0 3 0;
+#X connect 26 0 29 0;
+#X connect 27 0 28 0;
+#X connect 30 0 34 0;
+#X connect 30 0 41 0;
+#X connect 31 0 40 0;
+#X connect 40 0 26 0;
+#X connect 40 0 33 0;
+#X connect 41 0 27 0;
+#X restore 1608 481 pd numSlideSet;
+#X f 17;
+#X obj 1608 436 r \$0-progSlider-s;
+#X obj 1707 456 r \$0-progNumbox-s;
+#X obj 1707 503 s \$0-progNumbox-r;
+#X obj 1657 523 s \$0-progSlider-r;
+#X obj 1591 399 cnv 15 500 5 empty empty Progress\\\ Bar 0 12 0 14
+#dfdfdf #404040 0;
+#X obj 1826 519 s \$0-progNumbox-r;
+#X obj 958 933 v \$0-arrayInMs;
+#X obj 1826 452 line;
+#X obj 1051 932 s \$0-file-dur;
+#X floatatom 1608 503 5 0 0 0 - - - 0;
+#X obj 1594 556 cnv 14 14 14 empty empty R 6 8 0 8 #f8fc00 #7c7c7c
+0;
+#X obj 1608 556 s \$0-playStart-s;
+#X text 1716 553 <- updates when play start is changed via user, f
+16;
+#X text 1857 447 This line is converted to ms and then is used to drive
+the change in time for the file progress bar and number field, f 29
 ;
-#X obj 789 183 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcc4 #7c7c7c 0
+#X obj 1826 418 r \$0-progressBarLine;
+#X text 1281 425 If a mono audio file is loaded \, the left channel
+is copied to the right channel, f 41;
+#X obj 9 400 cnv 2 2 500 empty empty empty 20 12 0 14 #dfdfdf #404040
+0;
+#X obj 754 396 cnv 2 2 500 empty empty empty 20 12 0 14 #dfdfdf #404040
+0;
+#X obj 1277 399 cnv 2 2 500 empty empty empty 20 12 0 14 #dfdfdf #404040
+0;
+#X obj 1588 400 cnv 2 2 500 empty empty empty 20 12 0 14 #dfdfdf #404040
+0;
+#X obj 1684 612 cnv 14 14 14 empty empty S 6 8 0 8 #fce0c4 #7c7c7c
+0;
+#X obj 1601 612 r \$0-file-dur;
+#X msg 1601 673 label \$1;
+#X obj 1601 694 s \$0-progressEnd;
+#X text 1596 593 Progress Bar labels;
+#X msg 1719 672 label \$1;
+#X obj 1719 693 s \$0-progressMid;
+#X obj 1719 630 * 0.5;
+#X obj 1719 652 makefilename %s;
+#X obj 1601 651 makefilename %s;
+#X obj 1944 519 cnv 14 14 14 empty empty S 6 8 0 8 #fcfcc4 #7c7c7c
+0;
+#X obj 1960 518 r \$0-playStart-r;
+#X text 2067 519 From inlet;
+#N canvas 787 50 653 564 fileWiper 0;
+#X obj 105 102 hsl 128 15 0 1 0 0 \$0-progSlider-s \$0-progSlider-r
+empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 101 118 cnv 8 1 1 empty empty 0 0 4 0 8 #ffffff #606060 0;
+#X obj 171 174 cnv 8 1 1 empty \$0-progressMid 1624.42 0 4 0 8 #ffffff
+#606060 0;
+#X obj 201 119 cnv 8 1 1 empty \$0-progressEnd 3248.83 0 4 0 8 #ffffff
+#606060 0;
+#X coords 0 -1 1 1 137 30 2 100 100;
+#X restore 210 223 pd fileWiper;
+#N canvas 1938 50 653 564 fileWiper 0;
+#X obj 102 103 cnv 8 1 1 empty \$0-filenameDisp bell.aiff 0 4 0 6 #ffffff
+#606060 0;
+#X coords 0 -1 1 1 137 15 2 100 100;
+#X restore 210 256 pd fileWiper;
+#X msg 2056 476 stop;
+#X obj 2040 449 cnv 14 14 14 empty empty R 6 8 0 8 #fc0400 #606060
+0;
+#X obj 2056 449 r \$0-stop-s;
+#X obj 714 706 cnv 14 14 14 empty empty R 6 8 0 8 #fc8000 #7c7c7c 0
 ;
-#X obj 663 185 cnv 14 14 14 empty empty S 6 8 0 8 #fcfcc4 #7c7c7c 0
+#X obj 283 114 cnv 14 14 14 empty empty R 6 8 0 8 #f8fc00 #7c7c7c 0
 ;
-#X obj 1241 439 cnv 14 14 14 empty empty R 6 8 0 8 #fc0400 #404040
-0;
-#X obj 15 161 cnv 4 6 6 empty empty ☐ -1 2 0 14 #ffc7c6 #9f9f9f 0
+#X obj 626 705 r \$0-playEnd-s;
+#X obj 623 796 r \$0-playStart-s;
+#X obj 623 817 v \$0-start;
+#X obj 626 727 v \$0-end;
+#X obj 624 772 v \$0-rate;
+#X obj 404 92 cnv 14 14 14 empty empty 3 4 8 0 12 #606060 #dcdcdc 0
 ;
-#X obj 15 211 cnv 4 6 6 empty empty ☐ -1 2 0 14 #c6ffc7 #9f9f9f 0
+#X obj 300 114 s \$0-playStart-s;
+#X obj 420 114 s \$0-playEnd-s;
+#X obj 404 115 cnv 14 14 14 empty empty R 6 8 0 8 #fc8000 #7c7c7c 0
 ;
-#X obj 15 194 cnv 4 6 6 empty empty ☐ -1 2 0 14 #feffc6 #9f9f9f 0
+#X obj 725 796 cnv 14 14 14 empty empty R 6 8 0 8 #f8fc00 #7c7c7c 0
 ;
-#X obj 15 177 cnv 4 6 6 empty empty ☐ -1 2 0 14 #ffe3c6 #9f9f9f 0
-;
-#X obj 194 124 cnv 4 6 6 empty empty ☐ -1 2 0 14 #c7c6ff #9f9f9f
+#X obj 109 686 line~;
+#X obj 431 595 *;
+#X obj 109 629 pack f f f;
+#X msg 109 654 \$1 \, \$2 \$3;
+#X obj 512 570 -;
+#X obj 431 497 t b b b, f 14;
+#X obj 431 560 / 100;
+#X obj 109 930 outlet~;
+#N canvas 2170 71 1015 659 loop-mechanism 0;
+#X obj 180 372 spigot, f 33;
+#X obj 180 232 ==;
+#X obj 145 200 snapshot~;
+#X obj 66 171 metro 5;
+#X msg 66 148 1;
+#X obj 180 280 sel 1;
+#X obj 180 256 change;
+#X obj 30 124 cnv 15 35 19 empty empty INIT 1 10 0 14 #fcc4c4 #404040
 0;
-#X obj 10 126 cnv 4 6 6 empty empty ☐ -1 2 0 14 #c6feff #9f9f9f 0
-;
-#X obj 193 141 cnv 4 6 6 empty empty ☐ -1 2 0 14 #ff0400 #9f9f9f
-0;
-#X obj 387 152 cnv 14 18 14 empty empty 1 2 8 0 12 #dfdfdf #606060
-0;
-#X obj 513 152 cnv 14 18 14 empty empty 2 2 8 0 12 #dfdfdf #606060
-0;
-#X obj 623 152 cnv 14 18 14 empty empty 3 2 8 0 12 #dfdfdf #606060
-0;
-#X obj 524 102 cnv 14 18 14 empty empty 3 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 292 104 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 410 102 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 335 685 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
-0;
-#X obj 508 685 cnv 14 18 14 empty empty 2 2 8 0 12 #9f9f9f #ffffff
-0;
-#X obj 209 604 vline~;
-#X obj 209 381 sel 1;
-#X obj 209 550 pack f f f;
-#X obj 209 523 f;
-#X obj 209 409 t b b b b;
-#X floatatom 54 156 5 0 0 0 ATT \$0-attack-r \$0-attack-s 0;
-#X floatatom 54 173 5 0 0 0 DEC \$0-decay-r \$0-decay-s 0;
-#X floatatom 54 190 5 0 0 0 SUS \$0-sustain-r \$0-sustain-s 0;
-#X floatatom 54 207 5 0 0 0 REL \$0-release-r \$0-release-s 0;
-#X obj 34 122 tgl 15 0 \$0-gate-s \$0-gate-r Gate 17 7 0 10 #fcfcfc
-#000000 #000000 0 1;
-#X obj 331 381 sel 0;
-#X msg 332 585 \$1 10 \, 0 \$2;
-#X obj 332 523 f;
-#X obj 332 550 pack f f;
-#X obj 332 409 t b b b;
-#X obj 332 102 inlet attack;
-#X obj 452 102 inlet decay;
-#X obj 566 102 inlet sustain;
-#X obj 692 102 inlet release;
-#X obj 209 685 outlet~ envelope_sig;
-#N canvas 164 190 450 300 snapshot 0;
-#X obj 120 111 snapshot~;
-#X obj 120 23 inlet~;
-#X obj 120 153 outlet;
-#X obj 186 82 metro 10;
-#X obj 186 38 loadbang;
-#X msg 186 60 1;
-#X connect 0 0 2 0;
-#X connect 1 0 0 0;
-#X connect 3 0 0 0;
-#X connect 4 0 5 0;
-#X connect 5 0 3 0;
-#X restore 382 653 pd snapshot;
-#X obj 382 685 outlet envelope_data;
-#X obj 226 103 inlet gate;
-#X obj 357 121 loadbang;
-#X obj 357 152 f \$1;
-#X text 397 376 '1' triggers envelope A \, D & S stages \, '0' ramps
-to S (if necessary) \, and proceeds with R stage., f 25;
-#X text -7 1056 _;
-#X text 1168 816 _;
-#X obj 209 273 t f f;
-#X obj 371 312 * 0.0078;
-#X obj 370 289 spigot;
-#X obj 483 152 f \$2;
-#X obj 593 152 f \$3;
-#X obj 723 152 f \$4;
-#X text 217 340 Convert MIDI vel to linear amp for sus, f 21;
-#X obj 82 122 tgl 15 0 \$0-useMidiVel-s \$0-useMidiVel-r MIDI\\\ Velocity
-17 7 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 209 303 > 0;
-#X obj 810 102 inlet useMidiVelocity;
-#X obj 833 152 f \$5;
-#X obj 143 104 cnv 10 5 12 empty empty REL 0 6 0 8 #dfdfdf #404040
-0;
-#X obj 165 104 cnv 10 5 12 empty empty M.OP 0 6 0 8 #dfdfdf #404040
-0;
-#X text 87 155 ms;
-#X text 87 172 ms;
-#X text 87 206 ms;
-#X text 87 189 lin. amp.;
-#X obj 226 124 s \$0-gate-r;
-#X obj 209 248 r \$0-gate-s;
-#X text 426 295 Divide by 127 to get a linear sustain range from 0.0-1.0
+#X obj 66 126 loadbang;
+#X text 226 239 If [line~] reaches the end of array (arrayInSamp) then
+send a bang \; if "Loop" is enabled \, it will re-trigger sample playback
 , f 20;
-#X obj 463 334 cnv 14 14 14 empty empty S 6 8 0 8 #fcfcc4 #7c7c7c 0
+#X obj 245 65 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc 0
 ;
-#X obj 791 288 savestate, f 42;
-#X obj 82 139 tgl 15 0 \$0-embed-s \$0-embed-r Embed 17 7 0 10 #fcfcfc
-#000000 #000000 0 1;
-#X obj 1040 318 t b b b b b b, f 16;
-#X obj 866 614 cnv 14 14 14 empty empty S 6 8 0 8 #fce0c4 #7c7c7c 0
+#X obj 360 64 cnv 14 14 14 empty empty 2 4 8 0 12 #606060 #dcdcdc 0
 ;
-#X obj 852 594 cnv 14 14 14 empty empty S 6 8 0 8 #fcc4c4 #7c7c7c 0
+#X obj 129 65 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc 0
 ;
-#X obj 971 673 cnv 14 14 14 empty empty S 6 8 0 8 #c4c4fc #7c7c7c 0
+#X obj 144 65 inlet~ fromLine;
+#X obj 260 65 inlet endSample;
+#X obj 375 64 inlet loopOnOff;
+#X obj 375 343 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 180 393 outlet playAgain;
+#X connect 0 0 17 0;
+#X connect 1 0 6 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 5 0 0 0;
+#X connect 6 0 5 0;
+#X connect 8 0 4 0;
+#X connect 13 0 2 0;
+#X connect 14 0 1 1;
+#X connect 15 0 16 0;
+#X connect 16 0 0 1;
+#X restore 347 725 pd loop-mechanism;
+#X obj 270 567 t f f;
+#X obj 235 930 outlet~;
+#X obj 109 725 tabread4~ \$0-ch1;
+#X obj 235 725 tabread4~ \$0-ch2;
+#X text 159 929 L;
+#X text 290 929 R;
+#X obj 109 427 r \$0-play-s;
+#X text 562 552 produces the duration (ms) of file playback based on
+the settings specifed in the GUI (playback start and playback end)
+, f 27;
+#X text 538 571 <--;
+#X text 115 565 playback start point sample#, f 14;
+#X text 313 564 playback end point sample#, f 9;
+#X text 178 629 The msg for [line~]:;
+#X text 178 645 [start_sample \, end_sample amount_of_time_ramp_from_start_to_end(
 ;
-#X obj 927 653 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcc4 #7c7c7c 0
+#X text 440 618 Rate% * length-of-playback-portion = how_fast_to_read_portion_in_ms
+, f 37;
+#X obj 430 702 cnv 14 14 14 empty empty R 6 8 0 8 #00f8fc #7c7c7c 0
 ;
-#X obj 904 633 cnv 14 14 14 empty empty S 6 8 0 8 #fcfcc4 #7c7c7c 0
+#X obj 419 750 cnv 14 14 14 empty empty S 6 8 0 8 #e0c4fc #7c7c7c 0
 ;
-#X obj 332 184 s \$0-attack-r;
-#X obj 452 184 s \$0-decay-r;
-#X obj 566 184 s \$0-sustain-r;
-#X obj 692 184 s \$0-release-r;
-#X obj 810 185 s \$0-useMidiVel-r;
-#X obj 351 435 f;
-#X obj 351 458 f;
-#X obj 351 481 f;
-#X obj 351 503 f;
-#X obj 378 435 r \$0-attack-s;
-#X obj 378 458 r \$0-decay-s;
-#X obj 378 481 r \$0-sustain-s;
-#X obj 378 504 r \$0-release-s;
-#X msg 209 577 0.9 \$1 \, \$3 \$2 \$1;
-#X obj 1164 361 cnv 14 14 14 empty empty R 6 8 0 8 #fce0c4 #7c7c7c
-0;
-#X obj 1152 341 cnv 14 14 14 empty empty R 6 8 0 8 #fcc4c4 #7c7c7c
-0;
-#X obj 1214 400 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c
-0;
-#X obj 1196 380 cnv 14 14 14 empty empty R 6 8 0 8 #fcfcc4 #7c7c7c
-0;
-#X obj 1040 341 f;
-#X obj 1058 361 f;
-#X obj 1077 380 f;
-#X obj 1095 400 f;
-#X obj 1067 341 r \$0-attack-s;
-#X obj 1085 361 r \$0-decay-s;
-#X obj 1104 380 r \$0-sustain-s;
-#X obj 1122 400 r \$0-release-s;
-#X obj 1040 463 pack f f f f f f;
-#X obj 403 264 r \$0-useMidiVel-s;
-#X obj 1114 420 f;
-#X obj 1141 420 r \$0-useMidiVel-s;
-#X obj 1133 439 f;
-#X obj 1160 439 r \$0-embed-s;
-#X obj 942 102 cnv 14 18 14 empty empty 6 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 650 100 cnv 14 18 14 empty empty 4 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 776 102 cnv 14 18 14 empty empty 5 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 754 152 cnv 14 18 14 empty empty 1 2 8 0 12 #dfdfdf #606060
-0;
-#X obj 863 152 cnv 14 18 14 empty empty 2 2 8 0 12 #dfdfdf #606060
-0;
-#X obj 904 370 cnv 14 14 14 empty empty S 6 8 0 8 #fc0400 #404040 0
+#X obj 347 750 s \$0-play-r;
+#X obj 181 428 cnv 14 14 14 empty empty R 6 8 0 8 #9c00fc #b8b8b8 0
 ;
-#X obj 761 548 spigot;
-#X obj 825 370 s \$0-embed-r;
-#X obj 791 322 list split 5;
-#X obj 825 346 list trim;
-#X obj 761 506 list store;
-#X obj 791 460 t b l;
-#X text 679 274 Embed parameter determines if saved parameters are
-actually loaded here, f 17;
-#X obj 761 485 delay 5;
-#X obj 794 528 r \$0-embed-s;
-#X obj 761 571 unpack f f f f f;
-#X text 681 340 Send the stored embed parameter \, then it gets reported
-to the code below to allow the other saved parameters to get reported
-, f 17;
-#X text 642 470 Delay the remaining paramters 5 msec to make sure the
-[spigot] has time to be opened if the EMBED paramter is set to "on"
-\, then the parameters get reported to the GUI, f 18;
-#X text 625 223 Embed Parameters, f 17;
-#X text 625 231 ------------------------------------------------------------------------------------------------------
-, f 112;
-#X obj 872 528 cnv 14 14 14 empty empty R 6 8 0 8 #fc0400 #404040 0
+#X text 457 719 This tracks the playback ramp \, and when the end of
+the ramp is reached \, it sends a play command to the play button GUI
+, f 20;
+#X obj 446 701 r \$0-loop-s;
+#X obj 574 471 cnv 14 14 14 empty empty S 6 8 0 8 #c4c4fc #7c7c7c 0
 ;
-#X text 205 230 -----------------------------------------------------------------
-, f 66;
-#X text 205 223 Envelope Code;
-#X obj 761 594 s \$0-attack-r;
-#X obj 784 614 s \$0-decay-r;
-#X obj 807 634 s \$0-sustain-r;
-#X obj 830 653 s \$0-release-r;
-#X obj 854 673 s \$0-useMidiVel-r;
-#X floatatom 262 164 5 0 0 0 - - - 0;
-#X obj 371 333 s \$0-sustain-r;
-#X connect 43 0 63 0;
-#X connect 43 0 62 0;
-#X connect 44 0 47 0;
-#X connect 45 0 113 0;
-#X connect 46 0 45 0;
-#X connect 47 0 46 0;
-#X connect 47 1 107 0;
-#X connect 47 2 106 0;
-#X connect 47 3 105 0;
-#X connect 53 0 57 0;
-#X connect 54 0 43 0;
-#X connect 55 0 56 0;
-#X connect 56 0 54 0;
-#X connect 57 0 55 0;
-#X connect 57 1 108 0;
-#X connect 57 2 107 0;
-#X connect 58 0 100 0;
-#X connect 59 0 101 0;
-#X connect 60 0 102 0;
-#X connect 61 0 103 0;
-#X connect 63 0 64 0;
-#X connect 65 0 88 0;
-#X connect 66 0 67 0;
-#X connect 66 0 74 0;
-#X connect 66 0 75 0;
-#X connect 66 0 76 0;
-#X connect 66 0 81 0;
-#X connect 67 0 100 0;
-#X connect 71 0 79 0;
-#X connect 71 1 73 0;
-#X connect 72 0 161 0;
-#X connect 73 0 72 0;
-#X connect 74 0 101 0;
-#X connect 75 0 102 0;
-#X connect 76 0 103 0;
-#X connect 79 0 53 0;
-#X connect 79 0 44 0;
-#X connect 80 0 104 0;
-#X connect 81 0 104 0;
-#X connect 89 0 71 0;
-#X connect 92 0 140 0;
-#X connect 92 1 94 0;
-#X connect 94 0 118 0;
-#X connect 94 1 119 0;
-#X connect 94 2 120 0;
-#X connect 94 3 121 0;
-#X connect 94 4 128 0;
-#X connect 94 5 130 0;
-#X connect 105 0 46 1;
-#X connect 106 0 45 1;
-#X connect 107 0 55 1;
-#X connect 107 0 45 2;
-#X connect 108 0 56 1;
-#X connect 109 0 105 1;
-#X connect 110 0 106 1;
-#X connect 111 0 107 1;
-#X connect 112 0 108 1;
-#X connect 113 0 43 0;
-#X connect 118 0 126 0;
-#X connect 119 0 126 1;
-#X connect 120 0 126 2;
-#X connect 121 0 126 3;
-#X connect 122 0 118 1;
-#X connect 123 0 119 1;
-#X connect 124 0 120 1;
-#X connect 125 0 121 1;
-#X connect 126 0 92 0;
-#X connect 127 0 73 1;
-#X connect 128 0 126 4;
-#X connect 129 0 128 1;
-#X connect 130 0 126 5;
-#X connect 131 0 130 1;
-#X connect 138 0 147 0;
-#X connect 140 0 143 0;
-#X connect 140 1 141 0;
-#X connect 141 0 139 0;
-#X connect 142 0 138 0;
-#X connect 143 0 145 0;
-#X connect 143 1 142 1;
-#X connect 145 0 142 0;
-#X connect 146 0 138 1;
-#X connect 147 0 155 0;
-#X connect 147 1 156 0;
-#X connect 147 2 157 0;
-#X connect 147 3 158 0;
-#X connect 147 4 159 0;
-#X connect 160 0 88 0;
-#X coords 0 -1 1 1 160 158 2 25 100;
+#X obj 295 686 cnv 14 14 14 empty empty S 6 8 0 8 #00fc04 #7c7c7c 0
+;
+#X obj 169 686 s \$0-progressBarLine;
+#X obj 109 450 t b b b b, f 56;
+#X obj 442 470 s \$0-resetProgressbar;
+#X obj 431 529 v \$0-rate;
+#X obj 512 529 v \$0-end;
+#X obj 594 529 v \$0-start;
+#X obj 109 492 v \$0-start;
+#X obj 220 492 v \$0-end;
+#X msg 34 656 stop;
+#X obj 17 630 cnv 14 14 14 empty empty R 6 8 0 8 #fc0400 #606060 0
+;
+#X obj 34 629 r \$0-stop-s;
+#X obj 234 205 cnv 10 5 12 empty empty END 0 6 0 8 #dfdfdf #404040
+0;
+#X obj 264 205 cnv 10 5 12 empty empty SPEED 0 6 0 8 #dfdfdf #404040
+0;
+#X obj 302 205 cnv 10 5 12 empty empty FILE 0 6 0 8 #dfdfdf #404040
+0;
+#X obj 420 92 inlet endPt;
+#X obj 642 95 inlet load;
+#X obj 534 94 inlet speed;
+#X obj 516 114 cnv 14 14 14 empty empty S 6 8 0 8 #0400fc #ffffff 0
+;
+#X obj 719 752 cnv 14 14 14 empty empty S 6 8 0 8 #0400fc #ffffff 0
+;
+#X obj 840 497 cnv 14 14 14 empty empty R 6 8 0 8 #fc0400 #404040 0
+;
+#X obj 855 496 r \$0-file;
+#X obj 642 114 s \$0-file;
+#X floatatom 102 274 5 0 0 1 %\ Speed \$0-playRate-r \$0-playRate-s
+0;
+#X obj 624 753 r \$0-playRate-s;
+#X obj 534 113 s \$0-playRate-r;
+#X obj 109 535 tdh.lib/tdh.math.ms2samp~;
+#X obj 270 535 tdh.lib/tdh.math.ms2samp~;
+#X text 624 665 Playback parameter values from inlets and GUI:, f
+18;
+#X obj 1107 33 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 952 971 v \$0-end;
+#X obj 1005 971 cnv 12 20 14 empty empty VAR 3 8 0 8 #ffc7c6 #7c7c7c
+0;
+#X obj 746 237 cnv 12 20 14 empty empty VAR 3 8 0 8 #ffe3c6 #7c7c7c
+0;
+#X obj 661 529 cnv 12 20 14 empty empty VAR 3 8 0 8 #feffc6 #7c7c7c
+0;
+#X obj 806 237 cnv 12 20 14 empty empty VAR 3 8 0 8 #c6ffc7 #7c7c7c
+0;
+#X obj 683 773 cnv 12 20 14 empty empty VAR 3 8 0 8 #c6feff #7c7c7c
+0;
+#X obj 866 237 cnv 12 20 14 empty empty VAR 3 8 0 8 #c7c6ff #ffffff
+0;
+#X obj 896 237 cnv 12 20 14 empty empty VAR 3 8 0 8 #e3c6ff #7c7c7c
+0;
+#X obj 927 237 cnv 12 20 14 empty empty VAR 3 8 0 8 #ff0400 #ffffff
+0;
+#X obj 956 237 cnv 12 20 14 empty empty VAR 3 8 0 8 #ff8300 #ffffff
+0;
+#X obj 986 237 cnv 12 20 14 empty empty VAR 3 8 0 8 #faff00 #7c7c7c
+0;
+#X obj 1016 237 cnv 12 20 14 empty empty VAR 3 8 0 8 #00ff04 #7c7c7c
+0;
+#X obj 1046 237 cnv 12 20 14 empty empty VAR 3 8 0 8 #00faff #7c7c7c
+0;
+#X obj 1076 237 cnv 12 20 14 empty empty VAR 3 8 0 8 #0400ff #ffffff
+0;
+#X obj 1106 237 cnv 12 20 14 empty empty VAR 3 8 0 8 #9c00ff #ffffff
+0;
+#X text 1029 969 File load defaults to playing the entire file (i.e.
+playback end is the file's duration), f 16;
+#X obj 680 729 cnv 12 20 14 empty empty VAR 3 8 0 8 #ffc7c6 #7c7c7c
+0;
+#X obj 565 530 cnv 12 20 14 empty empty VAR 3 8 0 8 #ffc7c6 #7c7c7c
+0;
+#X obj 689 818 cnv 12 20 14 empty empty VAR 3 8 0 8 #feffc6 #7c7c7c
+0;
+#X obj 147 257 tgl 15 0 \$0-raw-s \$0-raw-r Raw 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 987 570 r \$0-raw-s;
+#X obj 762 676 spigot;
+#X obj 981 676 spigot;
+#X obj 987 595 sel 0 1;
+#X msg 1054 644 1, f 1;
+#X msg 1081 644 0, f 1;
+#X msg 987 644 1, f 1;
+#X msg 1014 644 0, f 1;
+#X text 965 643 No;
+#X text 1095 643 Yes;
+#X text 1096 580 Are we loading RAW data file? (RAW [tgl] setting)
+, f 13;
+#X msg 981 705 read -raw 128 2 3 n -resize \$1 \$2-ch1 \$2-ch2, f
+19;
+#X obj 987 619 t b b;
+#X obj 1054 619 t b b;
+#X obj 971 571 cnv 14 14 14 empty empty S 6 8 0 8 #c6feff #7c7c7c 0
+;
+#X msg 1080 448 vis 1;
+#X obj 1080 551 send;
+#X obj 1080 469 t a b;
+#X obj 1107 493 f \$0;
+#X msg 1109 515 symbol \$1-arrays, f 9;
+#N canvas 2061 134 222 334 audioFile 0;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-ch1 155944 float 2;
+#X coords 0 1 155944 -1 200 140 1 0 0;
+#X restore 12 14 graph;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-ch2 155944 float 2;
+#X coords 0 1 155944 -1 200 140 1 0 0;
+#X restore 13 167 graph;
+#X obj 89 311 namecanvas \$0-arrays;
+#X restore 961 318 pd audioFile;
+#X obj 1080 423 r \$0-showFile-s;
+#X obj 210 274 bng 15 250 50 0 \$0-showFile-s \$0-showFile-r Waveform
+17 7 0 10 #ffffff #000000 #000000;
+#X obj 490 530 cnv 12 20 14 empty empty VAR 3 8 0 8 #c6feff #7c7c7c
+0;
+#X obj 333 205 cnv 10 5 12 empty empty RAW 0 6 0 8 #dfdfdf #404040
+0;
+#X obj 883 87 inlet rawFlag;
+#X obj 883 108 s \$0-raw-r;
+#X obj 556 140 loadbang;
+#X msg 556 161 100;
+#X connect 4 0 8 0;
+#X connect 5 0 6 0;
+#X connect 6 0 14 0;
+#X connect 7 0 5 0;
+#X connect 8 0 7 1;
+#X connect 11 0 17 0;
+#X connect 11 0 29 0;
+#X connect 12 0 7 0;
+#X connect 13 0 11 0;
+#X connect 13 1 4 0;
+#X connect 14 0 76 0;
+#X connect 14 0 111 0;
+#X connect 14 0 113 0;
+#X connect 14 0 215 0;
+#X connect 15 0 16 0;
+#X connect 16 0 25 0;
+#X connect 17 0 237 0;
+#X connect 17 0 236 0;
+#X connect 24 0 12 0;
+#X connect 27 0 4 0;
+#X connect 31 0 32 0;
+#X connect 33 0 71 0;
+#X connect 44 0 13 0;
+#X connect 48 0 40 0;
+#X connect 49 0 45 0;
+#X connect 50 0 52 0;
+#X connect 51 0 151 0;
+#X connect 54 0 56 0;
+#X connect 55 0 69 0;
+#X connect 56 0 62 0;
+#X connect 57 0 64 0;
+#X connect 59 0 55 0;
+#X connect 59 1 57 1;
+#X connect 62 0 57 0;
+#X connect 64 0 70 0;
+#X connect 66 0 59 0;
+#X connect 69 0 54 0;
+#X connect 70 0 65 0;
+#X connect 71 0 31 0;
+#X connect 103 0 110 0;
+#X connect 104 0 114 0;
+#X connect 104 1 108 0;
+#X connect 104 2 107 0;
+#X connect 105 0 104 0;
+#X connect 106 0 104 1;
+#X connect 112 0 103 0;
+#X connect 119 0 112 0;
+#X connect 126 0 132 0;
+#X connect 126 0 134 0;
+#X connect 127 0 128 0;
+#X connect 130 0 131 0;
+#X connect 132 0 133 0;
+#X connect 133 0 130 0;
+#X connect 134 0 127 0;
+#X connect 136 0 110 0;
+#X connect 140 0 112 0;
+#X connect 142 0 140 0;
+#X connect 145 0 148 0;
+#X connect 146 0 147 0;
+#X connect 155 0 166 0;
+#X connect 155 0 167 0;
+#X connect 155 0 163 0;
+#X connect 156 0 157 2;
+#X connect 157 0 158 0;
+#X connect 158 0 155 0;
+#X connect 158 0 186 0;
+#X connect 159 0 156 1;
+#X connect 160 0 189 0;
+#X connect 160 1 190 0;
+#X connect 160 2 191 0;
+#X connect 161 0 156 0;
+#X connect 163 0 180 0;
+#X connect 164 0 157 1;
+#X connect 164 1 163 1;
+#X connect 166 0 162 0;
+#X connect 167 0 165 0;
+#X connect 170 0 187 0;
+#X connect 183 0 163 2;
+#X connect 187 0 192 0;
+#X connect 187 1 193 0;
+#X connect 187 2 160 0;
+#X connect 187 3 188 0;
+#X connect 189 0 161 0;
+#X connect 190 0 159 0;
+#X connect 191 0 159 1;
+#X connect 192 0 211 0;
+#X connect 193 0 212 0;
+#X connect 194 0 155 0;
+#X connect 196 0 194 0;
+#X connect 200 0 152 0;
+#X connect 201 0 207 0;
+#X connect 202 0 210 0;
+#X connect 206 0 29 0;
+#X connect 206 0 17 0;
+#X connect 209 0 149 0;
+#X connect 211 0 157 0;
+#X connect 212 0 164 0;
+#X connect 235 0 238 0;
+#X connect 236 0 24 0;
+#X connect 237 0 246 0;
+#X connect 238 0 247 0;
+#X connect 238 1 248 0;
+#X connect 239 0 237 1;
+#X connect 240 0 236 1;
+#X connect 241 0 236 1;
+#X connect 242 0 237 1;
+#X connect 246 0 12 0;
+#X connect 247 0 241 0;
+#X connect 247 1 242 0;
+#X connect 248 0 239 0;
+#X connect 248 1 240 0;
+#X connect 250 0 252 0;
+#X connect 252 0 251 0;
+#X connect 252 1 253 0;
+#X connect 253 0 254 0;
+#X connect 254 0 251 1;
+#X connect 256 0 250 0;
+#X connect 260 0 261 0;
+#X connect 262 0 263 0;
+#X connect 263 0 210 0;
+#X coords 0 -1 1 1 250 125 2 100 200;

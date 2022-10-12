@@ -1,26 +1,58 @@
-#N canvas 1512 25 800 847 10;
-#X obj 26 117 cnv 1 158 2 empty \$0-inletBorder-r empty 1 7 0 10 #404040
-#404040 0;
-#X obj 26 104 cnv 10 158 14 empty \$0-inletBar-r GATE 0 6 0 8 #dfdfdf
-#404040 0;
-#X obj 54 104 cnv 10 5 12 empty empty ATT 0 6 0 8 #dfdfdf #404040 0
+#N canvas 1901 37 705 635 10;
+#X obj 72 138 hsl 85 15 0 1 0 0 \$0-dwSlider-s \$0-dwSlider-r Balance
+18 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 50 444 *~;
+#X obj 166 380 - 1;
+#X obj 166 402 * -1;
+#X obj 248 444 *~;
+#X text 76 443 Dry Sig;
+#X text 274 443 Wet Sig;
+#X obj 437 232 inlet dry_wet_ctrl;
+#X obj 151 444 *~;
+#X obj 49 230 inlet~ dry1;
+#X obj 150 230 inlet~ dry2;
+#X obj 338 444 *~;
+#X obj 248 230 inlet~ wet1;
+#X obj 338 230 inlet~ wet2;
+#X obj 50 575 outlet~ out1;
+#X obj 151 575 outlet~ out2;
+#X floatatom 94 158 5 0 1 1 0-1 \$0-dwNumbox-r \$0-dwNumbox-s 0;
+#X msg 222 122 set \$1;
+#X text 1 603 _;
+#X text 33 137 Sig1;
+#X text 164 136 Sig2;
+#X obj 33 230 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc 0
 ;
-#X obj 82 104 cnv 10 5 12 empty empty DEC 0 6 0 8 #dfdfdf #404040 0
-;
-#X obj 111 104 cnv 10 5 12 empty empty SUS 0 6 0 8 #dfdfdf #404040
+#X obj 134 230 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc
 0;
-#X obj 26 224 cnv 1 158 2 empty \$0-moduleNameBorder-r empty 1 7 0
+#X obj 232 230 cnv 14 14 14 empty empty 2 4 8 0 12 #606060 #dcdcdc
+0;
+#X obj 322 230 cnv 14 14 14 empty empty 3 4 8 0 12 #606060 #dcdcdc
+0;
+#X obj 422 232 cnv 14 14 14 empty empty 4 4 8 0 12 #606060 #dcdcdc
+0;
+#X obj 26 117 cnv 1 172 2 empty \$0-inletBorder-r empty 1 7 0 10 #404040
+#404040 0;
+#X obj 26 104 cnv 10 172 14 empty \$0-inletBar-r In1-L 0 6 0 8 #dfdfdf
+#404040 0;
+#X obj 65 104 cnv 10 5 12 empty empty In2-R 0 6 0 8 #dfdfdf #404040
+0;
+#X obj 107 104 cnv 10 5 12 empty empty In2-L 0 6 0 8 #dfdfdf #404040
+0;
+#X obj 149 104 cnv 10 5 12 empty empty In2-R 0 6 0 8 #dfdfdf #404040
+0;
+#X obj 26 181 cnv 1 172 2 empty \$0-moduleNameBorder-r empty 1 7 0
 10 #404040 #404040 0;
-#X obj 26 225 cnv 12 158 14 empty \$0-moduleName-r ADSR\ Envelope\ Generator
+#X obj 26 182 cnv 12 172 14 empty \$0-moduleName-r 2-Signal\ X-Fade
 1 7 0 10 #dcdcdc #404040 0;
-#X obj 26 239 cnv 1 158 2 empty \$0-outletBorder-r empty 1 7 0 10 #404040
+#X obj 26 196 cnv 1 172 2 empty \$0-outletBorder-r empty 1 7 0 10 #404040
 #404040 0;
-#X obj 26 240 cnv 10 158 14 empty \$0-outletBar-r ENV~ 0 6 0 8 #dfdfdf
+#X obj 26 197 cnv 10 172 14 empty \$0-outletBar-r Out-L 0 6 0 8 #dfdfdf
 #404040 0;
-#X obj 167 240 cnv 10 5 12 empty empty ENV 0 6 0 8 #dfdfdf #404040
+#X obj 173 197 cnv 10 5 12 empty empty Out-R 0 6 0 8 #dfdfdf #404040
 0;
 #X text 18 48 Travis Houldcroft || travishouldcroft.com;
-#X obj 1 2 cnv 15 700 40 empty \$0-abstrPatchTitleBar tdh.util.adsr.ui~
+#X obj 1 2 cnv 15 700 40 empty \$0-abstrPatchTitleBar tdh.util.2sigXfade.UI
 9 20 0 18 #3c50fc #a0a0a0 0;
 #X obj 1 75 cnv 2 700 2 empty \$0-abstrPatchSecDivider empty 9 20 0
 18 #a0a0a0 #202020 0;
@@ -118,7 +150,7 @@
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.adsr.ui~
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.2sigXfade.UI
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -421,7 +453,7 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.adsr.ui~
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.2sigXfade.UI
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -724,7 +756,7 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.adsr.ui~
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.2sigXfade.UI
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -1027,7 +1059,7 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.adsr.ui~
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.2sigXfade.UI
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -1330,7 +1362,7 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.adsr.ui~
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.2sigXfade.UI
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -1770,7 +1802,7 @@ bgclr 1 \, lblclr 12, f 123;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.adsr.ui~
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.2sigXfade.UI
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -2078,7 +2110,7 @@ and pasted for easy initializing formatting)., f 89;
 #X text 0 18 Canvas Name;
 #X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.adsr.ui~
+#X obj 738 322 cnv 2 700 40 empty \$0-test_canvas tdh.util.2sigXfade.UI
 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
@@ -2399,15 +2431,15 @@ patch's main display name, f 20;
 #X text 82 316 EDIT HERE to set the GOP label width;
 #X obj 17 585 cnv 5 5 5 empty empty Module\\\ Specific\\\ Initializations\\\ ---------------------------------
 0 0 0 14 #ffffff #404040 0;
-#X msg 176 177 symbol tdh.util.adsr.ui~;
-#X msg 21 522 label ADSR\ Envelope\ Generator;
-#X msg 17 317 158;
+#X msg 17 318 172;
+#X msg 21 522 label 2-Signal\ X-Fade;
+#X msg 176 177 symbol tdh.util.2sigXfade.UI;
 #X connect 1 0 2 0;
-#X connect 2 0 33 0;
+#X connect 2 0 35 0;
 #X connect 2 0 29 0;
 #X connect 9 0 10 0;
 #X connect 10 0 34 0;
-#X connect 21 0 35 0;
+#X connect 21 0 33 0;
 #X connect 22 0 15 0;
 #X connect 22 0 20 0;
 #X connect 22 0 27 0;
@@ -2415,16 +2447,16 @@ patch's main display name, f 20;
 #X connect 26 0 16 0;
 #X connect 26 0 19 0;
 #X connect 29 0 3 1;
-#X connect 33 0 3 0;
+#X connect 33 0 22 0;
+#X connect 33 0 26 0;
 #X connect 34 0 28 0;
-#X connect 35 0 22 0;
-#X connect 35 0 26 0;
+#X connect 35 0 3 0;
 #X restore 610 50 pd abstr-init;
 #X obj 614 21 cnv 8 83 16 empty empty tdh.lib 14 8 0 14 #dfdfdf #131255
 0;
 #N canvas 727 144 713 522 reference 0;
 #X text 18 48 Travis Houldcroft || travishouldcroft.com;
-#X obj 1 2 cnv 15 700 40 empty \$0-abstrPatchTitleBar tdh.util.adsr.ui~
+#X obj 1 2 cnv 15 700 40 empty \$0-abstrPatchTitleBar tdh.util.2sigXfade.UI
 9 20 0 18 #3c50fc #a0a0a0 0;
 #X obj 1 362 cnv 2 700 3 empty \$0-abstrPatchSecLabelNotes Notes 20
 15 0 16 #a0a0a0 #202020 0;
@@ -2479,307 +2511,48 @@ patch's main display name, f 20;
 #X obj 125 221 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
 0;
 #X restore 526 50 pd reference;
-#X obj 473 458 cnv 14 14 14 empty empty R 6 8 0 8 #fce0c4 #7c7c7c 0
+#X obj 31 576 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff 0
 ;
-#X obj 473 435 cnv 14 14 14 empty empty R 6 8 0 8 #fcc4c4 #7c7c7c 0
-;
-#X obj 1252 420 cnv 14 14 14 empty empty R 6 8 0 8 #c4c4fc #7c7c7c
+#X obj 131 575 cnv 14 18 14 empty empty 0 2 8 0 12 #9f9f9f #ffffff
 0;
-#X obj 473 504 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
-;
-#X obj 473 481 cnv 14 14 14 empty empty R 6 8 0 8 #fcfcc4 #7c7c7c 0
-;
-#X obj 534 184 cnv 14 14 14 empty empty S 6 8 0 8 #fce0c4 #7c7c7c 0
-;
-#X obj 423 184 cnv 14 14 14 empty empty S 6 8 0 8 #fcc4c4 #7c7c7c 0
-;
-#X obj 927 185 cnv 14 14 14 empty empty S 6 8 0 8 #c4c4fc #7c7c7c 0
-;
-#X obj 297 124 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcfc #7c7c7c 0
-;
-#X obj 789 183 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcc4 #7c7c7c 0
-;
-#X obj 663 185 cnv 14 14 14 empty empty S 6 8 0 8 #fcfcc4 #7c7c7c 0
-;
-#X obj 1241 439 cnv 14 14 14 empty empty R 6 8 0 8 #fc0400 #404040
+#X obj 50 311 r~ \$0-dry1;
+#X obj 49 251 s~ \$0-dry1;
+#X obj 150 251 s~ \$0-dry2;
+#X obj 248 251 s~ \$0-wet1;
+#X obj 338 251 s~ \$0-wet2;
+#X obj 151 311 r~ \$0-dry2;
+#X obj 248 311 r~ \$0-wet1;
+#X obj 338 311 r~ \$0-wet2;
+#X obj 437 253 s \$0-dwSlider-r;
+#X obj 353 350 r \$0-dwNumbox-s;
+#X obj 222 101 r \$0-dwNumbox-s;
+#X obj 222 143 s \$0-dwSlider-r;
+#X obj 339 100 r \$0-dwSlider-s;
+#X obj 339 141 s \$0-dwNumbox-r;
+#X obj 353 371 print;
+#X obj 184 104 cnv 10 5 12 empty empty Amt 0 6 0 8 #dfdfdf #404040
 0;
-#X obj 15 161 cnv 4 6 6 empty empty ☐ -1 2 0 14 #ffc7c6 #9f9f9f 0
-;
-#X obj 15 211 cnv 4 6 6 empty empty ☐ -1 2 0 14 #c6ffc7 #9f9f9f 0
-;
-#X obj 15 194 cnv 4 6 6 empty empty ☐ -1 2 0 14 #feffc6 #9f9f9f 0
-;
-#X obj 15 177 cnv 4 6 6 empty empty ☐ -1 2 0 14 #ffe3c6 #9f9f9f 0
-;
-#X obj 194 124 cnv 4 6 6 empty empty ☐ -1 2 0 14 #c7c6ff #9f9f9f
-0;
-#X obj 10 126 cnv 4 6 6 empty empty ☐ -1 2 0 14 #c6feff #9f9f9f 0
-;
-#X obj 193 141 cnv 4 6 6 empty empty ☐ -1 2 0 14 #ff0400 #9f9f9f
-0;
-#X obj 387 152 cnv 14 18 14 empty empty 1 2 8 0 12 #dfdfdf #606060
-0;
-#X obj 513 152 cnv 14 18 14 empty empty 2 2 8 0 12 #dfdfdf #606060
-0;
-#X obj 623 152 cnv 14 18 14 empty empty 3 2 8 0 12 #dfdfdf #606060
-0;
-#X obj 524 102 cnv 14 18 14 empty empty 3 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 292 104 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 410 102 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 335 685 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
-0;
-#X obj 508 685 cnv 14 18 14 empty empty 2 2 8 0 12 #9f9f9f #ffffff
-0;
-#X obj 209 604 vline~;
-#X obj 209 381 sel 1;
-#X obj 209 550 pack f f f;
-#X obj 209 523 f;
-#X obj 209 409 t b b b b;
-#X floatatom 54 156 5 0 0 0 ATT \$0-attack-r \$0-attack-s 0;
-#X floatatom 54 173 5 0 0 0 DEC \$0-decay-r \$0-decay-s 0;
-#X floatatom 54 190 5 0 0 0 SUS \$0-sustain-r \$0-sustain-s 0;
-#X floatatom 54 207 5 0 0 0 REL \$0-release-r \$0-release-s 0;
-#X obj 34 122 tgl 15 0 \$0-gate-s \$0-gate-r Gate 17 7 0 10 #fcfcfc
-#000000 #000000 0 1;
-#X obj 331 381 sel 0;
-#X msg 332 585 \$1 10 \, 0 \$2;
-#X obj 332 523 f;
-#X obj 332 550 pack f f;
-#X obj 332 409 t b b b;
-#X obj 332 102 inlet attack;
-#X obj 452 102 inlet decay;
-#X obj 566 102 inlet sustain;
-#X obj 692 102 inlet release;
-#X obj 209 685 outlet~ envelope_sig;
-#N canvas 164 190 450 300 snapshot 0;
-#X obj 120 111 snapshot~;
-#X obj 120 23 inlet~;
-#X obj 120 153 outlet;
-#X obj 186 82 metro 10;
-#X obj 186 38 loadbang;
-#X msg 186 60 1;
-#X connect 0 0 2 0;
-#X connect 1 0 0 0;
-#X connect 3 0 0 0;
-#X connect 4 0 5 0;
-#X connect 5 0 3 0;
-#X restore 382 653 pd snapshot;
-#X obj 382 685 outlet envelope_data;
-#X obj 226 103 inlet gate;
-#X obj 357 121 loadbang;
-#X obj 357 152 f \$1;
-#X text 397 376 '1' triggers envelope A \, D & S stages \, '0' ramps
-to S (if necessary) \, and proceeds with R stage., f 25;
-#X text -7 1056 _;
-#X text 1168 816 _;
-#X obj 209 273 t f f;
-#X obj 371 312 * 0.0078;
-#X obj 370 289 spigot;
-#X obj 483 152 f \$2;
-#X obj 593 152 f \$3;
-#X obj 723 152 f \$4;
-#X text 217 340 Convert MIDI vel to linear amp for sus, f 21;
-#X obj 82 122 tgl 15 0 \$0-useMidiVel-s \$0-useMidiVel-r MIDI\\\ Velocity
-17 7 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 209 303 > 0;
-#X obj 810 102 inlet useMidiVelocity;
-#X obj 833 152 f \$5;
-#X obj 143 104 cnv 10 5 12 empty empty REL 0 6 0 8 #dfdfdf #404040
-0;
-#X obj 165 104 cnv 10 5 12 empty empty M.OP 0 6 0 8 #dfdfdf #404040
-0;
-#X text 87 155 ms;
-#X text 87 172 ms;
-#X text 87 206 ms;
-#X text 87 189 lin. amp.;
-#X obj 226 124 s \$0-gate-r;
-#X obj 209 248 r \$0-gate-s;
-#X text 426 295 Divide by 127 to get a linear sustain range from 0.0-1.0
-, f 20;
-#X obj 463 334 cnv 14 14 14 empty empty S 6 8 0 8 #fcfcc4 #7c7c7c 0
-;
-#X obj 791 288 savestate, f 42;
-#X obj 82 139 tgl 15 0 \$0-embed-s \$0-embed-r Embed 17 7 0 10 #fcfcfc
-#000000 #000000 0 1;
-#X obj 1040 318 t b b b b b b, f 16;
-#X obj 866 614 cnv 14 14 14 empty empty S 6 8 0 8 #fce0c4 #7c7c7c 0
-;
-#X obj 852 594 cnv 14 14 14 empty empty S 6 8 0 8 #fcc4c4 #7c7c7c 0
-;
-#X obj 971 673 cnv 14 14 14 empty empty S 6 8 0 8 #c4c4fc #7c7c7c 0
-;
-#X obj 927 653 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcc4 #7c7c7c 0
-;
-#X obj 904 633 cnv 14 14 14 empty empty S 6 8 0 8 #fcfcc4 #7c7c7c 0
-;
-#X obj 332 184 s \$0-attack-r;
-#X obj 452 184 s \$0-decay-r;
-#X obj 566 184 s \$0-sustain-r;
-#X obj 692 184 s \$0-release-r;
-#X obj 810 185 s \$0-useMidiVel-r;
-#X obj 351 435 f;
-#X obj 351 458 f;
-#X obj 351 481 f;
-#X obj 351 503 f;
-#X obj 378 435 r \$0-attack-s;
-#X obj 378 458 r \$0-decay-s;
-#X obj 378 481 r \$0-sustain-s;
-#X obj 378 504 r \$0-release-s;
-#X msg 209 577 0.9 \$1 \, \$3 \$2 \$1;
-#X obj 1164 361 cnv 14 14 14 empty empty R 6 8 0 8 #fce0c4 #7c7c7c
-0;
-#X obj 1152 341 cnv 14 14 14 empty empty R 6 8 0 8 #fcc4c4 #7c7c7c
-0;
-#X obj 1214 400 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c
-0;
-#X obj 1196 380 cnv 14 14 14 empty empty R 6 8 0 8 #fcfcc4 #7c7c7c
-0;
-#X obj 1040 341 f;
-#X obj 1058 361 f;
-#X obj 1077 380 f;
-#X obj 1095 400 f;
-#X obj 1067 341 r \$0-attack-s;
-#X obj 1085 361 r \$0-decay-s;
-#X obj 1104 380 r \$0-sustain-s;
-#X obj 1122 400 r \$0-release-s;
-#X obj 1040 463 pack f f f f f f;
-#X obj 403 264 r \$0-useMidiVel-s;
-#X obj 1114 420 f;
-#X obj 1141 420 r \$0-useMidiVel-s;
-#X obj 1133 439 f;
-#X obj 1160 439 r \$0-embed-s;
-#X obj 942 102 cnv 14 18 14 empty empty 6 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 650 100 cnv 14 18 14 empty empty 4 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 776 102 cnv 14 18 14 empty empty 5 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 754 152 cnv 14 18 14 empty empty 1 2 8 0 12 #dfdfdf #606060
-0;
-#X obj 863 152 cnv 14 18 14 empty empty 2 2 8 0 12 #dfdfdf #606060
-0;
-#X obj 904 370 cnv 14 14 14 empty empty S 6 8 0 8 #fc0400 #404040 0
-;
-#X obj 761 548 spigot;
-#X obj 825 370 s \$0-embed-r;
-#X obj 791 322 list split 5;
-#X obj 825 346 list trim;
-#X obj 761 506 list store;
-#X obj 791 460 t b l;
-#X text 679 274 Embed parameter determines if saved parameters are
-actually loaded here, f 17;
-#X obj 761 485 delay 5;
-#X obj 794 528 r \$0-embed-s;
-#X obj 761 571 unpack f f f f f;
-#X text 681 340 Send the stored embed parameter \, then it gets reported
-to the code below to allow the other saved parameters to get reported
-, f 17;
-#X text 642 470 Delay the remaining paramters 5 msec to make sure the
-[spigot] has time to be opened if the EMBED paramter is set to "on"
-\, then the parameters get reported to the GUI, f 18;
-#X text 625 223 Embed Parameters, f 17;
-#X text 625 231 ------------------------------------------------------------------------------------------------------
-, f 112;
-#X obj 872 528 cnv 14 14 14 empty empty R 6 8 0 8 #fc0400 #404040 0
-;
-#X text 205 230 -----------------------------------------------------------------
-, f 66;
-#X text 205 223 Envelope Code;
-#X obj 761 594 s \$0-attack-r;
-#X obj 784 614 s \$0-decay-r;
-#X obj 807 634 s \$0-sustain-r;
-#X obj 830 653 s \$0-release-r;
-#X obj 854 673 s \$0-useMidiVel-r;
-#X floatatom 262 164 5 0 0 0 - - - 0;
-#X obj 371 333 s \$0-sustain-r;
-#X connect 43 0 63 0;
-#X connect 43 0 62 0;
-#X connect 44 0 47 0;
-#X connect 45 0 113 0;
-#X connect 46 0 45 0;
-#X connect 47 0 46 0;
-#X connect 47 1 107 0;
-#X connect 47 2 106 0;
-#X connect 47 3 105 0;
-#X connect 53 0 57 0;
-#X connect 54 0 43 0;
-#X connect 55 0 56 0;
-#X connect 56 0 54 0;
-#X connect 57 0 55 0;
-#X connect 57 1 108 0;
-#X connect 57 2 107 0;
-#X connect 58 0 100 0;
-#X connect 59 0 101 0;
-#X connect 60 0 102 0;
-#X connect 61 0 103 0;
-#X connect 63 0 64 0;
-#X connect 65 0 88 0;
-#X connect 66 0 67 0;
-#X connect 66 0 74 0;
-#X connect 66 0 75 0;
-#X connect 66 0 76 0;
-#X connect 66 0 81 0;
-#X connect 67 0 100 0;
-#X connect 71 0 79 0;
-#X connect 71 1 73 0;
-#X connect 72 0 161 0;
-#X connect 73 0 72 0;
-#X connect 74 0 101 0;
-#X connect 75 0 102 0;
-#X connect 76 0 103 0;
-#X connect 79 0 53 0;
-#X connect 79 0 44 0;
-#X connect 80 0 104 0;
-#X connect 81 0 104 0;
-#X connect 89 0 71 0;
-#X connect 92 0 140 0;
-#X connect 92 1 94 0;
-#X connect 94 0 118 0;
-#X connect 94 1 119 0;
-#X connect 94 2 120 0;
-#X connect 94 3 121 0;
-#X connect 94 4 128 0;
-#X connect 94 5 130 0;
-#X connect 105 0 46 1;
-#X connect 106 0 45 1;
-#X connect 107 0 55 1;
-#X connect 107 0 45 2;
-#X connect 108 0 56 1;
-#X connect 109 0 105 1;
-#X connect 110 0 106 1;
-#X connect 111 0 107 1;
-#X connect 112 0 108 1;
-#X connect 113 0 43 0;
-#X connect 118 0 126 0;
-#X connect 119 0 126 1;
-#X connect 120 0 126 2;
-#X connect 121 0 126 3;
-#X connect 122 0 118 1;
-#X connect 123 0 119 1;
-#X connect 124 0 120 1;
-#X connect 125 0 121 1;
-#X connect 126 0 92 0;
-#X connect 127 0 73 1;
-#X connect 128 0 126 4;
-#X connect 129 0 128 1;
-#X connect 130 0 126 5;
-#X connect 131 0 130 1;
-#X connect 138 0 147 0;
-#X connect 140 0 143 0;
-#X connect 140 1 141 0;
-#X connect 141 0 139 0;
-#X connect 142 0 138 0;
-#X connect 143 0 145 0;
-#X connect 143 1 142 1;
-#X connect 145 0 142 0;
-#X connect 146 0 138 1;
-#X connect 147 0 155 0;
-#X connect 147 1 156 0;
-#X connect 147 2 157 0;
-#X connect 147 3 158 0;
-#X connect 147 4 159 0;
-#X connect 160 0 88 0;
-#X coords 0 -1 1 1 160 158 2 25 100;
+#X connect 1 0 14 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 1;
+#X connect 3 0 8 1;
+#X connect 4 0 14 0;
+#X connect 7 0 52 0;
+#X connect 8 0 15 0;
+#X connect 9 0 45 0;
+#X connect 10 0 46 0;
+#X connect 11 0 15 0;
+#X connect 12 0 47 0;
+#X connect 13 0 48 0;
+#X connect 17 0 55 0;
+#X connect 44 0 1 0;
+#X connect 49 0 8 0;
+#X connect 50 0 4 0;
+#X connect 51 0 11 0;
+#X connect 53 0 11 1;
+#X connect 53 0 4 1;
+#X connect 53 0 2 0;
+#X connect 53 0 58 0;
+#X connect 54 0 17 0;
+#X connect 56 0 57 0;
+#X coords 0 -1 1 1 175 115 2 25 100;

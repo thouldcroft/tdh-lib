@@ -1,24 +1,23 @@
-#N canvas 1561 -316 1383 840 10;
-#X obj 109 253 vradio 15 1 0 6 \$0-shape-s \$0-shape-r Shape -5 -8
+#N canvas 1732 -138 1473 916 10;
+#X obj 109 252 vradio 15 1 0 6 \$0-shape-s \$0-shape-r Shape -5 -6
 0 10 #fcfcfc #000000 #000000 0;
-#X obj 260 255 vsl 15 128 0.01 100 1 0 \$0-volSlider-s \$0-volSlider-r
-Vol -1 -9 0 10 #ffffff #000000 #000000 0 1;
-#X obj 212 255 vsl 15 128 0 1 0 0 \$0-freqSlider-s \$0-freqSlider-r
-Freq -5 -9 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 166 253 vradio 15 1 0 9 \$0-range-s \$0-range-r Range -5 -8
+#X obj 260 253 vsl 15 128 0.01 100 1 0 \$0-volSlider-s \$0-volSlider-r
+Vol -1 -7 0 10 #ffffff #000000 #000000 0 1;
+#X obj 212 252 vsl 15 128 0 1 0 0 \$0-freqSlider-s \$0-freqSlider-r
+Freq -5 -7 0 10 #ffffff #000000 #000000 0 1;
+#X obj 166 251 vradio 15 1 0 9 \$0-range-s \$0-range-r Range -5 -6
 0 10 #fcfcfc #000000 #000000 0;
-#X obj 452 286 s \$0-freq1;
-#X obj 449 447 s \$0-gain1;
+#X obj 397 625 s \$0-gain1;
 #X obj 49 529 r \$0-freq1;
 #X obj 103 569 r \$0-gain1;
-#X obj 22 669 outlet~;
-#X obj 26 159 loadbang;
-#N canvas 1908 -111 1933 944 oscillators1 0;
-#X obj 2 390 osc~;
-#X obj 1171 382 noise~;
-#X obj 1311 392 cyclone/pink~;
-#X msg 52 100 0;
-#X msg 20 100 1;
+#X obj 22 789 outlet~;
+#X obj 45 169 loadbang;
+#N canvas 1776 -352 1933 556 oscillators1 0;
+#X obj 2 389 osc~;
+#X obj 1171 381 noise~;
+#X obj 1311 391 cyclone/pink~;
+#X msg 52 99 0;
+#X msg 20 99 1;
 #N canvas 1440 218 450 300 on-off 0;
 #X obj 124 63 inlet~;
 #X obj 237 61 inlet onOff;
@@ -31,7 +30,7 @@ Freq -5 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X connect 2 0 5 0;
 #X connect 3 0 2 1;
 #X connect 4 0 3 0;
-#X restore 2 440 pd on-off;
+#X restore 2 439 pd on-off;
 #N canvas 0 22 450 300 on-off 0;
 #X obj 124 63 inlet~;
 #X obj 237 61 inlet onOff;
@@ -44,7 +43,7 @@ Freq -5 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X connect 2 0 5 0;
 #X connect 3 0 2 1;
 #X connect 4 0 3 0;
-#X restore 161 440 pd on-off;
+#X restore 161 439 pd on-off;
 #N canvas 0 22 450 300 on-off 0;
 #X obj 124 63 inlet~;
 #X obj 237 61 inlet onOff;
@@ -57,7 +56,7 @@ Freq -5 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X connect 2 0 5 0;
 #X connect 3 0 2 1;
 #X connect 4 0 3 0;
-#X restore 342 440 pd on-off;
+#X restore 342 439 pd on-off;
 #N canvas 0 22 450 300 on-off 0;
 #X obj 124 63 inlet~;
 #X obj 237 61 inlet onOff;
@@ -70,7 +69,7 @@ Freq -5 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X connect 2 0 5 0;
 #X connect 3 0 2 1;
 #X connect 4 0 3 0;
-#X restore 522 440 pd on-off;
+#X restore 522 439 pd on-off;
 #N canvas 0 22 450 300 on-off 0;
 #X obj 124 63 inlet~;
 #X obj 237 61 inlet onOff;
@@ -83,7 +82,7 @@ Freq -5 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X connect 2 0 5 0;
 #X connect 3 0 2 1;
 #X connect 4 0 3 0;
-#X restore 750 440 pd on-off;
+#X restore 750 439 pd on-off;
 #N canvas 1280 74 450 300 on-off 0;
 #X obj 124 63 inlet~;
 #X obj 237 61 inlet onOff;
@@ -96,9 +95,9 @@ Freq -5 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X connect 2 0 5 0;
 #X connect 3 0 2 1;
 #X connect 4 0 3 0;
-#X restore 968 440 pd on-off;
-#X obj 699 280 loadbang;
-#X text 758 281 Set the pulsewidth of the pulse oscil;
+#X restore 968 439 pd on-off;
+#X obj 699 279 loadbang;
+#X text 758 280 Set the pulsewidth of the pulse oscil;
 #N canvas 0 22 450 300 on-off 0;
 #X obj 124 63 inlet~;
 #X obj 237 61 inlet onOff;
@@ -111,7 +110,7 @@ Freq -5 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X connect 2 0 5 0;
 #X connect 3 0 2 1;
 #X connect 4 0 3 0;
-#X restore 1171 440 pd on-off;
+#X restore 1171 439 pd on-off;
 #N canvas 0 22 450 300 on-off 0;
 #X obj 124 63 inlet~;
 #X obj 237 61 inlet onOff;
@@ -124,134 +123,134 @@ Freq -5 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X connect 2 0 5 0;
 #X connect 3 0 2 1;
 #X connect 4 0 3 0;
-#X restore 1311 440 pd on-off;
-#X obj 20 70 sel 0 1 2 3 4 5 6 7, f 100;
-#X msg 124 100 0;
-#X msg 94 100 1;
-#X msg 199 100 0;
-#X msg 169 100 1;
-#X msg 273 100 0;
-#X msg 243 100 1;
-#X msg 348 100 0;
-#X msg 318 100 1;
-#X msg 423 100 0;
-#X msg 393 100 1;
-#X msg 497 100 0;
-#X msg 467 100 1;
-#X msg 572 100 0;
-#X msg 542 100 1;
-#X text 20 3 _;
-#X obj 710 10 inlet freq;
-#X obj 1552 394 *~;
-#X obj 1112 36 inlet gain;
-#X text 110 10 All oscillators are live \, so this code handles the
+#X restore 1311 439 pd on-off;
+#X obj 20 69 sel 0 1 2 3 4 5 6 7, f 100;
+#X msg 124 99 0;
+#X msg 94 99 1;
+#X msg 199 99 0;
+#X msg 169 99 1;
+#X msg 273 99 0;
+#X msg 243 99 1;
+#X msg 348 99 0;
+#X msg 318 99 1;
+#X msg 423 99 0;
+#X msg 393 99 1;
+#X msg 497 99 0;
+#X msg 467 99 1;
+#X msg 572 99 0;
+#X msg 542 99 1;
+#X text 20 2 _;
+#X obj 710 9 inlet freq;
+#X obj 1112 35 inlet gain;
+#X text 110 9 All oscillators are live \, so this code handles the
 radio button input and turns on output for the oscillator that corresponds
 with the radio button input \, and silences all other oscillators;
-#X obj 1552 480 outlet~;
-#X obj 810 10 inlet octave;
-#X obj 810 60 * 12;
-#X obj 710 130 +;
-#X text 899 84 Frequency is handled in MIDI (sort of - it is still
+#X obj 810 9 inlet octave;
+#X obj 863 57 * 12;
+#X obj 763 127 +;
+#X text 952 81 Frequency is handled in MIDI (sort of - it is still
 floating point) \, and oct# * 12 offsets a MIDI pitch to a new octave
 , f 25;
-#X obj 710 153 mtof;
-#X obj 20 40 inlet shape;
-#X floatatom 730 40 5 0 0 0 - - - 0;
-#X floatatom 850 40 5 0 0 0 - - - 0;
-#X floatatom 1137 66 5 0 0 0 - - - 0;
-#X obj 710 98 f;
-#X obj 810 88 t b f;
-#X obj 1537 36 inlet~ fm;
-#X text 1630 519 _;
-#X obj 1627 36 inlet~ am;
-#X obj 1647 66 loadbang;
-#X msg 1647 91 1;
-#X obj 1647 116 sig~;
-#X obj 20 150 s \$0-sin1;
-#X obj 90 150 s \$0-tri1;
-#X obj 170 150 s \$0-saw1;
-#X obj 240 150 s \$0-sqr1a;
-#X obj 330 150 s \$0-sqr1b;
-#X obj 410 150 s \$0-sqr1c;
-#X obj 510 150 s \$0-noise1;
-#X obj 600 150 s \$0-pink1;
-#X obj 53 410 r \$0-sin1;
-#X obj 212 410 r \$0-tri1;
-#X obj 393 410 r \$0-saw1;
-#X obj 573 410 r \$0-sqr1a;
-#X obj 801 410 r \$0-sqr1b;
-#X obj 1019 410 r \$0-sqr1c;
-#X obj 1222 402 r \$0-noise1;
-#X obj 1361 412 r \$0-pink1;
-#X obj 1609 401 r~ \$0-am1;
-#X obj 1627 166 s~ \$0-am1;
-#X obj 2 360 +~;
-#X obj 1557 76 loadbang;
-#X msg 1557 101 1;
-#X obj 1557 126 sig~;
-#X obj 1537 166 s~ \$0-fm1;
-#X obj 1248 294 r~ \$0-fm1;
-#X obj 161 360 +~;
-#X obj 342 360 +~;
-#X obj 522 360 +~;
-#X obj 750 360 +~;
-#X obj 968 360 +~;
-#X msg 927 330 0.75;
-#X msg 1145 327 0.9;
-#X obj 1248 345 *~;
-#X obj 1287 318 r \$0-fmAmt-s;
-#X msg 699 326 0.5;
-#X obj 750 390 tdh.lib/tdh.synth.oscilaPulse~;
-#X obj 968 392 tdh.lib/tdh.synth.oscilapulse~;
-#X obj 522 390 tdh.lib/tdh.synth.oscilaPulse~;
-#X obj 342 390 tdh.lib/tdh.synth.oscilaSaw~;
-#X obj 161 390 tdh.lib/tdh.synth.oscilaTri~;
-#X obj 2 461 throw~ \$0-oscilOut;
-#X obj 162 461 throw~ \$0-oscilOut;
-#X obj 342 461 throw~ \$0-oscilOut;
-#X obj 522 461 throw~ \$0-oscilOut;
-#X obj 750 461 throw~ \$0-oscilOut;
-#X obj 968 461 throw~ \$0-oscilOut;
-#X obj 1171 461 throw~ \$0-oscilOut;
-#X obj 1312 461 throw~ \$0-oscilOut;
-#X obj 1552 337 catch~ \$0-oscilOut;
-#X obj 1552 455 *~;
-#X obj 877 206 loadbang;
-#X msg 877 227 20;
-#X obj 753 130 s \$0-midiValNumbox-r;
-#X obj 753 154 s \$0-freqValNumbox-r;
-#X obj 876 180 r \$0-glide;
-#X obj 1048 210 send~ \$0-oscilGain;
-#X obj 1567 362 receive~ \$0-oscilGain;
-#X obj 1074 149 tdh.lib/tdh.util.declick~;
-#X obj 710 180 tdh.lib/tdh.util.declick~;
-#X obj 1287 339 tdh.lib/tdh.util.declick~;
-#X floatatom 861 82 5 0 0 0 - - - 0;
-#X obj 810 31 - 6;
-#X obj 943 179 cnv 14 14 14 empty empty R 6 8 0 8 #fc0400 #404040 0
+#X obj 763 150 mtof;
+#X obj 20 39 inlet shape;
+#X floatatom 783 37 5 0 0 0 - - - 0;
+#X floatatom 903 37 5 0 0 0 - - - 0;
+#X floatatom 1137 65 5 0 0 0 - - - 0;
+#X obj 763 95 f;
+#X obj 863 85 t b f;
+#X obj 1537 35 inlet~ fm;
+#X text 1904 523 _;
+#X obj 1627 35 inlet~ am;
+#X obj 20 149 s \$0-sin1;
+#X obj 90 149 s \$0-tri1;
+#X obj 170 149 s \$0-saw1;
+#X obj 240 149 s \$0-sqr1a;
+#X obj 330 149 s \$0-sqr1b;
+#X obj 410 149 s \$0-sqr1c;
+#X obj 510 149 s \$0-noise1;
+#X obj 600 149 s \$0-pink1;
+#X obj 53 409 r \$0-sin1;
+#X obj 212 409 r \$0-tri1;
+#X obj 393 409 r \$0-saw1;
+#X obj 573 409 r \$0-sqr1a;
+#X obj 801 409 r \$0-sqr1b;
+#X obj 1019 409 r \$0-sqr1c;
+#X obj 1222 401 r \$0-noise1;
+#X obj 1361 411 r \$0-pink1;
+#X obj 1627 75 s~ \$0-am1;
+#X obj 2 359 +~;
+#X obj 1537 75 s~ \$0-fm1;
+#X obj 1248 293 r~ \$0-fm1;
+#X obj 161 359 +~;
+#X obj 342 359 +~;
+#X obj 522 359 +~;
+#X obj 750 359 +~;
+#X obj 968 359 +~;
+#X msg 927 329 0.75;
+#X msg 1145 326 0.9;
+#X obj 1248 344 *~;
+#X obj 1287 317 r \$0-fmAmt-s;
+#X msg 699 325 0.5;
+#X obj 750 389 tdh.lib/tdh.synth.oscilaPulse~;
+#X obj 968 391 tdh.lib/tdh.synth.oscilapulse~;
+#X obj 522 389 tdh.lib/tdh.synth.oscilaPulse~;
+#X obj 342 389 tdh.lib/tdh.synth.oscilaSaw~;
+#X obj 161 389 tdh.lib/tdh.synth.oscilaTri~;
+#X obj 2 460 throw~ \$0-oscilOut;
+#X obj 162 460 throw~ \$0-oscilOut;
+#X obj 342 460 throw~ \$0-oscilOut;
+#X obj 522 460 throw~ \$0-oscilOut;
+#X obj 750 460 throw~ \$0-oscilOut;
+#X obj 968 460 throw~ \$0-oscilOut;
+#X obj 1171 460 throw~ \$0-oscilOut;
+#X obj 1312 460 throw~ \$0-oscilOut;
+#X obj 877 205 loadbang;
+#X msg 877 226 20;
+#X obj 818 128 s \$0-midiValNumbox-r;
+#X obj 806 151 s \$0-freqValNumbox-r;
+#X obj 876 179 r \$0-glide;
+#X obj 1113 122 send~ \$0-oscilGain;
+#X obj 1113 95 tdh.lib/tdh.util.declick~;
+#X obj 710 179 tdh.lib/tdh.util.declick~;
+#X obj 1287 338 tdh.lib/tdh.util.declick~;
+#X floatatom 914 79 5 0 0 0 - - - 0;
+#X obj 863 28 - 6;
+#X obj 943 178 cnv 14 14 14 empty empty R 6 8 0 8 #fc0400 #404040 0
 ;
+#X obj 1450 335 *~;
+#X obj 1450 529 outlet~;
+#X obj 1610 279 r~ \$0-am1;
+#X obj 1450 278 catch~ \$0-oscilOut;
+#X obj 1465 303 receive~ \$0-oscilGain;
+#X obj 1741 279 r \$0-amAmt;
+#X obj 1741 299 tdh.lib/tdh.util.declick;
+#X text 1475 385 copy of signal to be modulated ->, f 17;
+#X obj 1595 387 *~;
+#X obj 1450 499 tdh.lib/tdh.util.2sigxfade~, f 49;
+#X text 1747 429 <- level of modulation is the amount of modulated
+signal that gets mixed in, f 15;
 #X connect 0 0 5 0;
 #X connect 1 0 13 0;
 #X connect 2 0 14 0;
+#X connect 3 0 49 0;
+#X connect 3 0 50 0;
+#X connect 3 0 51 0;
+#X connect 3 0 52 0;
+#X connect 3 0 53 0;
 #X connect 3 0 54 0;
 #X connect 3 0 55 0;
-#X connect 3 0 56 0;
-#X connect 3 0 57 0;
-#X connect 3 0 58 0;
-#X connect 3 0 59 0;
-#X connect 3 0 60 0;
-#X connect 4 0 53 0;
-#X connect 5 0 92 0;
-#X connect 6 0 93 0;
-#X connect 7 0 94 0;
-#X connect 8 0 95 0;
-#X connect 9 0 96 0;
-#X connect 10 0 97 0;
-#X connect 11 0 86 0;
-#X connect 11 0 82 0;
-#X connect 11 0 83 0;
-#X connect 13 0 98 0;
-#X connect 14 0 99 0;
+#X connect 4 0 48 0;
+#X connect 5 0 83 0;
+#X connect 6 0 84 0;
+#X connect 7 0 85 0;
+#X connect 8 0 86 0;
+#X connect 9 0 87 0;
+#X connect 10 0 88 0;
+#X connect 11 0 77 0;
+#X connect 11 0 73 0;
+#X connect 11 0 74 0;
+#X connect 13 0 89 0;
+#X connect 14 0 90 0;
 #X connect 15 0 4 0;
 #X connect 15 0 3 0;
 #X connect 15 1 17 0;
@@ -268,144 +267,140 @@ floating point) \, and oct# * 12 offsets a MIDI pitch to a new octave
 #X connect 15 6 26 0;
 #X connect 15 7 29 0;
 #X connect 15 7 28 0;
+#X connect 16 0 48 0;
+#X connect 16 0 50 0;
+#X connect 16 0 51 0;
+#X connect 16 0 52 0;
 #X connect 16 0 53 0;
+#X connect 16 0 54 0;
 #X connect 16 0 55 0;
-#X connect 16 0 56 0;
-#X connect 16 0 57 0;
-#X connect 16 0 58 0;
-#X connect 16 0 59 0;
-#X connect 16 0 60 0;
-#X connect 17 0 54 0;
+#X connect 17 0 49 0;
+#X connect 18 0 48 0;
+#X connect 18 0 49 0;
+#X connect 18 0 51 0;
+#X connect 18 0 52 0;
 #X connect 18 0 53 0;
 #X connect 18 0 54 0;
-#X connect 18 0 56 0;
-#X connect 18 0 57 0;
-#X connect 18 0 58 0;
-#X connect 18 0 59 0;
-#X connect 18 0 60 0;
-#X connect 19 0 55 0;
+#X connect 18 0 55 0;
+#X connect 19 0 50 0;
+#X connect 20 0 48 0;
+#X connect 20 0 49 0;
+#X connect 20 0 50 0;
+#X connect 20 0 52 0;
 #X connect 20 0 53 0;
 #X connect 20 0 54 0;
 #X connect 20 0 55 0;
-#X connect 20 0 57 0;
-#X connect 20 0 58 0;
-#X connect 20 0 59 0;
-#X connect 20 0 60 0;
-#X connect 21 0 56 0;
+#X connect 21 0 51 0;
+#X connect 22 0 48 0;
+#X connect 22 0 49 0;
+#X connect 22 0 50 0;
+#X connect 22 0 51 0;
 #X connect 22 0 53 0;
 #X connect 22 0 54 0;
 #X connect 22 0 55 0;
-#X connect 22 0 56 0;
-#X connect 22 0 58 0;
-#X connect 22 0 59 0;
-#X connect 22 0 60 0;
-#X connect 23 0 57 0;
-#X connect 24 0 53 0;
+#X connect 23 0 52 0;
+#X connect 24 0 48 0;
+#X connect 24 0 49 0;
+#X connect 24 0 50 0;
+#X connect 24 0 51 0;
+#X connect 24 0 52 0;
 #X connect 24 0 54 0;
 #X connect 24 0 55 0;
-#X connect 24 0 56 0;
-#X connect 24 0 57 0;
-#X connect 24 0 59 0;
-#X connect 24 0 60 0;
-#X connect 25 0 58 0;
+#X connect 25 0 53 0;
+#X connect 26 0 48 0;
+#X connect 26 0 49 0;
+#X connect 26 0 50 0;
+#X connect 26 0 51 0;
+#X connect 26 0 52 0;
 #X connect 26 0 53 0;
-#X connect 26 0 54 0;
 #X connect 26 0 55 0;
-#X connect 26 0 56 0;
-#X connect 26 0 57 0;
-#X connect 26 0 58 0;
-#X connect 26 0 60 0;
-#X connect 27 0 59 0;
+#X connect 27 0 54 0;
+#X connect 28 0 48 0;
+#X connect 28 0 49 0;
+#X connect 28 0 50 0;
+#X connect 28 0 51 0;
+#X connect 28 0 52 0;
 #X connect 28 0 53 0;
 #X connect 28 0 54 0;
-#X connect 28 0 55 0;
-#X connect 28 0 56 0;
-#X connect 28 0 57 0;
-#X connect 28 0 58 0;
-#X connect 28 0 59 0;
-#X connect 29 0 60 0;
-#X connect 31 0 42 0;
-#X connect 31 0 45 0;
-#X connect 32 0 101 0;
-#X connect 33 0 44 0;
-#X connect 33 0 109 0;
-#X connect 36 0 43 0;
-#X connect 36 0 113 0;
-#X connect 37 0 46 0;
-#X connect 37 0 112 0;
-#X connect 38 0 40 0;
-#X connect 38 0 104 0;
-#X connect 40 0 105 0;
-#X connect 40 0 110 0;
-#X connect 41 0 15 0;
-#X connect 45 0 38 0;
-#X connect 46 0 45 0;
-#X connect 46 1 38 1;
-#X connect 47 0 75 0;
-#X connect 49 0 70 0;
-#X connect 50 0 51 0;
-#X connect 51 0 52 0;
-#X connect 52 0 70 0;
-#X connect 61 0 5 1;
-#X connect 62 0 6 1;
-#X connect 63 0 7 1;
-#X connect 64 0 8 1;
-#X connect 65 0 9 1;
-#X connect 66 0 10 1;
-#X connect 67 0 13 1;
-#X connect 68 0 14 1;
-#X connect 69 0 101 1;
-#X connect 71 0 0 0;
-#X connect 72 0 73 0;
-#X connect 73 0 74 0;
-#X connect 74 0 75 0;
-#X connect 76 0 84 0;
-#X connect 77 0 91 0;
-#X connect 78 0 90 0;
-#X connect 79 0 89 0;
-#X connect 80 0 87 0;
-#X connect 81 0 88 0;
-#X connect 82 0 87 1;
-#X connect 83 0 88 1;
-#X connect 84 0 81 1;
-#X connect 84 0 80 1;
-#X connect 84 0 79 1;
-#X connect 84 0 78 1;
-#X connect 84 0 77 1;
-#X connect 84 0 71 1;
-#X connect 85 0 111 0;
-#X connect 86 0 89 1;
-#X connect 87 0 9 0;
-#X connect 88 0 10 0;
-#X connect 89 0 8 0;
-#X connect 90 0 7 0;
-#X connect 91 0 6 0;
-#X connect 100 0 32 0;
+#X connect 29 0 55 0;
+#X connect 31 0 40 0;
+#X connect 31 0 43 0;
+#X connect 31 0 98 0;
+#X connect 32 0 42 0;
+#X connect 32 0 97 0;
+#X connect 34 0 41 0;
+#X connect 34 0 101 0;
+#X connect 35 0 44 0;
+#X connect 35 0 100 0;
+#X connect 36 0 38 0;
+#X connect 39 0 15 0;
+#X connect 43 0 36 0;
+#X connect 44 0 43 0;
+#X connect 44 1 36 1;
+#X connect 45 0 66 0;
+#X connect 47 0 64 0;
+#X connect 56 0 5 1;
+#X connect 57 0 6 1;
+#X connect 58 0 7 1;
+#X connect 59 0 8 1;
+#X connect 60 0 9 1;
+#X connect 61 0 10 1;
+#X connect 62 0 13 1;
+#X connect 63 0 14 1;
+#X connect 65 0 0 0;
+#X connect 67 0 75 0;
+#X connect 68 0 82 0;
+#X connect 69 0 81 0;
+#X connect 70 0 80 0;
+#X connect 71 0 78 0;
+#X connect 72 0 79 0;
+#X connect 73 0 78 1;
+#X connect 74 0 79 1;
+#X connect 75 0 72 1;
+#X connect 75 0 71 1;
+#X connect 75 0 70 1;
+#X connect 75 0 69 1;
+#X connect 75 0 68 1;
+#X connect 75 0 65 1;
+#X connect 76 0 99 0;
+#X connect 77 0 80 1;
+#X connect 78 0 9 0;
+#X connect 79 0 10 0;
+#X connect 80 0 8 0;
+#X connect 81 0 7 0;
+#X connect 82 0 6 0;
+#X connect 91 0 92 0;
+#X connect 92 0 98 1;
+#X connect 95 0 98 1;
+#X connect 97 0 96 0;
+#X connect 98 0 65 0;
+#X connect 98 0 68 0;
+#X connect 98 0 69 0;
+#X connect 98 0 70 0;
+#X connect 98 0 71 0;
+#X connect 98 0 72 0;
+#X connect 99 0 75 1;
 #X connect 101 0 35 0;
-#X connect 102 0 103 0;
-#X connect 103 0 110 1;
-#X connect 106 0 110 1;
-#X connect 108 0 32 1;
-#X connect 109 0 107 0;
-#X connect 110 0 71 0;
-#X connect 110 0 77 0;
-#X connect 110 0 78 0;
-#X connect 110 0 79 0;
-#X connect 110 0 80 0;
-#X connect 110 0 81 0;
-#X connect 111 0 84 1;
-#X connect 113 0 37 0;
+#X connect 103 0 111 0;
+#X connect 103 0 112 0;
+#X connect 105 0 111 1;
+#X connect 106 0 103 0;
+#X connect 107 0 103 1;
+#X connect 108 0 109 0;
+#X connect 109 0 112 4;
+#X connect 111 0 112 2;
+#X connect 112 0 104 0;
 #X restore 22 639 pd oscillators1;
 #X f 23;
 #X obj 26 90 inlet 1-shape;
 #X obj 270 90 inlet 1-freq;
 #X obj 389 90 inlet 1-gain;
-#X text 126 254 Sin;
-#X text 126 269 Tri;
-#X text 126 284 Saw;
-#X text 126 299 Pls1;
-#X text 126 314 Pls2;
-#X text 126 328 Pls3;
+#X text 126 253 Sin;
+#X text 126 268 Tri;
+#X text 126 283 Saw;
+#X text 126 298 Pls1;
+#X text 126 313 Pls2;
+#X text 126 327 Pls3;
 #X text 19 49 Travis Houldcroft || travishouldcroft.com;
 #X obj 2 3 cnv 15 1375 40 empty \$0-abstrPatchTitleBar tdh.synth.LFOscil~
 9 20 0 18 #3c50fc #a0a0a0 0;
@@ -424,21 +419,17 @@ floating point) \, and oct# * 12 offsets a MIDI pitch to a new octave
 #X obj 571 90 inlet~ fm;
 #X obj 571 109 s~ \$0-fm;
 #X obj 657 90 inlet~ am;
-#X obj 657 154 s~ \$0-am;
+#X obj 657 114 s~ \$0-am;
 #X obj 130 590 r~ \$0-fm;
 #X obj 157 610 r~ \$0-am;
-#X obj 684 113 r \$0-amAmt-s;
-#X obj 657 114 *~;
-#X obj 1026 85 cnv 14 18 14 empty empty 8 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 846 87 cnv 14 18 14 empty empty 7 2 8 0 12 #606060 #dcdcdc 0
+#X obj 907 85 cnv 14 18 14 empty empty 8 2 8 0 12 #606060 #dcdcdc 0
 ;
-#X obj 867 87 inlet fmAmt;
-#X obj 1047 85 inlet amAmt;
-#X obj 866 110 tdh.lib/tdh.util.declick;
-#X obj 866 131 s \$0-fmAmt-r;
-#X obj 1047 108 tdh.lib/tdh.util.declick;
-#X obj 1047 129 s \$0-amAmt-r;
+#X obj 727 87 cnv 14 18 14 empty empty 7 2 8 0 12 #606060 #dcdcdc 0
+;
+#X obj 748 87 inlet fmAmt;
+#X obj 928 85 inlet amAmt;
+#X obj 747 110 tdh.lib/tdh.util.declick;
+#X obj 928 108 tdh.lib/tdh.util.declick;
 #X obj 101 437 cnv 1 220 2 empty \$0-moduleNameBorder-r empty 1 7 0
 10 #404040 #404040 0;
 #X obj 101 438 cnv 12 220 14 empty \$0-moduleName-r Low\ Frequency\ Oscillator
@@ -2912,101 +2903,8 @@ to DSP code, f 71;
 tdh.synth.oscilaSaw~ \, tdh.synth.oscilaPulse~), f 94;
 #X text 22 548 22.05.06 ver 0.1;
 #X restore 1190 54 pd reference;
-#X floatatom 206 389 5 0 0 1 PC \$0-freqNumbox-r \$0-freqNumbox-s 8
-;
-#N canvas 2636 -52 1068 790 numSlideSet 0;
-#X obj 17 541 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 37 541 outlet;
-#X text 26 48 Travis Houldcroft || travishouldcroft.com;
-#X obj 145 123 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 145 143 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
-0;
-#X text 142 250 220306 - ver 0.1, f 21;
-#X text 167 122 (float);
-#X text 167 142 (float);
-#X text 217 122 Value from the [slider];
-#X text 217 142 Value from the [numbox];
-#X text 167 179 (float);
-#X text 167 199 (float);
-#X text 217 199 Set value FOR [slider] FROM [numbox];
-#X text 167 219 (float);
-#X text 217 219 Set value FOR [numbox] FROM [slider];
-#X text 25 76 An abstraction to handle sliders and their number-box
-displays., f 64;
-#X obj 23 92 cnv 15 5 5 empty empty Number-boxes\\\ always\\\ output\\\ true\\\ working\\\ code\\\ value\\\ -\\\ sliders\\\ are\\\ alw*
-5 8 0 10 #ffffff #ff0400 0;
-#X obj 145 179 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
-0;
-#X obj 145 199 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
-0;
-#X obj 145 219 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
-0;
-#X text 219 179 Value output from [numbox];
-#X text 142 259 220504 - ver 0.2, f 21;
-#X obj 206 378 cnv 12 100 14 empty empty empty 0 8 0 10 #c7c6ff #404040
-0;
-#X obj 546 378 cnv 12 100 14 empty empty empty 0 8 0 10 #c4c4fc #404040
-0;
-#X msg 206 477 set \$1;
-#X msg 546 477 set \$1;
-#X obj 206 541 outlet toSlider;
-#X obj 546 541 outlet toNumBox;
-#X obj 546 306 inlet fromNumBox;
-#X obj 206 306 inlet fromSlider;
-#X obj 186 306 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 526 306 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 186 541 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 526 541 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
-0;
-#N canvas 770 66 450 300 slider2numbox 0;
-#X obj 37 17 inlet;
-#X obj 104 19 cnv 10 5 5 empty empty Conversion\\\ from\\\ Slider\\\ to\\\ Numbox
-0 6 0 14 #ffffff #0400ff 0;
-#X obj 37 258 outlet;
-#X obj 37 38 * 11;
-#X connect 0 0 3 0;
-#X connect 3 0 2 0;
-#X restore 206 377 pd slider2numbox;
-#N canvas 870 165 450 300 numbox2slider 0;
-#X obj 47 37 inlet;
-#X obj 47 258 outlet;
-#X text 69 129 <-- conversion code;
-#X obj 122 32 cnv 5 5 5 empty empty Conversion\\\ from\\\ Numbox\\\ to\\\ Slider
-0 6 0 14 #ffffff #0400ff 0;
-#X obj 47 58 / 11;
-#X connect 0 0 4 0;
-#X connect 4 0 1 0;
-#X restore 546 377 pd numbox2slider;
-#X obj 22 17 cnv 15 5 5 empty empty numSlideSet 5 8 0 24 #ffffff #606060
-0;
-#X obj 14 67 cnv 2 500 2 empty empty empty 20 12 0 14 #9f9f9f #404040
-0;
-#X obj 10 116 cnv 2 500 2 empty empty Inlets 20 12 0 14 #9f9f9f #606060
-0;
-#X obj 10 166 cnv 2 500 2 empty empty Outlets 20 12 0 14 #9f9f9f #606060
-0;
-#X obj 10 246 cnv 2 500 2 empty empty Rev.\\\ History 20 12 0 14 #9f9f9f
-#606060 0;
-#X obj 316 378 cnv 15 5 5 empty empty Convert\\\ from\\\ slider\\\ to\\\ number-box
-5 8 0 10 #ffffff #9c00ff 0;
-#X obj 652 376 cnv 15 5 5 empty empty Convert\\\ from\\\ number-box\\\ to\\\ slider
-5 8 0 10 #ffffff #9c00ff 0;
-#X connect 25 0 26 0;
-#X connect 28 0 35 0;
-#X connect 28 0 1 0;
-#X connect 29 0 34 0;
-#X connect 34 0 24 0;
-#X connect 34 0 1 0;
-#X connect 34 0 27 0;
-#X connect 35 0 25 0;
-#X restore 452 257 pd numSlideSet;
-#X f 37;
-#X obj 26 112 s \$0-shape-r;
+#X floatatom 206 387 5 0 0 1 PC \$0-pcNumbox-r \$0-pcNumbox-s 8;
+#X obj 28 148 s \$0-shape-r;
 #X obj 22 509 r \$0-shape-s;
 #X obj 99 509 cnv 14 14 14 empty empty R 6 8 0 8 #fcc4c4 #7c7c7c 0
 ;
@@ -3016,31 +2914,27 @@ displays., f 64;
 ;
 #X obj 115 529 cnv 14 14 14 empty empty R 6 8 0 8 #fcfcc4 #7c7c7c 0
 ;
-#X obj 103 112 cnv 14 14 14 empty empty S 6 8 0 8 #fcc4c4 #7c7c7c 0
+#X obj 105 148 cnv 14 14 14 empty empty S 6 8 0 8 #fcc4c4 #7c7c7c 0
 ;
-#X obj 515 448 cnv 14 14 14 empty empty S 6 8 0 8 #c4c4fc #7c7c7c 0
+#X obj 463 626 cnv 14 14 14 empty empty S 6 8 0 8 #c4c4fc #7c7c7c 0
 ;
 #X obj 227 172 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcc4 #7c7c7c 0
-;
-#X obj 517 286 cnv 14 14 14 empty empty S 6 8 0 8 #fcfcc4 #7c7c7c 0
 ;
 #X obj 184 591 cnv 14 14 14 empty empty R 6 8 0 8 #9c00fc #b8b8b8 0
 ;
 #X obj 212 611 cnv 14 14 14 empty empty R 6 8 0 8 #0400fc #b8b8b8 0
 ;
-#X obj 517 556 cnv 14 14 14 empty empty S 6 8 0 8 #fc0400 #404040 0
+#X obj 465 734 cnv 14 14 14 empty empty S 6 8 0 8 #fc0400 #404040 0
 ;
-#X obj 944 132 cnv 14 14 14 empty empty S 6 8 0 8 #9c00fc #b8b8b8 0
+#X obj 862 132 cnv 14 14 14 empty empty S 6 8 0 8 #9c00fc #b8b8b8 0
 ;
-#X obj 1125 130 cnv 14 14 14 empty empty S 6 8 0 8 #0400fc #b8b8b8
+#X obj 1056 130 cnv 14 14 14 empty empty S 6 8 0 8 #0400fc #b8b8b8
 0;
 #X obj 113 206 cnv 4 6 6 empty empty ☐ -1 2 0 14 #ffc7c6 #9f9f9f
 0;
 #X obj 170 206 cnv 4 6 6 empty empty ☐ -1 2 0 14 #c6ffc7 #9f9f9f
 0;
-#X obj 564 239 cnv 4 6 6 empty empty ☐ -1 2 0 14 #feffc6 #9f9f9f
-0;
-#X obj 555 341 cnv 4 6 6 empty empty ☐ -1 2 0 14 #c7c6ff #9f9f9f
+#X obj 503 519 cnv 4 6 6 empty empty ☐ -1 2 0 14 #c7c6ff #9f9f9f
 0;
 #X obj 170 646 cnv 4 6 6 empty empty ☐ -1 2 0 14 #ff0400 #9f9f9f
 0;
@@ -3051,17 +2945,13 @@ displays., f 64;
 #X obj 150 90 inlet 1-range;
 #X obj 150 172 s \$0-range-r;
 #X obj 76 549 r \$0-range-s;
-#X obj 452 232 r \$0-freqSlider-s;
-#X obj 671 232 r \$0-freqNumbox-s;
-#X obj 561 286 s \$0-freqSlider-r;
-#X obj 671 286 s \$0-freqNumbox-r;
 #X obj 2 79 cnv 2 1375 2 empty \$0-abstrPatchSecDivider empty 9 20
 0 18 #a0a0a0 #202020 0;
-#X floatatom 206 419 5 0 0 1 Hz \$0-freqValNumbox-r \$0-freqValNumbox-s
+#X floatatom 206 417 5 0 0 1 Hz \$0-freqNumbox-r \$0-freqNumbox-s 8
+;
+#X floatatom 206 402 5 0 0 1 MIDI \$0-midiNumbox-r \$0-midiNumbox-s
 8;
-#X floatatom 206 404 5 0 0 1 MIDI \$0-midiValNumbox-r \$0-midiValNumbox-s
-8;
-#X floatatom 256 388 5 0 100 1 - \$0-volNumbox-r \$0-volNumbox-s 8
+#X floatatom 256 386 5 0 100 1 - \$0-volNumbox-r \$0-volNumbox-s 8
 ;
 #N canvas 1954 60 1068 790 numSlideSet 0;
 #X obj 17 541 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc 0
@@ -3149,62 +3039,54 @@ displays., f 64;
 #X connect 34 0 24 0;
 #X connect 34 0 27 0;
 #X connect 35 0 25 0;
-#X restore 449 361 pd numSlideSet;
+#X restore 397 539 pd numSlideSet;
 #X f 37;
-#X obj 558 390 s \$0-volSlider-r;
-#X obj 668 390 s \$0-volNumbox-r;
-#X obj 668 336 r \$0-volNumbox-s;
-#X obj 449 336 r \$0-volSlider-s;
-#X obj 449 382 * 0.01;
-#X obj 449 407 expr if($f1 < 0.0002 \, 0 \, $f1), f 15;
+#X obj 506 568 s \$0-volSlider-r;
+#X obj 616 568 s \$0-volNumbox-r;
+#X obj 616 514 r \$0-volNumbox-s;
+#X obj 397 514 r \$0-volSlider-s;
+#X obj 397 560 * 0.01;
+#X obj 397 585 expr if($f1 < 0.0002 \, 0 \, $f1), f 15;
 #X obj 245 646 r \$0-freqValNumbox-r;
-#X obj 1208 85 cnv 14 18 14 empty empty 8 2 8 0 12 #606060 #dcdcdc
+#X obj 1089 85 cnv 14 18 14 empty empty 8 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 1229 108 tdh.lib/tdh.util.declick;
-#X obj 1229 85 inlet glide;
+#X obj 1110 108 tdh.lib/tdh.util.declick;
+#X obj 1110 85 inlet glide;
 #X obj 310 222 cnv 10 5 12 empty empty Gl 0 6 0 8 #dfdfdf #404040 0
 ;
 #X obj 389 110 tdh.lib/tdh.util.declick;
-#X obj 684 134 tdh.lib/tdh.util.declick~;
-#X text 183 342 -1;
-#X text 187 357 0;
-#X text 187 372 1;
-#X msg 26 180 0;
-#X text 183 327 -2;
-#X text 183 311 -3;
-#X text 183 296 -4;
-#X text 183 283 -5;
-#X text 183 268 -6;
-#X text 183 253 -7;
-#X text 450 210 Frequency Slider/Number Boxes;
-#X text 446 317 Volume Slider/Number Boxes;
-#X obj 664 237 cnv 4 6 6 empty empty ☐ -1 2 0 14 #feffc6 #9f9f9f
-0;
-#X obj 552 293 cnv 4 6 6 empty empty ☐ -1 2 0 14 #feffc6 #9f9f9f
-0;
-#X obj 781 292 cnv 4 6 6 empty empty ☐ -1 2 0 14 #feffc6 #9f9f9f
-0;
+#X text 183 340 -1;
+#X text 187 355 0;
+#X text 187 370 1;
+#X msg 45 190 0;
+#X text 183 325 -2;
+#X text 183 309 -3;
+#X text 183 294 -4;
+#X text 183 281 -5;
+#X text 183 266 -6;
+#X text 183 251 -7;
+#X text 394 495 Volume Slider/Number Boxes;
 #X obj 218 206 cnv 4 6 6 empty empty ☐ -1 2 0 14 #feffc6 #9f9f9f
 0;
-#X obj 69 669 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc 0
+#X obj 69 789 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc 0
 ;
 #X obj 316 670 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
 0;
-#X obj 655 341 cnv 4 6 6 empty empty ☐ -1 2 0 14 #c7c6ff #9f9f9f
+#X obj 603 519 cnv 4 6 6 empty empty ☐ -1 2 0 14 #c7c6ff #9f9f9f
 0;
-#X obj 547 395 cnv 4 6 6 empty empty ☐ -1 2 0 14 #c7c6ff #9f9f9f
+#X obj 495 573 cnv 4 6 6 empty empty ☐ -1 2 0 14 #c7c6ff #9f9f9f
 0;
-#X obj 773 397 cnv 4 6 6 empty empty ☐ -1 2 0 14 #c7c6ff #9f9f9f
+#X obj 721 575 cnv 4 6 6 empty empty ☐ -1 2 0 14 #c7c6ff #9f9f9f
 0;
 #X obj 85 403 cnv 4 6 6 empty empty ☐ -1 2 0 14 #ff0400 #9f9f9f 0
 ;
-#X obj 573 506 cnv 4 6 6 empty empty ☐ -1 2 0 14 #ff0400 #9f9f9f
+#X obj 521 684 cnv 4 6 6 empty empty ☐ -1 2 0 14 #ff0400 #9f9f9f
 0;
-#X obj 671 506 cnv 4 6 6 empty empty ☐ -1 2 0 14 #ff0400 #9f9f9f
+#X obj 619 684 cnv 4 6 6 empty empty ☐ -1 2 0 14 #ff0400 #9f9f9f
 0;
-#X obj 555 554 cnv 4 6 6 empty empty ☐ -1 2 0 14 #ff0400 #9f9f9f
+#X obj 503 732 cnv 4 6 6 empty empty ☐ -1 2 0 14 #ff0400 #9f9f9f
 0;
-#X obj 802 553 cnv 4 6 6 empty empty ☐ -1 2 0 14 #ff0400 #9f9f9f
+#X obj 750 731 cnv 4 6 6 empty empty ☐ -1 2 0 14 #ff0400 #9f9f9f
 0;
 #X obj 256 130 cnv 14 14 14 empty empty S 6 8 0 8 #fcfcc4 #7c7c7c 0
 ;
@@ -3212,11 +3094,9 @@ displays., f 64;
 ;
 #X obj 625 111 cnv 14 14 14 empty empty S 6 8 0 8 #9c00fc #b8b8b8 0
 ;
-#X obj 711 155 cnv 14 14 14 empty empty S 6 8 0 8 #0400fc #b8b8b8 0
+#X obj 711 115 cnv 14 14 14 empty empty S 6 8 0 8 #0400fc #b8b8b8 0
 ;
-#X obj 761 114 cnv 14 14 14 empty empty R 6 8 0 8 #0400fc #b8b8b8 0
-;
-#N canvas 1568 122 1250 761 savestate 1;
+#N canvas 1568 122 1250 761 savestate 0;
 #X obj 199 387 s \$0-shape-r;
 #X obj 322 387 s \$0-range-r;
 #X text 96 52 This subpatch saves the values of each GUI control on
@@ -3291,8 +3171,8 @@ is sent to [savestate] to be stored.;
 #X restore 1102 54 pd savestate;
 #X obj 389 134 s \$0-volNumbox-r;
 #X obj 270 130 s \$0-freqNumbox-r;
-#X obj 1229 129 s \$0-glideNumbox-r;
-#X obj 1342 129 cnv 14 14 14 empty empty S 6 8 0 8 #fc0400 #404040
+#X obj 1110 129 s \$0-glideNumbox-r;
+#X obj 1223 129 cnv 14 14 14 empty empty S 6 8 0 8 #fc0400 #404040
 0;
 #X obj 150 111 tdh.lib/tdh.math.valueClamp -7 1, f 16;
 #X obj 264 206 cnv 4 6 6 empty empty ☐ -1 2 0 14 #c7c6ff #9f9f9f
@@ -3387,14 +3267,14 @@ displays., f 64;
 #X connect 34 0 1 0;
 #X connect 34 0 27 0;
 #X connect 35 0 25 0;
-#X restore 452 628 pd numSlideSet;
+#X restore 400 806 pd numSlideSet;
 #X f 39;
-#X obj 452 664 s \$0-fmAmt;
-#X obj 452 603 r \$0-fmAmtSlider-s;
-#X obj 567 657 s \$0-fmAmtSlider-r;
-#X obj 683 603 r \$0-fmAmtNumbox-s;
-#X obj 683 657 s \$0-fmAmtNumbox-r;
-#N canvas 1440 36 1068 790 numSlideSet 0;
+#X obj 400 842 s \$0-fmAmt;
+#X obj 400 781 r \$0-fmAmtSlider-s;
+#X obj 515 835 s \$0-fmAmtSlider-r;
+#X obj 631 781 r \$0-fmAmtNumbox-s;
+#X obj 631 835 s \$0-fmAmtNumbox-r;
+#N canvas 1512 36 1068 790 numSlideSet 0;
 #X obj 17 541 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc 0
 ;
 #X obj 37 541 outlet;
@@ -3443,24 +3323,20 @@ displays., f 64;
 0;
 #X obj 526 541 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
 0;
-#N canvas 1280 66 450 300 slider2numbox 0;
+#N canvas 1062 66 450 300 slider2numbox 0;
 #X obj 37 17 inlet;
 #X obj 104 19 cnv 10 5 5 empty empty Conversion\\\ from\\\ Slider\\\ to\\\ Numbox
 0 6 0 14 #ffffff #0400ff 0;
 #X obj 37 258 outlet;
-#X obj 37 38 * 250;
-#X connect 0 0 3 0;
-#X connect 3 0 2 0;
+#X connect 0 0 2 0;
 #X restore 206 377 pd slider2numbox;
-#N canvas 1280 165 450 300 numbox2slider 0;
+#N canvas 1062 165 450 300 numbox2slider 0;
 #X obj 47 37 inlet;
 #X obj 47 258 outlet;
 #X text 69 129 <-- conversion code;
 #X obj 122 32 cnv 5 5 5 empty empty Conversion\\\ from\\\ Numbox\\\ to\\\ Slider
 0 6 0 14 #ffffff #0400ff 0;
-#X obj 47 58 / 250;
-#X connect 0 0 4 0;
-#X connect 4 0 1 0;
+#X connect 0 0 1 0;
 #X restore 546 377 pd numbox2slider;
 #X obj 22 17 cnv 15 5 5 empty empty numSlideSet 5 8 0 24 #ffffff #606060
 0;
@@ -3484,13 +3360,13 @@ displays., f 64;
 #X connect 34 0 1 0;
 #X connect 34 0 27 0;
 #X connect 35 0 25 0;
-#X restore 453 739 pd numSlideSet;
+#X restore 401 917 pd numSlideSet;
 #X f 39;
-#X obj 453 768 s \$0-amAmt;
-#X obj 453 714 r \$0-amAmtSlider-s;
-#X obj 684 768 s \$0-amAmtNumbox-r;
-#X obj 568 768 s \$0-amAmtSlider-r;
-#X obj 684 714 r \$0-amAmtNumbox-s;
+#X obj 401 946 s \$0-amAmt;
+#X obj 401 892 r \$0-amAmtSlider-s;
+#X obj 632 946 s \$0-amAmtNumbox-r;
+#X obj 516 946 s \$0-amAmtSlider-r;
+#X obj 632 892 r \$0-amAmtNumbox-s;
 #X obj 293 261 vsl 15 55 0 1 0 0 \$0-fmAmtSlider-s \$0-fmAmtSlider-r
 Amt 0 -9 0 10 #ffffff #000000 #000000 0 1;
 #X text 292 236 FM;
@@ -3501,11 +3377,11 @@ Amt 0 -9 0 10 #ffffff #000000 #000000 0 1;
 8;
 #X obj 293 361 vsl 15 55 0 1 0 0 \$0-amAmtSlider-s \$0-amAmtSlider-r
 Amt 0 -9 0 10 #ffffff #000000 #000000 0 1;
-#X obj 109 400 hsl 50 15 0 1 0 0 \$0-glideSlider-s \$0-glideSlider-r
-Glide -2 -8 0 10 #ffffff #000000 #000000 0 1;
-#X floatatom 106 418 5 0 0 1 - \$0-glideNumbox-r \$0-glideNumbox-s
+#X obj 110 400 hsl 50 15 0 1 0 0 \$0-glideSlider-s \$0-glideSlider-r
+Glide -2 -6 0 10 #ffffff #000000 #000000 0 1;
+#X floatatom 107 417 5 0 0 1 - \$0-glideNumbox-r \$0-glideNumbox-s
 8;
-#N canvas 2916 25 1068 755 numSlideSet 1;
+#N canvas 2916 25 1068 755 numSlideSet 0;
 #X obj 17 541 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc 0
 ;
 #X obj 37 541 outlet;
@@ -3599,81 +3475,602 @@ displays., f 64;
 #X connect 34 0 1 0;
 #X connect 34 0 27 0;
 #X connect 35 0 25 0;
-#X restore 451 528 pd numSlideSet;
+#X restore 399 706 pd numSlideSet;
 #X f 39;
-#X obj 451 503 r \$0-glideSlider-s;
-#X obj 682 503 r \$0-glideNumbox-s;
-#X obj 682 549 s \$0-glideNumbox-r;
-#X obj 451 554 s \$0-glide;
-#X obj 566 549 s \$0-glideSlider-r;
-#X text 450 475 Glide Slider/Number Boxes;
-#X text 452 581 FM Amount Slider/Number Boxes;
-#X text 452 692 AM Amount Slider/Number Boxes;
-#X obj 441 312 cnv 5 400 1 empty empty empty 20 12 0 14 #7c7c7c #404040
+#X obj 399 681 r \$0-glideSlider-s;
+#X obj 630 681 r \$0-glideNumbox-s;
+#X obj 630 727 s \$0-glideNumbox-r;
+#X obj 399 732 s \$0-glide;
+#X obj 514 727 s \$0-glideSlider-r;
+#X text 398 653 Glide Slider/Number Boxes;
+#X text 400 759 FM Amount Slider/Number Boxes;
+#X text 400 870 AM Amount Slider/Number Boxes;
+#X obj 389 490 cnv 5 400 1 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 445 471 cnv 5 400 1 empty empty empty 20 12 0 14 #7c7c7c #404040
+#X obj 393 649 cnv 5 400 1 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 446 577 cnv 5 400 1 empty empty empty 20 12 0 14 #7c7c7c #404040
+#X obj 394 755 cnv 5 400 1 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 446 690 cnv 5 400 1 empty empty empty 20 12 0 14 #7c7c7c #404040
+#X obj 394 868 cnv 5 400 1 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 445 793 cnv 5 400 1 empty empty empty 20 12 0 14 #7c7c7c #404040
+#X obj 393 971 cnv 5 400 1 empty empty empty 20 12 0 14 #7c7c7c #404040
 0;
-#X obj 439 207 cnv 5 400 1 empty empty empty 20 12 0 14 #7c7c7c #404040
+#X obj 109 356 vradio 15 1 0 2 \$0-polarity-s \$0-polarity-r Polarity
+0 -6 0 10 #fcfcfc #000000 #000000 0;
+#X text 125 356 Bi;
+#X text 125 370 Uni;
+#N canvas 3178 279 450 544 polarityChoice 0;
+#X obj 117 20 inlet~;
+#X obj 259 44 sel 0 1, f 14;
+#X msg 259 72 1, f 1;
+#X msg 274 72 0, f 1;
+#X obj 236 143 abs~;
+#X obj 236 166 *~, f 7;
+#X obj 117 166 *~;
+#X obj 132 143 line~;
+#X obj 259 18 inlet;
+#X msg 299 72 1, f 1;
+#X msg 314 72 0, f 1;
+#X obj 274 143 line~;
+#X obj 162 232 outlet~;
+#X text 327 193 Uni-Polar;
+#X text 32 142 Bi-Polar;
+#X msg 132 122 \$1 5;
+#X msg 274 122 \$1 5;
+#X connect 0 0 6 0;
+#X connect 0 0 4 0;
+#X connect 1 0 2 0;
+#X connect 1 0 3 0;
+#X connect 1 1 9 0;
+#X connect 1 1 10 0;
+#X connect 2 0 15 0;
+#X connect 3 0 16 0;
+#X connect 4 0 5 0;
+#X connect 5 0 12 0;
+#X connect 6 0 12 0;
+#X connect 7 0 6 1;
+#X connect 8 0 1 0;
+#X connect 9 0 16 0;
+#X connect 10 0 15 0;
+#X connect 11 0 5 1;
+#X connect 15 0 7 0;
+#X connect 16 0 11 0;
+#X restore 22 719 pd polarityChoice;
+#X obj 121 692 r \$0-polarity-s;
+#X obj 26 124 route polarity;
+#X obj 3 226 s \$0-polarity-r;
+#X text 5 254 ^^^;
+#X text 3 272 polarity is set with a message to the 1st inlet: [polarity
+x( where x is 0 or 1 \, bipolar or unipolar, f 12;
+#X obj 393 462 s \$0-freq1;
+#N canvas 78 74 1360 847 numSlideSet 0;
+#X text 26 38 Travis Houldcroft || travishouldcroft.com;
+#X obj 145 113 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
 0;
-#X connect 6 0 10 1;
-#X connect 7 0 10 3;
-#X connect 9 0 114 0;
-#X connect 10 0 8 0;
-#X connect 11 0 64 0;
-#X connect 12 0 144 0;
-#X connect 13 0 109 0;
-#X connect 29 0 30 0;
-#X connect 31 0 36 0;
-#X connect 33 0 10 4;
-#X connect 34 0 10 5;
-#X connect 35 0 110 0;
-#X connect 36 0 32 0;
-#X connect 39 0 41 0;
-#X connect 40 0 43 0;
-#X connect 41 0 42 0;
-#X connect 43 0 44 0;
-#X connect 63 0 4 0;
-#X connect 63 1 91 0;
-#X connect 63 2 92 0;
-#X connect 65 0 10 0;
-#X connect 86 0 147 0;
-#X connect 88 0 10 2;
-#X connect 89 0 63 0;
-#X connect 90 0 63 1;
-#X connect 97 0 102 0;
-#X connect 97 1 98 0;
-#X connect 97 2 99 0;
-#X connect 100 0 97 1;
-#X connect 101 0 97 0;
-#X connect 102 0 103 0;
-#X connect 103 0 5 0;
-#X connect 104 0 26 0;
-#X connect 106 0 145 0;
-#X connect 107 0 106 0;
-#X connect 109 0 143 0;
-#X connect 110 0 36 1;
-#X connect 114 0 64 0;
-#X connect 114 0 87 0;
-#X connect 147 0 87 0;
-#X connect 149 0 150 0;
-#X connect 149 1 152 0;
-#X connect 149 2 154 0;
-#X connect 151 0 149 0;
-#X connect 153 0 149 1;
-#X connect 155 0 156 0;
-#X connect 155 1 159 0;
-#X connect 155 2 158 0;
-#X connect 157 0 155 0;
-#X connect 160 0 155 1;
-#X connect 169 0 173 0;
-#X connect 169 1 174 0;
-#X connect 169 2 172 0;
-#X connect 170 0 169 0;
-#X connect 171 0 169 1;
+#X obj 145 133 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
+0;
+#X text 142 240 220306 - ver 0.1, f 21;
+#X text 167 112 (float);
+#X text 167 132 (float);
+#X text 217 112 Value from the [slider];
+#X text 217 132 Value from the [numbox];
+#X text 167 169 (float);
+#X text 167 189 (float);
+#X text 217 189 Set value FOR [slider] FROM [numbox];
+#X text 167 209 (float);
+#X text 217 209 Set value FOR [numbox] FROM [slider];
+#X text 25 66 An abstraction to handle sliders and their number-box
+displays., f 64;
+#X obj 23 82 cnv 15 5 5 empty empty Number-boxes\\\ always\\\ output\\\ true\\\ working\\\ code\\\ value\\\ -\\\ sliders\\\ are\\\ alw*
+5 8 0 10 #ffffff #ff0400 0;
+#X obj 145 169 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
+0;
+#X obj 145 189 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
+0;
+#X obj 145 209 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
+0;
+#X text 219 169 Value output from [numbox];
+#X text 142 249 220504 - ver 0.2, f 21;
+#X obj 163 778 outlet toSlider;
+#X obj 33 328 inlet fromSlider;
+#X obj 135 328 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 301 328 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 22 6 cnv 15 5 5 empty empty pitchFreqConversionsAndGUI 5 8 0
+24 #ffffff #606060 0;
+#X obj 14 57 cnv 2 500 2 empty empty empty 20 12 0 14 #9f9f9f #404040
+0;
+#X obj 10 106 cnv 2 500 2 empty empty Inlets 20 12 0 14 #9f9f9f #606060
+0;
+#X obj 10 156 cnv 2 500 2 empty empty Outlets 20 12 0 14 #9f9f9f #606060
+0;
+#X obj 10 236 cnv 2 500 2 empty empty Rev.\\\ History 20 12 0 14 #9f9f9f
+#606060 0;
+#X obj 701 328 inlet fromFREQbox;
+#X obj 205 328 inlet fromPCBox;
+#X obj 743 778 outlet toRange;
+#X obj 38 778 outlet freq;
+#X obj 958 308 inlet fromRange;
+#X obj 317 778 outlet toPCBox;
+#X obj 448 778 outlet toMIDIBox;
+#X obj 593 778 outlet toFREQBox;
+#X obj 38 751 r \$0-freqVal;
+#X obj 628 240 v \$0-freqVar;
+#X obj 830 379 s \$0-freqVal;
+#X obj 756 598 s \$0-MIDIVal;
+#X obj 319 619 s \$0-PCVal;
+#X obj 756 556 ftom;
+#X msg 756 577 set \$1;
+#X obj 448 751 r \$0-MIDIVal;
+#X obj 627 217 v \$0-midiPitchVar;
+#X obj 803 577 v \$0-midiPitchVar;
+#N canvas 185 188 450 300 midi2opc 0;
+#X obj 25 51 inlet midiPitch;
+#X obj 265 185 / 12;
+#X obj 265 247 outlet octave;
+#X obj 25 72 t f f;
+#X obj 265 206 - 1;
+#X obj 25 125 t f b;
+#X obj 54 148 v \$0-octVar;
+#X obj 54 186 + 1;
+#X obj 54 205 * 12;
+#X obj 25 233 -;
+#X obj 135 203 print;
+#X obj 265 227 expr imodf($f1);
+#X obj 25 257 outlet pc;
+#X connect 0 0 3 0;
+#X connect 1 0 4 0;
+#X connect 3 0 5 0;
+#X connect 3 1 1 0;
+#X connect 4 0 11 0;
+#X connect 5 0 9 0;
+#X connect 5 1 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 1;
+#X connect 9 0 12 0;
+#X connect 11 0 2 0;
+#X restore 319 578 pd midi2opc;
+#X f 22;
+#X obj 448 619 s \$0-octVal;
+#X obj 743 751 r \$0-octVal;
+#X obj 317 751 r \$0-PCVal;
+#X msg 448 599 set \$1;
+#X msg 319 599 set \$1;
+#X obj 497 599 v \$0-octVar;
+#X obj 366 599 v \$0-pcVar;
+#X obj 1033 404 v \$0-octVar;
+#X obj 170 558 v \$0-pcVar;
+#X obj 170 579 / 11;
+#X obj 170 600 s \$0-sliderVal;
+#X obj 163 751 r \$0-sliderVal;
+#X obj 117 535 cnv 14 14 14 empty empty R 6 8 0 8 #fcc4c4 #7c7c7c 0
+;
+#X obj 1020 533 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcfc #7c7c7c
+0;
+#X obj 260 535 cnv 14 14 14 empty empty R 6 8 0 8 #e0c4fc #7c7c7c 0
+;
+#X obj 168 379 cnv 14 14 14 empty empty S 6 8 0 8 #fcc4c4 #7c7c7c 0
+;
+#X obj 654 379 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcfc #7c7c7c 0
+;
+#X obj 412 379 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcc4 #7c7c7c 0
+;
+#X obj 791 447 cnv 14 14 14 empty empty S 6 8 0 8 #e0c4fc #7c7c7c 0
+;
+#X obj 383 751 cnv 14 14 14 empty empty R 6 8 0 8 #00fc04 #7c7c7c 0
+;
+#X obj 252 751 cnv 14 14 14 empty empty R 6 8 0 8 #f8fc00 #7c7c7c 0
+;
+#X obj 852 533 cnv 14 14 14 empty empty R 6 8 0 8 #fc8000 #7c7c7c 0
+;
+#X obj 401 534 cnv 14 14 14 empty empty R 6 8 0 8 #fc0400 #404040 0
+;
+#X obj 116 751 cnv 14 14 14 empty empty R 6 8 0 8 #9c00fc #b8b8b8 0
+;
+#X obj 524 751 cnv 14 14 14 empty empty R 6 8 0 8 #0400fc #b8b8b8 0
+;
+#X obj 814 751 cnv 14 14 14 empty empty R 6 8 0 8 #00f8fc #404040 0
+;
+#X obj 385 619 cnv 14 14 14 empty empty S 6 8 0 8 #00fc04 #7c7c7c 0
+;
+#X obj 260 600 cnv 14 14 14 empty empty S 6 8 0 8 #f8fc00 #7c7c7c 0
+;
+#X obj 882 404 cnv 14 14 14 empty empty S 6 8 0 8 #fc8000 #7c7c7c 0
+;
+#X obj 828 425 cnv 14 14 14 empty empty S 6 8 0 8 #fc0400 #404040 0
+;
+#X obj 907 379 cnv 14 14 14 empty empty S 6 8 0 8 #9c00fc #b8b8b8 0
+;
+#X obj 833 598 cnv 14 14 14 empty empty S 6 8 0 8 #0400fc #b8b8b8 0
+;
+#X obj 519 619 cnv 14 14 14 empty empty S 6 8 0 8 #00f8fc #404040 0
+;
+#X obj 756 533 r \$0-freqToMidi;
+#X obj 787 404 s \$0-freqToMidi;
+#X obj 319 557 v \$0-midiPitchVar;
+#X obj 744 425 s \$0-midi2opc;
+#X obj 319 534 r \$0-midi2opc;
+#X obj 170 535 r \$0-pc2slider;
+#X obj 701 447 s \$0-pc2slider;
+#X obj 701 357 t b b f f, f 22;
+#X obj 593 723 r \$0-freqVal;
+#X obj 671 724 cnv 14 14 14 empty empty R 6 8 0 8 #9c00fc #b8b8b8 0
+;
+#X msg 593 751 set \$1;
+#X obj 561 447 cnv 14 14 14 empty empty S 6 8 0 8 #e0c4fc #7c7c7c 0
+;
+#X obj 586 425 cnv 14 14 14 empty empty S 6 8 0 8 #fc0400 #404040 0
+;
+#X obj 502 425 s \$0-midi2opc;
+#X obj 471 447 s \$0-pc2slider;
+#X obj 471 357 t b b f f, f 16;
+#X obj 471 328 inlet fromMidiBox;
+#X obj 564 379 s \$0-midi2freq;
+#X obj 929 556 mtof;
+#X obj 939 577 v \$0-freqVar;
+#X obj 929 598 s \$0-freqVal;
+#X obj 1006 598 cnv 14 14 14 empty empty S 6 8 0 8 #9c00fc #b8b8b8
+0;
+#X obj 533 404 v \$0-midiPitchVar;
+#X obj 577 328 cnv 14 18 14 empty empty 3 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 809 328 cnv 14 18 14 empty empty 4 2 8 0 12 #606060 #dcdcdc
+0;
+#X obj 674 535 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcc4 #7c7c7c 0
+;
+#X obj 596 535 r \$0-pc2midi;
+#X obj 334 379 s \$0-pc2midi;
+#X obj 596 556 t f b;
+#X obj 626 575 v \$0-octVar;
+#X obj 626 598 + 1;
+#X obj 626 618 * 12;
+#X obj 596 637 +;
+#X obj 672 678 cnv 14 14 14 empty empty R 6 8 0 8 #0400fc #b8b8b8 0
+;
+#X msg 596 658 set \$1;
+#X obj 596 678 s \$0-MIDIVal;
+#X obj 648 639 v \$0-midiPitchVar;
+#X obj 929 533 r \$0-midi2freq;
+#X obj 648 658 s \$0-midi2freq;
+#X obj 738 658 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcfc #7c7c7c 0
+;
+#X text 340 426 (also handles freq conversion), f 16;
+#X obj 205 357 t b f f, f 22;
+#X obj 269 404 v \$0-pcVar;
+#X obj 295 425 cnv 14 14 14 empty empty R 6 8 0 8 #e0c4fc #7c7c7c 0
+;
+#X obj 205 425 s \$0-pc2slider;
+#X obj 78 379 s \$0-slider2pc;
+#X obj 28 535 r \$0-slider2pc;
+#X obj 28 556 * 11;
+#X msg 28 577 set \$1;
+#X obj 28 600 s \$0-PCVal;
+#X obj 94 600 cnv 14 14 14 empty empty S 6 8 0 8 #00fc04 #7c7c7c 0
+;
+#X obj 81 576 v \$0-pcVar;
+#X obj 33 404 v \$0-pcVar;
+#X obj 111 425 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcc4 #7c7c7c 0
+;
+#X obj 33 425 s \$0-pc2midi;
+#X obj 33 357 t b f, f 8;
+#X text 27 445 (also handles freq conversion), f 16;
+#X obj 110 778 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff
+0;
+#X obj 259 778 cnv 14 18 14 empty empty 2 2 8 0 12 #9f9f9f #ffffff
+0;
+#X obj 407 778 cnv 14 18 14 empty empty 3 2 8 0 12 #9f9f9f #ffffff
+0;
+#X obj 551 778 cnv 14 18 14 empty empty 4 2 8 0 12 #9f9f9f #ffffff
+0;
+#X obj 695 778 cnv 14 18 14 empty empty 5 2 8 0 12 #9f9f9f #ffffff
+0;
+#X obj 833 778 cnv 14 18 14 empty empty 6 2 8 0 12 #9f9f9f #ffffff
+0;
+#X obj 1054 308 cnv 14 18 14 empty empty 5 2 8 0 12 #606060 #dcdcdc
+0;
+#X text 368 401 ^|, f 1;
+#X obj 626 195 v \$0-octVar;
+#X obj 625 173 v \$0-pcVar;
+#X obj 1073 447 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcc4 #7c7c7c
+0;
+#X obj 995 447 s \$0-pc2midi;
+#X obj 995 425 v \$0-pcVar;
+#X obj 1033 379 expr imodf($f1);
+#X text 1130 373 Guarantee octave is an integer;
+#X obj 958 467 v \$0-midiPitchVar;
+#X obj 1049 488 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcfc #7c7c7c
+0;
+#X obj 958 488 s \$0-midi2freq;
+#X obj 958 357 t b b f, f 13;
+#X text 1064 423 If octave changes \, recalculate MIDI note display
+;
+#X text 1067 463 If octave changes \, recalculate freq display;
+#X text 421 533 MIDI to octave and PC;
+#X obj 958 329 - 7;
+#X connect 21 0 136 0;
+#X connect 29 0 88 0;
+#X connect 30 0 122 0;
+#X connect 33 0 160 0;
+#X connect 37 0 32 0;
+#X connect 42 0 43 0;
+#X connect 42 0 46 0;
+#X connect 43 0 40 0;
+#X connect 44 0 35 0;
+#X connect 47 0 52 0;
+#X connect 47 0 54 0;
+#X connect 47 1 51 0;
+#X connect 47 1 53 0;
+#X connect 49 0 31 0;
+#X connect 50 0 34 0;
+#X connect 51 0 48 0;
+#X connect 52 0 41 0;
+#X connect 56 0 57 0;
+#X connect 57 0 58 0;
+#X connect 59 0 20 0;
+#X connect 81 0 42 0;
+#X connect 83 0 47 0;
+#X connect 85 0 83 0;
+#X connect 86 0 56 0;
+#X connect 88 0 87 0;
+#X connect 88 1 84 0;
+#X connect 88 2 82 0;
+#X connect 88 3 39 0;
+#X connect 89 0 91 0;
+#X connect 91 0 36 0;
+#X connect 96 0 95 0;
+#X connect 96 1 94 0;
+#X connect 96 2 103 0;
+#X connect 96 3 98 0;
+#X connect 97 0 96 0;
+#X connect 99 0 100 0;
+#X connect 99 0 101 0;
+#X connect 107 0 109 0;
+#X connect 109 0 113 0;
+#X connect 109 1 110 0;
+#X connect 110 0 111 0;
+#X connect 111 0 112 0;
+#X connect 112 0 113 1;
+#X connect 113 0 115 0;
+#X connect 113 0 117 0;
+#X connect 113 0 119 0;
+#X connect 115 0 116 0;
+#X connect 118 0 99 0;
+#X connect 122 0 125 0;
+#X connect 122 1 123 0;
+#X connect 122 2 108 0;
+#X connect 127 0 128 0;
+#X connect 128 0 129 0;
+#X connect 128 0 132 0;
+#X connect 129 0 130 0;
+#X connect 133 0 135 0;
+#X connect 136 0 133 0;
+#X connect 136 1 126 0;
+#X connect 150 0 149 0;
+#X connect 151 0 55 0;
+#X connect 153 0 155 0;
+#X connect 156 0 153 0;
+#X connect 156 1 150 0;
+#X connect 156 2 151 0;
+#X connect 160 0 156 0;
+#X restore 393 340 pd numSlideSet;
+#X f 37;
+#X obj 393 247 r \$0-freqSlider-s;
+#X obj 436 440 s \$0-freqSlider-r;
+#X text 389 221 Frequency and Range GUI and Value Handling;
+#X obj 447 266 r \$0-pcNumbox-s;
+#X obj 502 284 r \$0-midiNumbox-s;
+#X obj 557 302 r \$0-freqNumbox-s;
+#X obj 480 418 s \$0-pcNumbox-r;
+#X obj 524 397 s \$0-midiNumbox-r;
+#X obj 568 378 s \$0-freqNumbox-r;
+#X obj 612 320 r \$0-range-s;
+#X obj 612 359 s \$0-range-r;
+#X obj 690 321 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c 0
+;
+#X obj 690 361 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcc4 #7c7c7c 0
+;
+#X text 389 208 ---------------------------------------------------------
+;
+#X obj 138 417 tgl 15 0 \$0-embed-s \$0-embed-r Embed 17 7 0 10 #ffffff
+#000000 #000000 0 1;
+#X obj 1457 433 cnv 14 14 14 empty empty R 6 8 0 8 #c4c4fc #7c7c7c
+0;
+#X obj 1459 478 cnv 14 14 14 empty empty R 6 8 0 8 #fc0400 #404040
+0;
+#X obj 959 258 savestate, f 42;
+#X obj 1089 582 cnv 14 14 14 empty empty S 6 8 0 8 #fce0c4 #7c7c7c
+0;
+#X obj 1077 562 cnv 14 14 14 empty empty S 6 8 0 8 #fcc4c4 #7c7c7c
+0;
+#X obj 1160 648 cnv 14 14 14 empty empty S 6 8 0 8 #c4c4fc #7c7c7c
+0;
+#X obj 1140 624 cnv 14 14 14 empty empty S 6 8 0 8 #c4fcc4 #7c7c7c
+0;
+#X obj 1121 604 cnv 14 14 14 empty empty S 6 8 0 8 #fcfcc4 #7c7c7c
+0;
+#X obj 1388 368 cnv 14 14 14 empty empty R 6 8 0 8 #fce0c4 #7c7c7c
+0;
+#X obj 1379 351 cnv 14 14 14 empty empty R 6 8 0 8 #fcc4c4 #7c7c7c
+0;
+#X obj 1438 411 cnv 14 14 14 empty empty R 6 8 0 8 #c4fcc4 #7c7c7c
+0;
+#X obj 1424 388 cnv 14 14 14 empty empty R 6 8 0 8 #fcfcc4 #7c7c7c
+0;
+#X obj 1208 311 f;
+#X obj 1226 331 f;
+#X obj 1245 350 f;
+#X obj 1263 370 f;
+#X obj 1281 390 f;
+#X obj 1072 340 cnv 14 14 14 empty empty S 6 8 0 8 #fc0400 #404040
+0;
+#X obj 929 478 spigot;
+#X obj 993 340 s \$0-embed-r;
+#X obj 993 316 list trim;
+#X obj 929 436 list store;
+#X obj 959 390 t b l;
+#X text 847 244 Embed parameter determines if saved parameters are
+actually loaded here, f 17;
+#X obj 929 415 delay 5;
+#X obj 962 458 r \$0-embed-s;
+#X text 846 305 Send the stored embed parameter \, then it gets reported
+to the code below to allow the other saved parameters to get reported
+, f 17;
+#X text 810 410 Delay the remaining paramters 5 msec to make sure the
+[spigot] has time to be opened if the EMBED paramter is set to "on"
+\, then the parameters get reported to the GUI, f 18;
+#X text 793 221 Embed Parameters, f 17;
+#X obj 1040 458 cnv 14 14 14 empty empty R 6 8 0 8 #fc0400 #404040
+0;
+#X obj 1233 311 r \$0-shape-s;
+#X obj 948 543 s \$0-range-r;
+#X obj 967 563 s \$0-freqNumbox-r;
+#X obj 1044 646 s \$0-glideNumbox-r;
+#X obj 929 523 s \$0-shape-r;
+#X obj 1251 331 r \$0-range-s;
+#X obj 1300 410 f;
+#X obj 1318 433 f;
+#X obj 1355 476 f;
+#X obj 1380 476 r \$0-embed-s;
+#X obj 1287 369 r \$0-volNumbox-s;
+#X obj 986 583 s \$0-volNumbox-r;
+#X obj 1006 603 s \$0-fmAmtNumbox-r;
+#X obj 1025 623 s \$0-amAmtNumbox-r;
+#X obj 1308 389 r \$0-fmAmtNumbox-s;
+#X obj 1325 410 r \$0-amAmtNumbox-s;
+#X obj 1343 432 r \$0-glideNumbox-s;
+#X text 788 208 --------------------------------------------------------------------------------------------------------------------------
+, f 127;
+#X text 957 239 STORAGE ORDER: shape range freq vol fmAmt amAmt glide
+polarity embed, f 71;
+#X obj 1457 456 cnv 14 14 14 empty empty R 6 8 0 8 #c4c4fc #7c7c7c
+0;
+#X obj 1336 456 f;
+#X obj 1361 455 r \$0-polarity-s;
+#X obj 1208 513 pack f f f f f f f f f, f 25;
+#X obj 1208 288 t b b b b b b b b b, f 25;
+#X obj 959 292 list split 8;
+#X obj 929 501 unpack f f f f f f f f, f 23;
+#X obj 1160 666 cnv 14 14 14 empty empty R 6 8 0 8 #c4c4fc #7c7c7c
+0;
+#X obj 1064 665 s \$0-polarity-r;
+#X obj 1270 350 r \$0-freq1;
+#X obj 747 131 s \$0-fmAmtNumbox-r;
+#X obj 928 129 s \$0-amAmtNumbox-r;
+#X obj 989 149 loadbang;
+#X msg 989 170 0;
+#X obj 617 159 osc~ 2;
+#X connect 5 0 9 1;
+#X connect 6 0 9 3;
+#X connect 8 0 101 0;
+#X connect 9 0 168 0;
+#X connect 10 0 170 0;
+#X connect 11 0 126 0;
+#X connect 12 0 97 0;
+#X connect 28 0 29 0;
+#X connect 30 0 31 0;
+#X connect 32 0 9 4;
+#X connect 33 0 9 5;
+#X connect 36 0 38 0;
+#X connect 37 0 39 0;
+#X connect 38 0 250 0;
+#X connect 39 0 251 0;
+#X connect 59 0 9 0;
+#X connect 78 0 129 0;
+#X connect 85 0 90 0;
+#X connect 85 1 86 0;
+#X connect 85 2 87 0;
+#X connect 88 0 85 1;
+#X connect 89 0 85 0;
+#X connect 90 0 91 0;
+#X connect 91 0 4 0;
+#X connect 92 0 25 0;
+#X connect 94 0 127 0;
+#X connect 95 0 94 0;
+#X connect 97 0 125 0;
+#X connect 101 0 58 0;
+#X connect 101 0 79 0;
+#X connect 101 0 171 0;
+#X connect 129 0 79 0;
+#X connect 131 0 132 0;
+#X connect 131 1 134 0;
+#X connect 131 2 136 0;
+#X connect 133 0 131 0;
+#X connect 135 0 131 1;
+#X connect 137 0 138 0;
+#X connect 137 1 141 0;
+#X connect 137 2 140 0;
+#X connect 139 0 137 0;
+#X connect 142 0 137 1;
+#X connect 151 0 155 0;
+#X connect 151 1 156 0;
+#X connect 151 2 154 0;
+#X connect 152 0 151 0;
+#X connect 153 0 151 1;
+#X connect 168 0 7 0;
+#X connect 169 0 168 1;
+#X connect 170 0 171 0;
+#X connect 170 1 58 0;
+#X connect 175 0 174 0;
+#X connect 175 1 177 0;
+#X connect 175 2 182 0;
+#X connect 175 3 183 0;
+#X connect 175 4 184 0;
+#X connect 175 5 186 0;
+#X connect 176 0 175 0;
+#X connect 179 0 175 1;
+#X connect 180 0 175 2;
+#X connect 181 0 175 3;
+#X connect 185 0 175 4;
+#X connect 193 0 245 0;
+#X connect 193 1 244 0;
+#X connect 203 0 243 0;
+#X connect 204 0 243 1;
+#X connect 205 0 243 2;
+#X connect 206 0 243 3;
+#X connect 207 0 243 4;
+#X connect 209 0 246 0;
+#X connect 211 0 210 0;
+#X connect 212 0 209 0;
+#X connect 213 0 215 0;
+#X connect 213 1 212 1;
+#X connect 215 0 212 0;
+#X connect 216 0 209 1;
+#X connect 221 0 203 1;
+#X connect 226 0 204 1;
+#X connect 227 0 243 5;
+#X connect 228 0 243 6;
+#X connect 229 0 243 8;
+#X connect 230 0 229 1;
+#X connect 231 0 206 1;
+#X connect 235 0 207 1;
+#X connect 236 0 227 1;
+#X connect 237 0 228 1;
+#X connect 241 0 243 7;
+#X connect 242 0 241 1;
+#X connect 243 0 193 0;
+#X connect 244 0 203 0;
+#X connect 244 1 204 0;
+#X connect 244 2 205 0;
+#X connect 244 3 206 0;
+#X connect 244 4 207 0;
+#X connect 244 5 227 0;
+#X connect 244 6 228 0;
+#X connect 244 7 241 0;
+#X connect 244 8 229 0;
+#X connect 245 0 213 0;
+#X connect 245 1 211 0;
+#X connect 246 0 225 0;
+#X connect 246 1 222 0;
+#X connect 246 2 223 0;
+#X connect 246 3 232 0;
+#X connect 246 4 233 0;
+#X connect 246 5 234 0;
+#X connect 246 6 224 0;
+#X connect 246 7 248 0;
+#X connect 249 0 205 1;
+#X connect 252 0 253 0;
+#X connect 253 0 251 0;
+#X connect 254 0 31 0;
 #X coords 0 -1 1 1 222 250 2 100 220;
