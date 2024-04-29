@@ -1,0 +1,7 @@
+PD Patch Color Coding
+
+BLUE - UI is sized to the sizing standard
+PURPLE - patch is duplicated in the SATK
+Grey - Should be added to SATK
+GREEN - Patch has a help-file
+RED - Needs work

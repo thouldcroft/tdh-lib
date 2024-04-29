@@ -1,20 +1,24 @@
-#N canvas 2061 -346 1663 1200 10;
+#N canvas 40 38 1472 916 10;
+#X obj 26 117 cnv 1 298 2 empty \$0-inletBorder-r empty 1 7 0 10 #404040 #404040 0;
+#X obj 26 104 cnv 10 298 14 empty \$0-inletBar-r All 0 6 0 8 #dfdfdf #404040 0;
+#X obj 98 105 cnv 10 5 12 empty empty G1 0 6 0 8 #dfdfdf #404040 0;
+#X obj 169 105 cnv 10 5 12 empty empty G2 0 6 0 8 #dfdfdf #404040 0;
+#X obj 244 105 cnv 10 5 12 empty empty G3 0 6 0 8 #dfdfdf #404040 0;
+#X obj 26 366 cnv 1 298 2 empty \$0-moduleNameBorder-r empty 1 7 0 10 #404040 #404040 0;
+#X obj 26 367 cnv 12 298 14 empty \$0-moduleName-r Gesture 1 7 0 10 #dcdcdc #404040 0;
+#X obj 26 381 cnv 1 298 2 empty \$0-outletBorder-r empty 1 7 0 10 #404040 #404040 0;
+#X obj 26 382 cnv 10 298 14 empty \$0-outletBar-r G1 0 6 0 8 #dfdfdf #404040 0;
+#X obj 94 382 cnv 10 5 12 empty empty G2 0 6 0 8 #dfdfdf #404040 0;
+#X obj 171 382 cnv 10 5 12 empty empty G3 0 6 0 8 #dfdfdf #404040 0;
+#X obj 244 382 cnv 10 5 12 empty empty G4 0 6 0 8 #dfdfdf #404040 0;
 #X text 18 48 Travis Houldcroft || travishouldcroft.com;
-#X obj 1 2 cnv 15 1400 40 empty \$0-abstrPatchTitleBar tdh.seq.gesture
-9 20 0 18 #3c50fc #a0a0a0 0;
-#X obj 1 332 cnv 2 1400 3 empty \$0-abstrPatchSecLabelNotes Notes 20
-15 0 16 #a0a0a0 #202020 0;
-#X obj 1 435 cnv 2 1400 2 empty \$0-abstrPatchSecDivider empty 9 20
-0 18 #a0a0a0 #202020 0;
-#X obj 1 372 cnv 2 1400 3 empty \$0-abstrPatchSecLabelRevHist Revision\ History
-20 15 0 16 #a0a0a0 #202020 0;
-#X obj 1 292 cnv 2 1400 3 empty \$0-abstrPatchSecLabelArgs Arguments
-20 15 0 16 #a0a0a0 #202020 0;
-#N canvas 1440 293 656 414 abstr-init 0;
-#X obj 3 21 cnv 5 5 5 empty empty | 0 0 0 14 #fcfcfc #404040 0;
-#X obj 215 126 loadbang;
-#X obj 215 152 del 10;
-#N canvas 1280 23 1414 755 abstr-cnv-set 0;
+#X obj 1 2 cnv 15 1450 40 empty \$0-abstrPatchTitleBar tdh.seq.gesture 9 20 0 18 #3c50fc #a0a0a0 0;
+#X obj 1 75 cnv 2 1450 2 empty \$0-abstrPatchSecDivider empty 9 20 0 18 #a0a0a0 #202020 0;
+#N canvas 582 38 770 815 abstr-init 0;
+#X obj 3 56 cnv 5 5 5 empty empty | 0 0 0 14 #fcfcfc #404040 0;
+#X obj 176 122 loadbang;
+#X obj 176 148 del 10;
+#N canvas 98 38 1414 755 abstr-cnv-set 0;
 #X text 121 406 \$0-abstrPatchSecDivider;
 #X text 120 1003 \$0-abstrPatchSecLabelNotes;
 #X text 120 1139 \$0-abstrPatchSecLabelRevHist;
@@ -39,8 +43,7 @@
 #X msg 589 185 label_font \$1 \$2;
 #X text 632 41 type;
 #X text 760 40 size;
-#X obj 589 64 vradio 15 1 0 3 empty empty empty 0 -8 0 10 #fcfcfc #000000
-#000000 0;
+#X obj 589 64 vradio 15 1 0 3 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 0;
 #X text 605 63 DejaVu Sans Mono;
 #X text 605 78 Helvetica;
 #X text 606 93 Times;
@@ -66,50 +69,37 @@
 #X obj 400 42 inlet;
 #X obj 314 42 inlet;
 #X obj 491 42 inlet;
-#X obj 155 42 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 297 42 cnv 14 14 14 empty empty 2 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 384 42 cnv 14 14 14 empty empty 3 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 155 42 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 297 42 cnv 14 14 14 empty empty 2 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 384 42 cnv 14 14 14 empty empty 3 4 8 0 12 #606060 #dcdcdc 0;
 #X obj 721 42 inlet;
 #X obj 589 42 inlet;
 #X obj 817 42 inlet;
-#X obj 476 42 cnv 14 14 14 empty empty 4 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 573 42 cnv 14 14 14 empty empty 5 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 703 42 cnv 14 14 14 empty empty 6 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 476 42 cnv 14 14 14 empty empty 4 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 573 42 cnv 14 14 14 empty empty 5 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 703 42 cnv 14 14 14 empty empty 6 4 8 0 12 #606060 #dcdcdc 0;
 #X text 315 18 Size;
 #X text 421 18 Visible Size;
 #X text 635 18 Label Font;
 #X text 824 18 Label Offset;
 #X obj 889 42 inlet;
-#X obj 800 42 cnv 14 14 14 empty empty 7 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 800 42 cnv 14 14 14 empty empty 7 4 8 0 12 #606060 #dcdcdc 0;
 #X msg 1052 89 symbol my\ label;
 #X symbolatom 973 92 10 0 0 0 - - - 0;
 #X obj 973 42 inlet;
-#X obj 872 42 cnv 14 14 14 empty empty 8 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 872 42 cnv 14 14 14 empty empty 8 4 8 0 12 #606060 #dcdcdc 0;
 #X msg 973 70 symbol \$1;
 #X text 1007 18 Label Text;
 #X obj 1191 42 inlet;
-#X obj 958 42 cnv 14 14 14 empty empty 9 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 958 42 cnv 14 14 14 empty empty 9 4 8 0 12 #606060 #dcdcdc 0;
 #X obj 1295 42 inlet;
-#X obj 1174 42 cnv 14 14 14 empty empty 10 0 8 0 12 #606060 #dcdcdc
-0;
+#X obj 1174 42 cnv 14 14 14 empty empty 10 0 8 0 12 #606060 #dcdcdc 0;
 #X text 0 18 Canvas Name;
-#X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 738 322 cnv 2 1400 40 empty \$0-test_canvas tdh.seq.gesture
-20 15 0 16 #a0a0a0 #202020 0;
+#X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 738 322 cnv 2 1450 40 empty \$0-test_canvas tdh.seq.gesture 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
-#X obj 170 88 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#X obj 170 88 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 249 134 == 1;
 #X obj 101 135 == 0;
 #X obj 144 134 list append \$0;
@@ -117,19 +107,13 @@
 #X msg 24 136 symbol \$1;
 #X obj 24 167 spigot;
 #X obj 170 42 inlet;
-#X obj 1279 42 cnv 14 14 14 empty empty 11 0 8 0 12 #606060 #dcdcdc
-0;
+#X obj 1279 42 cnv 14 14 14 empty empty 11 0 8 0 12 #606060 #dcdcdc 0;
 #X text 136 18 Add "\$0" option;
-#X obj 374 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 561 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 791 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 944 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 1164 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
+#X obj 374 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 561 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 791 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 944 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 1164 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
 #X connect 0 0 1 0;
 #X connect 1 0 37 0;
 #X connect 1 0 69 0;
@@ -201,60 +185,37 @@
 #X symbolatom 214 127 10 0 0 0 CnvReceiveSymbol - - 0;
 #X floatatom 181 219 5 0 2 0 Lbl-Fon - - 0;
 #X symbolatom 274 195 10 0 0 0 Lbl-Txt - - 0;
-#X obj 295 128 tgl 15 0 empty empty Append_0 20 7 0 10 #fcfcfc #fc8000
-#000000 0 1;
+#X obj 295 128 tgl 15 0 empty empty Append_0 20 7 0 10 #fcfcfc #fc8000 #000000 0 1;
 #X text 194 103 Label Properties;
 #X obj 28 18 inlet;
-#X obj 414 223 cnv 15 500 30 empty \$0-myCanvas This\\\ is\\\ my\\\ label?
-9 13 0 18 #e0e0e0 #606060 0;
-#X obj 28 54 route doll rec size visw vish lblfon lblsz lblx lbly bgclr
-lblclr, f 66;
+#X obj 414 223 cnv 15 500 30 empty \$0-myCanvas This\ is\ my\ label? 9 13 0 18 #e0e0e0 #606060 0;
+#X obj 28 54 route doll rec size visw vish lblfon lblsz lblx lbly bgclr lblclr, f 66;
 #X obj 56 93 symbol;
 #X text 6 4 _;
 #X text 479 173 dollarsign0-myCanvas;
-#X msg 74 18 doll 1 \, rec myCanvas \, size 15 \, visw 50 \, vish 60
-\, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr
-21, f 106;
+#X msg 74 18 doll 1 \, rec myCanvas \, size 15 \, visw 50 \, vish 60 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr 21, f 106;
 #N canvas 240 66 752 410 \$0-how-to-set-values-externally 0;
-#X text 112 49 doll [0/1] - toggle on appending "\$0-" at the start
-of the recieve symbol, f 85;
-#X text 112 102 visw [float] - the visible width of the canvas in pixels
-, f 85;
-#X text 112 85 size [float] - the size of the clickable/dragable portion
-of the canvas in pixels, f 85;
-#X text 112 122 vish [float] - the visible height of the canvas in
-pixels, f 85;
-#X text 111 141 lblfon [0/1/2] - font designation for the canvas' label
-\, with [0] for Menlo \, [1] for, f 89;
-#X text 131 155 Helvetica \, [2] for Times. Note that these fonts may
-be different on Windows or Linux, f 84;
-#X text 111 173 lblsz [float] - font size designation for the canvas'
-label, f 85;
-#X text 111 213 lbly [float] - y offset in pixels from the top left
-corner of the canvas, f 85;
-#X text 111 193 lblx [float] - x offset (horizontal) in pixels from
-the top left corner of the canvas, f 85;
-#X text 4 29 To set the values for your canvas object externally \,
-send messages with the following signifiers to the 0 (leftmost) inlet:
-, f 124;
-#X msg 31 336 doll 1 \, rec myCanvas \, size 15 \, visw 500 \, vish
-30 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr
-21, f 106;
-#X text 111 67 rec [symbol] - receive symbol for the canvas, f 85
-;
-#X obj 90 241 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement1
-Please\ note\ that\ the\ $-0\ designation\ (1\ or\ 0)\ MUST\ be\ sent\ first\,\ followed\ by\ the\ canvas\ 
-1 9 0 12 #fcfcfc #fc0400 0;
+#X text 112 49 doll [0/1] - toggle on appending "\$0-" at the start of the recieve symbol, f 85;
+#X text 112 102 visw [float] - the visible width of the canvas in pixels, f 85;
+#X text 112 85 size [float] - the size of the clickable/dragable portion of the canvas in pixels, f 85;
+#X text 112 122 vish [float] - the visible height of the canvas in pixels, f 85;
+#X text 111 141 lblfon [0/1/2] - font designation for the canvas' label \, with [0] for Menlo \, [1] for, f 89;
+#X text 131 155 Helvetica \, [2] for Times. Note that these fonts may be different on Windows or Linux, f 84;
+#X text 111 173 lblsz [float] - font size designation for the canvas' label, f 85;
+#X text 111 213 lbly [float] - y offset in pixels from the top left corner of the canvas, f 85;
+#X text 111 193 lblx [float] - x offset (horizontal) in pixels from the top left corner of the canvas, f 85;
+#X text 4 29 To set the values for your canvas object externally \, send messages with the following signifiers to the 0 (leftmost) inlet:, f 124;
+#X msg 31 336 doll 1 \, rec myCanvas \, size 15 \, visw 500 \, vish 30 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr 21, f 106;
+#X text 111 67 rec [symbol] - receive symbol for the canvas, f 85;
+#X obj 90 241 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement1 Please\ note\ that\ the\ $-0\ designation\ (1\ or\ 0)\ MUST\ be\ sent\ first\,\ followed\ by\ the\ canvas\  1 9 0 12 #fcfcfc #fc0400 0;
 #N canvas 2423 143 808 250 init 0;
 #X msg 30 102 label \$1;
 #X msg 419 120 label \$1;
 #X obj 29 147 s \$0-canvas-format-helper-boldstatement1;
 #X obj 418 164 s \$0-canvas-format-helper-boldstatement2;
 #X obj 233 15 loadbang;
-#X msg 420 51 symbol receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching!
-;
-#X msg 26 43 symbol Please\\\ note\\\ that\\\ the\\\ $-0\\\ designation\\\ (1\\\ or\\\ 0)\\\ MUST\\\ be\\\ sent\\\ first\\\,\\\ followed\\\ by\\\ the\\\ canvas\\\ 
-;
+#X msg 420 51 symbol receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching!;
+#X msg 26 43 symbol Please\\\ note\\\ that\\\ the\\\ $-0\\\ designation\\\ (1\\\ or\\\ 0)\\\ MUST\\\ be\\\ sent\\\ first\\\,\\\ followed\\\ by\\\ the\\\ canvas\\\ ;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 4 0 5 0;
@@ -262,29 +223,20 @@ Please\ note\ that\ the\ $-0\ designation\ (1\ or\ 0)\ MUST\ be\ sent\ first\,\ 
 #X connect 5 0 1 0;
 #X connect 6 0 0 0;
 #X restore 659 9 pd init;
-#X obj 90 257 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement2
-receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching!
-1 9 0 12 #fcfcfc #fc0400 0;
+#X obj 90 257 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement2 receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching! 1 9 0 12 #fcfcfc #fc0400 0;
 #X msg 112 362 symbol this\ is\ my\ label!;
-#X text 296 357 The label parameter must be sent separately to Inlet
-1 (rightmost inlet). The message must be prepended with the "symbol"
-identifier \, and the escape character () needs to be set in the message:
-, f 68;
-#X text 102 286 All parameters EXCEPT label can be sent in a single
-message to Inlet 0 (leftmost inlet) like below (and this can be copied
-and pasted for easy initializing formatting)., f 89;
+#X text 296 357 The label parameter must be sent separately to Inlet 1 (rightmost inlet). The message must be prepended with the "symbol" identifier \, and the escape character () needs to be set in the message:, f 68;
+#X text 102 286 All parameters EXCEPT label can be sent in a single message to Inlet 0 (leftmost inlet) like below (and this can be copied and pasted for easy initializing formatting)., f 89;
 #X restore 326 378 pd \$0-how-to-set-values-externally;
 #X msg 326 336 vis 1;
 #X obj 326 357 s pd-\$0-how-to-set-values-externally;
-#X obj 120 263 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
+#X obj 120 263 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X text 141 263 How to set canvas values externally;
 #X text 891 18 All left-inlet messages;
 #X text 984 47 Label text;
 #X msg 636 48 symbol This\ is\ my\ label?;
 #X obj 587 47 inlet;
-#X obj 632 184 cnv 5 5 5 empty empty ↴ -3 3 0 24 #fcfcfc #606060
-0;
+#X obj 632 184 cnv 5 5 5 empty empty ↴ -3 3 0 24 #fcfcfc #606060 0;
 #X connect 0 0 2 6;
 #X connect 1 0 2 11;
 #X connect 3 0 2 10;
@@ -342,8 +294,7 @@ and pasted for easy initializing formatting)., f 89;
 #X msg 589 185 label_font \$1 \$2;
 #X text 632 41 type;
 #X text 760 40 size;
-#X obj 589 64 vradio 15 1 0 3 empty empty empty 0 -8 0 10 #fcfcfc #000000
-#000000 0;
+#X obj 589 64 vradio 15 1 0 3 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 0;
 #X text 605 63 DejaVu Sans Mono;
 #X text 605 78 Helvetica;
 #X text 606 93 Times;
@@ -369,50 +320,37 @@ and pasted for easy initializing formatting)., f 89;
 #X obj 400 42 inlet;
 #X obj 314 42 inlet;
 #X obj 491 42 inlet;
-#X obj 155 42 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 297 42 cnv 14 14 14 empty empty 2 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 384 42 cnv 14 14 14 empty empty 3 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 155 42 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 297 42 cnv 14 14 14 empty empty 2 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 384 42 cnv 14 14 14 empty empty 3 4 8 0 12 #606060 #dcdcdc 0;
 #X obj 721 42 inlet;
 #X obj 589 42 inlet;
 #X obj 817 42 inlet;
-#X obj 476 42 cnv 14 14 14 empty empty 4 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 573 42 cnv 14 14 14 empty empty 5 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 703 42 cnv 14 14 14 empty empty 6 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 476 42 cnv 14 14 14 empty empty 4 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 573 42 cnv 14 14 14 empty empty 5 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 703 42 cnv 14 14 14 empty empty 6 4 8 0 12 #606060 #dcdcdc 0;
 #X text 315 18 Size;
 #X text 421 18 Visible Size;
 #X text 635 18 Label Font;
 #X text 824 18 Label Offset;
 #X obj 889 42 inlet;
-#X obj 800 42 cnv 14 14 14 empty empty 7 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 800 42 cnv 14 14 14 empty empty 7 4 8 0 12 #606060 #dcdcdc 0;
 #X msg 1052 89 symbol my\ label;
 #X symbolatom 973 92 10 0 0 0 - - - 0;
 #X obj 973 42 inlet;
-#X obj 872 42 cnv 14 14 14 empty empty 8 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 872 42 cnv 14 14 14 empty empty 8 4 8 0 12 #606060 #dcdcdc 0;
 #X msg 973 70 symbol \$1;
 #X text 1007 18 Label Text;
 #X obj 1191 42 inlet;
-#X obj 958 42 cnv 14 14 14 empty empty 9 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 958 42 cnv 14 14 14 empty empty 9 4 8 0 12 #606060 #dcdcdc 0;
 #X obj 1295 42 inlet;
-#X obj 1174 42 cnv 14 14 14 empty empty 10 0 8 0 12 #606060 #dcdcdc
-0;
+#X obj 1174 42 cnv 14 14 14 empty empty 10 0 8 0 12 #606060 #dcdcdc 0;
 #X text 0 18 Canvas Name;
-#X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 738 322 cnv 2 1400 40 empty \$0-test_canvas tdh.seq.gesture
-20 15 0 16 #a0a0a0 #202020 0;
+#X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 738 322 cnv 2 1450 40 empty \$0-test_canvas tdh.seq.gesture 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
-#X obj 170 88 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#X obj 170 88 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 249 134 == 1;
 #X obj 101 135 == 0;
 #X obj 144 134 list append \$0;
@@ -420,19 +358,13 @@ and pasted for easy initializing formatting)., f 89;
 #X msg 24 136 symbol \$1;
 #X obj 24 167 spigot;
 #X obj 170 42 inlet;
-#X obj 1279 42 cnv 14 14 14 empty empty 11 0 8 0 12 #606060 #dcdcdc
-0;
+#X obj 1279 42 cnv 14 14 14 empty empty 11 0 8 0 12 #606060 #dcdcdc 0;
 #X text 136 18 Add "\$0" option;
-#X obj 374 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 561 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 791 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 944 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 1164 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
+#X obj 374 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 561 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 791 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 944 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 1164 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
 #X connect 0 0 1 0;
 #X connect 1 0 37 0;
 #X connect 1 0 69 0;
@@ -504,60 +436,37 @@ and pasted for easy initializing formatting)., f 89;
 #X symbolatom 214 127 10 0 0 0 CnvReceiveSymbol - - 0;
 #X floatatom 181 219 5 0 2 0 Lbl-Fon - - 0;
 #X symbolatom 274 195 10 0 0 0 Lbl-Txt - - 0;
-#X obj 295 128 tgl 15 0 empty empty Append_0 20 7 0 10 #fcfcfc #fc8000
-#000000 0 1;
+#X obj 295 128 tgl 15 0 empty empty Append_0 20 7 0 10 #fcfcfc #fc8000 #000000 0 1;
 #X text 194 103 Label Properties;
 #X obj 28 18 inlet;
-#X obj 414 223 cnv 15 500 30 empty \$0-myCanvas This\\\ is\\\ my\\\ label?
-9 13 0 18 #e0e0e0 #606060 0;
-#X obj 28 54 route doll rec size visw vish lblfon lblsz lblx lbly bgclr
-lblclr, f 66;
+#X obj 414 223 cnv 15 500 30 empty \$0-myCanvas This\ is\ my\ label? 9 13 0 18 #e0e0e0 #606060 0;
+#X obj 28 54 route doll rec size visw vish lblfon lblsz lblx lbly bgclr lblclr, f 66;
 #X obj 56 93 symbol;
 #X text 6 4 _;
 #X text 479 173 dollarsign0-myCanvas;
-#X msg 74 18 doll 1 \, rec myCanvas \, size 15 \, visw 50 \, vish 60
-\, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr
-21, f 106;
+#X msg 74 18 doll 1 \, rec myCanvas \, size 15 \, visw 50 \, vish 60 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr 21, f 106;
 #N canvas 240 66 752 410 \$0-how-to-set-values-externally 0;
-#X text 112 49 doll [0/1] - toggle on appending "\$0-" at the start
-of the recieve symbol, f 85;
-#X text 112 102 visw [float] - the visible width of the canvas in pixels
-, f 85;
-#X text 112 85 size [float] - the size of the clickable/dragable portion
-of the canvas in pixels, f 85;
-#X text 112 122 vish [float] - the visible height of the canvas in
-pixels, f 85;
-#X text 111 141 lblfon [0/1/2] - font designation for the canvas' label
-\, with [0] for Menlo \, [1] for, f 89;
-#X text 131 155 Helvetica \, [2] for Times. Note that these fonts may
-be different on Windows or Linux, f 84;
-#X text 111 173 lblsz [float] - font size designation for the canvas'
-label, f 85;
-#X text 111 213 lbly [float] - y offset in pixels from the top left
-corner of the canvas, f 85;
-#X text 111 193 lblx [float] - x offset (horizontal) in pixels from
-the top left corner of the canvas, f 85;
-#X text 4 29 To set the values for your canvas object externally \,
-send messages with the following signifiers to the 0 (leftmost) inlet:
-, f 124;
-#X msg 31 336 doll 1 \, rec myCanvas \, size 15 \, visw 500 \, vish
-30 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr
-21, f 106;
-#X text 111 67 rec [symbol] - receive symbol for the canvas, f 85
-;
-#X obj 90 241 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement1
-Please\ note\ that\ the\ $-0\ designation\ (1\ or\ 0)\ MUST\ be\ sent\ first\,\ followed\ by\ the\ canvas\ 
-1 9 0 12 #fcfcfc #fc0400 0;
+#X text 112 49 doll [0/1] - toggle on appending "\$0-" at the start of the recieve symbol, f 85;
+#X text 112 102 visw [float] - the visible width of the canvas in pixels, f 85;
+#X text 112 85 size [float] - the size of the clickable/dragable portion of the canvas in pixels, f 85;
+#X text 112 122 vish [float] - the visible height of the canvas in pixels, f 85;
+#X text 111 141 lblfon [0/1/2] - font designation for the canvas' label \, with [0] for Menlo \, [1] for, f 89;
+#X text 131 155 Helvetica \, [2] for Times. Note that these fonts may be different on Windows or Linux, f 84;
+#X text 111 173 lblsz [float] - font size designation for the canvas' label, f 85;
+#X text 111 213 lbly [float] - y offset in pixels from the top left corner of the canvas, f 85;
+#X text 111 193 lblx [float] - x offset (horizontal) in pixels from the top left corner of the canvas, f 85;
+#X text 4 29 To set the values for your canvas object externally \, send messages with the following signifiers to the 0 (leftmost) inlet:, f 124;
+#X msg 31 336 doll 1 \, rec myCanvas \, size 15 \, visw 500 \, vish 30 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr 21, f 106;
+#X text 111 67 rec [symbol] - receive symbol for the canvas, f 85;
+#X obj 90 241 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement1 Please\ note\ that\ the\ $-0\ designation\ (1\ or\ 0)\ MUST\ be\ sent\ first\,\ followed\ by\ the\ canvas\  1 9 0 12 #fcfcfc #fc0400 0;
 #N canvas 2423 143 808 250 init 0;
 #X msg 30 102 label \$1;
 #X msg 419 120 label \$1;
 #X obj 29 147 s \$0-canvas-format-helper-boldstatement1;
 #X obj 418 164 s \$0-canvas-format-helper-boldstatement2;
 #X obj 233 15 loadbang;
-#X msg 420 51 symbol receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching!
-;
-#X msg 26 43 symbol Please\\\ note\\\ that\\\ the\\\ $-0\\\ designation\\\ (1\\\ or\\\ 0)\\\ MUST\\\ be\\\ sent\\\ first\\\,\\\ followed\\\ by\\\ the\\\ canvas\\\ 
-;
+#X msg 420 51 symbol receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching!;
+#X msg 26 43 symbol Please\\\ note\\\ that\\\ the\\\ $-0\\\ designation\\\ (1\\\ or\\\ 0)\\\ MUST\\\ be\\\ sent\\\ first\\\,\\\ followed\\\ by\\\ the\\\ canvas\\\ ;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 4 0 5 0;
@@ -565,29 +474,20 @@ Please\ note\ that\ the\ $-0\ designation\ (1\ or\ 0)\ MUST\ be\ sent\ first\,\ 
 #X connect 5 0 1 0;
 #X connect 6 0 0 0;
 #X restore 659 9 pd init;
-#X obj 90 257 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement2
-receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching!
-1 9 0 12 #fcfcfc #fc0400 0;
+#X obj 90 257 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement2 receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching! 1 9 0 12 #fcfcfc #fc0400 0;
 #X msg 112 362 symbol this\ is\ my\ label!;
-#X text 296 357 The label parameter must be sent separately to Inlet
-1 (rightmost inlet). The message must be prepended with the "symbol"
-identifier \, and the escape character () needs to be set in the message:
-, f 68;
-#X text 102 286 All parameters EXCEPT label can be sent in a single
-message to Inlet 0 (leftmost inlet) like below (and this can be copied
-and pasted for easy initializing formatting)., f 89;
+#X text 296 357 The label parameter must be sent separately to Inlet 1 (rightmost inlet). The message must be prepended with the "symbol" identifier \, and the escape character () needs to be set in the message:, f 68;
+#X text 102 286 All parameters EXCEPT label can be sent in a single message to Inlet 0 (leftmost inlet) like below (and this can be copied and pasted for easy initializing formatting)., f 89;
 #X restore 326 378 pd \$0-how-to-set-values-externally;
 #X msg 326 336 vis 1;
 #X obj 326 357 s pd-\$0-how-to-set-values-externally;
-#X obj 120 263 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
+#X obj 120 263 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X text 141 263 How to set canvas values externally;
 #X text 891 18 All left-inlet messages;
 #X text 984 47 Label text;
 #X msg 636 48 symbol This\ is\ my\ label?;
 #X obj 587 47 inlet;
-#X obj 632 184 cnv 5 5 5 empty empty ↴ -3 3 0 24 #fcfcfc #606060
-0;
+#X obj 632 184 cnv 5 5 5 empty empty ↴ -3 3 0 24 #fcfcfc #606060 0;
 #X connect 0 0 2 6;
 #X connect 1 0 2 11;
 #X connect 3 0 2 10;
@@ -645,8 +545,7 @@ and pasted for easy initializing formatting)., f 89;
 #X msg 589 185 label_font \$1 \$2;
 #X text 632 41 type;
 #X text 760 40 size;
-#X obj 589 64 vradio 15 1 0 3 empty empty empty 0 -8 0 10 #fcfcfc #000000
-#000000 0;
+#X obj 589 64 vradio 15 1 0 3 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 0;
 #X text 605 63 DejaVu Sans Mono;
 #X text 605 78 Helvetica;
 #X text 606 93 Times;
@@ -672,50 +571,37 @@ and pasted for easy initializing formatting)., f 89;
 #X obj 400 42 inlet;
 #X obj 314 42 inlet;
 #X obj 491 42 inlet;
-#X obj 155 42 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 297 42 cnv 14 14 14 empty empty 2 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 384 42 cnv 14 14 14 empty empty 3 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 155 42 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 297 42 cnv 14 14 14 empty empty 2 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 384 42 cnv 14 14 14 empty empty 3 4 8 0 12 #606060 #dcdcdc 0;
 #X obj 721 42 inlet;
 #X obj 589 42 inlet;
 #X obj 817 42 inlet;
-#X obj 476 42 cnv 14 14 14 empty empty 4 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 573 42 cnv 14 14 14 empty empty 5 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 703 42 cnv 14 14 14 empty empty 6 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 476 42 cnv 14 14 14 empty empty 4 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 573 42 cnv 14 14 14 empty empty 5 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 703 42 cnv 14 14 14 empty empty 6 4 8 0 12 #606060 #dcdcdc 0;
 #X text 315 18 Size;
 #X text 421 18 Visible Size;
 #X text 635 18 Label Font;
 #X text 824 18 Label Offset;
 #X obj 889 42 inlet;
-#X obj 800 42 cnv 14 14 14 empty empty 7 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 800 42 cnv 14 14 14 empty empty 7 4 8 0 12 #606060 #dcdcdc 0;
 #X msg 1052 89 symbol my\ label;
 #X symbolatom 973 92 10 0 0 0 - - - 0;
 #X obj 973 42 inlet;
-#X obj 872 42 cnv 14 14 14 empty empty 8 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 872 42 cnv 14 14 14 empty empty 8 4 8 0 12 #606060 #dcdcdc 0;
 #X msg 973 70 symbol \$1;
 #X text 1007 18 Label Text;
 #X obj 1191 42 inlet;
-#X obj 958 42 cnv 14 14 14 empty empty 9 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 958 42 cnv 14 14 14 empty empty 9 4 8 0 12 #606060 #dcdcdc 0;
 #X obj 1295 42 inlet;
-#X obj 1174 42 cnv 14 14 14 empty empty 10 0 8 0 12 #606060 #dcdcdc
-0;
+#X obj 1174 42 cnv 14 14 14 empty empty 10 0 8 0 12 #606060 #dcdcdc 0;
 #X text 0 18 Canvas Name;
-#X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 738 322 cnv 2 1400 40 empty \$0-test_canvas tdh.seq.gesture
-20 15 0 16 #a0a0a0 #202020 0;
+#X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 738 322 cnv 2 1450 40 empty \$0-test_canvas tdh.seq.gesture 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
-#X obj 170 88 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#X obj 170 88 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 249 134 == 1;
 #X obj 101 135 == 0;
 #X obj 144 134 list append \$0;
@@ -723,19 +609,13 @@ and pasted for easy initializing formatting)., f 89;
 #X msg 24 136 symbol \$1;
 #X obj 24 167 spigot;
 #X obj 170 42 inlet;
-#X obj 1279 42 cnv 14 14 14 empty empty 11 0 8 0 12 #606060 #dcdcdc
-0;
+#X obj 1279 42 cnv 14 14 14 empty empty 11 0 8 0 12 #606060 #dcdcdc 0;
 #X text 136 18 Add "\$0" option;
-#X obj 374 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 561 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 791 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 944 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 1164 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
+#X obj 374 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 561 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 791 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 944 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 1164 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
 #X connect 0 0 1 0;
 #X connect 1 0 37 0;
 #X connect 1 0 69 0;
@@ -807,60 +687,37 @@ and pasted for easy initializing formatting)., f 89;
 #X symbolatom 214 127 10 0 0 0 CnvReceiveSymbol - - 0;
 #X floatatom 181 219 5 0 2 0 Lbl-Fon - - 0;
 #X symbolatom 274 195 10 0 0 0 Lbl-Txt - - 0;
-#X obj 295 128 tgl 15 0 empty empty Append_0 20 7 0 10 #fcfcfc #fc8000
-#000000 0 1;
+#X obj 295 128 tgl 15 0 empty empty Append_0 20 7 0 10 #fcfcfc #fc8000 #000000 0 1;
 #X text 194 103 Label Properties;
 #X obj 28 18 inlet;
-#X obj 414 223 cnv 15 500 30 empty \$0-myCanvas This\\\ is\\\ my\\\ label?
-9 13 0 18 #e0e0e0 #606060 0;
-#X obj 28 54 route doll rec size visw vish lblfon lblsz lblx lbly bgclr
-lblclr, f 66;
+#X obj 414 223 cnv 15 500 30 empty \$0-myCanvas This\ is\ my\ label? 9 13 0 18 #e0e0e0 #606060 0;
+#X obj 28 54 route doll rec size visw vish lblfon lblsz lblx lbly bgclr lblclr, f 66;
 #X obj 56 93 symbol;
 #X text 6 4 _;
 #X text 479 173 dollarsign0-myCanvas;
-#X msg 74 18 doll 1 \, rec myCanvas \, size 15 \, visw 50 \, vish 60
-\, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr
-21, f 106;
+#X msg 74 18 doll 1 \, rec myCanvas \, size 15 \, visw 50 \, vish 60 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr 21, f 106;
 #N canvas 240 66 752 410 \$0-how-to-set-values-externally 0;
-#X text 112 49 doll [0/1] - toggle on appending "\$0-" at the start
-of the recieve symbol, f 85;
-#X text 112 102 visw [float] - the visible width of the canvas in pixels
-, f 85;
-#X text 112 85 size [float] - the size of the clickable/dragable portion
-of the canvas in pixels, f 85;
-#X text 112 122 vish [float] - the visible height of the canvas in
-pixels, f 85;
-#X text 111 141 lblfon [0/1/2] - font designation for the canvas' label
-\, with [0] for Menlo \, [1] for, f 89;
-#X text 131 155 Helvetica \, [2] for Times. Note that these fonts may
-be different on Windows or Linux, f 84;
-#X text 111 173 lblsz [float] - font size designation for the canvas'
-label, f 85;
-#X text 111 213 lbly [float] - y offset in pixels from the top left
-corner of the canvas, f 85;
-#X text 111 193 lblx [float] - x offset (horizontal) in pixels from
-the top left corner of the canvas, f 85;
-#X text 4 29 To set the values for your canvas object externally \,
-send messages with the following signifiers to the 0 (leftmost) inlet:
-, f 124;
-#X msg 31 336 doll 1 \, rec myCanvas \, size 15 \, visw 500 \, vish
-30 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr
-21, f 106;
-#X text 111 67 rec [symbol] - receive symbol for the canvas, f 85
-;
-#X obj 90 241 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement1
-Please\ note\ that\ the\ $-0\ designation\ (1\ or\ 0)\ MUST\ be\ sent\ first\,\ followed\ by\ the\ canvas\ 
-1 9 0 12 #fcfcfc #fc0400 0;
+#X text 112 49 doll [0/1] - toggle on appending "\$0-" at the start of the recieve symbol, f 85;
+#X text 112 102 visw [float] - the visible width of the canvas in pixels, f 85;
+#X text 112 85 size [float] - the size of the clickable/dragable portion of the canvas in pixels, f 85;
+#X text 112 122 vish [float] - the visible height of the canvas in pixels, f 85;
+#X text 111 141 lblfon [0/1/2] - font designation for the canvas' label \, with [0] for Menlo \, [1] for, f 89;
+#X text 131 155 Helvetica \, [2] for Times. Note that these fonts may be different on Windows or Linux, f 84;
+#X text 111 173 lblsz [float] - font size designation for the canvas' label, f 85;
+#X text 111 213 lbly [float] - y offset in pixels from the top left corner of the canvas, f 85;
+#X text 111 193 lblx [float] - x offset (horizontal) in pixels from the top left corner of the canvas, f 85;
+#X text 4 29 To set the values for your canvas object externally \, send messages with the following signifiers to the 0 (leftmost) inlet:, f 124;
+#X msg 31 336 doll 1 \, rec myCanvas \, size 15 \, visw 500 \, vish 30 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr 21, f 106;
+#X text 111 67 rec [symbol] - receive symbol for the canvas, f 85;
+#X obj 90 241 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement1 Please\ note\ that\ the\ $-0\ designation\ (1\ or\ 0)\ MUST\ be\ sent\ first\,\ followed\ by\ the\ canvas\  1 9 0 12 #fcfcfc #fc0400 0;
 #N canvas 2423 143 808 250 init 0;
 #X msg 30 102 label \$1;
 #X msg 419 120 label \$1;
 #X obj 29 147 s \$0-canvas-format-helper-boldstatement1;
 #X obj 418 164 s \$0-canvas-format-helper-boldstatement2;
 #X obj 233 15 loadbang;
-#X msg 420 51 symbol receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching!
-;
-#X msg 26 43 symbol Please\\\ note\\\ that\\\ the\\\ $-0\\\ designation\\\ (1\\\ or\\\ 0)\\\ MUST\\\ be\\\ sent\\\ first\\\,\\\ followed\\\ by\\\ the\\\ canvas\\\ 
-;
+#X msg 420 51 symbol receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching!;
+#X msg 26 43 symbol Please\\\ note\\\ that\\\ the\\\ $-0\\\ designation\\\ (1\\\ or\\\ 0)\\\ MUST\\\ be\\\ sent\\\ first\\\,\\\ followed\\\ by\\\ the\\\ canvas\\\ ;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 4 0 5 0;
@@ -868,29 +725,20 @@ Please\ note\ that\ the\ $-0\ designation\ (1\ or\ 0)\ MUST\ be\ sent\ first\,\ 
 #X connect 5 0 1 0;
 #X connect 6 0 0 0;
 #X restore 659 9 pd init;
-#X obj 90 257 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement2
-receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching!
-1 9 0 12 #fcfcfc #fc0400 0;
+#X obj 90 257 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement2 receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching! 1 9 0 12 #fcfcfc #fc0400 0;
 #X msg 112 362 symbol this\ is\ my\ label!;
-#X text 296 357 The label parameter must be sent separately to Inlet
-1 (rightmost inlet). The message must be prepended with the "symbol"
-identifier \, and the escape character () needs to be set in the message:
-, f 68;
-#X text 102 286 All parameters EXCEPT label can be sent in a single
-message to Inlet 0 (leftmost inlet) like below (and this can be copied
-and pasted for easy initializing formatting)., f 89;
+#X text 296 357 The label parameter must be sent separately to Inlet 1 (rightmost inlet). The message must be prepended with the "symbol" identifier \, and the escape character () needs to be set in the message:, f 68;
+#X text 102 286 All parameters EXCEPT label can be sent in a single message to Inlet 0 (leftmost inlet) like below (and this can be copied and pasted for easy initializing formatting)., f 89;
 #X restore 326 378 pd \$0-how-to-set-values-externally;
 #X msg 326 336 vis 1;
 #X obj 326 357 s pd-\$0-how-to-set-values-externally;
-#X obj 120 263 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
+#X obj 120 263 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X text 141 263 How to set canvas values externally;
 #X text 891 18 All left-inlet messages;
 #X text 984 47 Label text;
 #X msg 636 48 symbol This\ is\ my\ label?;
 #X obj 587 47 inlet;
-#X obj 632 184 cnv 5 5 5 empty empty ↴ -3 3 0 24 #fcfcfc #606060
-0;
+#X obj 632 184 cnv 5 5 5 empty empty ↴ -3 3 0 24 #fcfcfc #606060 0;
 #X connect 0 0 2 6;
 #X connect 1 0 2 11;
 #X connect 3 0 2 10;
@@ -948,8 +796,7 @@ and pasted for easy initializing formatting)., f 89;
 #X msg 589 185 label_font \$1 \$2;
 #X text 632 41 type;
 #X text 760 40 size;
-#X obj 589 64 vradio 15 1 0 3 empty empty empty 0 -8 0 10 #fcfcfc #000000
-#000000 0;
+#X obj 589 64 vradio 15 1 0 3 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 0;
 #X text 605 63 DejaVu Sans Mono;
 #X text 605 78 Helvetica;
 #X text 606 93 Times;
@@ -975,50 +822,37 @@ and pasted for easy initializing formatting)., f 89;
 #X obj 400 42 inlet;
 #X obj 314 42 inlet;
 #X obj 491 42 inlet;
-#X obj 155 42 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 297 42 cnv 14 14 14 empty empty 2 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 384 42 cnv 14 14 14 empty empty 3 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 155 42 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 297 42 cnv 14 14 14 empty empty 2 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 384 42 cnv 14 14 14 empty empty 3 4 8 0 12 #606060 #dcdcdc 0;
 #X obj 721 42 inlet;
 #X obj 589 42 inlet;
 #X obj 817 42 inlet;
-#X obj 476 42 cnv 14 14 14 empty empty 4 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 573 42 cnv 14 14 14 empty empty 5 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 703 42 cnv 14 14 14 empty empty 6 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 476 42 cnv 14 14 14 empty empty 4 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 573 42 cnv 14 14 14 empty empty 5 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 703 42 cnv 14 14 14 empty empty 6 4 8 0 12 #606060 #dcdcdc 0;
 #X text 315 18 Size;
 #X text 421 18 Visible Size;
 #X text 635 18 Label Font;
 #X text 824 18 Label Offset;
 #X obj 889 42 inlet;
-#X obj 800 42 cnv 14 14 14 empty empty 7 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 800 42 cnv 14 14 14 empty empty 7 4 8 0 12 #606060 #dcdcdc 0;
 #X msg 1052 89 symbol my\ label;
 #X symbolatom 973 92 10 0 0 0 - - - 0;
 #X obj 973 42 inlet;
-#X obj 872 42 cnv 14 14 14 empty empty 8 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 872 42 cnv 14 14 14 empty empty 8 4 8 0 12 #606060 #dcdcdc 0;
 #X msg 973 70 symbol \$1;
 #X text 1007 18 Label Text;
 #X obj 1191 42 inlet;
-#X obj 958 42 cnv 14 14 14 empty empty 9 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 958 42 cnv 14 14 14 empty empty 9 4 8 0 12 #606060 #dcdcdc 0;
 #X obj 1295 42 inlet;
-#X obj 1174 42 cnv 14 14 14 empty empty 10 0 8 0 12 #606060 #dcdcdc
-0;
+#X obj 1174 42 cnv 14 14 14 empty empty 10 0 8 0 12 #606060 #dcdcdc 0;
 #X text 0 18 Canvas Name;
-#X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 738 322 cnv 2 1400 40 empty \$0-test_canvas tdh.seq.gesture
-20 15 0 16 #a0a0a0 #202020 0;
+#X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 738 322 cnv 2 1450 40 empty \$0-test_canvas tdh.seq.gesture 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
-#X obj 170 88 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#X obj 170 88 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 249 134 == 1;
 #X obj 101 135 == 0;
 #X obj 144 134 list append \$0;
@@ -1026,19 +860,13 @@ and pasted for easy initializing formatting)., f 89;
 #X msg 24 136 symbol \$1;
 #X obj 24 167 spigot;
 #X obj 170 42 inlet;
-#X obj 1279 42 cnv 14 14 14 empty empty 11 0 8 0 12 #606060 #dcdcdc
-0;
+#X obj 1279 42 cnv 14 14 14 empty empty 11 0 8 0 12 #606060 #dcdcdc 0;
 #X text 136 18 Add "\$0" option;
-#X obj 374 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 561 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 791 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 944 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 1164 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
+#X obj 374 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 561 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 791 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 944 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 1164 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
 #X connect 0 0 1 0;
 #X connect 1 0 37 0;
 #X connect 1 0 69 0;
@@ -1110,60 +938,37 @@ and pasted for easy initializing formatting)., f 89;
 #X symbolatom 214 127 10 0 0 0 CnvReceiveSymbol - - 0;
 #X floatatom 181 219 5 0 2 0 Lbl-Fon - - 0;
 #X symbolatom 274 195 10 0 0 0 Lbl-Txt - - 0;
-#X obj 295 128 tgl 15 0 empty empty Append_0 20 7 0 10 #fcfcfc #fc8000
-#000000 0 1;
+#X obj 295 128 tgl 15 0 empty empty Append_0 20 7 0 10 #fcfcfc #fc8000 #000000 0 1;
 #X text 194 103 Label Properties;
 #X obj 28 18 inlet;
-#X obj 414 223 cnv 15 500 30 empty \$0-myCanvas This\\\ is\\\ my\\\ label?
-9 13 0 18 #e0e0e0 #606060 0;
-#X obj 28 54 route doll rec size visw vish lblfon lblsz lblx lbly bgclr
-lblclr, f 66;
+#X obj 414 223 cnv 15 500 30 empty \$0-myCanvas This\ is\ my\ label? 9 13 0 18 #e0e0e0 #606060 0;
+#X obj 28 54 route doll rec size visw vish lblfon lblsz lblx lbly bgclr lblclr, f 66;
 #X obj 56 93 symbol;
 #X text 6 4 _;
 #X text 479 173 dollarsign0-myCanvas;
-#X msg 74 18 doll 1 \, rec myCanvas \, size 15 \, visw 50 \, vish 60
-\, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr
-21, f 106;
+#X msg 74 18 doll 1 \, rec myCanvas \, size 15 \, visw 50 \, vish 60 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr 21, f 106;
 #N canvas 240 66 752 410 \$0-how-to-set-values-externally 0;
-#X text 112 49 doll [0/1] - toggle on appending "\$0-" at the start
-of the recieve symbol, f 85;
-#X text 112 102 visw [float] - the visible width of the canvas in pixels
-, f 85;
-#X text 112 85 size [float] - the size of the clickable/dragable portion
-of the canvas in pixels, f 85;
-#X text 112 122 vish [float] - the visible height of the canvas in
-pixels, f 85;
-#X text 111 141 lblfon [0/1/2] - font designation for the canvas' label
-\, with [0] for Menlo \, [1] for, f 89;
-#X text 131 155 Helvetica \, [2] for Times. Note that these fonts may
-be different on Windows or Linux, f 84;
-#X text 111 173 lblsz [float] - font size designation for the canvas'
-label, f 85;
-#X text 111 213 lbly [float] - y offset in pixels from the top left
-corner of the canvas, f 85;
-#X text 111 193 lblx [float] - x offset (horizontal) in pixels from
-the top left corner of the canvas, f 85;
-#X text 4 29 To set the values for your canvas object externally \,
-send messages with the following signifiers to the 0 (leftmost) inlet:
-, f 124;
-#X msg 31 336 doll 1 \, rec myCanvas \, size 15 \, visw 500 \, vish
-30 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr
-21, f 106;
-#X text 111 67 rec [symbol] - receive symbol for the canvas, f 85
-;
-#X obj 90 241 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement1
-Please\ note\ that\ the\ $-0\ designation\ (1\ or\ 0)\ MUST\ be\ sent\ first\,\ followed\ by\ the\ canvas\ 
-1 9 0 12 #fcfcfc #fc0400 0;
+#X text 112 49 doll [0/1] - toggle on appending "\$0-" at the start of the recieve symbol, f 85;
+#X text 112 102 visw [float] - the visible width of the canvas in pixels, f 85;
+#X text 112 85 size [float] - the size of the clickable/dragable portion of the canvas in pixels, f 85;
+#X text 112 122 vish [float] - the visible height of the canvas in pixels, f 85;
+#X text 111 141 lblfon [0/1/2] - font designation for the canvas' label \, with [0] for Menlo \, [1] for, f 89;
+#X text 131 155 Helvetica \, [2] for Times. Note that these fonts may be different on Windows or Linux, f 84;
+#X text 111 173 lblsz [float] - font size designation for the canvas' label, f 85;
+#X text 111 213 lbly [float] - y offset in pixels from the top left corner of the canvas, f 85;
+#X text 111 193 lblx [float] - x offset (horizontal) in pixels from the top left corner of the canvas, f 85;
+#X text 4 29 To set the values for your canvas object externally \, send messages with the following signifiers to the 0 (leftmost) inlet:, f 124;
+#X msg 31 336 doll 1 \, rec myCanvas \, size 15 \, visw 500 \, vish 30 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr 21, f 106;
+#X text 111 67 rec [symbol] - receive symbol for the canvas, f 85;
+#X obj 90 241 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement1 Please\ note\ that\ the\ $-0\ designation\ (1\ or\ 0)\ MUST\ be\ sent\ first\,\ followed\ by\ the\ canvas\  1 9 0 12 #fcfcfc #fc0400 0;
 #N canvas 2423 143 808 250 init 0;
 #X msg 30 102 label \$1;
 #X msg 419 120 label \$1;
 #X obj 29 147 s \$0-canvas-format-helper-boldstatement1;
 #X obj 418 164 s \$0-canvas-format-helper-boldstatement2;
 #X obj 233 15 loadbang;
-#X msg 420 51 symbol receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching!
-;
-#X msg 26 43 symbol Please\\\ note\\\ that\\\ the\\\ $-0\\\ designation\\\ (1\\\ or\\\ 0)\\\ MUST\\\ be\\\ sent\\\ first\\\,\\\ followed\\\ by\\\ the\\\ canvas\\\ 
-;
+#X msg 420 51 symbol receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching!;
+#X msg 26 43 symbol Please\\\ note\\\ that\\\ the\\\ $-0\\\ designation\\\ (1\\\ or\\\ 0)\\\ MUST\\\ be\\\ sent\\\ first\\\,\\\ followed\\\ by\\\ the\\\ canvas\\\ ;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 4 0 5 0;
@@ -1171,29 +976,20 @@ Please\ note\ that\ the\ $-0\ designation\ (1\ or\ 0)\ MUST\ be\ sent\ first\,\ 
 #X connect 5 0 1 0;
 #X connect 6 0 0 0;
 #X restore 659 9 pd init;
-#X obj 90 257 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement2
-receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching!
-1 9 0 12 #fcfcfc #fc0400 0;
+#X obj 90 257 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement2 receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching! 1 9 0 12 #fcfcfc #fc0400 0;
 #X msg 112 362 symbol this\ is\ my\ label!;
-#X text 296 357 The label parameter must be sent separately to Inlet
-1 (rightmost inlet). The message must be prepended with the "symbol"
-identifier \, and the escape character () needs to be set in the message:
-, f 68;
-#X text 102 286 All parameters EXCEPT label can be sent in a single
-message to Inlet 0 (leftmost inlet) like below (and this can be copied
-and pasted for easy initializing formatting)., f 89;
+#X text 296 357 The label parameter must be sent separately to Inlet 1 (rightmost inlet). The message must be prepended with the "symbol" identifier \, and the escape character () needs to be set in the message:, f 68;
+#X text 102 286 All parameters EXCEPT label can be sent in a single message to Inlet 0 (leftmost inlet) like below (and this can be copied and pasted for easy initializing formatting)., f 89;
 #X restore 326 378 pd \$0-how-to-set-values-externally;
 #X msg 326 336 vis 1;
 #X obj 326 357 s pd-\$0-how-to-set-values-externally;
-#X obj 120 263 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
+#X obj 120 263 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X text 141 263 How to set canvas values externally;
 #X text 891 18 All left-inlet messages;
 #X text 984 47 Label text;
 #X msg 636 48 symbol This\ is\ my\ label?;
 #X obj 587 47 inlet;
-#X obj 632 184 cnv 5 5 5 empty empty ↴ -3 3 0 24 #fcfcfc #606060
-0;
+#X obj 632 184 cnv 5 5 5 empty empty ↴ -3 3 0 24 #fcfcfc #606060 0;
 #X connect 0 0 2 6;
 #X connect 1 0 2 11;
 #X connect 3 0 2 10;
@@ -1251,8 +1047,7 @@ and pasted for easy initializing formatting)., f 89;
 #X msg 589 185 label_font \$1 \$2;
 #X text 632 41 type;
 #X text 760 40 size;
-#X obj 589 64 vradio 15 1 0 3 empty empty empty 0 -8 0 10 #fcfcfc #000000
-#000000 0;
+#X obj 589 64 vradio 15 1 0 3 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 0;
 #X text 605 63 DejaVu Sans Mono;
 #X text 605 78 Helvetica;
 #X text 606 93 Times;
@@ -1278,50 +1073,37 @@ and pasted for easy initializing formatting)., f 89;
 #X obj 400 42 inlet;
 #X obj 314 42 inlet;
 #X obj 491 42 inlet;
-#X obj 155 42 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 297 42 cnv 14 14 14 empty empty 2 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 384 42 cnv 14 14 14 empty empty 3 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 155 42 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 297 42 cnv 14 14 14 empty empty 2 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 384 42 cnv 14 14 14 empty empty 3 4 8 0 12 #606060 #dcdcdc 0;
 #X obj 721 42 inlet;
 #X obj 589 42 inlet;
 #X obj 817 42 inlet;
-#X obj 476 42 cnv 14 14 14 empty empty 4 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 573 42 cnv 14 14 14 empty empty 5 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 703 42 cnv 14 14 14 empty empty 6 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 476 42 cnv 14 14 14 empty empty 4 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 573 42 cnv 14 14 14 empty empty 5 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 703 42 cnv 14 14 14 empty empty 6 4 8 0 12 #606060 #dcdcdc 0;
 #X text 315 18 Size;
 #X text 421 18 Visible Size;
 #X text 635 18 Label Font;
 #X text 824 18 Label Offset;
 #X obj 889 42 inlet;
-#X obj 800 42 cnv 14 14 14 empty empty 7 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 800 42 cnv 14 14 14 empty empty 7 4 8 0 12 #606060 #dcdcdc 0;
 #X msg 1052 89 symbol my\ label;
 #X symbolatom 973 92 10 0 0 0 - - - 0;
 #X obj 973 42 inlet;
-#X obj 872 42 cnv 14 14 14 empty empty 8 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 872 42 cnv 14 14 14 empty empty 8 4 8 0 12 #606060 #dcdcdc 0;
 #X msg 973 70 symbol \$1;
 #X text 1007 18 Label Text;
 #X obj 1191 42 inlet;
-#X obj 958 42 cnv 14 14 14 empty empty 9 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 958 42 cnv 14 14 14 empty empty 9 4 8 0 12 #606060 #dcdcdc 0;
 #X obj 1295 42 inlet;
-#X obj 1174 42 cnv 14 14 14 empty empty 10 0 8 0 12 #606060 #dcdcdc
-0;
+#X obj 1174 42 cnv 14 14 14 empty empty 10 0 8 0 12 #606060 #dcdcdc 0;
 #X text 0 18 Canvas Name;
-#X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 738 322 cnv 2 1400 40 empty \$0-test_canvas tdh.seq.gesture
-20 15 0 16 #a0a0a0 #202020 0;
+#X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 738 322 cnv 2 1450 40 empty \$0-test_canvas tdh.seq.gesture 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
-#X obj 170 88 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#X obj 170 88 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 249 134 == 1;
 #X obj 101 135 == 0;
 #X obj 144 134 list append \$0;
@@ -1329,19 +1111,13 @@ and pasted for easy initializing formatting)., f 89;
 #X msg 24 136 symbol \$1;
 #X obj 24 167 spigot;
 #X obj 170 42 inlet;
-#X obj 1279 42 cnv 14 14 14 empty empty 11 0 8 0 12 #606060 #dcdcdc
-0;
+#X obj 1279 42 cnv 14 14 14 empty empty 11 0 8 0 12 #606060 #dcdcdc 0;
 #X text 136 18 Add "\$0" option;
-#X obj 374 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 561 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 791 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 944 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 1164 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
+#X obj 374 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 561 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 791 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 944 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 1164 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
 #X connect 0 0 1 0;
 #X connect 1 0 37 0;
 #X connect 1 0 69 0;
@@ -1413,60 +1189,37 @@ and pasted for easy initializing formatting)., f 89;
 #X symbolatom 214 127 10 0 0 0 CnvReceiveSymbol - - 0;
 #X floatatom 181 219 5 0 2 0 Lbl-Fon - - 0;
 #X symbolatom 274 195 10 0 0 0 Lbl-Txt - - 0;
-#X obj 295 128 tgl 15 0 empty empty Append_0 20 7 0 10 #fcfcfc #fc8000
-#000000 0 1;
+#X obj 295 128 tgl 15 0 empty empty Append_0 20 7 0 10 #fcfcfc #fc8000 #000000 0 1;
 #X text 194 103 Label Properties;
 #X obj 28 18 inlet;
-#X obj 414 223 cnv 15 500 30 empty \$0-myCanvas This\\\ is\\\ my\\\ label?
-9 13 0 18 #e0e0e0 #606060 0;
-#X obj 28 54 route doll rec size visw vish lblfon lblsz lblx lbly bgclr
-lblclr, f 66;
+#X obj 414 223 cnv 15 500 30 empty \$0-myCanvas This\ is\ my\ label? 9 13 0 18 #e0e0e0 #606060 0;
+#X obj 28 54 route doll rec size visw vish lblfon lblsz lblx lbly bgclr lblclr, f 66;
 #X obj 56 93 symbol;
 #X text 6 4 _;
 #X text 479 173 dollarsign0-myCanvas;
-#X msg 74 18 doll 1 \, rec myCanvas \, size 15 \, visw 50 \, vish 60
-\, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr
-21, f 106;
+#X msg 74 18 doll 1 \, rec myCanvas \, size 15 \, visw 50 \, vish 60 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr 21, f 106;
 #N canvas 240 66 752 410 \$0-how-to-set-values-externally 0;
-#X text 112 49 doll [0/1] - toggle on appending "\$0-" at the start
-of the recieve symbol, f 85;
-#X text 112 102 visw [float] - the visible width of the canvas in pixels
-, f 85;
-#X text 112 85 size [float] - the size of the clickable/dragable portion
-of the canvas in pixels, f 85;
-#X text 112 122 vish [float] - the visible height of the canvas in
-pixels, f 85;
-#X text 111 141 lblfon [0/1/2] - font designation for the canvas' label
-\, with [0] for Menlo \, [1] for, f 89;
-#X text 131 155 Helvetica \, [2] for Times. Note that these fonts may
-be different on Windows or Linux, f 84;
-#X text 111 173 lblsz [float] - font size designation for the canvas'
-label, f 85;
-#X text 111 213 lbly [float] - y offset in pixels from the top left
-corner of the canvas, f 85;
-#X text 111 193 lblx [float] - x offset (horizontal) in pixels from
-the top left corner of the canvas, f 85;
-#X text 4 29 To set the values for your canvas object externally \,
-send messages with the following signifiers to the 0 (leftmost) inlet:
-, f 124;
-#X msg 31 336 doll 1 \, rec myCanvas \, size 15 \, visw 500 \, vish
-30 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr
-21, f 106;
-#X text 111 67 rec [symbol] - receive symbol for the canvas, f 85
-;
-#X obj 90 241 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement1
-Please\ note\ that\ the\ $-0\ designation\ (1\ or\ 0)\ MUST\ be\ sent\ first\,\ followed\ by\ the\ canvas\ 
-1 9 0 12 #fcfcfc #fc0400 0;
+#X text 112 49 doll [0/1] - toggle on appending "\$0-" at the start of the recieve symbol, f 85;
+#X text 112 102 visw [float] - the visible width of the canvas in pixels, f 85;
+#X text 112 85 size [float] - the size of the clickable/dragable portion of the canvas in pixels, f 85;
+#X text 112 122 vish [float] - the visible height of the canvas in pixels, f 85;
+#X text 111 141 lblfon [0/1/2] - font designation for the canvas' label \, with [0] for Menlo \, [1] for, f 89;
+#X text 131 155 Helvetica \, [2] for Times. Note that these fonts may be different on Windows or Linux, f 84;
+#X text 111 173 lblsz [float] - font size designation for the canvas' label, f 85;
+#X text 111 213 lbly [float] - y offset in pixels from the top left corner of the canvas, f 85;
+#X text 111 193 lblx [float] - x offset (horizontal) in pixels from the top left corner of the canvas, f 85;
+#X text 4 29 To set the values for your canvas object externally \, send messages with the following signifiers to the 0 (leftmost) inlet:, f 124;
+#X msg 31 336 doll 1 \, rec myCanvas \, size 15 \, visw 500 \, vish 30 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr 21, f 106;
+#X text 111 67 rec [symbol] - receive symbol for the canvas, f 85;
+#X obj 90 241 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement1 Please\ note\ that\ the\ $-0\ designation\ (1\ or\ 0)\ MUST\ be\ sent\ first\,\ followed\ by\ the\ canvas\  1 9 0 12 #fcfcfc #fc0400 0;
 #N canvas 2423 143 808 250 init 0;
 #X msg 30 102 label \$1;
 #X msg 419 120 label \$1;
 #X obj 29 147 s \$0-canvas-format-helper-boldstatement1;
 #X obj 418 164 s \$0-canvas-format-helper-boldstatement2;
 #X obj 233 15 loadbang;
-#X msg 420 51 symbol receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching!
-;
-#X msg 26 43 symbol Please\\\ note\\\ that\\\ the\\\ $-0\\\ designation\\\ (1\\\ or\\\ 0)\\\ MUST\\\ be\\\ sent\\\ first\\\,\\\ followed\\\ by\\\ the\\\ canvas\\\ 
-;
+#X msg 420 51 symbol receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching!;
+#X msg 26 43 symbol Please\\\ note\\\ that\\\ the\\\ $-0\\\ designation\\\ (1\\\ or\\\ 0)\\\ MUST\\\ be\\\ sent\\\ first\\\,\\\ followed\\\ by\\\ the\\\ canvas\\\ ;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 4 0 5 0;
@@ -1474,29 +1227,20 @@ Please\ note\ that\ the\ $-0\ designation\ (1\ or\ 0)\ MUST\ be\ sent\ first\,\ 
 #X connect 5 0 1 0;
 #X connect 6 0 0 0;
 #X restore 659 9 pd init;
-#X obj 90 257 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement2
-receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching!
-1 9 0 12 #fcfcfc #fc0400 0;
+#X obj 90 257 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement2 receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching! 1 9 0 12 #fcfcfc #fc0400 0;
 #X msg 112 362 symbol this\ is\ my\ label!;
-#X text 296 357 The label parameter must be sent separately to Inlet
-1 (rightmost inlet). The message must be prepended with the "symbol"
-identifier \, and the escape character () needs to be set in the message:
-, f 68;
-#X text 102 286 All parameters EXCEPT label can be sent in a single
-message to Inlet 0 (leftmost inlet) like below (and this can be copied
-and pasted for easy initializing formatting)., f 89;
+#X text 296 357 The label parameter must be sent separately to Inlet 1 (rightmost inlet). The message must be prepended with the "symbol" identifier \, and the escape character () needs to be set in the message:, f 68;
+#X text 102 286 All parameters EXCEPT label can be sent in a single message to Inlet 0 (leftmost inlet) like below (and this can be copied and pasted for easy initializing formatting)., f 89;
 #X restore 326 378 pd \$0-how-to-set-values-externally;
 #X msg 326 336 vis 1;
 #X obj 326 357 s pd-\$0-how-to-set-values-externally;
-#X obj 120 263 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
+#X obj 120 263 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X text 141 263 How to set canvas values externally;
 #X text 891 18 All left-inlet messages;
 #X text 984 47 Label text;
 #X msg 636 48 symbol This\ is\ my\ label?;
 #X obj 587 47 inlet;
-#X obj 632 184 cnv 5 5 5 empty empty ↴ -3 3 0 24 #fcfcfc #606060
-0;
+#X obj 632 184 cnv 5 5 5 empty empty ↴ -3 3 0 24 #fcfcfc #606060 0;
 #X connect 0 0 2 6;
 #X connect 1 0 2 11;
 #X connect 3 0 2 10;
@@ -1539,22 +1283,13 @@ and pasted for easy initializing formatting)., f 89;
 #X obj 692 196 f 501;
 #X msg 692 219 visw \$1;
 #X text 481 189 Abstraction Name;
-#X text 459 344 <-- Open to actively control canvas values \, or to
-see how to set values externally (as is done here), f 103;
+#X text 459 344 <-- Open to actively control canvas values \, or to see how to set values externally (as is done here), f 103;
 #X obj 438 216 symbol;
 #X obj 3 15 cnv 5 5 5 empty empty | 0 0 0 14 #fcfcfc #404040 0;
-#X text 51 6 This is where the canvases get set. A VERY long list of
-values get sent to the subpatch [pd canvas-ctrl]. These properties
-can be addessed singularly through a key symbol (such as "size") and
-then a value., f 187;
-#X text 51 47 [pd canvas-ctrl] also has a GUI which you can access
-by clicking on the object box. This is a good way to figure out canvas
-values., f 132;
-#X text 51 104 Note that the canvas LABEL cannot be set with this list
-\, and must be set via the right inlet., f 95;
-#X text 51 75 You can also click on the object box [pd how-to-use-canvas-ctrl]
-to see how to set canvas values with a message (currently the only
-way to save canvas values), f 160;
+#X text 51 6 This is where the canvases get set. A VERY long list of values get sent to the subpatch [pd canvas-ctrl]. These properties can be addessed singularly through a key symbol (such as "size") and then a value., f 187;
+#X text 51 47 [pd canvas-ctrl] also has a GUI which you can access by clicking on the object box. This is a good way to figure out canvas values., f 132;
+#X text 51 104 Note that the canvas LABEL cannot be set with this list \, and must be set via the right inlet., f 95;
+#X text 51 75 You can also click on the object box [pd how-to-use-canvas-ctrl] to see how to set canvas values with a message (currently the only way to save canvas values), f 160;
 #X obj 343 279 loadbang;
 #X obj 343 409 loadbang;
 #X obj 692 244 s \$0-width;
@@ -1567,63 +1302,38 @@ way to save canvas values), f 160;
 #X obj 453 1225 r \$0-width;
 #X obj 343 1147 loadbang;
 #X obj 3 985 cnv 5 5 5 empty empty | 0 0 0 14 #fcfcfc #404040 0;
-#X obj 89 269 cnv 15 1200 1 empty empty Title 0 -15 0 18 #606060 #404040
-0;
+#X obj 89 269 cnv 15 1200 1 empty empty Title 0 -15 0 18 #606060 #404040 0;
 #X text 137 276 Canvas receive name:;
-#X obj 88 398 cnv 15 1200 1 empty empty Section-Divider 0 -15 0 18
-#606060 #404040 0;
-#X obj 88 518 cnv 15 1200 1 empty empty Arguments 0 -15 0 18 #606060
-#404040 0;
-#X obj 88 987 cnv 15 1200 1 empty empty Notes 0 -15 0 18 #606060 #404040
-0;
-#X obj 88 1128 cnv 15 1200 1 empty empty Rev-History 0 -15 0 18 #606060
-#404040 0;
-#X obj 52 139 cnv 15 180 18 empty empty empty 20 12 0 14 #c4c4fc #404040
-0;
-#N canvas 1440 152 910 549 how-to-use-canvas-ctrl 0;
-#X text 112 139 doll [0/1] - toggle on appending "\$0-" at the start
-of the recieve symbol, f 85;
-#X text 112 192 visw [float] - the visible width of the canvas in pixels
-, f 85;
-#X text 112 175 size [float] - the size of the clickable/dragable portion
-of the canvas in pixels, f 85;
-#X text 112 212 vish [float] - the visible height of the canvas in
-pixels, f 85;
-#X text 111 231 lblfon [0/1/2] - font designation for the canvas' label
-\, with [0] for Menlo \, [1] for, f 89;
-#X text 131 245 Helvetica \, [2] for Times. Note that these fonts may
-be different on Windows or Linux, f 84;
-#X text 111 263 lblsz [float] - font size designation for the canvas'
-label, f 85;
-#X text 111 303 lbly [float] - y offset in pixels from the top left
-corner of the canvas, f 85;
-#X text 111 283 lblx [float] - x offset (horizontal) in pixels from
-the top left corner of the canvas, f 85;
-#X text 4 119 To set the values for your canvas object externally \,
-send messages with the following signifiers to the 0 (leftmost) inlet:
-, f 124;
-#X msg 31 426 doll 1 \, rec myCanvas \, size 15 \, visw 500 \, vish
-30 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr
-21, f 106;
-#X text 111 157 rec [symbol] - receive symbol for the canvas, f 85
-;
-#X obj 90 331 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement1
-Please\ note\ that\ the\ $-0\ designation\ (1\ or\ 0)\ MUST\ be\ sent\ first\,\ followed\ by\ the\ canvas\ 
-1 9 0 12 #fcfcfc #fc0400 0;
+#X obj 88 398 cnv 15 1200 1 empty empty Section-Divider 0 -15 0 18 #606060 #404040 0;
+#X obj 88 518 cnv 15 1200 1 empty empty Arguments 0 -15 0 18 #606060 #404040 0;
+#X obj 88 987 cnv 15 1200 1 empty empty Notes 0 -15 0 18 #606060 #404040 0;
+#X obj 88 1128 cnv 15 1200 1 empty empty Rev-History 0 -15 0 18 #606060 #404040 0;
+#X obj 52 139 cnv 15 180 18 empty empty empty 20 12 0 14 #c4c4fc #404040 0;
+#N canvas 602 152 910 549 how-to-use-canvas-ctrl 0;
+#X text 112 139 doll [0/1] - toggle on appending "\$0-" at the start of the recieve symbol, f 85;
+#X text 112 192 visw [float] - the visible width of the canvas in pixels, f 85;
+#X text 112 175 size [float] - the size of the clickable/dragable portion of the canvas in pixels, f 85;
+#X text 112 212 vish [float] - the visible height of the canvas in pixels, f 85;
+#X text 111 231 lblfon [0/1/2] - font designation for the canvas' label \, with [0] for Menlo \, [1] for, f 89;
+#X text 131 245 Helvetica \, [2] for Times. Note that these fonts may be different on Windows or Linux, f 84;
+#X text 111 263 lblsz [float] - font size designation for the canvas' label, f 85;
+#X text 111 303 lbly [float] - y offset in pixels from the top left corner of the canvas, f 85;
+#X text 111 283 lblx [float] - x offset (horizontal) in pixels from the top left corner of the canvas, f 85;
+#X text 4 119 To set the values for your canvas object externally \, send messages with the following signifiers to the 0 (leftmost) inlet:, f 124;
+#X msg 31 426 doll 1 \, rec myCanvas \, size 15 \, visw 500 \, vish 30 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr 21, f 106;
+#X text 111 157 rec [symbol] - receive symbol for the canvas, f 85;
+#X obj 90 331 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement1 Please\ note\ that\ the\ $-0\ designation\ (1\ or\ 0)\ MUST\ be\ sent\ first\,\ followed\ by\ the\ canvas\  1 9 0 12 #fcfcfc #fc0400 0;
 #N canvas 632 143 808 250 init 0;
 #X msg 126 74 label \$1;
 #X msg 489 71 label \$1;
 #X obj 126 97 s \$0-canvas-format-helper-boldstatement1;
 #X obj 489 94 s \$0-canvas-format-helper-boldstatement2;
 #X obj 26 17 loadbang;
-#X msg 489 41 symbol receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching!
-;
-#X msg 126 43 symbol Please\\\ note\\\ that\\\ the\\\ $-0\\\ designation\\\ (1\\\ or\\\ 0)\\\ MUST\\\ be\\\ sent\\\ first\\\,\\\ followed\\\ by\\\ the\\\ canvas\\\ 
-;
+#X msg 489 41 symbol receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching!;
+#X msg 126 43 symbol Please\\\ note\\\ that\\\ the\\\ $-0\\\ designation\\\ (1\\\ or\\\ 0)\\\ MUST\\\ be\\\ sent\\\ first\\\,\\\ followed\\\ by\\\ the\\\ canvas\\\ ;
 #X obj 98 203 s \$0-canvas-format-helper-title;
 #X msg 54 180 label \$1;
-#X msg 54 148 symbol Using\ [pd\ canvas-ctrl]\ and\ setting\ values\ externally
-;
+#X msg 54 148 symbol Using\ [pd\ canvas-ctrl]\ and\ setting\ values\ externally;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 4 0 5 0;
@@ -1633,41 +1343,19 @@ Please\ note\ that\ the\ $-0\ designation\ (1\ or\ 0)\ MUST\ be\ sent\ first\,\ 
 #X connect 8 0 7 0;
 #X connect 9 0 8 0;
 #X restore 704 13 pd init;
-#X obj 90 347 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement2
-receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching!
-1 9 0 12 #fcfcfc #fc0400 0;
+#X obj 90 347 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement2 receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching! 1 9 0 12 #fcfcfc #fc0400 0;
 #X msg 112 452 symbol this\ is\ my\ label!;
-#X text 296 447 The label parameter must be sent separately to Inlet
-1 (rightmost inlet). The message must be prepended with the "symbol"
-identifier \, and the escape character () needs to be set in the message:
-, f 68;
-#X text 102 376 All parameters EXCEPT label can be sent in a single
-message to Inlet 0 (leftmost inlet) like below (and this can be copied
-and pasted for easy initializing formatting)., f 89;
-#X obj 148 18 cnv 5 5 5 empty \$0-canvas-format-helper-title Using\\\ [pd\\\ canvas-ctrl]\\\ and\\\ setting\\\ values\\\ externally
-1 9 0 12 #fcfcfc #fc0400 0;
-#X text 6 43 By inserting a canvas into your patch \, giving it a RECEIVE
-NAME (via properties) \, inserting the [canvas-ctrl] object into your
-patch \, and finally telling [canvas-ctrl] the receive name via the
-message [rec "receive name"( to the left inlet (type the text between
-"[(" into a message box \, no quotes \, substituting "receive name"
-for your name. *IF* your receive name has "\$0-" as a prefix (common
-practice for [send] and [receive] names) \, you need to FIRST send
-[canvas-ctrl] the message [doll 1( which tells the object that the
-canbas name has "\$0-" at the start of its receive name., f 123;
+#X text 296 447 The label parameter must be sent separately to Inlet 1 (rightmost inlet). The message must be prepended with the "symbol" identifier \, and the escape character () needs to be set in the message:, f 68;
+#X text 102 376 All parameters EXCEPT label can be sent in a single message to Inlet 0 (leftmost inlet) like below (and this can be copied and pasted for easy initializing formatting)., f 89;
+#X obj 148 18 cnv 5 5 5 empty \$0-canvas-format-helper-title Using\ [pd\ canvas-ctrl]\ and\ setting\ values\ externally 1 9 0 12 #fcfcfc #fc0400 0;
+#X text 6 43 By inserting a canvas into your patch \, giving it a RECEIVE NAME (via properties) \, inserting the [canvas-ctrl] object into your patch \, and finally telling [canvas-ctrl] the receive name via the message [rec "receive name"( to the left inlet (type the text between "[(" into a message box \, no quotes \, substituting "receive name" for your name. *IF* your receive name has "\$0-" as a prefix (common practice for [send] and [receive] names) \, you need to FIRST send [canvas-ctrl] the message [doll 1( which tells the object that the canbas name has "\$0-" at the start of its receive name., f 123;
 #X restore 52 140 pd how-to-use-canvas-ctrl;
-#X text 268 140 Click here to explore how to change the canvas properties
-with a message, f 72;
-#X obj 244 145 cnv 5 5 5 empty empty ⟵ -3 3 0 30 #fcfcfc #9c00fc
-0;
+#X text 268 140 Click here to explore how to change the canvas properties with a message, f 72;
+#X obj 244 145 cnv 5 5 5 empty empty ⟵ -3 3 0 30 #fcfcfc #9c00fc 0;
 #X text 131 301 \$0-abstrPatchTitleBar;
-#X msg 343 1028 doll 1 \, rec abstrPatchSecLabelNotes \, size 2 \,
-visw 501 \, vish 3 \, lblfon 0 \, lblsz 16 \, lblx 20 \, lbly 15 \,
-bgclr 1 \, lblclr 12, f 123;
+#X msg 343 1028 doll 1 \, rec abstrPatchSecLabelNotes \, size 2 \, visw 501 \, vish 3 \, lblfon 0 \, lblsz 16 \, lblx 20 \, lbly 15 \, bgclr 1 \, lblclr 12, f 123;
 #X text 127 539 \$0-abstrPatchSecLabelArgs;
-#X msg 343 1179 doll 1 \, rec abstrPatchSecLabelRevHist \, size 2 \,
-visw 501 \, vish 3 \, lblfon 0 \, lblsz 16 \, lblx 20 \, lbly 15 \,
-bgclr 1 \, lblclr 12, f 123;
+#X msg 343 1179 doll 1 \, rec abstrPatchSecLabelRevHist \, size 2 \, visw 501 \, vish 3 \, lblfon 0 \, lblsz 16 \, lblx 20 \, lbly 15 \, bgclr 1 \, lblclr 12, f 123;
 #X msg 438 1202 symbol Revision\ History;
 #X msg 438 1052 symbol Notes;
 #N canvas 673 23 349 258 canvas-ctrl 0;
@@ -1691,8 +1379,7 @@ bgclr 1 \, lblclr 12, f 123;
 #X msg 589 185 label_font \$1 \$2;
 #X text 632 41 type;
 #X text 760 40 size;
-#X obj 589 64 vradio 15 1 0 3 empty empty empty 0 -8 0 10 #fcfcfc #000000
-#000000 0;
+#X obj 589 64 vradio 15 1 0 3 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 0;
 #X text 605 63 DejaVu Sans Mono;
 #X text 605 78 Helvetica;
 #X text 606 93 Times;
@@ -1718,50 +1405,37 @@ bgclr 1 \, lblclr 12, f 123;
 #X obj 400 42 inlet;
 #X obj 314 42 inlet;
 #X obj 491 42 inlet;
-#X obj 155 42 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 297 42 cnv 14 14 14 empty empty 2 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 384 42 cnv 14 14 14 empty empty 3 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 155 42 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 297 42 cnv 14 14 14 empty empty 2 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 384 42 cnv 14 14 14 empty empty 3 4 8 0 12 #606060 #dcdcdc 0;
 #X obj 721 42 inlet;
 #X obj 589 42 inlet;
 #X obj 817 42 inlet;
-#X obj 476 42 cnv 14 14 14 empty empty 4 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 573 42 cnv 14 14 14 empty empty 5 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 703 42 cnv 14 14 14 empty empty 6 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 476 42 cnv 14 14 14 empty empty 4 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 573 42 cnv 14 14 14 empty empty 5 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 703 42 cnv 14 14 14 empty empty 6 4 8 0 12 #606060 #dcdcdc 0;
 #X text 315 18 Size;
 #X text 421 18 Visible Size;
 #X text 635 18 Label Font;
 #X text 824 18 Label Offset;
 #X obj 889 42 inlet;
-#X obj 800 42 cnv 14 14 14 empty empty 7 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 800 42 cnv 14 14 14 empty empty 7 4 8 0 12 #606060 #dcdcdc 0;
 #X msg 1052 89 symbol my\ label;
 #X symbolatom 973 92 10 0 0 0 - - - 0;
 #X obj 973 42 inlet;
-#X obj 872 42 cnv 14 14 14 empty empty 8 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 872 42 cnv 14 14 14 empty empty 8 4 8 0 12 #606060 #dcdcdc 0;
 #X msg 973 70 symbol \$1;
 #X text 1007 18 Label Text;
 #X obj 1191 42 inlet;
-#X obj 958 42 cnv 14 14 14 empty empty 9 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 958 42 cnv 14 14 14 empty empty 9 4 8 0 12 #606060 #dcdcdc 0;
 #X obj 1295 42 inlet;
-#X obj 1174 42 cnv 14 14 14 empty empty 10 0 8 0 12 #606060 #dcdcdc
-0;
+#X obj 1174 42 cnv 14 14 14 empty empty 10 0 8 0 12 #606060 #dcdcdc 0;
 #X text 0 18 Canvas Name;
-#X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 738 322 cnv 2 1400 40 empty \$0-test_canvas tdh.seq.gesture
-20 15 0 16 #a0a0a0 #202020 0;
+#X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 738 322 cnv 2 1450 40 empty \$0-test_canvas tdh.seq.gesture 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
-#X obj 170 88 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#X obj 170 88 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 249 134 == 1;
 #X obj 101 135 == 0;
 #X obj 144 134 list append \$0;
@@ -1769,19 +1443,13 @@ bgclr 1 \, lblclr 12, f 123;
 #X msg 24 136 symbol \$1;
 #X obj 24 167 spigot;
 #X obj 170 42 inlet;
-#X obj 1279 42 cnv 14 14 14 empty empty 11 0 8 0 12 #606060 #dcdcdc
-0;
+#X obj 1279 42 cnv 14 14 14 empty empty 11 0 8 0 12 #606060 #dcdcdc 0;
 #X text 136 18 Add "\$0" option;
-#X obj 374 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 561 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 791 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 944 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 1164 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
+#X obj 374 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 561 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 791 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 944 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 1164 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
 #X connect 0 0 1 0;
 #X connect 1 0 37 0;
 #X connect 1 0 69 0;
@@ -1853,60 +1521,37 @@ bgclr 1 \, lblclr 12, f 123;
 #X symbolatom 214 127 10 0 0 0 CnvReceiveSymbol - - 0;
 #X floatatom 181 219 5 0 2 0 Lbl-Fon - - 0;
 #X symbolatom 274 195 10 0 0 0 Lbl-Txt - - 0;
-#X obj 295 128 tgl 15 0 empty empty Append_0 20 7 0 10 #fcfcfc #fc8000
-#000000 0 1;
+#X obj 295 128 tgl 15 0 empty empty Append_0 20 7 0 10 #fcfcfc #fc8000 #000000 0 1;
 #X text 194 103 Label Properties;
 #X obj 28 18 inlet;
-#X obj 414 223 cnv 15 500 30 empty \$0-myCanvas This\\\ is\\\ my\\\ label?
-9 13 0 18 #e0e0e0 #606060 0;
-#X obj 28 54 route doll rec size visw vish lblfon lblsz lblx lbly bgclr
-lblclr, f 66;
+#X obj 414 223 cnv 15 500 30 empty \$0-myCanvas This\ is\ my\ label? 9 13 0 18 #e0e0e0 #606060 0;
+#X obj 28 54 route doll rec size visw vish lblfon lblsz lblx lbly bgclr lblclr, f 66;
 #X obj 56 93 symbol;
 #X text 6 4 _;
 #X text 479 173 dollarsign0-myCanvas;
-#X msg 74 18 doll 1 \, rec myCanvas \, size 15 \, visw 50 \, vish 60
-\, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr
-21, f 106;
+#X msg 74 18 doll 1 \, rec myCanvas \, size 15 \, visw 50 \, vish 60 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr 21, f 106;
 #N canvas 240 66 752 410 \$0-how-to-set-values-externally 0;
-#X text 112 49 doll [0/1] - toggle on appending "\$0-" at the start
-of the recieve symbol, f 85;
-#X text 112 102 visw [float] - the visible width of the canvas in pixels
-, f 85;
-#X text 112 85 size [float] - the size of the clickable/dragable portion
-of the canvas in pixels, f 85;
-#X text 112 122 vish [float] - the visible height of the canvas in
-pixels, f 85;
-#X text 111 141 lblfon [0/1/2] - font designation for the canvas' label
-\, with [0] for Menlo \, [1] for, f 89;
-#X text 131 155 Helvetica \, [2] for Times. Note that these fonts may
-be different on Windows or Linux, f 84;
-#X text 111 173 lblsz [float] - font size designation for the canvas'
-label, f 85;
-#X text 111 213 lbly [float] - y offset in pixels from the top left
-corner of the canvas, f 85;
-#X text 111 193 lblx [float] - x offset (horizontal) in pixels from
-the top left corner of the canvas, f 85;
-#X text 4 29 To set the values for your canvas object externally \,
-send messages with the following signifiers to the 0 (leftmost) inlet:
-, f 124;
-#X msg 31 336 doll 1 \, rec myCanvas \, size 15 \, visw 500 \, vish
-30 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr
-21, f 106;
-#X text 111 67 rec [symbol] - receive symbol for the canvas, f 85
-;
-#X obj 90 241 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement1
-Please\ note\ that\ the\ $-0\ designation\ (1\ or\ 0)\ MUST\ be\ sent\ first\,\ followed\ by\ the\ canvas\ 
-1 9 0 12 #fcfcfc #fc0400 0;
+#X text 112 49 doll [0/1] - toggle on appending "\$0-" at the start of the recieve symbol, f 85;
+#X text 112 102 visw [float] - the visible width of the canvas in pixels, f 85;
+#X text 112 85 size [float] - the size of the clickable/dragable portion of the canvas in pixels, f 85;
+#X text 112 122 vish [float] - the visible height of the canvas in pixels, f 85;
+#X text 111 141 lblfon [0/1/2] - font designation for the canvas' label \, with [0] for Menlo \, [1] for, f 89;
+#X text 131 155 Helvetica \, [2] for Times. Note that these fonts may be different on Windows or Linux, f 84;
+#X text 111 173 lblsz [float] - font size designation for the canvas' label, f 85;
+#X text 111 213 lbly [float] - y offset in pixels from the top left corner of the canvas, f 85;
+#X text 111 193 lblx [float] - x offset (horizontal) in pixels from the top left corner of the canvas, f 85;
+#X text 4 29 To set the values for your canvas object externally \, send messages with the following signifiers to the 0 (leftmost) inlet:, f 124;
+#X msg 31 336 doll 1 \, rec myCanvas \, size 15 \, visw 500 \, vish 30 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr 21, f 106;
+#X text 111 67 rec [symbol] - receive symbol for the canvas, f 85;
+#X obj 90 241 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement1 Please\ note\ that\ the\ $-0\ designation\ (1\ or\ 0)\ MUST\ be\ sent\ first\,\ followed\ by\ the\ canvas\  1 9 0 12 #fcfcfc #fc0400 0;
 #N canvas 2423 143 808 250 init 0;
 #X msg 30 102 label \$1;
 #X msg 419 120 label \$1;
 #X obj 29 147 s \$0-canvas-format-helper-boldstatement1;
 #X obj 418 164 s \$0-canvas-format-helper-boldstatement2;
 #X obj 233 15 loadbang;
-#X msg 420 51 symbol receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching!
-;
-#X msg 26 43 symbol Please\\\ note\\\ that\\\ the\\\ $-0\\\ designation\\\ (1\\\ or\\\ 0)\\\ MUST\\\ be\\\ sent\\\ first\\\,\\\ followed\\\ by\\\ the\\\ canvas\\\ 
-;
+#X msg 420 51 symbol receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching!;
+#X msg 26 43 symbol Please\\\ note\\\ that\\\ the\\\ $-0\\\ designation\\\ (1\\\ or\\\ 0)\\\ MUST\\\ be\\\ sent\\\ first\\\,\\\ followed\\\ by\\\ the\\\ canvas\\\ ;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 4 0 5 0;
@@ -1914,29 +1559,20 @@ Please\ note\ that\ the\ $-0\ designation\ (1\ or\ 0)\ MUST\ be\ sent\ first\,\ 
 #X connect 5 0 1 0;
 #X connect 6 0 0 0;
 #X restore 659 9 pd init;
-#X obj 90 257 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement2
-receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching!
-1 9 0 12 #fcfcfc #fc0400 0;
+#X obj 90 257 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement2 receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching! 1 9 0 12 #fcfcfc #fc0400 0;
 #X msg 112 362 symbol this\ is\ my\ label!;
-#X text 296 357 The label parameter must be sent separately to Inlet
-1 (rightmost inlet). The message must be prepended with the "symbol"
-identifier \, and the escape character () needs to be set in the message:
-, f 68;
-#X text 102 286 All parameters EXCEPT label can be sent in a single
-message to Inlet 0 (leftmost inlet) like below (and this can be copied
-and pasted for easy initializing formatting)., f 89;
+#X text 296 357 The label parameter must be sent separately to Inlet 1 (rightmost inlet). The message must be prepended with the "symbol" identifier \, and the escape character () needs to be set in the message:, f 68;
+#X text 102 286 All parameters EXCEPT label can be sent in a single message to Inlet 0 (leftmost inlet) like below (and this can be copied and pasted for easy initializing formatting)., f 89;
 #X restore 326 378 pd \$0-how-to-set-values-externally;
 #X msg 326 336 vis 1;
 #X obj 326 357 s pd-\$0-how-to-set-values-externally;
-#X obj 120 263 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
+#X obj 120 263 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X text 141 263 How to set canvas values externally;
 #X text 891 18 All left-inlet messages;
 #X text 984 47 Label text;
 #X msg 636 48 symbol This\ is\ my\ label?;
 #X obj 587 47 inlet;
-#X obj 632 184 cnv 5 5 5 empty empty ↴ -3 3 0 24 #fcfcfc #606060
-0;
+#X obj 632 184 cnv 5 5 5 empty empty ↴ -3 3 0 24 #fcfcfc #606060 0;
 #X connect 0 0 2 6;
 #X connect 1 0 2 11;
 #X connect 3 0 2 10;
@@ -1975,8 +1611,7 @@ and pasted for easy initializing formatting)., f 89;
 #X restore 343 725 pd canvas-ctrl;
 #X obj 451 725 r \$0-width;
 #X obj 343 657 loadbang;
-#X obj 88 648 cnv 15 1200 1 empty empty Inlets 0 -15 0 18 #606060 #404040
-0;
+#X obj 88 648 cnv 15 1200 1 empty empty Inlets 0 -15 0 18 #606060 #404040 0;
 #X text 127 669 \$0-abstrPatchSecLabelArgs;
 #N canvas 673 23 349 258 canvas-ctrl 0;
 #X obj 291 1 inlet;
@@ -1999,8 +1634,7 @@ and pasted for easy initializing formatting)., f 89;
 #X msg 589 185 label_font \$1 \$2;
 #X text 632 41 type;
 #X text 760 40 size;
-#X obj 589 64 vradio 15 1 0 3 empty empty empty 0 -8 0 10 #fcfcfc #000000
-#000000 0;
+#X obj 589 64 vradio 15 1 0 3 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 0;
 #X text 605 63 DejaVu Sans Mono;
 #X text 605 78 Helvetica;
 #X text 606 93 Times;
@@ -2026,50 +1660,37 @@ and pasted for easy initializing formatting)., f 89;
 #X obj 400 42 inlet;
 #X obj 314 42 inlet;
 #X obj 491 42 inlet;
-#X obj 155 42 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 297 42 cnv 14 14 14 empty empty 2 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 384 42 cnv 14 14 14 empty empty 3 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 155 42 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 297 42 cnv 14 14 14 empty empty 2 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 384 42 cnv 14 14 14 empty empty 3 4 8 0 12 #606060 #dcdcdc 0;
 #X obj 721 42 inlet;
 #X obj 589 42 inlet;
 #X obj 817 42 inlet;
-#X obj 476 42 cnv 14 14 14 empty empty 4 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 573 42 cnv 14 14 14 empty empty 5 4 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 703 42 cnv 14 14 14 empty empty 6 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 476 42 cnv 14 14 14 empty empty 4 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 573 42 cnv 14 14 14 empty empty 5 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 703 42 cnv 14 14 14 empty empty 6 4 8 0 12 #606060 #dcdcdc 0;
 #X text 315 18 Size;
 #X text 421 18 Visible Size;
 #X text 635 18 Label Font;
 #X text 824 18 Label Offset;
 #X obj 889 42 inlet;
-#X obj 800 42 cnv 14 14 14 empty empty 7 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 800 42 cnv 14 14 14 empty empty 7 4 8 0 12 #606060 #dcdcdc 0;
 #X msg 1052 89 symbol my\ label;
 #X symbolatom 973 92 10 0 0 0 - - - 0;
 #X obj 973 42 inlet;
-#X obj 872 42 cnv 14 14 14 empty empty 8 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 872 42 cnv 14 14 14 empty empty 8 4 8 0 12 #606060 #dcdcdc 0;
 #X msg 973 70 symbol \$1;
 #X text 1007 18 Label Text;
 #X obj 1191 42 inlet;
-#X obj 958 42 cnv 14 14 14 empty empty 9 4 8 0 12 #606060 #dcdcdc 0
-;
+#X obj 958 42 cnv 14 14 14 empty empty 9 4 8 0 12 #606060 #dcdcdc 0;
 #X obj 1295 42 inlet;
-#X obj 1174 42 cnv 14 14 14 empty empty 10 0 8 0 12 #606060 #dcdcdc
-0;
+#X obj 1174 42 cnv 14 14 14 empty empty 10 0 8 0 12 #606060 #dcdcdc 0;
 #X text 0 18 Canvas Name;
-#X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 738 322 cnv 2 1400 40 empty \$0-test_canvas tdh.seq.gesture
-20 15 0 16 #a0a0a0 #202020 0;
+#X obj 284 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 738 322 cnv 2 1450 40 empty \$0-test_canvas tdh.seq.gesture 20 15 0 16 #a0a0a0 #202020 0;
 #X obj 415 328 s \$0-test_canvas;
 #X obj 210 187 spigot;
-#X obj 170 88 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#X obj 170 88 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 249 134 == 1;
 #X obj 101 135 == 0;
 #X obj 144 134 list append \$0;
@@ -2077,19 +1698,13 @@ and pasted for easy initializing formatting)., f 89;
 #X msg 24 136 symbol \$1;
 #X obj 24 167 spigot;
 #X obj 170 42 inlet;
-#X obj 1279 42 cnv 14 14 14 empty empty 11 0 8 0 12 #606060 #dcdcdc
-0;
+#X obj 1279 42 cnv 14 14 14 empty empty 11 0 8 0 12 #606060 #dcdcdc 0;
 #X text 136 18 Add "\$0" option;
-#X obj 374 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 561 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 791 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 944 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
-#X obj 1164 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
+#X obj 374 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 561 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 791 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 944 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 1164 2 cnv 5 1 260 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
 #X connect 0 0 1 0;
 #X connect 1 0 37 0;
 #X connect 1 0 69 0;
@@ -2161,60 +1776,37 @@ and pasted for easy initializing formatting)., f 89;
 #X symbolatom 214 127 10 0 0 0 CnvReceiveSymbol - - 0;
 #X floatatom 181 219 5 0 2 0 Lbl-Fon - - 0;
 #X symbolatom 274 195 10 0 0 0 Lbl-Txt - - 0;
-#X obj 295 128 tgl 15 0 empty empty Append_0 20 7 0 10 #fcfcfc #fc8000
-#000000 0 1;
+#X obj 295 128 tgl 15 0 empty empty Append_0 20 7 0 10 #fcfcfc #fc8000 #000000 0 1;
 #X text 194 103 Label Properties;
 #X obj 28 18 inlet;
-#X obj 414 223 cnv 15 500 30 empty \$0-myCanvas This\\\ is\\\ my\\\ label?
-9 13 0 18 #e0e0e0 #606060 0;
-#X obj 28 54 route doll rec size visw vish lblfon lblsz lblx lbly bgclr
-lblclr, f 66;
+#X obj 414 223 cnv 15 500 30 empty \$0-myCanvas This\ is\ my\ label? 9 13 0 18 #e0e0e0 #606060 0;
+#X obj 28 54 route doll rec size visw vish lblfon lblsz lblx lbly bgclr lblclr, f 66;
 #X obj 56 93 symbol;
 #X text 6 4 _;
 #X text 479 173 dollarsign0-myCanvas;
-#X msg 74 18 doll 1 \, rec myCanvas \, size 15 \, visw 50 \, vish 60
-\, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr
-21, f 106;
+#X msg 74 18 doll 1 \, rec myCanvas \, size 15 \, visw 50 \, vish 60 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr 21, f 106;
 #N canvas 240 66 752 410 \$0-how-to-set-values-externally 0;
-#X text 112 49 doll [0/1] - toggle on appending "\$0-" at the start
-of the recieve symbol, f 85;
-#X text 112 102 visw [float] - the visible width of the canvas in pixels
-, f 85;
-#X text 112 85 size [float] - the size of the clickable/dragable portion
-of the canvas in pixels, f 85;
-#X text 112 122 vish [float] - the visible height of the canvas in
-pixels, f 85;
-#X text 111 141 lblfon [0/1/2] - font designation for the canvas' label
-\, with [0] for Menlo \, [1] for, f 89;
-#X text 131 155 Helvetica \, [2] for Times. Note that these fonts may
-be different on Windows or Linux, f 84;
-#X text 111 173 lblsz [float] - font size designation for the canvas'
-label, f 85;
-#X text 111 213 lbly [float] - y offset in pixels from the top left
-corner of the canvas, f 85;
-#X text 111 193 lblx [float] - x offset (horizontal) in pixels from
-the top left corner of the canvas, f 85;
-#X text 4 29 To set the values for your canvas object externally \,
-send messages with the following signifiers to the 0 (leftmost) inlet:
-, f 124;
-#X msg 31 336 doll 1 \, rec myCanvas \, size 15 \, visw 500 \, vish
-30 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr
-21, f 106;
-#X text 111 67 rec [symbol] - receive symbol for the canvas, f 85
-;
-#X obj 90 241 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement1
-Please\ note\ that\ the\ $-0\ designation\ (1\ or\ 0)\ MUST\ be\ sent\ first\,\ followed\ by\ the\ canvas\ 
-1 9 0 12 #fcfcfc #fc0400 0;
+#X text 112 49 doll [0/1] - toggle on appending "\$0-" at the start of the recieve symbol, f 85;
+#X text 112 102 visw [float] - the visible width of the canvas in pixels, f 85;
+#X text 112 85 size [float] - the size of the clickable/dragable portion of the canvas in pixels, f 85;
+#X text 112 122 vish [float] - the visible height of the canvas in pixels, f 85;
+#X text 111 141 lblfon [0/1/2] - font designation for the canvas' label \, with [0] for Menlo \, [1] for, f 89;
+#X text 131 155 Helvetica \, [2] for Times. Note that these fonts may be different on Windows or Linux, f 84;
+#X text 111 173 lblsz [float] - font size designation for the canvas' label, f 85;
+#X text 111 213 lbly [float] - y offset in pixels from the top left corner of the canvas, f 85;
+#X text 111 193 lblx [float] - x offset (horizontal) in pixels from the top left corner of the canvas, f 85;
+#X text 4 29 To set the values for your canvas object externally \, send messages with the following signifiers to the 0 (leftmost) inlet:, f 124;
+#X msg 31 336 doll 1 \, rec myCanvas \, size 15 \, visw 500 \, vish 30 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 13 \, bgclr 10 \, lblclr 21, f 106;
+#X text 111 67 rec [symbol] - receive symbol for the canvas, f 85;
+#X obj 90 241 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement1 Please\ note\ that\ the\ $-0\ designation\ (1\ or\ 0)\ MUST\ be\ sent\ first\,\ followed\ by\ the\ canvas\  1 9 0 12 #fcfcfc #fc0400 0;
 #N canvas 2423 143 808 250 init 0;
 #X msg 30 102 label \$1;
 #X msg 419 120 label \$1;
 #X obj 29 147 s \$0-canvas-format-helper-boldstatement1;
 #X obj 418 164 s \$0-canvas-format-helper-boldstatement2;
 #X obj 233 15 loadbang;
-#X msg 420 51 symbol receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching!
-;
-#X msg 26 43 symbol Please\\\ note\\\ that\\\ the\\\ $-0\\\ designation\\\ (1\\\ or\\\ 0)\\\ MUST\\\ be\\\ sent\\\ first\\\,\\\ followed\\\ by\\\ the\\\ canvas\\\ 
-;
+#X msg 420 51 symbol receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching!;
+#X msg 26 43 symbol Please\\\ note\\\ that\\\ the\\\ $-0\\\ designation\\\ (1\\\ or\\\ 0)\\\ MUST\\\ be\\\ sent\\\ first\\\,\\\ followed\\\ by\\\ the\\\ canvas\\\ ;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 4 0 5 0;
@@ -2222,29 +1814,20 @@ Please\ note\ that\ the\ $-0\ designation\ (1\ or\ 0)\ MUST\ be\ sent\ first\,\ 
 #X connect 5 0 1 0;
 #X connect 6 0 0 0;
 #X restore 659 9 pd init;
-#X obj 90 257 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement2
-receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching!
-1 9 0 12 #fcfcfc #fc0400 0;
+#X obj 90 257 cnv 5 5 5 empty \$0-canvas-format-helper-boldstatement2 receive\ symbol!\ Failure\ to\ do\ so\ will\ cause\ incorrect\ parameter\ dispatching! 1 9 0 12 #fcfcfc #fc0400 0;
 #X msg 112 362 symbol this\ is\ my\ label!;
-#X text 296 357 The label parameter must be sent separately to Inlet
-1 (rightmost inlet). The message must be prepended with the "symbol"
-identifier \, and the escape character () needs to be set in the message:
-, f 68;
-#X text 102 286 All parameters EXCEPT label can be sent in a single
-message to Inlet 0 (leftmost inlet) like below (and this can be copied
-and pasted for easy initializing formatting)., f 89;
+#X text 296 357 The label parameter must be sent separately to Inlet 1 (rightmost inlet). The message must be prepended with the "symbol" identifier \, and the escape character () needs to be set in the message:, f 68;
+#X text 102 286 All parameters EXCEPT label can be sent in a single message to Inlet 0 (leftmost inlet) like below (and this can be copied and pasted for easy initializing formatting)., f 89;
 #X restore 326 378 pd \$0-how-to-set-values-externally;
 #X msg 326 336 vis 1;
 #X obj 326 357 s pd-\$0-how-to-set-values-externally;
-#X obj 120 263 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
+#X obj 120 263 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X text 141 263 How to set canvas values externally;
 #X text 891 18 All left-inlet messages;
 #X text 984 47 Label text;
 #X msg 636 48 symbol This\ is\ my\ label?;
 #X obj 587 47 inlet;
-#X obj 632 184 cnv 5 5 5 empty empty ↴ -3 3 0 24 #fcfcfc #606060
-0;
+#X obj 632 184 cnv 5 5 5 empty empty ↴ -3 3 0 24 #fcfcfc #606060 0;
 #X connect 0 0 2 6;
 #X connect 1 0 2 11;
 #X connect 3 0 2 10;
@@ -2283,27 +1866,16 @@ and pasted for easy initializing formatting)., f 89;
 #X restore 343 865 pd canvas-ctrl;
 #X obj 451 865 r \$0-width;
 #X obj 343 797 loadbang;
-#X obj 88 788 cnv 15 1200 1 empty empty Outlets 0 -15 0 18 #606060
-#404040 0;
+#X obj 88 788 cnv 15 1200 1 empty empty Outlets 0 -15 0 18 #606060 #404040 0;
 #X text 127 809 \$0-abstrPatchSecLabelArgs;
 #X msg 438 702 symbol Inlets;
-#X msg 343 679 doll 1 \, rec abstrPatchSecLabelInlets \, size 2 \,
-visw 501 \, vish 3 \, lblfon 0 \, lblsz 16 \, lblx 20 \, lbly 15 \,
-bgclr 1 \, lblclr 12, f 123;
-#X msg 343 548 doll 1 \, rec abstrPatchSecLabelArgs \, size 2 \, visw
-501 \, vish 3 \, lblfon 0 \, lblsz 16 \, lblx 20 \, lbly 15 \, bgclr
-1 \, lblclr 12, f 123;
+#X msg 343 679 doll 1 \, rec abstrPatchSecLabelInlets \, size 2 \, visw 501 \, vish 3 \, lblfon 0 \, lblsz 16 \, lblx 20 \, lbly 15 \, bgclr 1 \, lblclr 12, f 123;
+#X msg 343 548 doll 1 \, rec abstrPatchSecLabelArgs \, size 2 \, visw 501 \, vish 3 \, lblfon 0 \, lblsz 16 \, lblx 20 \, lbly 15 \, bgclr 1 \, lblclr 12, f 123;
 #X msg 438 572 symbol Arguments;
-#X msg 343 819 doll 1 \, rec abstrPatchSecLabelOutlets \, size 2 \,
-visw 501 \, vish 3 \, lblfon 0 \, lblsz 16 \, lblx 20 \, lbly 15 \,
-bgclr 1 \, lblclr 12, f 123;
+#X msg 343 819 doll 1 \, rec abstrPatchSecLabelOutlets \, size 2 \, visw 501 \, vish 3 \, lblfon 0 \, lblsz 16 \, lblx 20 \, lbly 15 \, bgclr 1 \, lblclr 12, f 123;
 #X msg 438 842 symbol Outlets;
-#X msg 343 309 doll 1 \, rec abstrPatchTitleBar \, size 15 \, visw
-501 \, vish 40 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 20 \, bgclr
-18 \, lblclr 1, f 123;
-#X msg 343 433 doll 1 \, rec abstrPatchSecDivider \, size 2 \, visw
-501 \, vish 2 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 20 \, bgclr
-1 \, lblclr 12, f 123;
+#X msg 343 309 doll 1 \, rec abstrPatchTitleBar \, size 15 \, visw 501 \, vish 40 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 20 \, bgclr 18 \, lblclr 1, f 123;
+#X msg 343 433 doll 1 \, rec abstrPatchSecDivider \, size 2 \, visw 501 \, vish 2 \, lblfon 0 \, lblsz 18 \, lblx 9 \, lbly 20 \, bgclr 1 \, lblclr 12, f 123;
 #X connect 8 0 15 0;
 #X connect 9 0 11 0;
 #X connect 11 0 12 0;
@@ -2340,161 +1912,151 @@ bgclr 1 \, lblclr 12, f 123;
 #X connect 64 0 54 1;
 #X connect 65 0 3 0;
 #X connect 66 0 4 0;
-#X restore 166 244 pd abstr-cnv-set;
-#X f 30;
-#X obj 147 196 cnv 5 5 5 empty empty ⟶ -3 3 0 30 #fcfcfc #000000
-0;
-#X obj 414 198 cnv 5 5 5 empty empty ⟵ -3 3 0 30 #fcfcfc #000000
-0;
-#X text 435 186 EDIT HERE to change patch WIDTH, f 16;
-#X text 16 12 This subpatch (and nested subpatches) helps set the uniform
-titles and graphics for ABSTRACTIONS., f 84;
-#X text 10 180 EDIT HERE text after "symbol" to change the abstraction's
-DISPLAY NAME, f 20;
-#X text 13 60 The two most commonly changed fields \, DISPLAY NAME
-and WIDTH can be changed by editing the [message( boxes below. Text
-in [message( objects get saved to the patch., f 84;
-#X msg 373 196 1400;
-#X msg 166 194 symbol tdh.seq.gesture;
+#X restore 176 208 pd abstr-cnv-set;
+#X f 32;
+#X obj 147 176 cnv 5 5 5 empty empty ⟶ -3 3 0 30 #fcfcfc #000000 0;
+#X obj 471 179 cnv 5 5 5 empty empty ⟵ -3 3 0 30 #fcfcfc #000000 0;
+#X text 491 168 EDIT HERE to change patch WIDTH, f 16;
+#X text 16 47 This subpatch (and nested subpatches) helps set the uniform titles and graphics for ABSTRACTIONS., f 84;
+#X text 13 80 The two most commonly changed fields \, DISPLAY NAME and WIDTH can be changed by editing the [message( boxes below. Text in [message( objects get saved to the patch., f 84;
+#X obj 21 480 loadbang;
+#X obj 21 501 del 10;
+#X text 288 504 EDIT HERE text after "label" to change the display name shown on the module, f 20;
+#X text 10 161 EDIT HERE text after "symbol" to change the abstraction patch's main display name, f 20;
+#X obj 18 259 cnv 5 5 5 empty empty GOP\ Module\ Label\ +\ Width\ --------------------------------- 0 0 0 14 #ffffff #404040 0;
+#X obj 40 383 s \$0-inletBorder-r;
+#X obj 216 378 s \$0-inletBar-r;
+#X obj 41 403 s \$0-moduleNameBorder-r;
+#X obj 263 519 cnv 5 5 5 empty empty ⟵ -3 3 0 30 #fcfcfc #000000 0;
+#X obj 20 461 cnv 5 5 5 empty empty Module\ Name 0 0 0 12 #ffffff #0400ff 0;
+#X obj 42 422 s \$0-outletBorder-r;
+#X obj 217 420 s \$0-outletBar-r;
+#X obj 17 298 loadbang;
+#X msg 203 356 vis_size \$1 14;
+#X obj 15 26 cnv 5 5 5 empty empty Object\ Title\ Bar\ ------------------------------------------------ 0 0 0 14 #ffffff #404040 0;
+#X obj 50 315 cnv 5 5 5 empty empty ⟵ -3 3 0 30 #fcfcfc #000000 0;
+#X obj 16 286 cnv 5 5 5 empty empty Module\ Width 0 0 0 12 #ffffff #0400ff 0;
+#X msg 17 358 vis_size \$1 2;
+#X obj 217 400 s \$0-moduleName-r;
+#X obj 21 542 s \$0-moduleName-r;
+#X obj 18 600 loadbang;
+#X text 82 316 EDIT HERE to set the GOP label width;
+#X obj 17 585 cnv 5 5 5 empty empty Module\ Specific\ Initializations\ --------------------------------- 0 0 0 14 #ffffff #404040 0;
+#X obj 17 339 - 2;
+#X msg 17 318 300;
+#X msg 435 178 1450;
+#X msg 21 522 label Gesture;
+#X msg 176 177 symbol tdh.seq.gesture;
 #X connect 1 0 2 0;
-#X connect 2 0 11 0;
-#X connect 2 0 10 0;
-#X connect 10 0 3 1;
-#X connect 11 0 3 0;
-#X restore 610 50 pd abstr-init;
-#X obj 1 72 cnv 2 1400 3 empty \$0-abstrPatchSecLabelInlets Inlets
-20 15 0 16 #a0a0a0 #202020 0;
-#X obj 1 202 cnv 2 1400 3 empty \$0-abstrPatchSecLabelOutlets Outlets
-20 15 0 16 #a0a0a0 #202020 0;
-#X obj 125 81 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc 0
-;
-#X obj 125 141 cnv 14 18 14 empty empty 3 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 125 101 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 125 121 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 125 211 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 125 271 cnv 14 18 14 empty empty 3 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 125 231 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc
-0;
-#X obj 125 251 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc
-0;
-#X text 24 403 22/02/20 - ver 0.1, f 21;
-#X text 127 299 None;
-#X text 127 339 Dependencies: None;
-#X obj 125 161 cnv 14 18 14 empty empty 4 2 8 0 12 #606060 #dcdcdc
-0;
-#X text 147 80 (bang);
-#X text 197 80 Trigger all gestures simultaneously;
-#X text 147 100 (bang/message);
-#X text 147 120 (bang/message);
-#X text 147 140 (bang/message);
-#X text 147 160 (bang/message);
-#X text 247 100 "Bang" triggers gesture 1 \, a message of "delay" \,
-"start" \, "end" \, or "dur" followed by a float value sets the respective
-value for each parameter of the gesture., f 163;
-#X text 247 120 "Bang" triggers gesture 2 \, a message of "delay" \,
-"start" \, "end" \, or "dur" followed by a float value sets the respective
-value for each parameter of the gesture., f 163;
-#X text 247 140 "Bang" triggers gesture 3 \, a message of "delay" \,
-"start" \, "end" \, or "dur" followed by a float value sets the respective
-value for each parameter of the gesture., f 163;
-#X text 247 160 "Bang" triggers gesture 4 \, a message of "delay" \,
-"start" \, "end" \, or "dur" followed by a float value sets the respective
-value for each parameter of the gesture., f 163;
-#X text 147 210 (float);
-#X text 207 210 Gesture 1 in the form of a linear ramp of float values
-determed by the parameters set for that gesture, f 105;
-#X text 147 230 (float);
-#X text 207 230 Gesture 1 in the form of a linear ramp of float values
-determed by the parameters set for that gesture, f 105;
-#X text 147 250 (float);
-#X text 207 250 Gesture 1 in the form of a linear ramp of float values
-determed by the parameters set for that gesture, f 105;
-#X text 147 270 (float);
-#X text 207 270 Gesture 1 in the form of a linear ramp of float values
-determed by the parameters set for that gesture, f 105;
-#X obj 1314 23 cnv 8 83 16 empty empty tdh-lib 14 8 0 14 #dfdfdf #131255
-0;
-#X obj 564 846 r \$0-g1end-s;
-#X obj 455 846 r \$0-g1start-s;
-#X obj 440 668 r \$0-g1-s;
-#X obj 673 846 r \$0-g1dur-s;
-#X obj 482 726 r \$0-g1del-s;
-#X obj 1190 675 r \$0-g4-s;
-#X obj 1081 677 r \$0-g3-s;
-#X obj 955 678 r \$0-g2-s;
-#X obj 440 1010 outlet g1;
-#X obj 955 1010 outlet g2;
-#X obj 426 1010 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc
-0;
-#X obj 940 1010 cnv 14 14 14 empty empty 2 4 8 0 12 #606060 #dcdcdc
-0;
-#X obj 1065 1010 cnv 14 14 14 empty empty 3 4 8 0 12 #606060 #dcdcdc
-0;
-#X obj 431 449 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc
-0;
-#X obj 467 751 f;
-#X obj 440 873 f;
-#X obj 549 873 f;
-#X obj 549 846 cnv 14 14 14 empty empty R 6 8 0 8 #fce0c4 #7c7c7c 0
-;
-#X obj 439 846 cnv 14 14 14 empty empty R 6 8 0 8 #fcc4c4 #7c7c7c 0
-;
-#X obj 466 726 cnv 14 14 14 empty empty R 6 8 0 8 #b8b8b8 #404040 0
-;
-#X obj 425 668 cnv 14 14 14 empty empty R 6 8 0 8 #dcdcdc #7c7c7c 0
-;
-#X obj 657 846 cnv 14 14 14 empty empty R 6 8 0 8 #fcfcc4 #7c7c7c 0
-;
-#X obj 1066 678 cnv 14 14 14 empty empty R 6 8 0 8 #00fc04 #7c7c7c
-0;
-#X obj 1174 676 cnv 14 14 14 empty empty R 6 8 0 8 #0400fc #dfdfdf
-0;
-#X obj 583 631 cnv 14 14 14 empty empty S 6 8 0 8 #00fc04 #7c7c7c 0
-;
-#X obj 506 631 cnv 14 14 14 empty empty S 6 8 0 8 #fc8000 #7c7c7c 0
-;
-#X obj 661 631 cnv 14 14 14 empty empty S 6 8 0 8 #0400fc #dfdfdf 0
-;
-#X obj 27 505 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #e0e0e0
-#404040 0;
-#X obj 37 505 cnv 5 5 5 empty empty empty 2 10 0 14 #b8b8b8 #404040
-0;
-#X obj 47 505 cnv 5 5 5 empty empty empty 2 10 0 14 #fcc4c4 #404040
-0;
-#X obj 57 505 cnv 5 5 5 empty empty empty 2 10 0 14 #fce0c4 #404040
-0;
-#X obj 945 708 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #fc8000
-#404040 0;
-#X obj 1065 710 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #00fc04
-#404040 0;
-#X obj 1180 710 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #0400fc
-#fcfcfc 0;
-#X obj 66 505 cnv 5 5 5 empty empty ☐ 0 2 0 14 #fcfcc4 #dfdfdf 0
-;
-#X obj 658 873 f;
-#X obj 440 689 t b b;
-#X obj 440 779 del;
-#X obj 440 917 pack f f f, f 37;
-#X msg 440 954 \$1 \, \$2 \$3;
-#X obj 440 983 line;
-#X text 565 726 Delay time of gesture start;
-#X text 479 689 Gesture trigger;
-#X text 682 872 Gesture duration;
-#X text 574 872 Gesture destination value, f 11;
-#X text 464 872 Gesture start value, f 11;
-#X text 508 954 A gesture is a linear progression of values from a
-start point to an end point over a certain duration, f 26;
-#X obj 61 537 cnv 5 5 5 empty empty ❴ -3 3 0 22 #ffffff #ff8300 0
-;
-#X obj 55 562 cnv 10 5 5 empty empty ❴ 2 7 0 22 #ffffff #00ff04 0
-;
-#X obj 55 592 cnv 10 5 5 empty empty ❴ 2 7 0 22 #ffffff #0400ff 0
-;
+#X connect 2 0 36 0;
+#X connect 2 0 34 0;
+#X connect 9 0 10 0;
+#X connect 10 0 35 0;
+#X connect 21 0 33 0;
+#X connect 22 0 15 0;
+#X connect 22 0 20 0;
+#X connect 22 0 27 0;
+#X connect 26 0 14 0;
+#X connect 26 0 16 0;
+#X connect 26 0 19 0;
+#X connect 32 0 26 0;
+#X connect 32 0 22 0;
+#X connect 33 0 32 0;
+#X connect 34 0 3 1;
+#X connect 35 0 28 0;
+#X connect 36 0 3 0;
+#X restore 1360 50 pd abstr-init;
+#X obj 1364 21 cnv 8 83 16 empty empty tdh.lib 14 8 0 14 #dfdfdf #131255 0;
+#N canvas 41 78 1422 431 reference 0;
+#X text 18 48 Travis Houldcroft || travishouldcroft.com;
+#X obj 1 2 cnv 15 1450 40 empty \$0-abstrPatchTitleBar tdh.seq.gesture 9 20 0 18 #3c50fc #a0a0a0 0;
+#X obj 11 330 cnv 2 1450 3 empty \$0-abstrPatchSecLabelNotes Notes 20 15 0 16 #a0a0a0 #202020 0;
+#X obj 11 370 cnv 2 1450 3 empty \$0-abstrPatchSecLabelRevHist Revision\ History 20 15 0 16 #a0a0a0 #202020 0;
+#X obj 11 290 cnv 2 1450 3 empty \$0-abstrPatchSecLabelArgs Arguments 20 15 0 16 #a0a0a0 #202020 0;
+#X obj 11 70 cnv 2 1450 3 empty \$0-abstrPatchSecLabelInlets Inlets 20 15 0 16 #a0a0a0 #202020 0;
+#X obj 11 200 cnv 2 1450 3 empty \$0-abstrPatchSecLabelOutlets Outlets 20 15 0 16 #a0a0a0 #202020 0;
+#X obj 135 79 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc 0;
+#X obj 135 139 cnv 14 18 14 empty empty 3 2 8 0 12 #606060 #dcdcdc 0;
+#X obj 135 99 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc 0;
+#X obj 135 119 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc 0;
+#X obj 135 209 cnv 14 18 14 empty empty 0 2 8 0 12 #606060 #dcdcdc 0;
+#X obj 135 269 cnv 14 18 14 empty empty 3 2 8 0 12 #606060 #dcdcdc 0;
+#X obj 135 229 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc 0;
+#X obj 135 249 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc 0;
+#X text 137 297 None;
+#X text 137 337 Dependencies: None;
+#X obj 135 159 cnv 14 18 14 empty empty 4 2 8 0 12 #606060 #dcdcdc 0;
+#X text 157 78 (bang);
+#X text 207 78 Trigger all gestures simultaneously;
+#X text 157 98 (bang/message);
+#X text 157 118 (bang/message);
+#X text 157 138 (bang/message);
+#X text 157 158 (bang/message);
+#X text 257 98 "Bang" triggers gesture 1 \, a message of "delay" \, "start" \, "end" \, or "dur" followed by a float value sets the respective value for each parameter of the gesture., f 163;
+#X text 257 118 "Bang" triggers gesture 2 \, a message of "delay" \, "start" \, "end" \, or "dur" followed by a float value sets the respective value for each parameter of the gesture., f 163;
+#X text 257 138 "Bang" triggers gesture 3 \, a message of "delay" \, "start" \, "end" \, or "dur" followed by a float value sets the respective value for each parameter of the gesture., f 163;
+#X text 257 158 "Bang" triggers gesture 4 \, a message of "delay" \, "start" \, "end" \, or "dur" followed by a float value sets the respective value for each parameter of the gesture., f 163;
+#X text 157 208 (float);
+#X text 217 208 Gesture 1 in the form of a linear ramp of float values determed by the parameters set for that gesture, f 105;
+#X text 157 228 (float);
+#X text 217 228 Gesture 1 in the form of a linear ramp of float values determed by the parameters set for that gesture, f 105;
+#X text 157 248 (float);
+#X text 217 248 Gesture 1 in the form of a linear ramp of float values determed by the parameters set for that gesture, f 105;
+#X text 157 268 (float);
+#X text 217 268 Gesture 1 in the form of a linear ramp of float values determed by the parameters set for that gesture, f 105;
+#X text 204 379 22/02/20 - ver 0.1, f 21;
+#X text 204 391 22/04/04 - ver 0.2, f 21;
+#X restore 1276 50 pd reference;
+#X obj 524 496 r \$0-g1end-s;
+#X obj 415 496 r \$0-g1start-s;
+#X obj 400 318 r \$0-g1-s;
+#X obj 633 496 r \$0-g1dur-s;
+#X obj 442 376 r \$0-g1del-s;
+#X obj 1150 325 r \$0-g4-s;
+#X obj 1041 327 r \$0-g3-s;
+#X obj 915 328 r \$0-g2-s;
+#X obj 400 660 outlet g1;
+#X obj 915 660 outlet g2;
+#X obj 386 660 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 900 660 cnv 14 14 14 empty empty 2 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 1025 660 cnv 14 14 14 empty empty 3 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 391 99 cnv 14 14 14 empty empty 0 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 427 401 f;
+#X obj 400 523 f;
+#X obj 509 523 f;
+#X obj 509 496 cnv 14 14 14 empty empty R 6 8 0 8 #fce0c4 #7c7c7c 0;
+#X obj 399 496 cnv 14 14 14 empty empty R 6 8 0 8 #fcc4c4 #7c7c7c 0;
+#X obj 426 376 cnv 14 14 14 empty empty R 6 8 0 8 #b8b8b8 #404040 0;
+#X obj 385 318 cnv 14 14 14 empty empty R 6 8 0 8 #dcdcdc #7c7c7c 0;
+#X obj 617 496 cnv 14 14 14 empty empty R 6 8 0 8 #fcfcc4 #7c7c7c 0;
+#X obj 1026 328 cnv 14 14 14 empty empty R 6 8 0 8 #00fc04 #7c7c7c 0;
+#X obj 1134 326 cnv 14 14 14 empty empty R 6 8 0 8 #0400fc #dfdfdf 0;
+#X obj 543 281 cnv 14 14 14 empty empty S 6 8 0 8 #00fc04 #7c7c7c 0;
+#X obj 466 281 cnv 14 14 14 empty empty S 6 8 0 8 #fc8000 #7c7c7c 0;
+#X obj 621 281 cnv 14 14 14 empty empty S 6 8 0 8 #0400fc #dfdfdf 0;
+#X obj -3 146 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #e0e0e0 #404040 0;
+#X obj 7 146 cnv 5 5 5 empty empty empty 2 10 0 14 #b8b8b8 #404040 0;
+#X obj 17 146 cnv 5 5 5 empty empty empty 2 10 0 14 #fcc4c4 #404040 0;
+#X obj 7 156 cnv 5 5 5 empty empty empty 2 10 0 14 #fce0c4 #404040 0;
+#X obj 905 358 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #fc8000 #404040 0;
+#X obj 1025 360 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #00fc04 #404040 0;
+#X obj 1140 360 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #0400fc #fcfcfc 0;
+#X obj 16 156 cnv 5 5 5 empty empty ☐ 0 2 0 14 #fcfcc4 #dfdfdf 0;
+#X obj 618 523 f;
+#X obj 400 339 t b b;
+#X obj 400 429 del;
+#X obj 400 567 pack f f f, f 37;
+#X msg 400 604 \$1 \, \$2 \$3;
+#X obj 400 633 line;
+#X text 525 376 Delay time of gesture start;
+#X text 439 339 Gesture trigger;
+#X text 642 522 Gesture duration;
+#X text 534 522 Gesture destination value, f 11;
+#X text 424 522 Gesture start value, f 11;
+#X text 468 604 A gesture is a linear progression of values from a start point to an end point over a certain duration, f 26;
+#X obj 11 208 cnv 5 5 5 empty empty ❴ -3 3 0 22 #ffffff #ff8300 0;
+#X obj 5 263 cnv 10 5 5 empty empty ❴ 2 7 0 22 #ffffff #00ff04 0;
+#X obj 5 333 cnv 10 5 5 empty empty ❴ 2 7 0 22 #ffffff #0400ff 0;
 #N canvas 1440 -209 740 384 \$0-gesture2 0;
 #X obj 81 97 f;
 #X obj 54 219 f;
@@ -2510,8 +2072,7 @@ start point to an end point over a certain duration, f 26;
 #X text 307 218 Gesture duration;
 #X text 188 218 Gesture destination value, f 11;
 #X text 78 218 Gesture start value, f 11;
-#X text 122 300 A gesture is a linear progression of values from a
-start point to an end point over a certain duration, f 26;
+#X text 122 300 A gesture is a linear progression of values from a start point to an end point over a certain duration, f 26;
 #X obj 96 72 r \$0-g2del-s;
 #X obj 69 192 r \$0-g2start-s;
 #X obj 178 192 r \$0-g2end-s;
@@ -2519,19 +2080,14 @@ start point to an end point over a certain duration, f 26;
 #X obj 54 350 outlet;
 #X obj 54 7 inlet;
 #X obj 81 71 cnv 14 14 14 empty empty R 6 8 0 8 #fc8000 #7c7c7c 0;
-#X obj 53 192 cnv 14 14 14 empty empty R 6 8 0 8 #fc8000 #7c7c7c 0
-;
-#X obj 163 192 cnv 14 14 14 empty empty R 6 8 0 8 #fc8000 #7c7c7c 0
-;
-#X obj 273 192 cnv 14 14 14 empty empty R 6 8 0 8 #fc8000 #7c7c7c 0
-;
+#X obj 53 192 cnv 14 14 14 empty empty R 6 8 0 8 #fc8000 #7c7c7c 0;
+#X obj 163 192 cnv 14 14 14 empty empty R 6 8 0 8 #fc8000 #7c7c7c 0;
+#X obj 273 192 cnv 14 14 14 empty empty R 6 8 0 8 #fc8000 #7c7c7c 0;
 #X obj 54 149 t b b b b, f 55;
 #X obj 381 275 spigot;
 #X obj 381 296 s \$0-chain;
-#X text 413 171 GUI toggles [spigot] open and sends this gesture's
-trigger to the chain outlet, f 17;
-#X obj 503 242 cnv 14 14 14 empty empty S 6 8 0 8 #e3c6ff #7c7c7c 0
-;
+#X text 413 171 GUI toggles [spigot] open and sends this gesture's trigger to the chain outlet, f 17;
+#X obj 503 242 cnv 14 14 14 empty empty S 6 8 0 8 #e3c6ff #7c7c7c 0;
 #X obj 414 242 r \$0-g2Chain-s;
 #X connect 0 0 5 1;
 #X connect 1 0 6 0;
@@ -2554,9 +2110,8 @@ trigger to the chain outlet, f 17;
 #X connect 25 3 26 0;
 #X connect 26 0 27 0;
 #X connect 30 0 26 1;
-#X restore 955 707 pd \$0-gesture2;
-#X obj 940 678 cnv 14 14 14 empty empty R 6 8 0 8 #fc8000 #7c7c7c 0
-;
+#X restore 915 357 pd \$0-gesture2;
+#X obj 900 328 cnv 14 14 14 empty empty R 6 8 0 8 #fc8000 #7c7c7c 0;
 #N canvas 1440 -209 740 384 \$0-gesture3 0;
 #X obj 71 97 f;
 #X obj 44 219 f;
@@ -2572,27 +2127,21 @@ trigger to the chain outlet, f 17;
 #X text 297 218 Gesture duration;
 #X text 178 218 Gesture destination value, f 11;
 #X text 68 218 Gesture start value, f 11;
-#X text 112 300 A gesture is a linear progression of values from a
-start point to an end point over a certain duration, f 26;
+#X text 112 300 A gesture is a linear progression of values from a start point to an end point over a certain duration, f 26;
 #X obj 44 350 outlet;
 #X obj 44 7 inlet;
 #X obj 71 71 cnv 14 14 14 empty empty R 6 8 0 8 #00ff04 #7c7c7c 0;
-#X obj 43 192 cnv 14 14 14 empty empty R 6 8 0 8 #00ff04 #7c7c7c 0
-;
-#X obj 153 192 cnv 14 14 14 empty empty R 6 8 0 8 #00ff04 #7c7c7c 0
-;
-#X obj 263 192 cnv 14 14 14 empty empty R 6 8 0 8 #00ff04 #7c7c7c 0
-;
+#X obj 43 192 cnv 14 14 14 empty empty R 6 8 0 8 #00ff04 #7c7c7c 0;
+#X obj 153 192 cnv 14 14 14 empty empty R 6 8 0 8 #00ff04 #7c7c7c 0;
+#X obj 263 192 cnv 14 14 14 empty empty R 6 8 0 8 #00ff04 #7c7c7c 0;
 #X obj 86 72 r \$0-g3del-s;
 #X obj 59 192 r \$0-g3start-s;
 #X obj 168 192 r \$0-g3end-s;
 #X obj 278 192 r \$0-g3dur-s;
 #X obj 377 275 spigot;
 #X obj 377 296 s \$0-chain;
-#X text 409 171 GUI toggles [spigot] open and sends this gesture's
-trigger to the chain outlet, f 17;
-#X obj 499 242 cnv 14 14 14 empty empty S 6 8 0 8 #e3c6ff #7c7c7c 0
-;
+#X text 409 171 GUI toggles [spigot] open and sends this gesture's trigger to the chain outlet, f 17;
+#X obj 499 242 cnv 14 14 14 empty empty S 6 8 0 8 #e3c6ff #7c7c7c 0;
 #X obj 44 149 t b b b b, f 56;
 #X obj 410 241 r \$0-g3Chain-s;
 #X connect 0 0 5 1;
@@ -2616,7 +2165,7 @@ trigger to the chain outlet, f 17;
 #X connect 29 2 3 0;
 #X connect 29 3 25 0;
 #X connect 30 0 25 1;
-#X restore 1080 705 pd \$0-gesture3;
+#X restore 1040 355 pd \$0-gesture3;
 #N canvas 1440 -209 740 384 \$0-gesture3 0;
 #X obj 71 97 f;
 #X obj 44 219 f;
@@ -2632,27 +2181,21 @@ trigger to the chain outlet, f 17;
 #X text 297 218 Gesture duration;
 #X text 178 218 Gesture destination value, f 11;
 #X text 68 218 Gesture start value, f 11;
-#X text 112 300 A gesture is a linear progression of values from a
-start point to an end point over a certain duration, f 26;
+#X text 112 300 A gesture is a linear progression of values from a start point to an end point over a certain duration, f 26;
 #X obj 44 350 outlet;
 #X obj 44 7 inlet;
 #X obj 71 71 cnv 14 14 14 empty empty R 6 8 0 8 #0400ff #dfdfdf 0;
-#X obj 43 192 cnv 14 14 14 empty empty R 6 8 0 8 #0400ff #dfdfdf 0
-;
-#X obj 153 192 cnv 14 14 14 empty empty R 6 8 0 8 #0400ff #dfdfdf 0
-;
-#X obj 263 192 cnv 14 14 14 empty empty R 6 8 0 8 #0400ff #dfdfdf 0
-;
+#X obj 43 192 cnv 14 14 14 empty empty R 6 8 0 8 #0400ff #dfdfdf 0;
+#X obj 153 192 cnv 14 14 14 empty empty R 6 8 0 8 #0400ff #dfdfdf 0;
+#X obj 263 192 cnv 14 14 14 empty empty R 6 8 0 8 #0400ff #dfdfdf 0;
 #X obj 86 72 r \$0-g4del-s;
 #X obj 59 192 r \$0-g4start-s;
 #X obj 168 192 r \$0-g4end-s;
 #X obj 278 192 r \$0-g4dur-s;
 #X obj 377 275 spigot;
 #X obj 377 296 s \$0-chain;
-#X text 409 171 GUI toggles [spigot] open and sends this gesture's
-trigger to the chain outlet, f 17;
-#X obj 499 242 cnv 14 14 14 empty empty S 6 8 0 8 #e3c6ff #7c7c7c 0
-;
+#X text 409 171 GUI toggles [spigot] open and sends this gesture's trigger to the chain outlet, f 17;
+#X obj 499 242 cnv 14 14 14 empty empty S 6 8 0 8 #e3c6ff #7c7c7c 0;
 #X obj 44 149 t b b b b, f 56;
 #X obj 410 242 r \$0-g4Chain-s;
 #X connect 0 0 5 1;
@@ -2676,84 +2219,52 @@ trigger to the chain outlet, f 17;
 #X connect 29 2 3 0;
 #X connect 29 3 25 0;
 #X connect 30 0 25 1;
-#X restore 1190 705 pd \$0-gesture3;
-#X obj 1080 1010 outlet g3;
-#X obj 1190 1010 outlet g4;
-#X obj 445 631 s \$0-g1-r;
-#X obj 430 631 cnv 14 14 14 empty empty S 6 8 0 8 #dcdcdc #7c7c7c 0
-;
-#X obj 430 578 cnv 14 14 14 empty empty R 6 8 0 8 #9c00fc #dfdfdf 0
-;
-#X obj 64 478 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #9c00fc
-#fcfcfc 0;
-#X obj 522 631 s \$0-g2-r;
-#X obj 599 631 s \$0-g3-r;
-#X obj 676 631 s \$0-g4-r;
-#X obj 445 599 t b b b b, f 39;
-#X obj 447 449 inlet all;
-#X obj 541 449 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc
-0;
-#X obj 557 449 inlet gest1;
-#X obj 1162 449 cnv 14 14 14 empty empty 2 4 8 0 12 #606060 #dcdcdc
-0;
-#X obj 1178 449 inlet gest2;
-#X obj 1262 449 cnv 14 14 14 empty empty 3 4 8 0 12 #606060 #dcdcdc
-0;
-#X obj 1278 449 inlet gest3;
-#X obj 1356 449 cnv 14 14 14 empty empty 4 4 8 0 12 #606060 #dcdcdc
-0;
-#X obj 1372 449 inlet gest4;
-#X obj 1262 491 cnv 14 14 14 empty empty S 6 8 0 8 #00fc04 #7c7c7c
-0;
-#X obj 1162 491 cnv 14 14 14 empty empty S 6 8 0 8 #fc8000 #7c7c7c
-0;
-#X obj 1357 491 cnv 14 14 14 empty empty S 6 8 0 8 #0400fc #dfdfdf
-0;
-#X obj 557 491 s \$0-g1-r;
-#X obj 542 491 cnv 14 14 14 empty empty S 6 8 0 8 #dcdcdc #7c7c7c 0
-;
-#X obj 1178 491 s \$0-g2-r;
-#X obj 1278 491 s \$0-g3-r;
-#X obj 1372 491 s \$0-g4-r;
-#X obj 432 491 cnv 14 14 14 empty empty S 6 8 0 8 #9c00fc #dfdfdf 0
-;
-#X obj 447 491 s \$0-allGest-s;
-#X obj 1175 1010 cnv 14 14 14 empty empty 4 4 8 0 12 #606060 #dcdcdc
-0;
-#X text 76 449 All;
-#X text 139 449 G1;
-#X text 212 449 G2;
-#X text 283 449 G3;
-#X text 349 449 G4;
-#X text 219 665 G3;
-#X text 287 665 G4;
-#X text 76 665 G1;
-#X text 145 665 G2;
-#X obj 78 642 cnv 15 285 20 empty empty Gesture 20 9 0 14 #e0e0e0 #404040
-0;
-#X obj 841 491 cnv 14 14 14 empty empty S 6 8 0 8 #fce0c4 #7c7c7c 0
-;
-#X obj 734 491 cnv 14 14 14 empty empty S 6 8 0 8 #fcc4c4 #7c7c7c 0
-;
-#X obj 935 491 cnv 14 14 14 empty empty S 6 8 0 8 #fcfcc4 #7c7c7c 0
-;
-#X obj 637 491 cnv 14 14 14 empty empty S 6 8 0 8 #b8b8b8 #404040 0
-;
-#X obj 653 491 s \$0-g1del-r;
-#X obj 750 491 s \$0-g1start-r;
-#X obj 856 491 s \$0-g1end-r;
-#X obj 951 491 s \$0-g1dur-r;
+#X restore 1150 355 pd \$0-gesture3;
+#X obj 1040 660 outlet g3;
+#X obj 1150 660 outlet g4;
+#X obj 405 281 s \$0-g1-r;
+#X obj 390 281 cnv 14 14 14 empty empty S 6 8 0 8 #dcdcdc #7c7c7c 0;
+#X obj 390 228 cnv 14 14 14 empty empty R 6 8 0 8 #9c00fc #dfdfdf 0;
+#X obj 14 129 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #9c00fc #fcfcfc 0;
+#X obj 482 281 s \$0-g2-r;
+#X obj 559 281 s \$0-g3-r;
+#X obj 636 281 s \$0-g4-r;
+#X obj 405 249 t b b b b, f 39;
+#X obj 407 99 inlet all;
+#X obj 501 99 cnv 14 14 14 empty empty 1 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 517 99 inlet gest1;
+#X obj 1112 99 cnv 14 14 14 empty empty 2 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 1128 99 inlet gest2;
+#X obj 1212 99 cnv 14 14 14 empty empty 3 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 1228 99 inlet gest3;
+#X obj 1306 99 cnv 14 14 14 empty empty 4 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 1322 99 inlet gest4;
+#X obj 1212 141 cnv 14 14 14 empty empty S 6 8 0 8 #00fc04 #7c7c7c 0;
+#X obj 1112 141 cnv 14 14 14 empty empty S 6 8 0 8 #fc8000 #7c7c7c 0;
+#X obj 1307 141 cnv 14 14 14 empty empty S 6 8 0 8 #0400fc #dfdfdf 0;
+#X obj 517 141 s \$0-g1-r;
+#X obj 502 141 cnv 14 14 14 empty empty S 6 8 0 8 #dcdcdc #7c7c7c 0;
+#X obj 1128 141 s \$0-g2-r;
+#X obj 1228 141 s \$0-g3-r;
+#X obj 1322 141 s \$0-g4-r;
+#X obj 392 141 cnv 14 14 14 empty empty S 6 8 0 8 #9c00fc #dfdfdf 0;
+#X obj 407 141 s \$0-allGest-s;
+#X obj 1135 660 cnv 14 14 14 empty empty 4 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 801 141 cnv 14 14 14 empty empty S 6 8 0 8 #fce0c4 #7c7c7c 0;
+#X obj 694 141 cnv 14 14 14 empty empty S 6 8 0 8 #fcc4c4 #7c7c7c 0;
+#X obj 895 141 cnv 14 14 14 empty empty S 6 8 0 8 #fcfcc4 #7c7c7c 0;
+#X obj 597 141 cnv 14 14 14 empty empty S 6 8 0 8 #b8b8b8 #404040 0;
+#X obj 613 141 s \$0-g1del-r;
+#X obj 710 141 s \$0-g1start-r;
+#X obj 816 141 s \$0-g1end-r;
+#X obj 911 141 s \$0-g1dur-r;
 #N canvas 1506 356 1215 428 g2routing 0;
 #X obj 36 57 inlet;
-#X obj 99 110 cnv 14 14 14 empty empty S 6 8 0 8 #ff8300 #404040 0
-;
+#X obj 99 110 cnv 14 14 14 empty empty S 6 8 0 8 #ff8300 #404040 0;
 #X obj 36 110 outlet;
-#X obj 194 110 cnv 14 14 14 empty empty S 6 8 0 8 #ff8300 #404040 0
-;
-#X obj 301 110 cnv 14 14 14 empty empty S 6 8 0 8 #ff8300 #404040 0
-;
-#X obj 397 110 cnv 14 14 14 empty empty S 6 8 0 8 #ff8300 #404040 0
-;
+#X obj 194 110 cnv 14 14 14 empty empty S 6 8 0 8 #ff8300 #404040 0;
+#X obj 301 110 cnv 14 14 14 empty empty S 6 8 0 8 #ff8300 #404040 0;
+#X obj 397 110 cnv 14 14 14 empty empty S 6 8 0 8 #ff8300 #404040 0;
 #X obj 115 110 s \$0-g2del-r;
 #X obj 210 110 s \$0-g2start-r;
 #X obj 316 110 s \$0-g2end-r;
@@ -2767,18 +2278,14 @@ trigger to the chain outlet, f 17;
 #X connect 11 3 8 0;
 #X connect 11 4 9 0;
 #X connect 11 5 10 0;
-#X restore 1178 470 pd g2routing;
+#X restore 1128 120 pd g2routing;
 #N canvas 1593 -10 698 218 g3routing 0;
 #X obj 36 57 inlet;
-#X obj 99 110 cnv 14 14 14 empty empty S 6 8 0 8 #00ff04 #404040 0
-;
+#X obj 99 110 cnv 14 14 14 empty empty S 6 8 0 8 #00ff04 #404040 0;
 #X obj 36 110 outlet;
-#X obj 194 110 cnv 14 14 14 empty empty S 6 8 0 8 #00ff04 #404040 0
-;
-#X obj 301 110 cnv 14 14 14 empty empty S 6 8 0 8 #00ff04 #404040 0
-;
-#X obj 397 110 cnv 14 14 14 empty empty S 6 8 0 8 #00ff04 #404040 0
-;
+#X obj 194 110 cnv 14 14 14 empty empty S 6 8 0 8 #00ff04 #404040 0;
+#X obj 301 110 cnv 14 14 14 empty empty S 6 8 0 8 #00ff04 #404040 0;
+#X obj 397 110 cnv 14 14 14 empty empty S 6 8 0 8 #00ff04 #404040 0;
 #X obj 115 110 s \$0-g3del-r;
 #X obj 210 110 s \$0-g3start-r;
 #X obj 316 110 s \$0-g3end-r;
@@ -2792,18 +2299,14 @@ trigger to the chain outlet, f 17;
 #X connect 10 3 8 0;
 #X connect 10 4 9 0;
 #X connect 10 5 11 0;
-#X restore 1278 470 pd g3routing;
+#X restore 1228 120 pd g3routing;
 #N canvas 1593 -10 595 218 g4routing 0;
 #X obj 16 57 inlet;
-#X obj 79 110 cnv 14 14 14 empty empty S 6 8 0 8 #0400ff #dfdfdf 0
-;
+#X obj 79 110 cnv 14 14 14 empty empty S 6 8 0 8 #0400ff #dfdfdf 0;
 #X obj 16 110 outlet;
-#X obj 174 110 cnv 14 14 14 empty empty S 6 8 0 8 #0400ff #dfdfdf 0
-;
-#X obj 281 110 cnv 14 14 14 empty empty S 6 8 0 8 #0400ff #dfdfdf 0
-;
-#X obj 377 110 cnv 14 14 14 empty empty S 6 8 0 8 #0400ff #dfdfdf 0
-;
+#X obj 174 110 cnv 14 14 14 empty empty S 6 8 0 8 #0400ff #dfdfdf 0;
+#X obj 281 110 cnv 14 14 14 empty empty S 6 8 0 8 #0400ff #dfdfdf 0;
+#X obj 377 110 cnv 14 14 14 empty empty S 6 8 0 8 #0400ff #dfdfdf 0;
 #X obj 95 110 s \$0-g4del-r;
 #X obj 190 110 s \$0-g4start-r;
 #X obj 296 110 s \$0-g4end-r;
@@ -2817,52 +2320,32 @@ trigger to the chain outlet, f 17;
 #X connect 10 3 8 0;
 #X connect 10 4 9 0;
 #X connect 10 5 11 0;
-#X restore 1372 472 pd g4routing;
-#X obj 1168 473 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #fc8000
-#404040 0;
-#X obj 1265 473 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #00fc04
-#404040 0;
-#X obj 1360 473 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #0400fc
-#fcfcfc 0;
-#X text 559 577 Trigger all gestures simultaneously (delays still affect
-start times), f 69;
-#X text 558 515 [route] allows the 3 trigger inlets to also accept
-the messages "delay" \, "start" \, "end" \, and "dur" followed by a
-float value to set the paramters of each gesture externally, f 74
-;
-#X text 1451 470 <- all other routing, f 8;
-#X obj 445 578 r \$0-allGest-s;
-#X obj 440 803 t b b b b, f 55;
-#X text 331 665 CHAIN;
-#X obj 767 940 spigot;
-#X obj 800 907 r \$0-g1Chain-s;
-#X obj 767 961 s \$0-chain;
-#X text 799 836 GUI toggles [spigot] open and sends this gesture's
-trigger to the chain outlet, f 17;
-#X obj 832 961 cnv 14 14 14 empty empty S 6 8 0 8 #e3c6ff #7c7c7c 0
-;
-#X obj 945 719 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #e3c6ff
-#404040 0;
-#X obj 1065 719 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #e3c6ff
-#404040 0;
-#X obj 1180 719 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #e3c6ff
-#404040 0;
-#X obj 1354 985 r \$0-chain;
-#X obj 1354 1006 outlet chain;
-#X obj 1339 1006 cnv 14 14 14 empty empty 5 4 8 0 12 #606060 #dcdcdc
-0;
-#X obj 1419 985 cnv 14 14 14 empty empty R 6 8 0 8 #e3c6ff #7c7c7c
-0;
-#X obj 390 512 cnv 5 2 100 empty empty empty 20 12 0 14 #c7c6ff #404040
-0;
-#X obj 375 506 cnv 5 5 5 empty empty ─ -2 3 0 30 #fcfcfc #c7c6ff
-0;
-#X obj 375 540 cnv 5 5 5 empty empty ─ -2 3 0 30 #fcfcfc #c7c6ff
-0;
-#X obj 375 573 cnv 5 5 5 empty empty ─ -2 3 0 30 #fcfcfc #c7c6ff
-0;
-#X obj 375 608 cnv 5 5 5 empty empty ─ -2 3 0 30 #fcfcfc #c7c6ff
-0;
+#X restore 1322 122 pd g4routing;
+#X obj 1118 123 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #fc8000 #404040 0;
+#X obj 1215 123 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #00fc04 #404040 0;
+#X obj 1310 123 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #0400fc #fcfcfc 0;
+#X text 519 227 Trigger all gestures simultaneously (delays still affect start times), f 69;
+#X text 518 165 [route] allows the 3 trigger inlets to also accept the messages "delay" \, "start" \, "end" \, and "dur" followed by a float value to set the paramters of each gesture externally, f 74;
+#X text 1401 120 <- all other routing, f 8;
+#X obj 405 228 r \$0-allGest-s;
+#X obj 400 453 t b b b b, f 55;
+#X obj 727 590 spigot;
+#X obj 760 557 r \$0-g1Chain-s;
+#X obj 727 611 s \$0-chain;
+#X text 759 486 GUI toggles [spigot] open and sends this gesture's trigger to the chain outlet, f 17;
+#X obj 792 611 cnv 14 14 14 empty empty S 6 8 0 8 #e3c6ff #7c7c7c 0;
+#X obj 905 369 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #e3c6ff #404040 0;
+#X obj 1025 369 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #e3c6ff #404040 0;
+#X obj 1140 369 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #e3c6ff #404040 0;
+#X obj 1314 635 r \$0-chain;
+#X obj 1314 656 outlet chain;
+#X obj 1299 656 cnv 14 14 14 empty empty 5 4 8 0 12 #606060 #dcdcdc 0;
+#X obj 1379 635 cnv 14 14 14 empty empty R 6 8 0 8 #e3c6ff #7c7c7c 0;
+#X obj 360 162 cnv 5 2 200 empty empty empty 20 12 0 14 #c7c6ff #404040 0;
+#X obj 345 156 cnv 5 5 5 empty empty ─ -2 3 0 30 #fcfcfc #c7c6ff 0;
+#X obj 345 220 cnv 5 5 5 empty empty ─ -2 3 0 30 #fcfcfc #c7c6ff 0;
+#X obj 345 283 cnv 5 5 5 empty empty ─ -2 3 0 30 #fcfcfc #c7c6ff 0;
+#X obj 345 358 cnv 5 5 5 empty empty ─ -2 3 0 30 #fcfcfc #c7c6ff 0;
 #N canvas 2340 183 606 253 chainTglDisp 0;
 #X obj 38 51 r \$0-g1Chain-s;
 #X obj 38 73 sel 1;
@@ -2888,8 +2371,7 @@ trigger to the chain outlet, f 17;
 #X obj 361 159 s \$0-g3Chain-r;
 #X obj 361 49 r \$0-g4Chain-s;
 #X obj 251 49 r \$0-g3Chain-s;
-#X text 482 46 Enabling any 1 gesture as the chain output causes all
-other gestures to not be able to send to the chain output, f 16;
+#X text 482 46 Enabling any 1 gesture as the chain output causes all other gestures to not be able to send to the chain output, f 16;
 #X connect 0 0 1 0;
 #X connect 1 0 6 0;
 #X connect 2 0 9 0;
@@ -2910,108 +2392,91 @@ other gestures to not be able to send to the chain output, f 16;
 #X connect 18 0 21 0;
 #X connect 22 0 4 0;
 #X connect 23 0 3 0;
-#X restore 1345 710 pd chainTglDisp;
-#X obj 1444 714 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #c7c6ff
-#404040 0;
-#X obj 557 470 route bang delay start end dur chain, f 97;
-#X obj 1049 491 s \$0-g1Chain-r;
-#X obj 888 907 cnv 14 14 14 empty empty R 6 8 0 8 #c7c6ff #606060 0
-;
-#X obj 1033 492 cnv 14 14 14 empty empty S 6 8 0 8 #c7c6ff #606060
-0;
-#X obj 395 565 cnv 14 14 14 empty empty R 6 8 0 8 #c7c6ff #606060 0
-;
-#X obj 396 539 cnv 14 14 14 empty empty S 6 8 0 8 #c7c6ff #606060 0
-;
-#X obj 77 495 cnv 15 285 32 empty empty empty 20 9 0 14 #e3c6ff #404040
-0;
-#X obj 77 532 cnv 15 285 32 empty empty empty 20 9 0 14 #e3c6ff #404040
-0;
-#X obj 77 568 cnv 15 285 32 empty empty empty 20 9 0 14 #e3c6ff #404040
-0;
-#X obj 77 604 cnv 15 285 32 empty empty empty 20 9 0 14 #e3c6ff #404040
-0;
-#X obj 82 499 bng 15 250 50 0 \$0-g1-s \$0-g1-r Gesture\\\ 1 17 7 0
-10 #fcfcfc #000000 #000000;
-#X obj 82 535 bng 15 250 50 0 \$0-g2-s \$0-g2-r Gesture\\\ 2 17 7 0
-10 #fcfcfc #000000 #000000;
-#X obj 82 571 bng 15 250 50 0 \$0-g3-s \$0-g3-r Gesture\\\ 3 17 7 0
-10 #fcfcfc #000000 #000000;
-#X obj 82 607 bng 15 250 50 0 \$0-g4-s \$0-g4-r Gesture\\\ 4 17 7 0
-10 #fcfcfc #000000 #000000;
-#X floatatom 200 498 5 0 0 3 StVal \$0-g1start-r \$0-g1start-s 0;
-#X floatatom 240 498 5 0 0 3 EndVal \$0-g1end-r \$0-g1end-s 0;
-#X floatatom 280 498 5 0 0 3 Dur \$0-g1dur-r \$0-g1dur-s 0;
-#X floatatom 200 534 5 0 0 3 StVal \$0-g2start-r \$0-g2start-s 0;
-#X floatatom 240 534 5 0 0 3 EndVal \$0-g2end-r \$0-g2end-s 0;
-#X floatatom 280 534 5 0 0 3 Dur \$0-g2dur-r \$0-g2dur-s 0;
-#X floatatom 200 570 5 0 0 3 StVal \$0-g3start-r \$0-g3start-s 0;
-#X floatatom 240 570 5 0 0 3 EndVal \$0-g3end-r \$0-g3end-s 0;
-#X floatatom 280 570 5 0 0 3 Dur \$0-g3dur-r \$0-g3dur-s 0;
-#X floatatom 200 606 5 0 0 3 StVal \$0-g4start-r \$0-g4start-s 0;
-#X floatatom 240 606 5 0 0 3 EndVal \$0-g4end-r \$0-g4end-s 0;
-#X floatatom 280 606 5 0 0 3 Dur \$0-g4dur-r \$0-g4dur-s 0;
-#X floatatom 160 498 5 0 0 3 Delay \$0-g1del-r \$0-g1del-s 0;
-#X floatatom 160 534 5 0 0 3 Delay \$0-g2del-r \$0-g2del-s 0;
-#X floatatom 160 570 5 0 0 3 Delay \$0-g3del-r \$0-g3del-s 0;
-#X floatatom 160 606 5 0 0 3 Delay \$0-g4del-r \$0-g4del-s 0;
-#X obj 324 498 tgl 14 0 \$0-g1Chain-s \$0-g1Chain-r Chain 0 24 0 10
-#fcfcfc #000000 #000000 0 1;
-#X obj 324 534 tgl 14 0 \$0-g2Chain-s \$0-g2Chain-r Chain 0 24 0 10
-#fcfcfc #000000 #000000 0 1;
-#X obj 324 570 tgl 14 0 \$0-g3Chain-s \$0-g3Chain-r Chain 0 24 0 10
-#fcfcfc #000000 #000000 0 1;
-#X obj 324 606 tgl 14 0 \$0-g4Chain-s \$0-g4Chain-r Chain 0 24 0 10
-#fcfcfc #000000 #000000 0 1;
-#X obj 77 473 cnv 15 285 18 empty empty empty 20 9 0 14 #e3c6ff #404040
-0;
-#X obj 82 475 bng 15 250 50 0 \$0-allGest-s \$0-allGest-r All\\\ Gestures
-17 7 0 10 #fcfcfc #000000 #000000;
-#X connect 40 0 56 1;
-#X connect 41 0 55 1;
-#X connect 42 0 76 0;
-#X connect 43 0 75 1;
-#X connect 44 0 54 1;
-#X connect 45 0 93 0;
-#X connect 46 0 92 0;
-#X connect 47 0 90 0;
-#X connect 54 0 77 1;
-#X connect 55 0 78 0;
-#X connect 56 0 78 1;
-#X connect 75 0 78 2;
-#X connect 76 0 77 0;
-#X connect 76 1 54 0;
-#X connect 77 0 152 0;
-#X connect 78 0 79 0;
-#X connect 79 0 80 0;
-#X connect 80 0 48 0;
-#X connect 90 0 49 0;
-#X connect 92 0 94 0;
-#X connect 93 0 95 0;
-#X connect 103 0 96 0;
-#X connect 103 1 100 0;
-#X connect 103 2 101 0;
-#X connect 103 3 102 0;
-#X connect 104 0 122 0;
-#X connect 106 0 173 0;
-#X connect 108 0 142 0;
-#X connect 110 0 143 0;
-#X connect 112 0 144 0;
-#X connect 142 0 118 0;
-#X connect 143 0 119 0;
-#X connect 144 0 120 0;
-#X connect 151 0 103 0;
-#X connect 152 0 55 0;
-#X connect 152 1 56 0;
-#X connect 152 2 75 0;
-#X connect 152 3 154 0;
-#X connect 154 0 156 0;
-#X connect 155 0 154 1;
-#X connect 162 0 163 0;
-#X connect 173 0 116 0;
-#X connect 173 1 138 0;
-#X connect 173 2 139 0;
-#X connect 173 3 140 0;
-#X connect 173 4 141 0;
-#X connect 173 5 174 0;
-#X coords 0 -1 1 1 290 230 2 75 450;
+#X restore 1305 360 pd chainTglDisp;
+#X obj 1404 364 cnv 5 5 5 empty \$0-vari-tab-1 empty 2 10 0 14 #c7c6ff #404040 0;
+#X obj 517 120 route bang delay start end dur chain, f 97;
+#X obj 1009 141 s \$0-g1Chain-r;
+#X obj 848 557 cnv 14 14 14 empty empty R 6 8 0 8 #c7c6ff #606060 0;
+#X obj 993 142 cnv 14 14 14 empty empty S 6 8 0 8 #c7c6ff #606060 0;
+#X obj 365 265 cnv 14 14 14 empty empty R 6 8 0 8 #c7c6ff #606060 0;
+#X obj 365 242 cnv 14 14 14 empty empty S 6 8 0 8 #c7c6ff #606060 0;
+#X obj 27 143 cnv 15 296 52 empty empty empty 20 9 0 14 #e3c6ff #404040 0;
+#X obj 27 200 cnv 15 296 52 empty empty empty 20 9 0 14 #e3c6ff #404040 0;
+#X obj 27 256 cnv 15 296 52 empty empty empty 20 9 0 14 #e3c6ff #404040 0;
+#X obj 27 312 cnv 15 296 52 empty empty empty 20 9 0 14 #e3c6ff #404040 0;
+#X obj 32 147 bng 15 250 50 0 \$0-g1-s \$0-g1-r Gesture\ 1 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 32 203 bng 15 250 50 0 \$0-g2-s \$0-g2-r Gesture\ 2 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 32 259 bng 15 250 50 0 \$0-g3-s \$0-g3-r Gesture\ 3 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 32 315 bng 15 250 50 0 \$0-g4-s \$0-g4-r Gesture\ 4 17 7 0 10 #fcfcfc #000000 #000000;
+#X floatatom 122 165 5 0 0 3 StVal \$0-g1start-r \$0-g1start-s 0;
+#X floatatom 172 165 5 0 0 3 EndVal \$0-g1end-r \$0-g1end-s 0;
+#X floatatom 222 165 5 0 0 3 Dur \$0-g1dur-r \$0-g1dur-s 0;
+#X floatatom 122 221 5 0 0 3 StVal \$0-g2start-r \$0-g2start-s 0;
+#X floatatom 172 221 5 0 0 3 EndVal \$0-g2end-r \$0-g2end-s 0;
+#X floatatom 222 221 5 0 0 3 Dur \$0-g2dur-r \$0-g2dur-s 0;
+#X floatatom 122 277 5 0 0 3 StVal \$0-g3start-r \$0-g3start-s 0;
+#X floatatom 172 277 5 0 0 3 EndVal \$0-g3end-r \$0-g3end-s 0;
+#X floatatom 222 277 5 0 0 3 Dur \$0-g3dur-r \$0-g3dur-s 0;
+#X floatatom 122 333 5 0 0 3 StVal \$0-g4start-r \$0-g4start-s 0;
+#X floatatom 172 333 5 0 0 3 EndVal \$0-g4end-r \$0-g4end-s 0;
+#X floatatom 222 333 5 0 0 3 Dur \$0-g4dur-r \$0-g4dur-s 0;
+#X floatatom 72 165 5 0 0 3 Delay \$0-g1del-r \$0-g1del-s 0;
+#X floatatom 72 221 5 0 0 3 Delay \$0-g2del-r \$0-g2del-s 0;
+#X floatatom 72 277 5 0 0 3 Delay \$0-g3del-r \$0-g3del-s 0;
+#X floatatom 72 333 5 0 0 3 Delay \$0-g4del-r \$0-g4del-s 0;
+#X obj 266 165 tgl 14 0 \$0-g1Chain-s \$0-g1Chain-r Chain 0 24 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 266 221 tgl 14 0 \$0-g2Chain-s \$0-g2Chain-r Chain 0 24 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 266 277 tgl 14 0 \$0-g3Chain-s \$0-g3Chain-r Chain 0 24 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 266 333 tgl 14 0 \$0-g4Chain-s \$0-g4Chain-r Chain 0 24 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 27 121 cnv 15 296 18 empty empty empty 20 9 0 14 #e3c6ff #404040 0;
+#X obj 32 123 bng 15 250 50 0 \$0-allGest-s \$0-allGest-r All\ Gestures 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 309 105 cnv 10 5 12 empty empty G4 0 6 0 8 #dfdfdf #404040 0;
+#X obj 299 382 cnv 10 5 12 empty empty Chain 0 6 0 8 #dfdfdf #404040 0;
+#X connect 18 0 34 1;
+#X connect 19 0 33 1;
+#X connect 20 0 54 0;
+#X connect 21 0 53 1;
+#X connect 22 0 32 1;
+#X connect 23 0 71 0;
+#X connect 24 0 70 0;
+#X connect 25 0 68 0;
+#X connect 32 0 55 1;
+#X connect 33 0 56 0;
+#X connect 34 0 56 1;
+#X connect 53 0 56 2;
+#X connect 54 0 55 0;
+#X connect 54 1 32 0;
+#X connect 55 0 120 0;
+#X connect 56 0 57 0;
+#X connect 57 0 58 0;
+#X connect 58 0 26 0;
+#X connect 68 0 27 0;
+#X connect 70 0 72 0;
+#X connect 71 0 73 0;
+#X connect 81 0 74 0;
+#X connect 81 1 78 0;
+#X connect 81 2 79 0;
+#X connect 81 3 80 0;
+#X connect 82 0 100 0;
+#X connect 84 0 140 0;
+#X connect 86 0 110 0;
+#X connect 88 0 111 0;
+#X connect 90 0 112 0;
+#X connect 110 0 96 0;
+#X connect 111 0 97 0;
+#X connect 112 0 98 0;
+#X connect 119 0 81 0;
+#X connect 120 0 33 0;
+#X connect 120 1 34 0;
+#X connect 120 2 53 0;
+#X connect 120 3 121 0;
+#X connect 121 0 123 0;
+#X connect 122 0 121 1;
+#X connect 129 0 130 0;
+#X connect 140 0 94 0;
+#X connect 140 1 106 0;
+#X connect 140 2 107 0;
+#X connect 140 3 108 0;
+#X connect 140 4 109 0;
+#X connect 140 5 141 0;
+#X coords 0 -1 1 1 300 300 2 25 100;

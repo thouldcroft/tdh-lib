@@ -1,6 +1,6 @@
-#N canvas 665 461 888 476 10;
+#N canvas 624 461 888 476 10;
 #X obj -24 221 osc~;
-#X floatatom -24 196 5 0 0 0 - - -, f 5;
+#X floatatom -24 196 5 0 0 0 - - - 0;
 #X obj -24 267 *~;
 #X text -331 178 Arguments:;
 #X text -329 133 Travis Houldcroft;
@@ -10,13 +10,13 @@
 #X text -322 192 1: LFO frequency (rate);
 #X text -322 203 2: LFO amplitude (depth);
 #X text -331 106 tdh.synth.lfo.pd;
-#X floatatom 39 222 5 0 0 0 - - -, f 5;
+#X floatatom 39 222 5 0 0 0 - - - 0;
 #X obj 170 53 f \$1;
 #X obj 209 53 f \$2;
 #X obj -99 405 outlet~;
 #X obj 170 30 loadbang;
-#X floatatom 125 144 5 0 0 0 - - -, f 5;
-#X floatatom 125 162 5 0 0 0 - - -, f 5;
+#X floatatom 125 144 5 0 0 0 - - - 0;
+#X floatatom 125 162 5 0 0 0 - - - 0;
 #N canvas 0 22 868 859 selector8~ 0;
 #X obj -306 463 *~;
 #X obj -306 531 outlet~;
@@ -124,12 +124,10 @@
 #X connect 44 0 25 0;
 #X connect 44 0 29 0;
 #X restore -99 317 pd selector8~;
-#X obj -99 242 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj -99 242 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X text 79 361 <-- rectify for amplitude modulation etc.;
 #X obj -99 273 + 1;
-#X obj 258 146 tgl 15 0 empty empty Rectify 20 7 0 10 -262144 -1 -1
-0 1;
+#X obj 258 146 tgl 15 0 empty empty Rectify 20 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X text 244 57 arguments;
 #X obj -124 30 inlet rate;
 #X obj -52 30 inlet depth;
@@ -145,6 +143,7 @@
 #X obj -124 52 change;
 #X obj -52 52 change;
 #X obj 36 52 change;
+#X obj -307 7 cnv 5 5 5 empty empty This\ object\ is\ depreciated.\ Please\ use\ tdh.synth.lfoscil~ 0 0 0 10 #e0e0e0 #ff0400 0;
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
 #X connect 2 0 18 1;
