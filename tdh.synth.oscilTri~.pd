@@ -1,63 +1,40 @@
 #N canvas 133 39 591 654 10;
 #X text 16 34 Travis Houldcroft || travishouldcroft.com;
-#X text 18 220 All waveform generating code is an implementation of
-code discussed in "Making Voltage Controlled Oscillators in Pure Data"
-by Alexandros Drymonitis (drymonitis.me).;
-#X obj 11 273 inlet;
-#X obj 11 338 phasor~;
-#X obj 51 363 *~ -1;
-#X obj 51 388 +~ 1;
-#X text 95 371 <-- Produces an inverted phasor;
-#X obj 11 424 min~;
-#X obj 11 455 *~ 4;
-#X obj 11 480 -~ 1;
-#X text 48 479 <-- Produces a triangle wave -1 to 1;
-#X text 49 454 <-- Produces a triangle wave 0 to 2;
-#X text 48 423 <-- Produces a triangle wave from 0 to 0.5;
-#X obj 11 525 outlet~;
-#X obj 0 0 cnv 15 552 26 empty empty tdh.synth.oscil-tri~ 20 12 0 14
-#e0e0e0 #404040 0;
-#X obj 0 58 cnv 15 551 8 empty empty Inlets 20 15 0 14 #e0e0e0 #404040
-0;
+#X text 18 220 All waveform generating code is an implementation of code discussed in "Making Voltage Controlled Oscillators in Pure Data" by Alexandros Drymonitis (drymonitis.me).;
+#X obj 19 399 phasor~;
+#X obj 61 423 *~ -1;
+#X obj 61 448 +~ 1;
+#X text 105 431 <-- Produces an inverted phasor;
+#X obj 19 489 min~;
+#X obj 19 519 *~ 4;
+#X obj 19 549 -~ 1;
+#X text 58 539 <-- Produces a triangle wave -1 to 1;
+#X text 59 514 <-- Produces a triangle wave 0 to 2;
+#X text 58 483 <-- Produces a triangle wave from 0 to 0.5;
+#X obj 19 579 outlet~;
+#X obj 0 0 cnv 15 552 26 empty empty tdh.synth.oscil-tri~ 20 12 0 14 #e0e0e0 #404040 0;
+#X obj 0 58 cnv 15 551 8 empty empty Inlets 20 15 0 14 #e0e0e0 #404040 0;
 #X text 20 87 0;
 #X text 42 87 -;
-#X obj 0 128 cnv 15 551 8 empty empty Outlets 20 15 0 14 #e0e0e0 #404040
-0;
+#X obj 0 128 cnv 15 551 8 empty empty Outlets 20 15 0 14 #e0e0e0 #404040 0;
 #X text 20 157 0;
 #X text 42 157 -;
 #X text 64 157 (sig) waveform;
 #X text 64 87 (float) oscillator frequency;
-#X obj 0 188 cnv 15 549 8 empty empty Note 20 15 0 14 #e0e0e0 #404040
-0;
-#X obj 338 361 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
-#N canvas 0 22 450 300 (subpatch) 0;
-#X array \$0-scope 240 float 0 black black;
-#X coords 0 1 239 -1 200 140 1;
-#X restore 337 405 graph;
-#N canvas 0 22 450 300 scope 0;
-#X obj 13 94 tabwrite~ \$0-scope;
-#X obj 14 50 metro 256;
-#X obj 13 26 inlet;
-#X obj 106 28 receive~ \$0-toScope;
-#X connect 1 0 0 0;
-#X connect 2 0 1 0;
-#X connect 3 0 0 0;
-#X restore 338 382 pd scope;
-#X obj 316 332 cnv 15 231 8 empty empty Oscilloscope 20 15 0 14 #e0e0e0
-#404040 0;
-#X text 359 361 On/Off;
-#X obj 67 524 send~ \$0-toScope;
-#X text 50 273 Freq (Data);
-#X obj 140 270 inlet~;
-#X text 180 270 Freq (sig);
+#X obj 0 188 cnv 15 549 8 empty empty Note 20 15 0 14 #e0e0e0 #404040 0;
+#X text 69 278 Freq (Data);
+#X obj 19 279 inlet~;
+#X obj 99 309 loadbang;
+#X obj 99 339 f \$1;
+#X obj 99 369 sig~;
 #X connect 2 0 3 0;
+#X connect 2 0 6 0;
 #X connect 3 0 4 0;
-#X connect 3 0 7 0;
-#X connect 4 0 5 0;
-#X connect 5 0 7 1;
+#X connect 4 0 6 1;
+#X connect 6 0 7 0;
 #X connect 7 0 8 0;
-#X connect 8 0 9 0;
-#X connect 9 0 13 0;
-#X connect 9 0 29 0;
-#X connect 24 0 26 0;
+#X connect 8 0 12 0;
+#X connect 24 0 2 0;
+#X connect 25 0 26 0;
+#X connect 26 0 27 0;
+#X connect 27 0 2 0;

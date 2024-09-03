@@ -2096,7 +2096,7 @@
 #X connect 38 0 26 0;
 #X restore 610 48 pd abstr-init;
 #X obj 614 19 cnv 8 83 16 empty empty tdh.lib 14 8 0 14 #dfdfdf #131255 0;
-#N canvas 1516 144 712 796 reference 0;
+#N canvas 640 54 712 796 reference 1;
 #X text 18 48 Travis Houldcroft || travishouldcroft.com;
 #X obj 1 2 cnv 15 700 40 empty \$0-abstrPatchTitleBar tdh.util.audioFileSm~ 9 20 0 18 #3c50fc #a0a0a0 0;
 #X obj 1 312 cnv 2 700 3 empty \$0-abstrPatchSecLabelNotes Notes 20 15 0 16 #a0a0a0 #202020 0;
@@ -2132,6 +2132,7 @@
 #X text 122 319 To Do:;
 #X text 132 362 • some sends and receives still need color coding;
 #X text 132 332 • Progress bar time duration indication should right justify (so when its only a few digits \, its at the end of the bar);
+#X text 23 491 24/0731 - ver 0.3 - Added start and end specifications in GUI \, improved file loading \, added settings emedding., f 111;
 #X restore 516 48 pd reference;
 #X obj 2842 408 cnv 14 14 14 empty empty R 6 8 0 8 #00fc04 #7c7c7c 0;
 #X obj 468 1040 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff 0;

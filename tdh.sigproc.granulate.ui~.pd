@@ -2050,7 +2050,7 @@
 #X obj 371 94 cnv 14 18 14 empty empty 1 2 8 0 12 #606060 #dcdcdc 0;
 #X obj 433 94 cnv 14 18 14 empty empty 2 2 8 0 12 #606060 #dcdcdc 0;
 #X obj 370 588 cnv 14 18 14 empty empty 1 2 8 0 12 #9f9f9f #ffffff 0;
-#X obj 34 125 tgl 16 0 \$0-onOff-s \$0-onOff-r On/Off 18 8 0 10 #ffffff #000000 #000000 0 1;
+#X obj 34 125 tgl 16 0 \$0-onOff-s \$0-onOff-r On/Off 18 8 0 10 #c6feff #000000 #000000 0 1;
 #X floatatom 34 164 5 0 1000 1 Events/sec \$0-rate-r \$0-rate-s 0;
 #X floatatom 172 162 5 0 500 1 Grains\ Per\ Event \$0-nGrains-r \$0-nGrains-s 0;
 #X obj 578 369 r \$0-rate-s;
@@ -2059,7 +2059,7 @@
 #X obj 551 410 metro;
 #X obj 389 588 outlet~;
 #X obj 389 94 inlet~;
-#X obj 36 345 hsl 42 15 0 100 0 0 \$0-dryWetSlider-s \$0-dryWetSlider-r Dry\ \ \ Wet -2 -8 0 10 #ffffff #000000 #000000 0 1;
+#X obj 36 345 hsl 42 15 0 100 0 0 \$0-dryWetSlider-s \$0-dryWetSlider-r Dry\ \ \ Wet -2 -8 0 10 #c6feff #000000 #000000 0 1;
 #X floatatom 92 345 5 0 100 1 % \$0-dryWetNbx-r \$0-dryWetNbx-s 0;
 #X obj 627 529 / 100;
 #X obj 757 513 r \$0-dryWetSlider-s;
@@ -2320,7 +2320,7 @@
 #X msg 1443 228 -1, f 2;
 #X msg 1565 227 1;
 #X text 32 294 Grain Stereo Field Placement Boundaries;
-#X obj 259 345 tgl 15 0 \$0-embed-s \$0-embed-r Embed 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 259 345 tgl 15 0 \$0-embed-s \$0-embed-r Embed 17 7 0 10 #c6feff #000000 #000000 0 1;
 #X obj 733 115 s \$0-dur-r;
 #X text 1677 413 <-- to be implemented;
 #X obj 85 104 cnv 10 5 12 empty empty nGr 0 6 0 8 #dfdfdf #404040 0;

@@ -29,7 +29,7 @@
 #X text 57 438 0.7;
 #X text 96 399 +3dB;
 #X text 56 398 1.5;
-#X obj 233 372 vu 15 120 empty empty -1 -8 0 10 #404040 #000000 1 0;
+#X obj 234 374 vu 15 120 empty empty -1 -8 0 10 #404040 #000000 1 0;
 #X text 95 424 -0dB;
 #X text 28 33 Convert from a linear scale gain to dBFS \, and dBFS to linear scale gain, f 73;
 #X text 75 126 (float) a linear gain scale from 0 to 2;
@@ -43,18 +43,5 @@
 #X text 53 226 -;
 #X text 75 206 (float) a gain value in dBFS;
 #X text 75 226 (float) a gain value in linear scale;
-#X floatatom 80 523 5 0 0 0 - - - 0;
-#X floatatom 80 581 5 0 0 0 - - - 0;
-#X floatatom 222 589 5 0 0 0 - - - 0;
-#X text 319 418 d = log10(l) * 20;
-#X text 368 446 d = gain in dBFS;
-#X text 368 466 l = gain in linear scale;
-#X text 462 418 l = 10^(d/20);
 #X obj 462 343 declare -path tdh.lib;
-#X obj 80 556 tdh.math.lin2dbfs.dbfs2lin;
-#X connect 0 0 43 0;
-#X connect 29 0 51 1;
-#X connect 43 0 51 0;
-#X connect 44 0 29 0;
-#X connect 51 0 44 0;
-#X connect 51 1 45 0;
+#X obj 146 580 tdh.lib/tdh.math.lin2dbfs;

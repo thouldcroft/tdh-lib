@@ -3,7 +3,7 @@
 #X obj 71 277 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 71 488 *~;
 #X obj 71 516 outlet~;
-#X obj 54 123 bng 15 250 50 0 \$0-trigger-s \$0-trigger-r Trigger 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 54 123 bng 15 250 50 0 \$0-trigger-s \$0-trigger-r Trigger 17 7 0 10 #c6feff #000000 #000000;
 #X floatatom 53 142 5 0 0 1 Freq \$0-frequency-r \$0-frequency-s 0;
 #X obj 71 256 r \$0-trigger-s;
 #X floatatom 53 160 5 0 0 1 Pitch \$0-pitch-r \$0-pitch-s 0;
@@ -2235,7 +2235,7 @@
 #X connect 40 3 38 0;
 #X connect 40 4 39 0;
 #X restore 619 395 pd savestateWithEmbedOpt;
-#X obj 149 122 tgl 15 0 \$0-embed-s \$0-embed-r Embed 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 149 122 tgl 15 0 \$0-embed-s \$0-embed-r Embed 17 7 0 10 #c6feff #000000 #000000 0 1;
 #X text 617 375 Save parameters on patch save:;
 #N canvas 421 420 450 300 nonUsed 0;
 #X obj 54 81 array define -k tri\$0;
@@ -2321,7 +2321,7 @@
 #X connect 28 0 20 0;
 #X restore 55 51 pd makeTriArray;
 #X restore 826 468 pd nonUsed;
-#X obj 149 143 vradio 16 1 1 4 waveSelect\$0-s waveSelect\$0-r empty 0 -8 0 10 #fcfcfc #000000 #000000 -1;
+#X obj 149 143 vradio 16 1 1 4 waveSelect\$0-s waveSelect\$0-r empty 0 -8 0 10 #c6feff #000000 #000000 1;
 #N canvas 321 225 871 300 waveform 0;
 #X obj 43 234 outlet~;
 #X obj 58 97 r waveSelect\$0-s;
@@ -2436,7 +2436,7 @@
 #X obj 1010 110 inlet embed;
 #X obj 818 133 f \$4;
 #X text 830 218 Default shape: sine, f 8;
-#N canvas 721 217 719 510 argDefaultF 1;
+#N canvas 721 217 719 510 argDefaultF 0;
 #X obj 264 47 t f f;
 #X obj 213 139 sel 1 0;
 #X obj 278 176 f;
